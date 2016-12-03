@@ -37,12 +37,26 @@ class ProjectController extends Controller
     public function project()
     {
         $data['activer']=array($this->activer,'project');
-        print_r($data['activer']);
         return view('project',$data);
     }
     public function issue()
     {
         $data['activer']=array($this->activer,'issue');
+        return view('project',$data);
+    }
+    public function history()
+    {
+        $data['activer']=array($this->activer,'history');
+        return view('project',$data);
+    }
+    public function review()
+    {
+        $data['activer']=array($this->activer,'review');
+        return view('project',$data);
+    }
+    public function published()
+    {
+        $data['activer']=array($this->activer,'published');
         return view('project',$data);
     }
 }
