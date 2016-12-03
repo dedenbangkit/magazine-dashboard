@@ -11,20 +11,20 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 
 /**
- * Class HomeController
+ * Class ProjectController
  * @package App\Http\Controllers
  */
-class HomeController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    protected $activer;
+    protected $activer ;
     public function __construct()
     {
-        $this->activer = 'home';
+        $this->activer='file';
         $this->middleware('auth');
     }
 
@@ -33,9 +33,16 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function index()
+
+    public function project()
     {
-        $data['activer'] = array($this->activer);
-        return view('home', $data);
+        $data['activer']=array($this->activer,'project');
+        print_r($data['activer']);
+        return view('project',$data);
+    }
+    public function issue()
+    {
+        $data['activer']=array($this->activer,'issue');
+        return view('project',$data);
     }
 }
