@@ -120,6 +120,7 @@ return [
     'dropus'                  => 'Drop Us A Line',
     'yourname'                => 'Your Name',
     'emailaddress'            => 'Email Address',
+    'phonenumber'             => 'Phone Number',
     'enteremail'              => 'Enter Email',
     'yourtext'                => 'Your Text',
     'submit'                  => 'SUBMIT',
