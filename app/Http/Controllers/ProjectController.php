@@ -9,7 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use App\Model\Project;
 /**
  * Class ProjectController
  * @package App\Http\Controllers
@@ -21,9 +21,11 @@ class ProjectController extends Controller
      *
      * @return void
      */
-    protected $activer ;
+    protected $activer;
+    protected $authdata;
     public function __construct()
     {
+        $this->authdata = $this->authData();
         $this->activer='file';
         $this->middleware('auth');
     }
@@ -37,7 +39,12 @@ class ProjectController extends Controller
     public function project()
     {
         $data['activer']=array($this->activer,'project');
+
         return view('project',$data);
+    }
+    public function createProject(){
+        $data['activer']=array($this->activer,'project');
+        return view('create_project',$data);
     }
     public function issue()
     {

@@ -51,6 +51,15 @@
                     <li <?php if (in_array("published", $activer)) { echo "class='active'";} ?>><a href="/published"><i class='fa fa-plane'></i> <span>PUBLISHED</span></a></li>
                 </ul>
             </li>
+            <li <?php if (in_array("user management", $activer)) { echo "class='active'"; } ?> class="treeview">
+                <a href="javascript:void(0)"><i class='fa fa-user'></i> <span>USER MANAGEMENT</span> <i
+                            class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li <?php if (in_array("user", $activer)) { echo "class='active'";} ?> ><a href="/user"><i class='fa fa-users'></i> <span>USER</span></a></li>
+                    <li <?php if (in_array("add user", $activer)) { echo "class='active'";} ?>><a href="/registration"><i class='fa fa-user-plus'></i> <span>ADD USER</span></a></li>
+                  \
+                </ul>
+            </li>
             <li><a href="#"><i class='fa fa-link'></i>
                     <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
         </ul><!-- /.sidebar-menu -->

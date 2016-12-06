@@ -38,6 +38,9 @@ desired effect
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        @section('contentheader_title')
+        <?= strtoupper(array_last($activer)); ?>
+        @endsection
 
         @include('layouts.partials.contentheader')
 
@@ -57,6 +60,6 @@ desired effect
 @section('scripts')
     @include('layouts.partials.scripts')
 @show
-
+@yield('script-content')
 </body>
 </html>

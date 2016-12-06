@@ -40,15 +40,17 @@
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <select name='position' class="form-control">
+                        <option value="editor">Editor </option>
+                        <option value="designer">Designer</option>
+                        <option value="leader">Team Leader</option>
+                        <option value="supervisor">Supervisor</option>
+                    </select>
+                    <span class="glyphicon glyphicon-tags form-control-feedback" style="margin-right: 7px"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <select name='department' class="form-control">
-                        <option>Editor</option>
-                        <option>Designer</option>
-                        <option>Supervisor</option>
-                    </select>
+                    <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
+                    <span class="glyphicon glyphicon-lock form-control-feedback" ></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.retrypepassword') }}" name="password_confirmation"/>
@@ -69,6 +71,13 @@
     @include('auth.terms')
 
     <script>
+
+    </script>
+</body>
+
+@endsection
+@section('script-content')
+    <script>
         $(function () {
             $('input').iCheck({
                 checkboxClass: 'icheckbox_square-blue',
@@ -77,6 +86,4 @@
             });
         });
     </script>
-</body>
-
 @endsection

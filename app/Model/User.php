@@ -17,8 +17,12 @@ class User extends Model
              'email'=>$data['email'],
              'password'=>bcrypt($data['password']),
              'phone'=>$data['phone'],
+             'position'=>$data['position'],
              'remember_token'=>$data['_token']
             )
         );
+    }
+    public function getUser(){
+        return User::whereNull('deleted_at')->where('position','!=','administrator')->orderBy('name')->get();
     }
 }

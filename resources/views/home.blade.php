@@ -4,7 +4,6 @@
     <?= ucfirst(array_last($activer)); ?>
 @endsection
 
-
 @section('main-content')
 	<div class="container spark-screen">
 		<div class="row">

@@ -28,3 +28,6 @@
     height:120px;
     margin-bottom: 5px;
 }
+.dataTables_filter{
+    float:right !important;
+}

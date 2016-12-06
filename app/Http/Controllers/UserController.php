@@ -11,6 +11,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\User;
 use Validator;
+
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -24,26 +25,44 @@ class UserController extends Controller
      */
     protected $activer;
     protected $user;
+    protected $authdata;
     public function __construct()
     {
-        $this->activer = 'user';
+        $this->authdata = $this->authData();
+        $this->activer = 'user management';
         $this->user = new User();
         $this->middleware('auth');
     }
 
     /**
-     * Show the application dashboard.
+     * Show registration form.
      *
      * @return Response
      */
     public function showRegistrationForm()
     {
-        $data['activer']=array($this->activer,'Registration');
+        $data['activer']=array($this->activer,'add user');
         return view('register',$data);
     }
+    /**
+     * processing registering new member.
+     *
+     * @return redirect to user page
+     */
     public function registrationProcess(Request $request){
         $this->user->insertUser($request->all());
-        return $request->all();
+        return redirect('/user');
 
+    }
+    /**
+     * Show the user management page.
+     *
+     * @return Response
+     */
+    public function showUser(){
+        $data['access']=$this->authdata->position;
+        $data['activer']=array($this->activer,'user');
+        $data['user']=$this->user->getUser();
+        return view('user-list',$data);
     }
 }

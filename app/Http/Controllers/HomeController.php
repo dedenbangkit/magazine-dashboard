@@ -22,8 +22,10 @@ class HomeController extends Controller
      * @return void
      */
     protected $activer;
+    protected $authdata;
     public function __construct()
     {
+        $this->authdata = $this->authData();
         $this->activer = 'home';
         $this->middleware('auth');
     }
