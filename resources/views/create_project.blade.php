@@ -25,7 +25,7 @@
 
         <div class="register-box-body">
             <p class="login-box-msg">Create New Project</p>
-            <form action="registration" method="post">
+            <form action="create-project" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Project Name" name="name" value="{{ old('name') }}"/>
@@ -33,8 +33,7 @@
                 </div>
                 <div class="form-group ">
                     <label for="exampleInputFile">Project Cover</label>
-                    <input type="file" id="imagefile" >
-
+                    <input type="file" name="cover" id="imagefile" >
                 </div>
                 <div class="row">
                     <div class="col-xs-4 ">

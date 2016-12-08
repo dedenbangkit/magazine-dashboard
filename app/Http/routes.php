@@ -18,6 +18,7 @@ Route::get('/home', 'HomeController@index');
 /*projects*/
 Route::get('/projects', 'ProjectController@project');
 Route::get('/create-project', 'ProjectController@createProject');
+Route::post('/create-project', 'ProjectController@createProjectProcess');
 Route::get('/history', 'ProjectController@history');
 Route::get('/issue', 'ProjectController@issue');
 Route::get('/review', 'ProjectController@review');

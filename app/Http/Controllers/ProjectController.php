@@ -10,6 +10,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\Project;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Input;
+
 /**
  * Class ProjectController
  * @package App\Http\Controllers
@@ -23,10 +26,14 @@ class ProjectController extends Controller
      */
     protected $activer;
     protected $authdata;
+    protected $project;
+    protected $access;
     public function __construct()
     {
+        $this->access= array('administrator','supervisor','leader');
+        $this->project = new Project();
         $this->authdata = $this->authData();
-        $this->activer='file';
+        $this->activer = 'file';
         $this->middleware('auth');
     }
 
@@ -38,32 +45,65 @@ class ProjectController extends Controller
 
     public function project()
     {
-        $data['activer']=array($this->activer,'project');
+        $data['create']=false;
+        if(in_array($this->authdata->position,$this->access)){
+            $data['create']=true;
+        }
+        $data['activer'] = array($this->activer, 'project');
+        $data['projects'] = $this->project->getProject();
+        return view('project', $data);
+    }
 
-        return view('project',$data);
+    public function createProject()
+    {
+        $data['activer'] = array($this->activer, 'project');
+        return view('create_project', $data);
     }
-    public function createProject(){
-        $data['activer']=array($this->activer,'project');
-        return view('create_project',$data);
+
+    public function createProjectProcess(Request $request)
+    {
+        if (!empty($request->file('cover'))) {
+            Image::make(Input::file('cover'))->resize(300, 200)->save('img/projects/' . $request->file('cover')->getClientOriginalName());
+        }
+        $datainput = array(
+            'name' => $request->name,
+            'cover' => $request->file('cover')->getClientOriginalName(),
+            'master' => $this->authdata->id,
+            'key' => mt_rand(11111111,999999),
+        );
+        $this->project->insertProject($datainput);
+        return redirect('/projects');
     }
+
     public function issue()
     {
-        $data['activer']=array($this->activer,'issue');
-        return view('project',$data);
+        $data['create']=false;
+        if(in_array($this->authdata->position,$this->access)){
+            $data['create']=true;
+        }
+        $data['activer'] = array($this->activer, 'issue');
+
+        return view('project', $data);
     }
+
     public function history()
     {
-        $data['activer']=array($this->activer,'history');
-        return view('project',$data);
+        $data['create']=false;
+        $data['activer'] = array($this->activer, 'history');
+        return view('project', $data);
     }
+
     public function review()
     {
-        $data['activer']=array($this->activer,'review');
-        return view('project',$data);
+        $data['activer'] = array($this->activer, 'review');
+        return view('project', $data);
     }
+
     public function published()
     {
-        $data['activer']=array($this->activer,'published');
-        return view('project',$data);
+        $data['create']=false;
+        $data['activer'] = array($this->activer, 'published');
+        $data['projects'] = $this->project->getProjectPublish();
+        return view('project', $data);
     }
 }
