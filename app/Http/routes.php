@@ -21,6 +21,8 @@ Route::get('/create-project', 'ProjectController@createProject');
 Route::post('/create-project', 'ProjectController@createProjectProcess');
 Route::get('/history', 'ProjectController@history');
 Route::get('/issue', 'ProjectController@issue');
+Route::get('/create-issue', 'ProjectController@createIssue');
+Route::post('/create-issue', 'ProjectController@createIssueProcess');
 Route::get('/review', 'ProjectController@review');
 Route::get('/published', 'ProjectController@published');
 

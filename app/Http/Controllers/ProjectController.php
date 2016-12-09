@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\Project;
+use App\Model\User;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
 
@@ -27,11 +28,13 @@ class ProjectController extends Controller
     protected $activer;
     protected $authdata;
     protected $project;
+    protected $user;
     protected $access;
     public function __construct()
     {
         $this->access= array('administrator','supervisor','leader');
         $this->project = new Project();
+        $this->user = new User();
         $this->authdata = $this->authData();
         $this->activer = 'file';
         $this->middleware('auth');
@@ -69,7 +72,7 @@ class ProjectController extends Controller
             'name' => $request->name,
             'cover' => $request->file('cover')->getClientOriginalName(),
             'master' => $this->authdata->id,
-            'key' => mt_rand(11111111,999999),
+            'key' => mt_rand(111111,999999),
         );
         $this->project->insertProject($datainput);
         return redirect('/projects');
@@ -82,8 +85,20 @@ class ProjectController extends Controller
             $data['create']=true;
         }
         $data['activer'] = array($this->activer, 'issue');
+        $data['projects'] = $this->project->getProject();
+        return view('issue', $data);
+    }
 
-        return view('project', $data);
+    public function createIssue()
+    {
+        $data['users']=  $this->user->getUser();
+        $data['activer'] = array($this->activer, 'issue');
+        return view('create_issue', $data);
+    }
+
+    public function createIssueProcess(Request $request)
+    {
+        return $request->all();
     }
 
     public function history()
