@@ -8,9 +8,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Model\Page;
 use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
+use App\Model\Issue;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
 
@@ -29,12 +31,16 @@ class ProjectController extends Controller
     protected $authdata;
     protected $project;
     protected $user;
+    protected $issue;
+    protected $page;
     protected $access;
     public function __construct()
     {
         $this->access= array('administrator','supervisor','leader');
         $this->project = new Project();
         $this->user = new User();
+        $this->issue = new Issue();
+        $this->page = new Page();
         $this->authdata = $this->authData();
         $this->activer = 'file';
         $this->middleware('auth');
@@ -78,14 +84,27 @@ class ProjectController extends Controller
         return redirect('/projects');
     }
 
-    public function issue()
+    public function issue(Request $request)
     {
+        if(empty($request->session()->get('project_id'))){
+            if(empty($request->id)){
+                return redirect('/projects');
+            }else{
+                $request->session()->put('project_id', $request->id);
+            }
+        }else{
+            if(!empty($request->id)){
+                if($request->id != $request->session()->get('project_id') ){
+                    $request->session()->put('project_id', $request->id);
+                }
+            }
+        }
         $data['create']=false;
         if(in_array($this->authdata->position,$this->access)){
             $data['create']=true;
         }
         $data['activer'] = array($this->activer, 'issue');
-        $data['projects'] = $this->project->getProject();
+        $data['projects'] = $this->issue->getIssue($request->session()->get('project_id'));
         return view('issue', $data);
     }
 
@@ -98,7 +117,33 @@ class ProjectController extends Controller
 
     public function createIssueProcess(Request $request)
     {
-        return $request->all();
+        $request->session()->get('project_id');
+        $data=array(
+            'name'=>$request->name,
+            'cover'=>$request->cover,
+            'master'=>$this->authdata->id,
+            'project_id'=>$request->session()->get('project_id')
+        );
+        $issue_id=$this->issue->insertIssue($data);
+        $pagename=$request->pagename ;
+        foreach($pagename as $i=>$row){
+            var_dump($request->team[$i]);
+            $team = $request->team[$i];
+            $team = array_push($team,$this->authdata->id);
+            if(!empty($row)){
+                $name=$row;
+            }else{
+                $name= 'page '.($i+1);
+            }
+            $dataPage=array(
+                'issue'=>$issue_id,
+                'name'=>$name,
+                'team'=>$team,
+                'description'=>$request->description[$i]
+            );
+            $this->page->insertPage($dataPage);
+        };
+        return  $request->all() ;
     }
 
     public function history()

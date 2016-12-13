@@ -14,8 +14,7 @@
                         <div class="panel-body">
                             <?php if($create == true) {?>
                             <div class="col-md-3  text-center">
-                                <div class="box-content" style="cursor: pointer;"
-                                     onclick="window.location='/create-project';">
+                                <div class="box-content" style="cursor: pointer;" onclick="window.location='/create-project';">
                                     <div class="box-content-inside-new">
                                         <img src="{{asset('/img/add new.png')}}"/>
                                     </div>
@@ -24,7 +23,7 @@
                             <?php } ?>
                             <?php foreach($projects as $i=>$row){ ?>
                             <div class="col-sm-3  text-center">
-                                <div class="box-content">
+                                <div class="box-content" style="cursor: pointer;" onclick="window.location='/issue?id={{$row->id}}';">
                                     <div class="box-content-inside">
                                         <div class="row">
                                             <img src="{{asset('/img/projects/'.$row->project_cover)}}">

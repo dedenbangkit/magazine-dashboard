@@ -11,9 +11,9 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading"><?=  ucfirst(array_last($activer));?></div>
-                        <div class="panel-body">
+                        <div class="panel-body" >
                             <?php if($create == true) {?>
-                            <div class="col-md-3  text-center">
+                            <div class="col-md-3  text-center " style="margin-bottom: 10px !important;">
                                 <div class="box-content" style="cursor: pointer;"
                                      onclick="window.location='/create-issue';">
                                     <div class="box-content-inside-new">
@@ -23,14 +23,14 @@
                             </div>
                             <?php } ?>
                             <?php foreach($projects as $i=>$row){ ?>
-                            <div class="col-sm-3  text-center">
+                            <div class="col-sm-3  text-center" style="margin-bottom: 10px !important;">
                                 <div class="box-content">
                                     <div class="box-content-inside">
                                         <div class="row">
-                                            <img src="{{asset('/img/projects/'.$row->project_cover)}}">
+                                            <img src="<?php if(empty($row->issue_cover)){echo asset('/img/empty_zine.jpg');}else{echo asset('/img/projects/'.$row->issue_cover);} ?>">
                                         </div>
                                         <div class="row">
-                                            <b>{{$row->project_name}}</b>
+                                            <b>{{$row->issue_name}}</b>
                                         </div>
                                         <div class="row">
                                             <p class="font-light"

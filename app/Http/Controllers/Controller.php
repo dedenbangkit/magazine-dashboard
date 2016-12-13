@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,4 +15,14 @@ class Controller extends BaseController
      public function authData(){
          return Auth::user();
      }
+
+        public function checkSessionProject($request){
+            if(empty($request->session()->get('project_id'))){
+                if(empty($request->id)){
+                    return redirect('/projects');
+                }else{
+                    $request->session()->put('project_id', $request->id);
+                }
+            }
+    }
 }

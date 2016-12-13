@@ -10,6 +10,7 @@
 
 
     <body class="hold-transition register-page">
+    <div class="row"><div class="col-md-12">
     <div class="col-md-5">
         <div class="register-logo">
             <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
@@ -32,41 +33,37 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Issue Name" name="name" value="{{ old('name') }}"/>
-                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-book form-control-feedback" data-id="" ></span>
                 </div>
                 <div class="form-group ">
                     <label for="exampleInputFile">Issue Cover</label>
                     <input type="file" name="cover" id="imagefile" >
                 </div>
-                <div class="form-group clone">
-                    <div class="row well">
-                    <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="page Name" name="pagename[]" value=""/>
-                    </div>
-                    <div class="col-xs-6">
-                        <?php
-                        echo '<div class="checkbox">
-                            <label><input name="team[0][]" type="checkbox" value="1">Option 1</label>
+                <div id="checkbox-form">
+                    <div class="form-group clone">
+                        <div class="row well" style="margin:0px; 10px; padding:5px;">
+                            <span class="glyphicon glyphicon-remove pull-right" style="cursor:not-allowed" id=""></span>
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" placeholder="page Name" name="pagename[]" value=""/>
                         </div>
-                        <div class="checkbox">
-                            <label><input name="team[0][]" type="checkbox" value="2">Option 2</label>
+                        <div class="col-xs-6" style="height: 120px; overflow-y: auto;">
+                            @foreach ($users as $i=>$row)
+                                <div class="checkbox">
+                                    <label><input name="team[0][]" class="checkbox-member" type="checkbox" value="{{$row->id}}">{{$row->name}}</label>
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="checkbox disabled">
-                            <label><input name="team" type="checkbox" value="" disabled>Option 3</label>
-                        </div>';
-                        ?>
-                    </div>
-                    <div class="col-xs-6" >
-                        <textarea width="100%"></textarea>
-                    </div>
+                        <div class="col-xs-6" >
+                            <textarea class="form-control" rows="5" name="description[]" placeholder="Description"></textarea>
+                        </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-4 ">
-                        <a href="#" class="add" rel=".clone">add more</a>
+                        <a href="javascript:void(0)" class="btn btn-primary btn-block btn-flat add pull-right" rel=".clone">add more</a>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-xs-4 ">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Create</button>
                     </div><!-- /.col -->
@@ -75,7 +72,7 @@
 
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
-
+    </div></div>
     @include('layouts.partials.scripts_auth')
 
     @include('auth.terms')
@@ -137,6 +134,12 @@
                             var newid = $(this).attr('id') + (counter +1);
                             $(this).attr('id', newid);
                         });
+                        //increae arraychexbox
+                        clone.find(".checkbox-member").attr('name',  'team['+counter+'][]');
+                        //increase data value
+                        clone.find(".glyphicon-remove").attr('data-id',  counter);
+                        //change style pointer
+                        clone.find(".glyphicon-remove").attr('style',  'cursor:pointer');
 
                         //Clear Inputs/Textarea
                         if (settings.clearInputs){
@@ -151,7 +154,6 @@
                                     case "submit":
                                         break;
                                     case "checkbox":
-                                        $(this).attr('checked', '');
                                         break;
                                     default:
                                         $(this).val("");
@@ -176,6 +178,13 @@
 
 
             $('a.add').relCopy();
+
+            $(".glyphicon-remove").click(function () {
+
+               var remove_id = $(this).data('id');
+                $('.copy'+remove_id).remove();
+                console.log(remove_id);
+            });
         });
 
 
