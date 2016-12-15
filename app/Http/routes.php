@@ -30,3 +30,9 @@ Route::get('/published', 'ProjectController@published');
 Route::get('/registration', 'UserController@showRegistrationForm');
 Route::post('/registration', 'UserController@registrationProcess');
 Route::get('/user', 'UserController@showUser');
+
+
+/* sample */
+Route::get('/sample', function () {
+    return view('interact-sample');
+});
