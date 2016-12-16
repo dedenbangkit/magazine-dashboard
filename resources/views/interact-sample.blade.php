@@ -32,6 +32,7 @@
     <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/autosize.js') }}" type="text/javascript"></script>
     <!-- DataTables -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
@@ -43,49 +44,65 @@
 
     #drag-1, #drag-2 {
         width: 25%;
-        height: 20px;
         min-height: 6.5em;
         margin: 0px;
-
-        background-color: #29e;
+        background-color: transparent;
         color: white;
-
+        border: solid black 1px;
         border-radius: 0.75em;
         padding: 4%;
-
+        position: absolute;
         -webkit-transform: translate(0px, 0px);
         transform: translate(0px, 0px);
+        padding: 0px;
+        padding-top: 10px;
     }
-
+    #drag-1, #drag-2:focus{
+        outline-style: solid;
+        outline-width: 1px;
+    }
     #drag-me::before {
         content: "#" attr(id);
         font-weight: bold;
+    }
+    textarea {
+        padding: 10px;
+        vertical-align: top;
+        width: 98%;
+        margin: 5px;
+        resize:none;
+        background: transparent;
+    }
+    textarea:focus {
+        resize: both;
     }
     .jeje{
         border: solid black 1px;
         height: 100%;
         padding: 0px !important;
     }
+    .draggable:focus{
+        cursor: hand;
+    }
 
 </style>
 
-    <div class="col-md-12 jeje">
+    <div class="col-md-8 jeje">
 
-
-        <div id="drag-1" class="draggable" style="transform: translate(10%, 10%);">
-            <p> You can drag one element </p>
-        </div>
-        <div id="drag-2" class="draggable">
-            <p> with each pointer </p>
+        <div id="drag-2" class="draggable" style="z-index: 1">
+           <img src="{{asset('/img/projects/ahm.png')}}">
         </div>
 
-
-
+        <div id="drag-1" class="draggable form-group" style="transform: translate(10%, 10%);z-index: 2">
+            <textarea style="color: black;border: none;"  ></textarea>
+        </div>
     </div>
 
 </body>
 <script>
+
     $(function () {
+        autosize($('textarea'));
         interact('.draggable')
                 .draggable({
                     // enable inertial throwing
@@ -111,8 +128,11 @@
                                         event.dy * event.dy)|0) + '%');
                         document.body.style.cursor = 'default';
                     }
-                });
 
+                });
+        function hand(){
+            document.body.style.cursor = 'hand';
+        }
         function dragMoveListener (event) {
             var target = event.target,
             // keep the dragged position in the data-x/data-y attributes
@@ -133,7 +153,8 @@
         // this is used later in the resizing and gesture demos
         window.dragMoveListener = dragMoveListener;
 
-    });
+
+    })
 
 </script>
 </html>
