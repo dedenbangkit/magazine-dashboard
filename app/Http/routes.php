@@ -26,6 +26,10 @@ Route::post('/create-issue', 'ProjectController@createIssueProcess');
 Route::get('/review', 'ProjectController@review');
 Route::get('/published', 'ProjectController@published');
 
+/*page*/
+Route::get('/get-page', 'PageController@getPage');
+Route::post('/save-page', 'PageController@savePage');
+
 /*userController*/
 Route::get('/registration', 'UserController@showRegistrationForm');
 Route::post('/registration', 'UserController@registrationProcess');
@@ -36,3 +40,5 @@ Route::get('/user', 'UserController@showUser');
 Route::get('/sample', function () {
     return view('interact-sample');
 });
+Route::get('/page', 'PageController@index');
+Route::get('/sample-page', 'PageController@sample');

@@ -183,7 +183,6 @@
 
                var remove_id = $(this).data('id');
                 $('.copy'+remove_id).remove();
-                console.log(remove_id);
             });
         });
 

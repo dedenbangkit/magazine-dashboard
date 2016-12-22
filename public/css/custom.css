@@ -31,3 +31,6 @@
 .dataTables_filter{
     float:right !important;
 }
+.page-thumb:hover{
+    cursor: hand;
+}
