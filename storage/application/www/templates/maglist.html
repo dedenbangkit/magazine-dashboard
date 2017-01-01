@@ -1,0 +1,26 @@
+
+<ion-view view-title="{{title}}">
+    <ion-content scroll="false">
+    <ion-slides disable-scroll="false"  options="options" slider="data.slider">
+      <ion-slide-page ng-repeat="detail in details">
+        <p>{{detail.downloadUrl}}</p>
+        <ion-list>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
+        </ion-list>
+      </ion-slide-page>
+    </ion-slides>
+    </ion-content>
+</ion-view>

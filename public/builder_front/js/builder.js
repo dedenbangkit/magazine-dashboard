@@ -13,8 +13,7 @@ var editableItems = new Array();
 
 editableItems['.frameCover'] = [];
 editableItems['span.fa'] = ['color', 'font-size'];
-editableItems['.bg.bg1'] = ['background-color'];
-editableItems['.column'] = ['background-color'];
+editableItems['.bg.bg1'] = ['background-color', 'background-size'];
 editableItems['.container'] = ['background-color'];
 editableItems['nav a, a.edit'] = ['color', 'font-weight', 'text-transform'];
 editableItems['h1'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
@@ -29,10 +28,10 @@ editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
 editableItems['.footer a'] = ['color'];
-editableItems['.bg.bg1, .bg.bg2'] = ['background-image', 'background-color'];
-editableItems['.container'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
-editableItems['.column'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
-editableItems['.page'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.bg.bg1, .bg.bg2'] = ['background-image','background-color','background-size'];
+editableItems['.container'] = ['background-size','border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.column'] = ['background-color','background-size','opacity', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.page'] = ['background-color','background-size','border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
 editableItems['#nivoSlider img.edit'] = [];
 
 var editableItemOptions = new Array();
@@ -46,6 +45,7 @@ editableItemOptions['img : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.column : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['.column : background-size'] = ['cover', 'contain', 'initial'];
 editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
@@ -1187,6 +1187,12 @@ function styleClick(el) {
 
 		}
 
+		$('#detailsAppliedMessage').fadeIn(600, function(){
+
+			setTimeout(function(){ $('#detailsAppliedMessage').fadeOut(1000) }, 3000)
+
+		})
+
 	});
 
 
@@ -1578,6 +1584,12 @@ $(function(){
 		$('.link_Tab .btn-group.select > button .filter-option').text( $('.link_Tab .dropdown-menu li:first').text() )
 
 		this.select();
+
+	})
+
+	$('#detailsAppliedMessageHide').click(function(){
+
+		$(this).parent().fadeOut(500)
 
 	})
 

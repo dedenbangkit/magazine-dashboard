@@ -86,15 +86,11 @@ class PageController extends Controller
         $pages = $this->page->getPage($request->session()->get('issue-editor'));
         foreach($pages as $i=>$row){
             $page_array= explode('<!-- end array-->',$row->test_content);
-//            $page_array=str_replace(" <!-- end array--> ",'"]["',$row->test_content);
             $data['loadpage'][$i]=[
                 'id'=>$row->id,
                 'content_array'=>$page_array
             ];
         }
-        $abcd="abcd<!-- end array-->efgh<!-- end array-->";
-//        return explode('<!-- end array-->',$abcd);
-//        return $data['loadpage'][1]['content_array'][1];
         return $data;
     }
     public function exportIssue(Request $request){
