@@ -21,8 +21,9 @@
         </div>
         <div class="col-md-9" style="">
             <div class="editor" style="border: 1px solid black;height: 84vh;background-color: white">
-                <div class="col-lg-12" style="overflow: scroll; height: inherit">
+                <div class="col-lg-12" style=" height: inherit">
                     <div class="content-magz" id="content-magz" style="height: inherit; margin: none;padding: none;" >
+
                     </div>
                 </div>
             </div>
@@ -45,6 +46,7 @@
             });
 
         });
+
         $(document).ready(function()
         {
             var xx;                            // To store cloned div
@@ -54,7 +56,8 @@
                     {
                         helper: "clone",
                         cursor: "move",
-                        revert: true
+                        appendTo: ".content-magz",
+                        revert: "invalid"
                     });
 
             $(".content-magz").droppable(
@@ -63,9 +66,9 @@
                         drop: function(event, ui)
                         {
                             x = ui.helper.clone();    // Store cloned div in x
-                            y=ui.helper.remove();       // Escape from revert the original div
+//                            y=ui.helper.remove();       // Escape from revert the original div
                             x.appendTo('.content-magz');
-                            console.log(y);
+                            console.log(x);
 
                         }
                     });
