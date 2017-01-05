@@ -65,11 +65,10 @@
                     {
                         drop: function(event, ui)
                         {
-                            x = ui.helper.clone();    // Store cloned div in x
+                            x = ui.helper.clone().attr('id', 'value');    // Store cloned div in x
 //                            y=ui.helper.remove();       // Escape from revert the original div
-                            x.appendTo('.content-magz');
+                            x.appendTo('.content-magz').removeClass( "test" ).draggable({helper:"clone"});
                             console.log(x);
-
                         }
                     });
         });
