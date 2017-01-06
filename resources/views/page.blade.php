@@ -67,7 +67,7 @@
                         appendTo: ".content-magz",
                         revert: "invalid"
                     });
-
+  
             $(".content-magz").droppable(
 
                     {
