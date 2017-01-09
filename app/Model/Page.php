@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class Page extends Model
 {
     //
@@ -20,5 +20,18 @@ class Page extends Model
                 'page_description'=>$data['description']
             )
         );
+    }
+    public function getPage($id){
+        return Page::whereNull('deleted_at')
+            ->where('issue_id',$id)
+            ->orderBy('id','ASC')
+            ->get();
+    }
+    public function savePage($id,$content){
+        return Page::where('id','=',$id)
+        ->update([
+            'page_content'=>$content,
+            'updated_at'=>Carbon::now()
+        ]);
     }
 }

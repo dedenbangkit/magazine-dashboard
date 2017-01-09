@@ -159,8 +159,7 @@ return [
         /*
          * Acacha AdminLTE template provider
          */
-        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
+        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class
     ],
 
     /*

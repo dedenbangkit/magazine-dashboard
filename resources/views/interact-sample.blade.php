@@ -41,7 +41,9 @@
 <body>
 <style>
 
-
+    body{
+    background-color: blue;
+    }
     #drag-1, #drag-2 {
         width: 25%;
         min-height: 6.5em;
@@ -78,8 +80,9 @@
     }
     .jeje{
         border: solid black 1px;
-        height: 100%;
+        height: 500px;
         padding: 0px !important;
+        background-color: white;
     }
     .draggable:focus{
         cursor: hand;
@@ -87,15 +90,18 @@
 
 </style>
 
-    <div class="col-md-8 jeje">
+    <div class="col-md-8 jeje" style="z-index: -10">
 
         <div id="drag-2" class="draggable" style="z-index: 1">
            <img src="{{asset('/img/projects/ahm.png')}}">
         </div>
 
-        <div id="drag-1" class="draggable form-group" style="transform: translate(10%, 10%);z-index: 2">
+        <div id="drag-1" class="draggable form-group" style="transform: translate(10%, 10%);">
             <textarea style="color: black;border: none;"  ></textarea>
         </div>
+    </div>
+    <div class="blus" style="z-index: -100;background-color: red">
+asdasdasd
     </div>
 
 </body>
