@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,8 +95,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12564">
-              <caret line="146" column="78" lean-forward="false" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="78" />
+            <state relative-caret-position="-75">
+              <caret line="155" column="74" lean-forward="false" selection-start-line="155" selection-start-column="74" selection-end-line="155" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -192,6 +190,7 @@
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -555,15 +554,15 @@
       <workItem from="1482158178593" duration="786000" />
       <workItem from="1482163219721" duration="58000" />
       <workItem from="1483029462558" duration="4471000" />
-      <workItem from="1483971993193" duration="777000" />
+      <workItem from="1483971993193" duration="843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23069000" />
+    <option name="totallyTimeSpent" value="23135000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -922,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12564">
-          <caret line="146" column="78" lean-forward="false" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="78" />
+        <state relative-caret-position="-75">
+          <caret line="155" column="74" lean-forward="false" selection-start-line="155" selection-start-column="74" selection-end-line="155" selection-end-column="74" />
           <folding />
         </state>
       </provider>
