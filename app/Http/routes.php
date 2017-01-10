@@ -40,5 +40,8 @@ Route::get('/user', 'UserController@showUser');
 Route::get('/sample', function () {
     return view('interact-sample');
 });
+Route::get('/editor-page', function () {
+    return view('editor-page');
+});
 Route::get('/page', 'PageController@index');
 Route::get('/sample-page', 'PageController@sample');

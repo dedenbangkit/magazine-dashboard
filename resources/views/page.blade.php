@@ -22,10 +22,8 @@
         <div class="col-md-9" style="">
             <div class="editor" style="border: 1px solid black;height: 84vh;background-color: white">
                 <div class="col-lg-12" style=" height: inherit">
-                    <div class="content-magzs" id="content-magzs" style="height:736px; max-height: 736px; width: 414px; margin: auto;padding: none;border:1px solid black;background-color: white;" >
-                        <div class="content-magz" id="content-magz" style="height:100%;  width: 100%; margin: auto;padding: none;border:1px solid black;background-color: white;" >
+                    <div class="content-magz" id="content-magz" style="height:736px; max-height: 736px; width: 414px; margin: auto;padding: none;border:1px solid black;background-color: white;" >
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -48,6 +46,24 @@
                 document.getElementById("content-magz").innerHTML = content;
 
             });
+            $(".test").click(function () {
+                var content = $(this).data('content');
+                document.getElementById("content-magz").innerHTML += '<div id="draggableHelper" class="item" style="display:inline-block">'+
+                '<img class="text-style"  src="<?= asset('/img/empty_zine.jpg')?>">'+
+                '</div>';
+                $(".item").draggable({ revert: "invalid",
+                                containment: ".content-magz",
+                                stop: function () {
+                                    var $elm = $(this);
+                                    var pos = $elm.position(),
+                                            parentSizes = {
+                                                height: $elm.parent().height(),
+                                                width: $elm.parent().width()
+                                            };
+
+                                    $elm.css('top', ((pos.top/parentSizes.height) * 100) + '%').css('left', ((pos.left/parentSizes.width) * 100) + '%');
+                                }})
+            });
 
         });
 //        $(".text-style").click(function(){
@@ -62,36 +78,36 @@
             var xx;                            // To store cloned div
             var y;                            // To store cloned div
             var ex;
-            $(".test").draggable(
-                    {
-                        helper: "clone",
-                        cursor: "move",
-                        appendTo: ".content-magz",
-                        revert: "invalid"
-                    });
-            $(".content-magz").droppable(
-
-                    {
-                        drop: function(event, ui)
-                        {
-                            containment: ".content-magz",
-                            x = ui.helper.clone().attr('id', 'value');    // Store cloned div in x
-                            y=ui.helper.remove();       // Escape from revert the original div
-                            x.appendTo('.content-magz').removeClass( "test").addClass("ui-widget-content ui-resizable").draggable( {
-                                revert: "invalid",
-                                containment: ".content-magz",
-                                snap: true,
-                                snap: ".content-magz",
-                                grid: [ 5, 5 ],
-                                stop: function () {
-                                    var l = ( 100 * parseFloat($(this).position().left / parseFloat($(this).width())) ) + "%" ;
-                                    var t = ( 100 * parseFloat($(this).position().top / parseFloat($(this).height())) ) + "%" ;
-                                    $(this).css("left", l);
-                                    $(this).css("top", t);
-                                }});
-                            console.log(x);
-                        }
-                    });
+//            $(".test").draggable(
+//                    {
+//                        helper: "clone",
+//                        cursor: "move",
+//                        appendTo: ".content-magz",
+//                        revert: "invalid"
+//                    });
+//            $(".content-magz").droppable(
+//
+//                    {
+//                        drop: function(event, ui)
+//                        {
+//                            containment: ".content-magz",
+//                            x = ui.helper.clone().attr('id', 'value');    // Store cloned div in x
+//                            y=ui.helper.remove();       // Escape from revert the original div
+//                            x.appendTo('.content-magz').removeClass( "test").addClass("ui-widget-content ui-resizable").draggable( {
+//                                revert: "invalid",
+//                                containment: ".content-magz",
+//                                snap: true,
+//                                snap: ".content-magz",
+//                                grid: [ 5, 5 ],
+//                                stop: function () {
+//                                    var l = ( 100 * parseFloat($(this).position().left / parseFloat($(this).width())) ) + "%" ;
+//                                    var t = ( 100 * parseFloat($(this).position().top / parseFloat($(this).height())) ) + "%" ;
+//                                    $(this).css("left", l);
+//                                    $(this).css("top", t);
+//                                }});
+//                            console.log(x);
+//                        }
+//                    });
         });
 
     </script>
