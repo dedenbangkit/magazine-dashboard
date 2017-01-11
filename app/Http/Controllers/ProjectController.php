@@ -118,18 +118,22 @@ class ProjectController extends Controller
     public function createIssueProcess(Request $request)
     {
         $request->session()->get('project_id');
+        $cover=null;
+        if(!empty($request->file('cover')) && $request->file('cover')->isValid()){
+            $cover=$request->file('cover').'.'.$request->file('cover')->clientExtension();
+            $request->file('cover')->move('img/projects/tmp',$cover);
+        };
         $data=array(
             'name'=>$request->name,
-            'cover'=>$request->cover,
+            'cover'=>$cover,
             'master'=>$this->authdata->id,
             'project_id'=>$request->session()->get('project_id')
         );
         $issue_id=$this->issue->insertIssue($data);
         $pagename=$request->pagename ;
         foreach($pagename as $i=>$row){
-            var_dump($request->team[$i]);
-            $team = $request->team[$i];
-            $team = array_push($team,$this->authdata->id);
+            $team = array($this->authdata->id);
+            array_push($team,$request->team[$i]);
             if(!empty($row)){
                 $name=$row;
             }else{
@@ -143,7 +147,8 @@ class ProjectController extends Controller
             );
             $this->page->insertPage($dataPage);
         };
-        return  $request->all() ;
+
+        return redirect('/issue');
     }
 
     public function history()

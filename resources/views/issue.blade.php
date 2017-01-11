@@ -27,7 +27,7 @@
                                 <div class="box-content">
                                     <div class="box-content-inside">
                                         <div class="row">
-                                            <img src="<?php if(empty($row->issue_cover)){echo asset('/img/empty_zine.jpg');}else{echo asset('/img/projects/'.$row->issue_cover);} ?>">
+                                            <img src="<?php if(empty($row->issue_cover)){echo asset('/img/empty_zine.jpg');}else{echo asset('/img/projects'.$row->issue_cover);} ?>">
                                         </div>
                                         <div class="row">
                                             <b>{{$row->issue_name}}</b>
