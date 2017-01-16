@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
+use App\Model\Action_log;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
 
@@ -34,6 +35,7 @@ class ProjectController extends Controller
     protected $issue;
     protected $page;
     protected $access;
+    protected $action_log;
     public function __construct()
     {
         $this->access= array('administrator','supervisor','leader');
@@ -41,6 +43,7 @@ class ProjectController extends Controller
         $this->user = new User();
         $this->issue = new Issue();
         $this->page = new Page();
+        $this->action_log = new Action_log();
         $this->authdata = $this->authData();
         $this->activer = 'file';
         $this->middleware('auth');
@@ -147,7 +150,7 @@ class ProjectController extends Controller
             );
             $this->page->insertPage($dataPage);
         };
-
+        $this->action_log->create_log('Creating Issue '.$request->name,$this->authdata->id);
         return redirect('/issue');
     }
 
@@ -155,7 +158,8 @@ class ProjectController extends Controller
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'history');
-        return view('project', $data);
+        $data['list']= $this->action_log->getHistory($this->authdata->id);
+        return view('history-list', $data);
     }
 
     public function review()

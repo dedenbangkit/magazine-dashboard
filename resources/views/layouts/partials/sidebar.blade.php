@@ -41,7 +41,7 @@
             } ?> ><a href="{{ url('home') }}"><i class='fa fa-home'></i>
                     <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li <?php if (in_array("file", $activer)) { echo "class='active'"; } ?> class="treeview">
-                <a href="javascript:void(0)"><i class='fa fa-file'></i> <span>FILE</span> <i
+                <a href="javascript:void(0)"><i class='fa fa-file'></i> <span>FILE MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li <?php if (in_array("project", $activer)) { echo "class='active'";} ?> ><a href="/projects"><i class='fa fa-tags'></i> <span>PROJECT</span></a></li>

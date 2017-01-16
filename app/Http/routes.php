@@ -32,7 +32,10 @@ Route::post('/save-page', 'PageController@savePage');
 
 /*userController*/
 Route::get('/registration', 'UserController@showRegistrationForm');
+Route::get('/user-list', 'UserController@userList');
 Route::post('/registration', 'UserController@registrationProcess');
+Route::post('/remove-user', 'UserController@removeUser');
+Route::post('/change-user-password', 'UserController@changeUserPassword');
 Route::get('/user', 'UserController@showUser');
 
 

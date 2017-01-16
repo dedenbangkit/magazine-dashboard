@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class User extends Model
 {
     protected $table='users';
@@ -24,5 +24,19 @@ class User extends Model
     }
     public function getUser(){
         return User::whereNull('deleted_at')->where('position','!=','administrator')->orderBy('name')->get();
+    }
+
+    public function removeUser($id){
+        return User::where('id',$id)
+            ->update([
+                'deleted_at'=>Carbon::now()
+            ]);
+    }
+    public function changeUserPassword($id,$password){
+        return User::where('id',$id)
+            ->update([
+                'password'=>bcrypt($password),
+                'updated_at'=>Carbon::now()
+            ]);
     }
 }
