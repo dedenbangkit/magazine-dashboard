@@ -108,4 +108,25 @@ class UserController extends Controller
         }
         return $status_message;
     }
+    /**
+     *response to remove user.
+     *
+     * @return Response
+     */
+    public function changeUserPosition(Request $request){
+        if(!empty($request->position)){
+
+
+        $status=$this->user->changeUserPosition($request->id,$request->position);
+        if($status){
+            $status_message='Success to change '.$request->name.' position';
+            $this->action_log->create_log('Change User '.$request->name.' position to '.$request->position,$this->authdata->id);
+        }else{
+            $status_message='Failed to change '.$request->name.' position';
+        }
+        }else{
+            $status_message = 'Nothing to Change';
+        }
+        return $status_message;
+    }
 }

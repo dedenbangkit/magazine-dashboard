@@ -36,6 +36,7 @@ Route::get('/user-list', 'UserController@userList');
 Route::post('/registration', 'UserController@registrationProcess');
 Route::post('/remove-user', 'UserController@removeUser');
 Route::post('/change-user-password', 'UserController@changeUserPassword');
+Route::post('/change-user-position', 'UserController@changeUserPosition');
 Route::get('/user', 'UserController@showUser');
 
 

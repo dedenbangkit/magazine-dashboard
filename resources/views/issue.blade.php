@@ -30,7 +30,7 @@
                                             <img src="<?php if(empty($row->issue_cover)){echo asset('/img/empty_zine.jpg');}else{echo asset('/img/projects'.$row->issue_cover);} ?>">
                                         </div>
                                         <div class="row">
-                                            <b>{{$row->issue_name}}</b>
+                                            <b><?php echo (empty($row->issue_name)?'Untittled':$row->issue_name); ?></b>
                                         </div>
                                         <div class="row">
                                             <p class="font-light"

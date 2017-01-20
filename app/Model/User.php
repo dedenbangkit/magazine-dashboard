@@ -39,4 +39,11 @@ class User extends Model
                 'updated_at'=>Carbon::now()
             ]);
     }
+    public function changeUserPosition($id,$position){
+        return User::where('id',$id)
+            ->update([
+                'position'=>$position,
+                'updated_at'=>Carbon::now()
+            ]);
+    }
 }

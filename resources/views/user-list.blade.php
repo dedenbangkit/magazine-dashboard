@@ -64,7 +64,7 @@
                          "aTargets": [4],
                          "mData": null,
                          "mRender": function (data, type, full) {
-                             return "<a href='javascript:void(0)'><i class='fa fa-gear'></i></a> <a href='javascript:void(0);' data-id='"+data+"' data-name='"+full.name+"'><i class='fa fa-key' data-id='"+data+"' data-name='"+full.name+"'></i></a> <a href='javascript:void(0)'><i class='fa fa-trash' data-id='"+data+"' data-name='"+full.name+"'>&nbsp;</i></a>";
+                             return "<a href='javascript:void(0)'><i class='fa fa-gear' data-id='"+data+"' data-name='"+full.name+"'></i></a> <a href='javascript:void(0);' data-id='"+data+"' data-name='"+full.name+"'><i class='fa fa-key' data-id='"+data+"' data-name='"+full.name+"'></i></a> <a href='javascript:void(0)'><i class='fa fa-trash' data-id='"+data+"' data-name='"+full.name+"'>&nbsp;</i></a>";
 
                          }
                      }
@@ -144,6 +144,66 @@
                  });
 
              });
+
+             $('#user').on('click', '.fa-gear', function () {
+                 var name = $(this).data('name');
+                 var id = $(this).data('id');
+
+                 bootbox.prompt({
+                     title: "Change position for "+name,
+                     inputType: 'select',
+                     inputOptions: [
+                         {
+                             text: 'Choose one...',
+                             value: '',
+                         },
+                         {
+                             text: 'Admin',
+                             value: 'administrator',
+                         },
+                         {
+                             text: 'Supervisor',
+                             value: 'supervisor',
+                         },
+                         {
+                             text: 'Leader',
+                             value: 'leader',
+                         },
+                         {
+                             text: 'Editor',
+                             value: 'editor',
+                         },
+                         {
+                             text: 'Designer',
+                             value: 'designer',
+                         }
+                     ],
+                     callback: function (result) {
+                         if(result != ""){
+                             $.post("/change-user-position",
+                                     {
+                                         id: id,
+                                         name:name,
+                                         position:result,
+                                         _token: "<?php echo csrf_token();?>"
+                                     },
+                                     function(data, status){
+                                         var  message =  data;
+                                         bootbox.alert({
+                                             message: message,
+                                             backdrop: true,
+                                         });
+                                         userTable.ajax.reload();
+                                     });
+
+                         }else if(result == null){
+
+                         }
+
+                     }
+                 });
+             });
+
          });
 
      </script>
