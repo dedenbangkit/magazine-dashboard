@@ -158,14 +158,6 @@
                              value: '',
                          },
                          {
-                             text: 'Admin',
-                             value: 'administrator',
-                         },
-                         {
-                             text: 'Supervisor',
-                             value: 'supervisor',
-                         },
-                         {
                              text: 'Leader',
                              value: 'leader',
                          },
