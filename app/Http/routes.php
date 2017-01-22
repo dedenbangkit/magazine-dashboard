@@ -32,13 +32,20 @@ Route::post('/save-page', 'PageController@savePage');
 
 /*userController*/
 Route::get('/registration', 'UserController@showRegistrationForm');
+Route::get('/user-list', 'UserController@userList');
 Route::post('/registration', 'UserController@registrationProcess');
+Route::post('/remove-user', 'UserController@removeUser');
+Route::post('/change-user-password', 'UserController@changeUserPassword');
+Route::post('/change-user-position', 'UserController@changeUserPosition');
 Route::get('/user', 'UserController@showUser');
 
 
 /* sample */
 Route::get('/sample', function () {
     return view('interact-sample');
+});
+Route::get('/editor-page', function () {
+    return view('editor-page');
 });
 Route::get('/page', 'PageController@index');
 Route::get('/sample-page', 'PageController@sample');

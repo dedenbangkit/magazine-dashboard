@@ -1,0 +1,182 @@
+/* General styles for all menus @@@@@@@@@@@@ */
+/* General styles for all menus */
+.cssInspector {
+	/*background: #47a3da; */
+	background: #496B87; /* #26a9f0; #40c5ff;*/
+	/*background: #fff;*/
+	position: fixed;
+
+/*
+	border-top: 10px solid #e6e9ec;   #f58d7b; KALO
+	border-bottom: 10px solid #e6e9ec;
+	border-left: 5px solid #e6e9ec;
+	border-right: 5px solid #e6e9ec; e56900
+*/
+    border-top: 10px solid #000;
+	border-bottom: 10px solid #000;
+	border-left: 7px solid #000;
+	border-right: 7px solid #000;
+
+	padding-top:20px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+
+	font-size: 14px;
+}
+
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cssInspector-vertical {
+	width: 320px; /*400px; /* 380px; /*240px;*/
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+	overflow: auto; /*scroll*/
+
+}
+.nav-header .blueText{
+	font-size: 16px;
+}
+.nav-body .panel-title{
+	font-size: 14px;
+}
+.blackText{
+	color:#fff;
+}
+#inspectorPreview button i{
+	font-size: 8px;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cssInspector-left {
+	left: -320px; /*-400px; /*-380px; /*-240px;*/
+}
+
+.cssInspector-right {
+	right: -240px;
+}
+
+.cssInspector-left.cssInspector-open {
+	left: 0px;
+}
+
+.cssInspector-right.cssInspector-open {
+	right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cssInspector-top {
+	top: -150px;
+}
+
+.cssInspector-bottom {
+	bottom: -150px;
+}
+
+.cssInspector-top.cssInspector-open {
+	top: 0px;
+}
+
+.cssInspector-bottom.cssInspector-open {
+	bottom: 0px;
+}
+
+/* Push classes applied to the body */
+
+
+.cssInspector-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.cssInspector-push-toright {
+	left: 240px;
+}
+
+.cssInspector-push-toleft {
+	left: -240px;
+}
+
+/* Transitions */
+
+.cssInspector,
+.cssInspector-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cssInspector-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cssInspector-top {
+		top: -110px;
+	}
+
+	.cssInspector-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cssInspector-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cssInspector-left,
+	.cssInspector-push-toleft {
+		left: -190px;
+	}
+
+	.cssInspector-right {
+		right: -190px;
+	}
+
+	.cssInspector-push-toright {
+		left: 190px;
+	}
+}
+
+/*
+#closemark{
+	background: none;
+	border:none;
+	margin-left:140px;
+	font-size: 0.885em;
+	
+}
+*/
+
+.cssInspector-vertical::-webkit-scrollbar {
+      width: 8px;
+} 
+
+.cssInspector-vertical::-webkit-scrollbar-track {
+      background-color: #e6e9ec;
+} 
+ 
+.cssInspector-vertical::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+} 
+ 
+.cbp-spmenu-vertical::-webkit-scrollbar-button {
+      background-color: #7c2929;
+} 
+ 
+ 
+
+

@@ -2,7 +2,202 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/Futura PT W01 Demi.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/Lato-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/SantEliaScriptBold.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/images/footBack3A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/application.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/code.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/css.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/db.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/directory.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/doc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/film.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/flash.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/folder_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/html.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/java.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/linux.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/music.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/pdf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/php.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/picture.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/ppt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/psd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/ruby.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/script.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/txt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/xls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/filetree_images/zip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/Futura PT W01 Demi.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/Lato-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/SantEliaScriptBold.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Preloader_2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Template1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Template2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Template3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Template4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/Template5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/carousel4A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/carousel4B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/carousel4C.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/carousel4D.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/features4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/footBack3A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/footBack3B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/footBack3C.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/footerback1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5b.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5c.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5e.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/grid5f.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/header4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/header5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/headerBack1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/headerBack3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/headerback2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middle2A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middle2B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3C.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3D.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3E.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3G.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleBack3H.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/middleback1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2C.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2D.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2E.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2G.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2H.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/miidle2I.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/placeholder.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1C.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1D.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1E.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1F.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1G.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1H.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/portfolio1I.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/thumbs5a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/thumbs5b.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/thumbs5c.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/thumbs5d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/topBack3A.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/images/topBack3B.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/starter.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/template1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/template2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/template3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/template4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/template5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/template_images/usertemplates.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/videos/Three-Swans.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/php6OHDkT.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpASgY9V.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpDYGbi9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpGuuPd6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpQWOuB1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpVCMTZc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpmP0nvm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpnapQ25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpy5ug1O.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/Action_log.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/db/magazineapp-20-01-2017.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/animate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/dropzone.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/jqueryFileTree.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/slidepanel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/css/spectrum.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/false.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/scripts/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/downloads/bbb/scripts/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/bower_components/rangy-official/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/bower_components/rangy-official/rangy-classapplier.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/bower_components/rangy-official/rangy-core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/bower_components/undo/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/bower_components/undo/undo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/medium.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/medium.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/medium.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Action.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Cache.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Cursor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Drag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Element.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Injector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Selection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Undoable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/Utilities.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/environmentCorrection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/Medium/wrapper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/MediumJS/src/drag.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/classie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/dropzone.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/jquery-ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/jqueryFileTree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/editor/scripts/spectrum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/editor-page.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/history-list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/magazine.iml" afterPath="$PROJECT_DIR$/.idea/magazine.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Page.php" afterPath="$PROJECT_DIR$/app/Model/Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/User.php" afterPath="$PROJECT_DIR$/app/Model/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issue.blade.php" afterPath="$PROJECT_DIR$/resources/views/issue.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/scripts.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/scripts.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/page.blade.php" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user-list.blade.php" afterPath="$PROJECT_DIR$/resources/views/user-list.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +232,8 @@
       <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="1003">
+              <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -48,8 +243,11 @@
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
-              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="24" />
-              <folding />
+              <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="24" />
+              <folding>
+                <marker date="1485095465809" expanded="true" signature="1789:1794" ph="..." />
+                <marker date="1485095465809" expanded="true" signature="1789:1795" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,9 +255,13 @@
       <file leaf-file-name="page.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="18" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+              <folding>
+                <element signature="e#1125#1254#0#HTML" expanded="true" />
+                <element signature="e#1410#1430#0#HTML" expanded="true" />
+                <element signature="e#1485#1513#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,9 +344,10 @@
         <option value="$PROJECT_DIR$/resources/views/interact-sample.blade.php" />
         <option value="$PROJECT_DIR$/public/plugins/jQueryUI/jquery-ui.js" />
         <option value="$PROJECT_DIR$/public/js/jquery-drag.js" />
-        <option value="$PROJECT_DIR$/resources/views/page.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="C:/Windows/System32/drivers/etc/hosts" />
+        <option value="$PROJECT_DIR$/resources/views/page.blade.php" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -484,15 +687,15 @@
       <workItem from="1483029462558" duration="4471000" />
       <workItem from="1483971993193" duration="843000" />
       <workItem from="1483973202468" duration="1149000" />
-      <workItem from="1485093341439" duration="789000" />
+      <workItem from="1485093341439" duration="1500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25073000" />
+    <option name="totallyTimeSpent" value="25784000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -571,11 +774,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/img/projects/ahm.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -818,8 +1016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        <state relative-caret-position="1003">
+          <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -857,8 +1055,11 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="24" />
-          <folding />
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="24" />
+          <folding>
+            <marker date="1485095465809" expanded="true" signature="1789:1794" ph="..." />
+            <marker date="1485095465809" expanded="true" signature="1789:1795" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -892,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Windows/System32/drivers/etc/hosts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -907,11 +1101,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="316" column="78" lean-forward="false" selection-start-line="316" selection-start-column="74" selection-end-line="316" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="18" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="238">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#1125#1254#0#HTML" expanded="true" />
+            <element signature="e#1410#1430#0#HTML" expanded="true" />
+            <element signature="e#1485#1513#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

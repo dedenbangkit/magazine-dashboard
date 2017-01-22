@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
+use App\Model\Action_log;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
 
@@ -34,6 +35,7 @@ class ProjectController extends Controller
     protected $issue;
     protected $page;
     protected $access;
+    protected $action_log;
     public function __construct()
     {
         $this->access= array('administrator','supervisor','leader');
@@ -41,6 +43,7 @@ class ProjectController extends Controller
         $this->user = new User();
         $this->issue = new Issue();
         $this->page = new Page();
+        $this->action_log = new Action_log();
         $this->authdata = $this->authData();
         $this->activer = 'file';
         $this->middleware('auth');
@@ -118,18 +121,22 @@ class ProjectController extends Controller
     public function createIssueProcess(Request $request)
     {
         $request->session()->get('project_id');
+        $cover=null;
+        if(!empty($request->file('cover')) && $request->file('cover')->isValid()){
+            $cover=$request->file('cover').'.'.$request->file('cover')->clientExtension();
+            $request->file('cover')->move('img/projects/tmp',$cover);
+        };
         $data=array(
             'name'=>$request->name,
-            'cover'=>$request->cover,
+            'cover'=>$cover,
             'master'=>$this->authdata->id,
             'project_id'=>$request->session()->get('project_id')
         );
         $issue_id=$this->issue->insertIssue($data);
         $pagename=$request->pagename ;
         foreach($pagename as $i=>$row){
-            var_dump($request->team[$i]);
-            $team = $request->team[$i];
-            $team = array_push($team,$this->authdata->id);
+            $team = array($this->authdata->id);
+            array_push($team,$request->team[$i]);
             if(!empty($row)){
                 $name=$row;
             }else{
@@ -143,14 +150,16 @@ class ProjectController extends Controller
             );
             $this->page->insertPage($dataPage);
         };
-        return  $request->all() ;
+        $this->action_log->create_log('Creating Issue '.$request->name,$this->authdata->id);
+        return redirect('/issue');
     }
 
     public function history()
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'history');
-        return view('project', $data);
+        $data['list']= $this->action_log->getHistory($this->authdata->id);
+        return view('history-list', $data);
     }
 
     public function review()

@@ -12,11 +12,12 @@ class Page extends Model
     protected $primaryKey = 'id';
 
     public function insertPage($data){
+        // restore array use unserialize
         return  Page::insertGetId(
             array(
                 'issue_id'=>$data['issue'],
                 'page_name'=>$data['name'],
-                'page_team'=>$data['team'],
+                'page_team'=>serialize($data['team']),
                 'page_description'=>$data['description']
             )
         );

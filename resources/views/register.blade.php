@@ -44,7 +44,6 @@
                         <option value="editor">Editor </option>
                         <option value="designer">Designer</option>
                         <option value="leader">Team Leader</option>
-                        <option value="supervisor">Supervisor</option>
                     </select>
                     <span class="glyphicon glyphicon-tags form-control-feedback" style="margin-right: 7px"></span>
                 </div>
