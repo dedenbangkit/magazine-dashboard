@@ -10,7 +10,10 @@ class User extends Model
     public $timestamps = true;
     protected $primaryKey = 'id';
 
-    public function insertUser($data){
+    public function insertUser($data,$project_id){
+        if(empty($data['position'])){
+            $data['position'] = 'supervisor';
+        }
         return  User::insert(
             array(
              'name'=>$data['name'],
@@ -18,14 +21,25 @@ class User extends Model
              'password'=>bcrypt($data['password']),
              'phone'=>$data['phone'],
              'position'=>$data['position'],
-             'remember_token'=>$data['_token']
+             'remember_token'=>$data['_token'],
+              'project_id'=>$project_id
             )
         );
     }
     public function getUser(){
-        return User::whereNull('deleted_at')->where('position','!=','administrator')->orderBy('name')->get();
+        return User::whereNull('deleted_at')
+            ->where('position','!=','administrator')
+            ->orderBy('name')
+            ->get();
     }
-
+    public function getUserClient(){
+        return User::whereNull('users.deleted_at')
+            ->leftjoin('project','users.project_id','=','project.id')
+            ->where('users.position','supervisor')
+            ->orderBy('project.project_name')
+            ->select('users.*','project.project_name')
+            ->get();
+    }
     public function removeUser($id){
         return User::where('id',$id)
             ->update([

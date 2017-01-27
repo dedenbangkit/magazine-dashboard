@@ -39,6 +39,11 @@ Route::post('/change-user-password', 'UserController@changeUserPassword');
 Route::post('/change-user-position', 'UserController@changeUserPosition');
 Route::get('/user', 'UserController@showUser');
 
+/*subscribe*/
+Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
+Route::Post('/subscribe-process', 'SubscribeController@subscribeProcessAdd');
+Route::get('/client', 'SubscribeController@showClient');
+Route::get('/client-list', 'SubscribeController@clientList');
 
 /* sample */
 Route::get('/sample', function () {

@@ -14,9 +14,8 @@ use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
 use App\Model\Action_log;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
-
+use Intervention\Image\ImageManagerStatic as Image;
 /**
  * Class ProjectController
  * @package App\Http\Controllers

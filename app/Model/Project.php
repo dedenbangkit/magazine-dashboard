@@ -12,7 +12,7 @@ class Project extends Model
     protected $primaryKey = 'id';
 
     public function insertProject($data){
-        return  Project::insert(
+        return  Project::insertGetId(
             array(
                 'project_name'=>$data['name'],
                 'project_master'=>$data['master'],

@@ -57,18 +57,18 @@
                 <ul class="treeview-menu">
                     <li <?php if (in_array("user", $activer)) { echo "class='active'";} ?> ><a href="/user"><i class='fa fa-users'></i> <span>USER</span></a></li>
                     <li <?php if (in_array("add user", $activer)) { echo "class='active'";} ?>><a href="/registration"><i class='fa fa-user-plus'></i> <span>ADD USER</span></a></li>
-                  \
+
                 </ul>
             </li>
-            <li <?php if (in_array("subscribe management", $activer)) { echo "class='active'"; } ?> class="treeview">
+            <li <?php if (in_array("subscribe", $activer)) { echo "class='active'"; } ?> class="treeview">
                 <a href="javascript:void(0)"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li <?php if (in_array("subscribe service", $activer)) { echo "class='active'";} ?> ><a href="/user"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE SERVICE</span></a></li>
-                    <li <?php if (in_array("add subscriber", $activer)) { echo "class='active'";} ?>><a href="/registration"><i class='fa fa-sign-in'></i> <span>ADD SUBSCRIBER</span></a></li>
-                    <li <?php if (in_array("subscriber list", $activer)) { echo "class='active'";} ?>><a href="/registration"><i class='fa fa-list-alt'></i> <span>SUBSCRIBER LIST</span></a></li>
+                    <li <?php if (in_array("add subscriber", $activer)) { echo "class='active'";} ?>><a href="/new-subscribe"><i class='fa fa-sign-in'></i> <span>ADD CLIENT</span></a></li>
+                    <li <?php if (in_array("subscriber list", $activer)) { echo "class='active'";} ?>><a href="/client"><i class='fa fa-list-alt'></i> <span>CLIENT LIST</span></a></li>
                     <li <?php if (in_array("subscriber list", $activer)) { echo "class='active'";} ?>><a href="/registration"><i class='fa fa-money'></i> <span>PAYMENT LOG</span></a></li>
-                    \
+
                 </ul>
             </li>
             <li><a href="#"><i class='fa fa-link'></i>

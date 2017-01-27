@@ -53,8 +53,7 @@ class UserController extends Controller
      * @return redirect to user page
      */
     public function registrationProcess(Request $request){
-        $this->user->insertUser($request->all());
-        var_dump($this->authdata->id);
+        $this->user->insertUser($request->all(),$this->authdata->project_id);
         $this->action_log->create_log('Creating User '.$request->name.' position '.$request->position,$this->authdata->id);
         return redirect('/user');
 
