@@ -88,6 +88,11 @@ class ProjectController extends Controller
 
     public function issue(Request $request)
     {
+        if(in_array($this->authdata->position,$this->access)){
+            $data['buttonAccess']='true';
+        }else{
+            $data['buttonAccess']='false';
+        }
         if(empty($request->session()->get('project_id'))){
             if(empty($request->id)){
                 return redirect('/projects');
@@ -152,7 +157,14 @@ class ProjectController extends Controller
         $this->action_log->create_log('Creating Issue '.$request->name,$this->authdata->id);
         return redirect('/issue');
     }
-
+    public function deleteIssueProcess(Request $request){
+        $deletingIssue=$this->issue->deleteIssue($request->id);
+        return $deletingIssue;
+    }
+    public function publishIssueProcess(Request $request){
+        $deletingIssue=$this->issue->publishIssue($request->id);
+        return $deletingIssue;
+    }
     public function history()
     {
         $data['create']=false;

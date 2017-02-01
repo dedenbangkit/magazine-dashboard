@@ -2283,8 +2283,8 @@ a:focus {
   border-radius: 3px;
   position: relative;
   padding: 15px 5px;
-  margin: 0 0 10px 10px;
-  min-width: 80px;
+  margin: 5px 0 5px 10px;
+  min-width: 70px;
   height: 60px;
   text-align: center;
   color: #666;

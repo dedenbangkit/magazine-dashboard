@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Issue extends Model
 {
@@ -26,5 +27,18 @@ class Issue extends Model
             ->where('project_id',$id)
             ->orderBy('created_at','desc')
             ->get();
+    }
+    public function deleteIssue($id){
+        return Issue::where('id',$id)
+            ->update([
+                'deleted_at'=>Carbon::now()
+            ]);
+    }
+    public function publishIssue($id){
+        return Issue::where('id',$id)
+            ->update([
+                'status'=>'published',
+                'updated_at'=>Carbon::now()
+            ]);
     }
 }

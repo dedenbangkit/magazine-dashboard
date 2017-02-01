@@ -12,7 +12,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"><?=  ucfirst(array_last($activer));?></div>
                         <div class="panel-body">
-                            <?php if($create == true) {?>
+                            <!-- <?php if($create == true) {?>
                             <div class="col-md-3  text-center">
                                 <div class="box-content" style="cursor: pointer;" onclick="window.location='/create-project';">
                                     <div class="box-content-inside-new">
@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php } ?> -->
                             <?php foreach($projects as $i=>$row){ ?>
                             <div class="col-sm-3  text-center">
                                 <div class="box-content" style="cursor: pointer;" onclick="window.location='/issue?id={{$row->id}}';">

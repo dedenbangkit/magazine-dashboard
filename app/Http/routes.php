@@ -23,6 +23,8 @@ Route::get('/history', 'ProjectController@history');
 Route::get('/issue', 'ProjectController@issue');
 Route::get('/create-issue', 'ProjectController@createIssue');
 Route::post('/create-issue', 'ProjectController@createIssueProcess');
+Route::post('/del-issue', 'ProjectController@deleteIssueProcess');
+Route::post('/publish-issue', 'ProjectController@publishIssueProcess');
 Route::get('/review', 'ProjectController@review');
 Route::get('/published', 'ProjectController@published');
 
