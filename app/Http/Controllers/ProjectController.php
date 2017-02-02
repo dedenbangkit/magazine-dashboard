@@ -61,8 +61,13 @@ class ProjectController extends Controller
             $data['create']=true;
         }
         $data['activer'] = array($this->activer, 'project');
-        $data['projects'] = $this->project->getProject();
-        return view('project', $data);
+        if($this->authdata->position == 'admin'){
+            $data['projects'] = $this->project->getProject();
+            return view('project', $data);
+        }else{
+            $data['projects'] = $this->project->getProjectById($this->authdata->project_id);
+            return view('project-clients', $data);
+        }
     }
 
     public function createProject()

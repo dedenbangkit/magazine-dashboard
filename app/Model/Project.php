@@ -27,6 +27,13 @@ class Project extends Model
             ->orderBy('created_at','desc')
             ->get();
     }
+    public function getProjectById($id){
+    return Project::whereNull('deleted_at')
+        ->where('status','unpublished')
+        ->where('id',$id)
+        ->orderBy('created_at','desc')
+        ->get();
+}
     public function getProjectPublish(){
         return Project::whereNull('deleted_at')
             ->where('status','published')
