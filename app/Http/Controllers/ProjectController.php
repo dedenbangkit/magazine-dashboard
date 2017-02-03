@@ -98,25 +98,13 @@ class ProjectController extends Controller
         }else{
             $data['buttonAccess']='false';
         }
-        if(empty($request->session()->get('project_id'))){
-            if(empty($request->id)){
-                return redirect('/projects');
-            }else{
-                $request->session()->put('project_id', $request->id);
-            }
-        }else{
-            if(!empty($request->id)){
-                if($request->id != $request->session()->get('project_id') ){
-                    $request->session()->put('project_id', $request->id);
-                }
-            }
-        }
+
         $data['create']=false;
         if(in_array($this->authdata->position,$this->access)){
             $data['create']=true;
         }
         $data['activer'] = array($this->activer, 'issue');
-        $data['projects'] = $this->issue->getIssue($request->session()->get('project_id'));
+        $data['projects'] = $this->issue->getIssue($this->authdata->project_id);
         return view('issue', $data);
     }
 
