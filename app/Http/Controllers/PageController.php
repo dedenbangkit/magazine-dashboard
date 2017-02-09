@@ -54,6 +54,14 @@ class PageController extends Controller
 
         return view('sample-page', $data);
     }
+    public function sample2()
+    {
+        $data['create']=false;
+        $data['activer'] = array($this->activer, 'page');
+        $data['page_list'] = $this->page->getPage(11);
+
+        return view('page-editor', $data);
+    }
     public function getPage()
     {
         $data['page_list'] = $this->page->getPage(11);

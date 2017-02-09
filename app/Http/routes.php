@@ -56,3 +56,4 @@ Route::get('/editor-page', function () {
 });
 Route::get('/page', 'PageController@index');
 Route::get('/sample-page', 'PageController@sample');
+Route::get('/sample-page2', 'PageController@sample2');

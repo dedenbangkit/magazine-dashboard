@@ -40,36 +40,36 @@
                                 </div>
                             </div>
                             <div class="col-sm-4 ">
-                                <div class="row">
+                                <div class="row editor-button">
                                     <table>
                                         <tr>
                                             <td><label>Magazine Name</label></td>
-                                            <td><label> : </label></td>
-                                            <td></td>
+                                            <td width="10px" class="text-center" ><label> : </label></td>
+                                            <td>{{$row->project_name}}</td>
                                         </tr>
                                         <tr>
                                             <td><label>Company Name</label></td>
-                                            <td><label> : </label></td>
-                                            <td></td>
+                                            <td width="10px" class="text-center"><label> : </label></td>
+                                            <td>{{$row->company_name}}</td>
                                         </tr>
                                         <tr>
-                                            <td><label>Magazine Name</label></td>
-                                            <td><label> : </label></td>
-                                            <td></td>
+                                            <td><label>Company Phone</label></td>
+                                            <td width="10px" class="text-center" ><label> : </label></td>
+                                            <td>{{$row->company_phone}}</td>
                                         </tr>
                                         <tr>
-                                            <td><label>Date </label></td>
-                                            <td><label> : </label></td>
-                                            <td></td>
+                                            <td><label>Expired Date </label></td>
+                                            <td width="10px" class="text-center" ><label> : </label></td>
+                                            <td><?php echo (empty($row->date_0f_redeem)?"":date('d-m-Y',strtotime($row->date_0f_redeem))) ?></td>
                                         </tr>
                                         <tr>
                                             <td><label>Service </label></td>
-                                            <td><label> : </label></td>
-                                            <td></td>
+                                            <td width="10px" class="text-center" ><label> : </label></td>
+                                            <td>{{$row->service_name}}</td>
                                         </tr>
                                     </table>
-                                    <button class="btn btn-primary btn-block btn-flat">Edit</button>
-                                    <button class="btn btn-primary btn-block btn-flat">Build Apps</button>
+                                    <button class="btn btn-primary btn-block btn-flat editor">Edit</button>
+                                    <button class="btn btn-primary btn-block btn-flat build">Build Apps</button>
                                 </div>
                                 <div class="row text-center">
                                     <label>Download Apps</label>
@@ -86,8 +86,7 @@
                                 </div>
                             </div>
                             <?php if($create){?>
-                            <div class="col-sm-5  text-center hidden">
-
+                            <div class="col-sm-5 editor-content text-center hidden">
                                 <div class="register-box-body">
                                     <form action="subscribe-process-update" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -100,6 +99,11 @@
                                         <div class="form-group has-feedback">
                                             <input type="text" class="form-control" placeholder="Project Name"
                                                    name="companyname" value="Company Name"/>
+                                            <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control" placeholder="Project Name"
+                                                   name="companyphone" value="Company phone"/>
                                             <span class="glyphicon glyphicon-book form-control-feedback"></span>
                                         </div>
                                         <div class="form-group ">
@@ -133,7 +137,7 @@
                                 </div>
                                 <!-- /.form-box -->
                             </div>
-                            <div class="col-sm-5   ">
+                            <div class="col-sm-5 build-content  ">
                                 <h3>Build & Certificate</h3>
                                 <div class="register-box-body">
                                         <table>
@@ -163,7 +167,7 @@
                                             </div>
                                         </div>
                                         </div>
-<br/>
+                                        <br/>
                                         <div class="row">
                                             <div class="col-md-12 ">
                                                 <button type="submit" class="btn btn-primary btn-block btn-flat">
@@ -192,4 +196,18 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script-content')
+    <script>
+
+        $('.editor-button').on('click', '.editor', function () {
+            $('.editor-content').removeClass("hidden");
+            $('.build-content').addClass("hidden");
+        });
+
+        $('.editor-button').on('click', '.build', function () {
+            $('.editor-content').addClass("hidden");
+            $('.build-content').removeClass("hidden");
+        });
+    </script>
 @endsection
