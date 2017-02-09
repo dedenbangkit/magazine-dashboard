@@ -113,18 +113,11 @@
                   <a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
                 </span>
                 </li>
-                <li class="active">
-                    <a href="#page1">index</a>
-                <span class="pageButtons">
-                  <a href="" class="fileEdit"><span class="fui-new"></span></a>
-                  <a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
-                </span>
-                </li>
             </ul>
 
             <div class="sideButtons clearfix">
                 <a href="#" class="btn btn-primary btn-sm btn-embossed" id="addPage"><span class="fui-plus"></span> Add</a>
-                <a href="#exportModal" data-toggle="modal" class="btn btn-info btn-sm btn-embossed disabled actionButtons"><span class="fui-export"></span> Export</a>
+                <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-sm btn-embossed actionButtons"><span class="fui-export"></span> Save</a>
             </div>
         </div>
 
@@ -186,7 +179,6 @@
 
         <div id="frameWrapper" class="frameWrapper empty">
             <div id="pageList">
-                <ul style="display: block;" id="page1"></ul>
             </div>
             <div class="start" id="start">
 
@@ -2168,11 +2160,134 @@
          $('.modes #modeContent').parent().show();
 
          }*/
+    });
+    var getXsrfToken = function() {
+        var cookies = document.cookie.split(';');
+        var token = '';
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].split('=');
+            if(cookie[0] == 'XSRF-TOKEN') {
+                token = decodeURIComponent(cookie[1]);
+            }
+        }
+
+        return token;
+    }
+    jQuery.ajaxSetup({
+        headers: {
+            'X-XSRF-TOKEN': getXsrfToken()
+        }
+    });
+    $("#savePage").click(function () {
+        var contentArray= [];
+        pageNum =$('#pages li').size()-1;
+        for(i=1;i<=pageNum;i++){
+            content=$('#page'+i).html();
+            id=$('#page'+i).data('id');
+            contentArray[i-1] = {id:id,content:content};
+        }
+        $.ajax({
+            type: 'POST',
+            url: "save-page",
+            data: {'contentArray':contentArray,'_token':'<?= csrf_token() ?>'},
+            success: function(resultData) {
+                console.log(resultData);
+            }
+        });
+
+    });
+
+    $.ajax({
+        url: "/get-page"
+    }).done(function(data) {
+        $(data['page_list']).each(function(index, el) {
+            page_content = el.page_content;
+            newPage(el.page_name,el.page_content,el.id)
+
+        });
+
+    });
+    function newPage(pageTittle,pageContent,pageID){
+        $('#pages li.active').each(function(){
+
+            if( $(this).find('input').size() > 0 ) {
+
+                theLink = $('<a href="#">'+$(this).find('input').val()+'</a>');
+
+                $(this).find('input').remove();
+
+                $(this).prepend( theLink );
+
+            }
+
+        })
+
+        $('#pages li').removeClass('active');
+
+        newPageLI = $('#newPageLI').clone();
+        newPageLI.css('display', 'block');
+        newPageLI.find('input').val( pageTittle );
+        newPageLI.attr('id', '');
+
+        $('ul#pages').append( newPageLI );
 
 
+        theInput = newPageLI.find('input');
+
+        theInput.focus();
+
+        var tmpStr = theInput.val();
+        theInput.val('');
+        theInput.val(tmpStr);
+
+        theInput.keyup( function(){
+
+            $('#pageTitle span span').text( $(this).val() )
+
+        } )
+
+        newPageLI.addClass('active').addClass('edit');
 
 
-    })
+        //create the page structure
+        if(pageContent==null){
+            newPageList = $('<ul></ul>');
+        }else{
+            newPageList = $('<ul>'+pageContent+'</ul>');
+        }
+
+        newPageList.css('display','block');
+        newPageList.attr('id', 'page'+($('#pages li').size()-1) );
+        newPageList.attr('data-id', pageID);
+
+        $('#pageList > ul').hide();
+        $('#pageList').append( newPageList );
+
+
+        makeSortable( newPageList );
+
+        //draggables
+        makeDraggable( '#'+'page'+($('#pages li').size()-1) )
+
+
+        //alter page title
+        $('#pageTitle span span').text( 'page'+($('#pages li').size()-1) );
+
+        $('#frameWrapper').addClass('empty')
+        $('#start').fadeIn();
+
+
+        //add page to page dropdown
+
+        newItem = $('<option value="'+'page'+($('#pages li').size()-1)+'.html">'+'page'+($('#pages li').size()-1)+'</option>')
+
+        $('#internalLinksDropdown').append( newItem );
+
+        $('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'})
+
+        pageNumber = $('#pages li').size()-1;
+    }
 
 </script>
 </body>
