@@ -55,7 +55,7 @@
 
             </div>
 
-    				<div class="column col-xs-3" data-editable data-name="article">
+    				<div class="column col-xs-3" data-editable data-name="article2">
 
     					<h3 class="article__by-line">Layout 2 Columns</h3>
 
@@ -65,7 +65,7 @@
 
     				</div>
 
-            <div class="column col-xs-3" data-editable data-name="article">
+            <div class="column col-xs-3" data-editable data-name="article3">
 
     					<h3 class="article__by-line">Layout 3 Columns</h3>
 
@@ -75,7 +75,7 @@
 
     				</div>
 
-            <div class="column col-xs-3" data-editable data-name="article">
+            <div class="column col-xs-3" data-editable data-name="article4">
 
     					<h3 class="article__by-line">Layout 3 Columns</h3>
 
@@ -107,31 +107,5 @@
     <script src="js/jquery.tagsinput.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="js/sortable.js"></script>
-	<script>
-
-    $('.sortable-function-edit').hide();
-
-    function sortableMode(){
-      $('.column').addClass('sortable-mode');
-      $('.sortable-function').hide();
-      $('.sortable-function-edit').show();
-  		$(function() {
-              $('.row').sortable({
-                tolerance: 'pointer',
-                revert: 'invalid',
-                placeholderClass: 'col-xs-3',
-                forceHelperSize: true
-              });
-  		});
-    }
-    function sortableClose(){
-      $('.column').removeClass('sortable-mode');
-      $('.sortable-function-edit').hide();
-      $('.sortable-function').show();
-  		$(function() {
-              $('.row').sortable("destroy");
-  		});
-    }
-	</script>
 </body>
 </html>
