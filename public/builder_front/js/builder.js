@@ -2634,10 +2634,6 @@ $(function(){
 			$('#screen').css({'width':'480px'});
 			$('#screen').css({'zoom': newIframeMobile});
 			$('#screen').css({'min-height': newHeightMobile});
-			$('#pageList li:visible iframe').each(function(){
-				iframeHeight = this.height();
-				console.log(iframeHeight);
-			};
 		} else if(target == 'tablet-sm'){
 			$('#screen').css({'width':'768px'});
 			$('#screen').css({'zoom': newIframeTabletSm});
