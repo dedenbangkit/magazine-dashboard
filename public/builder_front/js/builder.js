@@ -15,13 +15,14 @@ editableItems['.frameCover'] = [];
 editableItems['span.fa'] = ['color', 'font-size'];
 editableItems['.bg.bg1'] = ['background-color'];
 editableItems['.column'] = ['background-color'];
+editableItems['.container'] = ['background-color'];
 editableItems['nav a, a.edit'] = ['color', 'font-weight', 'text-transform'];
 editableItems['h1'] = ['color', 'font-size', 'background-color', 'font-family'];
 editableItems['h2'] = ['color', 'font-size', 'background-color', 'font-family'];
 editableItems['h3'] = ['color', 'font-size', 'background-color', 'font-family'];
 editableItems['h4'] = ['color', 'font-size', 'background-color', 'font-family'];
 editableItems['h5'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['p'] = ['color', 'font-size', 'background-color', 'font-family'];
+editableItems['p'] = ['color', 'font-size', 'background-color', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
@@ -29,7 +30,9 @@ editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
 editableItems['.footer a'] = ['color'];
 editableItems['.bg.bg1, .bg.bg2'] = ['background-image', 'background-color'];
+editableItems['.container'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
 editableItems['.column'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.page'] = ['background-color', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
 editableItems['#nivoSlider img.edit'] = [];
 
 var editableItemOptions = new Array();
@@ -41,6 +44,10 @@ editableItemOptions['img : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.column : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
+editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
+editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
+
 editableItemOptions['h1 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
 editableItemOptions['h2 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
 editableItemOptions['h3 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
@@ -223,6 +230,7 @@ function makeDraggable(theID) {
 var frameContents = '';//holds frame contents
 
 function makeSortable(el) {
+	el.selectable();
 
 	el.sortable({
 		revert: true,
@@ -2602,15 +2610,32 @@ $(function(){
 
 	});
 
+
 	$('#responsive-toolbar ul li a').on('click',function(){
+		theHeight = $('#frameWrapper').height();
+		theWidth = $('#frameWrapper').width();
+		newHeightMobile = (480/theWidth)*theHeight;
+		newHeightTabletSm = (768/theWidth)*theHeight;
+		newHeightTabletLg = (1024/theWidth)*theHeight;
+		newIframeMobile = 1
+		newIframeTabletSm = 0.7;
+		newIframeTabletLg = 0.6;
+		console.log(newIframeTabletLg);
+
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
 			$('#screen').css({'width':'480px'});
+			$('#screen').css({'zoom': newIframeMobile});
+			$('#frameWrapper').css({'min-height': newHeightMobile});
 		} else if(target == 'tablet-sm'){
 			$('#screen').css({'width':'768px'});
+			$('#screen').css({'zoom': newIframeTabletSm});
+			$('#frameWrapper').css({'min-height': newHeightTabletSm});
 		}else if(target == 'tablet-lg'){
 			$('#screen').css({'width':'1024px'});
+			$('#screen').css({'zoom': newIframeTabletLg});
+			$('#frameWrapper').css({'min-height': newHeightTabletLg});
 		}
 	});
 

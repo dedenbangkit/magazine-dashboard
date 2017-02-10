@@ -45,9 +45,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse topnavigation">
             <div class="navbar-left navbar-issue">
-                <i class="fa fa-copy"></i>
-                <div class="title"><strong>Dalang Lelakon Antasari</strong></div>
-                <div class="subtitle">Issue #11</div>
+              <i class="fa fa-copy"></i>
+              <div class="title"><strong>Dalang Lelakon Antasari</strong>
+              </div>
+              <div class="subtitle">Issue #11 > <span id="pageTitle"><span>index</span></span></div>
             </div>
             <div class="toolbar" id="responsive-toolbar">
                 <ul>
@@ -162,20 +163,6 @@
     </header>
 
     <div class="screen" id="screen">
-
-        <div class="toolbar">
-
-            <div class="buttons clearfix">
-                <span class="left red"></span>
-                <span class="left yellow"></span>
-                <span class="left green"></span>
-            </div>
-
-            <div class="title" id="pageTitle">
-                <span><span>index</span>.html</span>
-            </div>
-
-        </div>
 
         <div id="frameWrapper" class="frameWrapper empty">
             <div id="pageList">

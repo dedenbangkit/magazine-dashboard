@@ -1,7 +1,7 @@
 /* general styles */
 
 p {
-	font-size: 16px;	
+	font-size: 16px;
 }
 
 h1 {
@@ -34,11 +34,76 @@ form .row {
 }
 
 #page {
-	
+
+}
+
+.page o.sortable-function{
+	z-index: 100;
+	padding-left: 5px;
+	padding-top: 4px;
+	font-size: 14px;
+	border-radius:12px;
+	cursor: pointer;
+	display: block;
+	height: 24px;
+	line-height: 0px;
+	opacity: 0;
+	width:24px;
+	left: 45px;
+	top:16px;
+	visibility: hidden;
+	position: absolute;
+	cursor: pointer;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+}
+o.sortable-function:hover i{
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+o.sortable-function:hover {
+	background-color: #2e8ece;
+}
+
+.page:hover o.sortable-function{
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+}
+.page o.sortable-function-edit{
+	z-index: 100;
+	padding-left: 10px;
+	padding-top: 5px;
+	text-indent: -2.5px;
+	font-size: 14px;
+	border-radius:12px;
+	cursor: pointer;
+	display: block;
+	height: 24px;
+	line-height: 0px;
+	opacity: 0;
+	width:24px;
+	left: 45px;
+	top:16px;
+	position: absolute;
+	cursor: pointer;
+	visibility: hidden;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+}
+.page:hover o.sortable-function-edit{
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+}
+.sortable-mode{
+	outline:dotted 1px rgba(255, 0, 0, 0.5);
 }
 
 .item {
-	
+
 }
 
 .item.header {
@@ -46,8 +111,8 @@ form .row {
 }
 
 .item.content, .item.portfolio, .item.team, .item.pricing, .item.contact {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .item.footer {

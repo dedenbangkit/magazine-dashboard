@@ -5924,18 +5924,26 @@
     IgnitionUI.prototype._addDOMEventListeners = function() {
       this._domEdit.addEventListener('click', (function(_this) {
         return function(ev) {
+            $('.column').removeClass('sortable-mode');
+            $('.sortable-function-edit').hide();
+            $('.sortable-function').hide();
+        		$(function() {
+                    $('.row').sortable("destroy");
+        		});
           ev.preventDefault();
           return _this.edit();
         };
       })(this));
       this._domConfirm.addEventListener('click', (function(_this) {
         return function(ev) {
+          $('.sortable-function').show();
           ev.preventDefault();
           return _this.confirm();
         };
       })(this));
       return this._domCancel.addEventListener('click', (function(_this) {
         return function(ev) {
+          $('.sortable-function').show();
           ev.preventDefault();
           return _this.cancel();
         };
