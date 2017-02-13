@@ -84,3 +84,27 @@ $.fn.sortable = function(options) {
 	});
 };
 })(jQuery);
+
+$('.sortable-function-edit').hide();
+
+function sortableMode(){
+	$('.column').addClass('sortable-mode');
+	$('.sortable-function').hide();
+	$('.sortable-function-edit').show();
+	$(function() {
+					$('.row').sortable({
+						tolerance: 'pointer',
+						revert: 'invalid',
+						placeholderClass: 'col-xs-12',
+						forceHelperSize: true
+					});
+	});
+}
+function sortableClose(){
+	$('.column').removeClass('sortable-mode');
+	$('.sortable-function-edit').hide();
+	$('.sortable-function').show();
+	$(function() {
+					$('.row').sortable("destroy");
+	});
+}

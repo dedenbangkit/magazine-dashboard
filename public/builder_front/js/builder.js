@@ -230,7 +230,6 @@ function makeDraggable(theID) {
 var frameContents = '';//holds frame contents
 
 function makeSortable(el) {
-	el.selectable();
 
 	el.sortable({
 		revert: true,
@@ -2510,13 +2509,20 @@ $(function(){
 
 	});
 
-
 	//edit page button
 	$('.page-panel').on('click','.page-panel-toggler',function(){
 		if($('.page-panel').hasClass('active')){
 			$('.page-panel').removeClass('active');
 		} else {
 			$('.page-panel').addClass('active');
+		}
+	});
+
+	$('#wrapper').on('click','.page-panel-toggler',function(){
+		if($('#wrapper').hasClass('active')){
+			$('#wrapper').removeClass('active');
+		} else {
+			$('#wrapper').addClass('active');
 		}
 	});
 
@@ -2627,15 +2633,15 @@ $(function(){
 		if(target == 'phone'){
 			$('#screen').css({'width':'480px'});
 			$('#screen').css({'zoom': newIframeMobile});
-			$('#frameWrapper').css({'min-height': newHeightMobile});
+			$('#screen').css({'min-height': newHeightMobile});
 		} else if(target == 'tablet-sm'){
 			$('#screen').css({'width':'768px'});
 			$('#screen').css({'zoom': newIframeTabletSm});
-			$('#frameWrapper').css({'min-height': newHeightTabletSm});
+			$('#screen').css({'min-height': newHeightTabletSm});
 		}else if(target == 'tablet-lg'){
 			$('#screen').css({'width':'1024px'});
 			$('#screen').css({'zoom': newIframeTabletLg});
-			$('#frameWrapper').css({'min-height': newHeightTabletLg});
+			$('#screen').css({'min-height': newHeightTabletLg});
 		}
 	});
 

@@ -2,7 +2,14 @@
 
   window.onload = function() {
     var FIXTURE_TOOLS, editor, req;
-    ContentTools.StylePalette.add([new ContentTools.Style('By-line', 'article__by-line', ['h3','p'])]);
+    ContentTools.StylePalette.add([
+        new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        new ContentTools.Style('By-line', 'article__by-line', ['p'])
+    ]);
     editor = ContentTools.EditorApp.get();
     editor.init('[data-editable], [data-fixture]', 'data-name');
     editor.addEventListener('saved', function(ev) {
