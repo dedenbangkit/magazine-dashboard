@@ -31,6 +31,7 @@ Route::get('/published', 'ProjectController@published');
 /*page*/
 Route::get('/get-page', 'PageController@getPage');
 Route::post('/save-page', 'PageController@savePage');
+Route::post('/iupload', 'PageController@iupload');
 
 /*userController*/
 Route::get('/registration', 'UserController@showRegistrationForm');
