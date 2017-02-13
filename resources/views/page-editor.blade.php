@@ -249,7 +249,7 @@
                 <span>OR</span>
             </p>
 
-            <form id="imageUploadForm" action="iupload.php">
+            <form id="imageUploadForm" action="iupload">
 
                 <label>Upload image:</label>
 

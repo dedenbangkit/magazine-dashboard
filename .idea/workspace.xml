@@ -3,10 +3,856 @@
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/1-column.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/1-column.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/2-column.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/2-column.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/3-column.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/3-column.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/4-column.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/4-column.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/JJN Weekly Newsletter - 31 May 2016.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/JJN Weekly Newsletter - 31 May 2016.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/Screen Shot 2015-01-09 at 5.02.00 PM (2).png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/Screen Shot 2015-01-09 at 5.02.00 PM (2).png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/autumn-507555.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/autumn-507555.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/avatar/avatar.jpg" afterPath="$PROJECT_DIR$/public/builder_front/images/avatar/avatar.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/bricks.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/bricks.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/contact1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/contact1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/contact2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/contact2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section10.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section11.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section4.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section5.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section6.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section7.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section8.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section9.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/content_section9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/ctaForSale.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/ctaForSale.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider4.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider5.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider6.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider7.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/divider7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/download.png" afterPath="$PROJECT_DIR$/public/builder_front/images/download.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/embed-iframe.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/embed-iframe.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/embed-video.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/embed-video.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/exaple-image.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/exaple-image.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/exaple-image.jpg" afterPath="$PROJECT_DIR$/public/builder_front/images/exaple-image.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/favicon.ico" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/favicon.ico" afterPath="$PROJECT_DIR$/public/builder_front/images/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/footer3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/fullscreen-2x.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/fullscreen-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/fullscreen.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/fullscreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header10.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header11.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header4.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header5.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header6.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header7.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header8.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header9.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/header9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/hqdefault.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/hqdefault.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-all.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-all.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-embed.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-embed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-image.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-image.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-layout.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-layout.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-phone.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-phone.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-shape.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-shape.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-table.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-table.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-tablet.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-tablet.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/icon-text.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/icon-text.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-01.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-01.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/carousel/image-01.jpg" afterPath="$PROJECT_DIR$/public/builder_front/images/carousel/image-01.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-02.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-02.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/carousel/image-02.jpg" afterPath="$PROJECT_DIR$/public/builder_front/images/carousel/image-02.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-03.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-03.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/carousel/image-03.jpg" afterPath="$PROJECT_DIR$/public/builder_front/images/carousel/image-03.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-04.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-05.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-05.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-06.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/carousel/image-06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/image-carousel.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/image-carousel.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/image-centerblock.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/image-centerblock.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/image-responsive.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/image-responsive.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/image.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/image.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/image1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/image1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/iphone-518101_1920.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/iphone-518101_1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.eot" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.ttf" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.woff" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/loading.gif" afterPath="$PROJECT_DIR$/public/builder_front/images/loading.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/switch/mask-square.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/switch/mask-square.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/switch/mask-square.png" afterPath="$PROJECT_DIR$/public/builder_front/images/switch/mask-square.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/switch/mask.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/switch/mask.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/switch/mask.png" afterPath="$PROJECT_DIR$/public/builder_front/images/switch/mask.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/nikon-515883_1920.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/nikon-515883_1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/noise.png" afterPath="$PROJECT_DIR$/public/builder_front/images/noise.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/pause-2x.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/pause-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/pause.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/pause.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/projects/tmp/phpcC9Yie.jpeg" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpcC9Yie.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/picture1.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/picture1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/picture2.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/picture2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/play-2x.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/play-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/play.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/play.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio1.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio2.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio3.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/portfolio3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio4.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio5.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio6.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio7.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio8.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/portfolio8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/poster.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/poster.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/powder-snow-496875_1920.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/powder-snow-496875_1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/preview.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/preview.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/pricing_table3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor-font.eot" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor-font.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor-font.eot" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor-font.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/search.png" afterPath="$PROJECT_DIR$/public/builder_front/images/search.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/shape-ellipse.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/shape-ellipse.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/shape-line.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/shape-line.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/shape-polygon.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/shape-polygon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/shape-rectangle.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/shape-rectangle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/shape-rounded.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/shape-rounded.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/slideshow1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/slideshow1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/table-row.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/table-row.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/team1.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/team1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team1.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team2.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team3.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/thumbs/team3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-blockquote.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-blockquote.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-h1.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-h1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-h2.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-h2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-h3.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-h3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-h4.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-h4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icon/text-paragraf.png" afterPath="$PROJECT_DIR$/public/builder_front/images/icon/text-paragraf.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/thumb.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/thumb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/unnamed.jpg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/uploads/unnamed.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-full-2x.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-full-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-full.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-full.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-off-2x.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-off-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-off.png" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/video/volume-off.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/tmp/website.zip" afterPath="$PROJECT_DIR$/public/builder_front/tmp/website.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.dev.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.dev.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.dev.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.dev.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/Flat-UI-Icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/Flat-UI-Icons.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/abap.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/abap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ace.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/actionscript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/actionscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ada.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ada.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/android.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/android.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/android.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/android.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/android1.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/android1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/android1.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/android1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/apache_conf.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/apache_conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/app-store.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/app-store.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/app-store.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/app-store.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/applescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/applescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/js/application.js" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/js/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/application.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/application.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/application.js" afterPath="$PROJECT_DIR$/public/builder_front/js/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/arrow.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/arrow.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/arrow.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/arrow.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/art.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/art.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/art.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/art.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/asciidoc.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/asciidoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/assembly_x86.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/assembly_x86.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/autohotkey.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/autohotkey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/basket.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/basket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/basket.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/basket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/batchfile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/batchfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/book.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/book.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/book.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/book.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/css/bootstrap-docs.css" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/css/bootstrap-docs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/bootstrap-docs.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/bootstrap-docs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap-select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/public/builder_front/js/bootstrap-select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap-switch.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap-switch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/bootstrap-switch.js" afterPath="$PROJECT_DIR$/public/builder_front/js/bootstrap-switch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bowling.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bowling.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/bowling.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/bowling.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/box.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/box.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/box.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/box.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/brush.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/brush.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/brush.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/brush.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/bufferButtons.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/bufferButtons.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/bufferButtons.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/bufferButtons.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/builder.js" afterPath="$PROJECT_DIR$/public/builder_front/js/builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/building.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/building.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/building.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/building.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bulb.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/bulb.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/bulb.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/bulb.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/button.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/button.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/button.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/button.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/c9search.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/c9search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/c_cpp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/c_cpp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/calculator.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/calculator.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/calculator.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/calculator.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/calendar.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/calendar.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/calendar.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/calendar.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/camera.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/camera.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/camera.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/camera.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/car.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/car.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/car.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/car.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/card.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/card.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/card.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/card.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/chair.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/chair.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/chair.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/chair.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/chat.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/chat.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/chat.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/chat.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/chosen.jquery.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/chosen.jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/cirru.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/cirru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/clipboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/clipboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/clipboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/clipboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/clocks.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/clocks.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/clocks.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/clocks.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/clojure.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/clojure.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/cobol.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/cobol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/coffee.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/coldfusion.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/coldfusion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/compas.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/compas.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/compas.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/compas.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/contact1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/contact1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/contact2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/contact2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section10.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section11.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section4.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section5.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section6.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section7.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section8.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/content_section9.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/content_section9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/converse.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/converse.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/converse.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/converse.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/csharp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/csharp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/css.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/cup.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/cup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/cup.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/cup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/curly.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/curly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/d.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/d.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dart.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/diff.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/diff.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider4.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider5.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider6.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider7.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dj.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dj.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/dj.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/dj.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/django.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/django.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dockerfile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dockerfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/donut.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/donut.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/donut.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/donut.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dot.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/dot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dude.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dude.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/dude.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/dude.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dynamite.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/dynamite.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/dynamite.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/dynamite.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/earth.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/earth.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/earth.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/earth.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/assets/editor.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/assets/editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/egg.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/egg.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/egg.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/egg.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/eiffel.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/eiffel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ejs.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ejs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/elixir.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/elixir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/elm.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/elm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/erlang.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/erlang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-beautify.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-beautify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-chromevox.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-chromevox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-elastic_tabstops_lite.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-elastic_tabstops_lite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-emmet.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-emmet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-error_marker.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-error_marker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-keybinding_menu.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-keybinding_menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-language_tools.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-language_tools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-linking.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-linking.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-modelist.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-modelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-old_ie.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-old_ie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-searchbox.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-settings_menu.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-settings_menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-spellcheck.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-spellcheck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-split.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-split.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-static_highlight.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-static_highlight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-statusbar.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-statusbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-textarea.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-textarea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-themelist.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-themelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-whitespace.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/ext-whitespace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/eye.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/eye.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/eye.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/eye.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/file.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/file.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/file.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/file.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/fit.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/fit.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/fit.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/fit.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flag.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/flag.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/flag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flask.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flask.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/flask.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/flask.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/flat-ui.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/flat-ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-checkbox.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-checkbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/flatui-checkbox.js" afterPath="$PROJECT_DIR$/public/builder_front/js/flatui-checkbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-fileinput.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-fileinput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/flatui-fileinput.js" afterPath="$PROJECT_DIR$/public/builder_front/js/flatui-fileinput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-radio.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/flatui-radio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/flatui-radio.js" afterPath="$PROJECT_DIR$/public/builder_front/js/flatui-radio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flower.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/flower.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/flower.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/flower.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/font-awesome.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/footer1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/footer1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/footer2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/footer2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/footer3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/footer3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/forth.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/forth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ftl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ftl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/games.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/games.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/games.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/games.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gcode.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gherkin.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gherkin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/gift-box.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/gift-box.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/gift-box.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/gift-box.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/girl.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/girl.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/girl.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/girl.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gitignore.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/gitignore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/glsl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/glsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/goal.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/goal.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/goal.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/goal.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/golang.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/golang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/google .svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/google .svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/google .svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/google .svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/graph.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/graph.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/graph.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/graph.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/groovy.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/groovy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/handlebars.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/handlebars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haskell.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haskell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haxe.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/haxe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header10.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header11.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header12.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header4.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header5.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header6.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header7.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header8.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/header9.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/header9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/js/holder.js" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/js/holder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/holder.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/holder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/holder.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/holder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/holder.js" afterPath="$PROJECT_DIR$/public/builder_front/js/holder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/html.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/html5shiv.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/html5shiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/html5shiv.js" afterPath="$PROJECT_DIR$/public/builder_front/js/html5shiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/html_ruby.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/html_ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/icecream.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/icecream.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/icecream.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/icecream.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/icomoon-session.json" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/icomoon-session.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/icomoon-session.json" afterPath="$PROJECT_DIR$/public/builder_front/fonts/icomoon-session.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/icon-font-ie7.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/icon-font-ie7.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/icon-font-ie7.js" afterPath="$PROJECT_DIR$/public/builder_front/js/icon-font-ie7.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/imac.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/imac.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/imac.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/imac.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ini.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ini.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/io.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/io.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ipad.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ipad.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/ipad.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/ipad.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/iphone.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/iphone.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/iphone.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/iphone.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jack.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jade.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/java.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/java.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/javascript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery-1.8.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery-1.8.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery-ui-1.10.3.custom.min.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery-ui-1.10.3.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.nivo.slider.pack.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.nivo.slider.pack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.placeholder.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.placeholder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery.placeholder.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery.placeholder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.tagsinput.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.tagsinput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery.tagsinput.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery.tagsinput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.ui.touch-punch.min.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/jquery.ui.touch-punch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery.ui.touch-punch.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery.ui.touch-punch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/jquery.zoomer.js" afterPath="$PROJECT_DIR$/public/builder_front/js/jquery.zoomer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/json.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsoniq.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsoniq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsx.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/jsx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/julia.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/julia.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/key.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/key.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/key.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/key.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/keybinding-emacs.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/keybinding-emacs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/keybinding-vim.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/keybinding-vim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/latex.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/latex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-black-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-black-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bold-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bold-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-bolditalic-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-bolditalic-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-italic-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-italic-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-light-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-light-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/lato/lato-regular-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.svg" afterPath="$PROJECT_DIR$/public/builder_front/fonts/lato/lato-regular-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/layout_1_column.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/layout_1_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/layout_2_column.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/layout_2_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/layout_3_column.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/layout_3_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/layout_4_column.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/layout_4_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/less.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/less.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/lettersymbol.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/lettersymbol.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/lettersymbol.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/lettersymbol.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/liquid.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/liquid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lisp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/livescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/livescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/lock.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/lock.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/lock.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/lock.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/logiql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/logiql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/loop.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/loop.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/loop.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/loop.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lsl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lua.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/luapage.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/luapage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lucene.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/lucene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/macbook.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/macbook.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/macbook.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/macbook.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/db/magazineapp-10-02-2017.sql" afterPath="$PROJECT_DIR$/public/db/magazineapp-10-02-2017.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/magic.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/magic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/magic.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/magic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/magicmouse.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/magicmouse.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/magicmouse.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/magicmouse.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mail.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mail.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/mail.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/mail.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/makefile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/makefile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/map.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/map.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/map.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/map.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/markdown.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/matlab.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/matlab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/medal.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/medal.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/medal.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/medal.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mel.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mic.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/mic.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/mic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-abap.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-abap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-actionscript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-actionscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ada.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ada.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-apache_conf.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-apache_conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-applescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-applescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-asciidoc.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-asciidoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-assembly_x86.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-assembly_x86.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-autohotkey.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-autohotkey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-batchfile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-batchfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-c9search.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-c9search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-c_cpp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-c_cpp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-cirru.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-cirru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-clojure.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-clojure.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-cobol.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-cobol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-coffee.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-coldfusion.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-coldfusion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-csharp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-csharp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-css.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-curly.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-curly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-d.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-d.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dart.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-diff.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-diff.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-django.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-django.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dockerfile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dockerfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dot.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-dot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-eiffel.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-eiffel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ejs.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ejs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-elixir.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-elixir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-elm.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-elm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-erlang.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-erlang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-forth.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-forth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ftl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ftl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gcode.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gherkin.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gherkin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gitignore.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-gitignore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-glsl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-glsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-golang.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-golang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-groovy.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-groovy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-handlebars.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-handlebars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haskell.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haskell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haxe.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-haxe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-html.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-html_ruby.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-html_ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ini.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ini.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-io.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-io.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jack.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jade.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-java.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-java.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-javascript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-json.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsoniq.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsoniq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsx.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-jsx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-julia.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-julia.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-latex.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-latex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-less.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-less.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-liquid.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-liquid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lisp.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-livescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-livescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-logiql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-logiql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lsl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lua.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-luapage.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-luapage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lucene.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-lucene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-makefile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-makefile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-markdown.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-matlab.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-matlab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mel.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mushcode.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mushcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mysql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-mysql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-nix.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-nix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-objectivec.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-objectivec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ocaml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ocaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-pascal.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-pascal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-perl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-perl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-pgsql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-pgsql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-php.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-plain_text.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-plain_text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-powershell.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-powershell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-praat.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-praat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-prolog.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-prolog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-properties.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-properties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-protobuf.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-protobuf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-python.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-python.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-r.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-r.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rdoc.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rdoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rhtml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rhtml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ruby.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rust.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-rust.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sass.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scad.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scala.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scheme.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scss.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-scss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sh.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sjs.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sjs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-smarty.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-smarty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-snippets.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-snippets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-soy_template.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-soy_template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-space.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-space.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-stylus.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-stylus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-svg.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-svg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-tcl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-tcl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-tex.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-tex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-text.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-textile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-textile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-toml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-toml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-twig.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-twig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-typescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-typescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vala.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vbscript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vbscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-velocity.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-velocity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-verilog.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-verilog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vhdl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-vhdl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-xml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-xquery.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-xquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-yaml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/mode-yaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/money.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/money.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/money.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/money.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mortarboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mortarboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/mortarboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/mortarboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mountain.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/mountain.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/mountain.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/mountain.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mushcode.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mushcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mysql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/mysql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/news.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/news.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/news.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/news.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/nivo-slider.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/nivo-slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/nix.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/nix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/objectivec.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/objectivec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ocaml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ocaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/over.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/over.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/page-editor.blade.php" afterPath="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/paper-bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/paper-bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/paper-bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/paper-bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/pascal.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/pascal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pc.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pc.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/pc.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/pc.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pencil.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pencil.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/pencil.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/pencil.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pencils.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pencils.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/pencils.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/pencils.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/perl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/perl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/pgsql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/pgsql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/php.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/picture.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/picture.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/picture.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/picture.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pig.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pig.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/pig.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/pig.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pills.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/pills.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/pills.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/pills.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/plain_text.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/plain_text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/play.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/play.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/play.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/play.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/plugins.js" afterPath="$PROJECT_DIR$/public/builder_front/js/plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/portfolio1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/portfolio1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/portfolio2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/portfolio2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/portfolio3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/portfolio3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/powershell.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/powershell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/praat.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/praat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/css/prettify.css" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/css/prettify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/prettify.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/css/prettify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/bootstrap/js/google-code-prettify/prettify.js" afterPath="$PROJECT_DIR$/public/builder_front/bootstrap/js/google-code-prettify/prettify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/google-code-prettify/prettify.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/bootstrap/js/google-code-prettify/prettify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/pricing_table1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/pricing_table1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/pricing_table2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/pricing_table2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/pricing_table3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/pricing_table3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/printer.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/printer.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/printer.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/printer.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/prolog.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/prolog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/properties.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/properties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/protobuf.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/protobuf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/python.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/python.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/r.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/r.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rdoc.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rdoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.css" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.css" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.less" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.less" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/redactor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/redactor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/respond.min.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/respond.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/respond.min.js" afterPath="$PROJECT_DIR$/public/builder_front/js/respond.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/responsive.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/responsive.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/responsive.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/responsive.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/retina.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/retina.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/retina.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/retina.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rhtml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rhtml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ring.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ring.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/ring.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/ring.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/rocket.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/rocket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/rocket.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/rocket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/rss.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/rss.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/rss.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/rss.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ruby.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rust.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/rust.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/safe.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/safe.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/safe.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/safe.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sass.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/save.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/save.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/save.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/save.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scad.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scala.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scheme.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scss.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/scss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/search.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/search.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/search.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/search.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/settings.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/settings.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/settings.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/settings.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sh.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/shield.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/shield.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/shield.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/shield.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/shirt.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/shirt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/shirt.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/shirt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sjs.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sjs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/skateboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/skateboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/skateboard.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/skateboard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/skeleton.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/skeleton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/slideshow1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/slideshow1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/fonts/slideshow1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/fonts/slideshow1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/smarty.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/smarty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/snippets.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/snippets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/sortable.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/sortable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/soy_template.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/soy_template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/space.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/space.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/spectrum.js" afterPath="$PROJECT_DIR$/public/builder_front/js/spectrum.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/spray.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/spray.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/spray.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/spray.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sql.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/storage.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/storage.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/storage.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/storage.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-contact.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-contact.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-content.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-dividers.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-dividers.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-footers.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-footers.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-headers.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-headers.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-portfolios.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-portfolios.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-pricing.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-pricing.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style-team.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style-team.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/style.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/stylus.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/stylus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/support.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/support.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/support.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/support.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/svg.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/svg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor/table.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor/table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/redactor_old/table.js" afterPath="$PROJECT_DIR$/public/builder_front/js/redactor_old/table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/tcl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/tcl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/team1.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/team1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/team2.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/team2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/team3.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/team3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/tex.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/tex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/text.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/text.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/textile.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/textile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-ambiance.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-ambiance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-chaos.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-chaos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-chrome.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-chrome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-clouds.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-clouds.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-clouds_midnight.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-clouds_midnight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-cobalt.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-cobalt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-crimson_editor.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-crimson_editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-dawn.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-dawn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-dreamweaver.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-dreamweaver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-eclipse.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-eclipse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-github.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-github.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-idle_fingers.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-idle_fingers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-katzenmilch.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-katzenmilch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-kr_theme.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-kr_theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-kuroir.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-kuroir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-merbivore.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-merbivore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-merbivore_soft.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-merbivore_soft.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-mono_industrial.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-mono_industrial.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-monokai.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-monokai.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-pastel_on_dark.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-pastel_on_dark.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-solarized_dark.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-solarized_dark.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-solarized_light.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-solarized_light.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-terminal.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-terminal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-textmate.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-textmate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_blue.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_blue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_bright.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_bright.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_eighties.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-tomorrow_night_eighties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-twilight.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-twilight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-vibrant_ink.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-vibrant_ink.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-xcode.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/theme-xcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ticket.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ticket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/ticket.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/ticket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/toilet-paper.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/toilet-paper.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/toilet-paper.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/toilet-paper.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/toml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/toml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/touch.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/touch.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/touch.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/touch.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trash.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trash.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/trash.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/trash.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trip-bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trip-bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/trip-bag.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/trip-bag.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trunk.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/trunk.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/trunk.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/trunk.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/twig.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/twig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/js/typeahead.js" afterPath="$PROJECT_DIR$/public/builder_front/elements/js/typeahead.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/typeahead.js" afterPath="$PROJECT_DIR$/public/builder_front/js/typeahead.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/typescript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/typescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ubmrella.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/ubmrella.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/ubmrella.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/ubmrella.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/user-interface.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/user-interface.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/user-interface.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/user-interface.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vala.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vbscript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vbscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/velocity.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/velocity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/verilog.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/verilog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vhdl.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/vhdl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/css/video.css" afterPath="$PROJECT_DIR$/public/builder_front/elements/css/video.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/video.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/video.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/video.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/video.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/weather.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/weather.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/weather.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/weather.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/wi-fi.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/wi-fi.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/wi-fi.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/wi-fi.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/wine.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/wine.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/wine.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/wine.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-coffee.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-css.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-html.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-javascript.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-json.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-lua.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-php.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-xquery.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/worker-xquery.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/xml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/xquery.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/xquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/yaml.js" afterPath="$PROJECT_DIR$/public/builder_front/js/src-min-noconflict/snippets/yaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/images/icons/yinyang.svg" afterPath="$PROJECT_DIR$/public/builder_front/elements/images/icons/yinyang.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/images/icons/yinyang.svg" afterPath="$PROJECT_DIR$/public/builder_front/images/icons/yinyang.svg" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +878,7 @@
       <file leaf-file-name="elements.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/builder_front/elements.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
               <folding />
             </state>
@@ -43,11 +889,10 @@
         <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+              <caret line="1006" column="112" selection-start-line="1006" selection-start-column="104" selection-end-line="1006" selection-end-column="112" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1486741298761" expanded="true" signature="58745:58752" placeholder="{...}" />
-                <marker date="1486741298761" expanded="true" signature="58745:58755" placeholder="{...}" />
+                <marker date="1486977645712" expanded="true" signature="5139:5301" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -66,8 +911,8 @@
       <file leaf-file-name="page-editor.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.291666">
-              <caret line="2253" column="0" selection-start-line="2253" selection-start-column="0" selection-end-line="2253" selection-end-column="0" />
+            <state vertical-scroll-proportion="21.054546">
+              <caret line="251" column="30" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -86,7 +931,7 @@
       <file leaf-file-name="sample-page.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/sample-page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-11.958333">
               <caret line="2219" column="64" selection-start-line="2219" selection-start-column="63" selection-end-line="2219" selection-end-column="64" />
               <folding />
             </state>
@@ -103,21 +948,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style-content.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/builder_front/elements/css/style-content.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PageController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43621868">
-              <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.09265734">
+              <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -126,8 +961,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75">
-              <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -206,9 +1041,9 @@
         <option value="$PROJECT_DIR$/resources/views/page-editor.php" />
         <option value="$PROJECT_DIR$/public/builder_front/elements.json" />
         <option value="$PROJECT_DIR$/public/builder_front/js/builder.js" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
       </list>
     </option>
@@ -546,6 +1381,130 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="builder_front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="builder_front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="builder_front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="builder_front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uploads" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magazineapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -605,32 +1564,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="magazineapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="magazineapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -722,6 +1655,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32832617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -732,7 +1666,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -795,13 +1728,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/project.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/issue.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1107,18 +2033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1486741298761" expanded="true" signature="58745:58752" placeholder="{...}" />
-            <marker date="1486741298761" expanded="true" signature="58745:58755" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/builder_front/elements.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1127,18 +2041,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sample-page.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/builder_front/elements/images/uploads/icon-twitter.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2219" column="64" selection-start-line="2219" selection-start-column="63" selection-end-line="2219" selection-end-column="64" />
-          <folding />
+          <caret line="1006" column="112" selection-start-line="1006" selection-start-column="104" selection-end-line="1006" selection-end-column="112" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1486977645712" expanded="true" signature="5139:5301" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.291666">
-          <caret line="2253" column="0" selection-start-line="2253" selection-start-column="0" selection-end-line="2253" selection-end-column="0" />
+        <state vertical-scroll-proportion="21.054546">
+          <caret line="251" column="30" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sample-page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.958333">
+          <caret line="2219" column="64" selection-start-line="2219" selection-start-column="63" selection-end-line="2219" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -1151,18 +2089,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43621868">
-          <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.09265734">
+          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
           <folding />
         </state>
       </provider>
