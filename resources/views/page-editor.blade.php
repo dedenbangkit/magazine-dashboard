@@ -250,7 +250,7 @@
             </p>
 
             <form id="imageUploadForm" action="iupload">
-
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Upload image:</label>
 
                 <div class="form-group">
