@@ -2634,6 +2634,7 @@ $(function(){
 			$('#screen').css({'width':'480px'});
 			$('#screen').css({'zoom': newIframeMobile});
 			$('#screen').css({'min-height': newHeightMobile});
+			$('#frameWrapper').closest('li').css({"color": "red", "border": "2px solid red"});
 		} else if(target == 'tablet-sm'){
 			$('#screen').css({'width':'768px'});
 			$('#screen').css({'zoom': newIframeTabletSm});
