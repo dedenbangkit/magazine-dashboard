@@ -1951,7 +1951,7 @@
 
     -->
 
-    <form action="save.php" target="_blank" id="markupForm" method="post" class="form-horizontal">
+    <form action="save.php"  id="markupForm" method="post" class="form-horizontal">
 
         <input type="hidden" name="markup" value="" id="markupField">
 
