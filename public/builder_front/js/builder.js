@@ -1558,8 +1558,6 @@ $(function(){
 		})
 
 	})
-
-
 	for( var key in _Elements.elements ) {
 
 		niceKey = key.toLowerCase().replace(" ", "_");
@@ -1572,6 +1570,7 @@ $(function(){
 			//alert( data.elements[key][x].url )
 
 
+			//buat eleman baru
 
 
 			if( _Elements.elements[key][x].sandbox != null ) {
@@ -1582,12 +1581,11 @@ $(function(){
 
 				//newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].thumbnail+'" data-srcc="'+_Elements.elements[key][x].url+'" data-height="'+_Elements.elements[key][x].height+'" data-sandbox="" '+loaderFunction+'></li>')
 				newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].icon+'" data-srcc="'+_Elements.elements[key][x].url+'" data-sandbox="" '+loaderFunction+'>'+_Elements.elements[key][x].title+'</li>')
-
+				console.log(niceKey);
 			} else {
 
 				//newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].thumbnail+'" data-srcc="'+_Elements.elements[key][x].url+'" data-height="'+_Elements.elements[key][x].height+'"></li>')
 				newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].icon+'" data-srcc="'+_Elements.elements[key][x].url+'">'+_Elements.elements[key][x].title+'</li>')
-
 			}
 
 
@@ -2620,29 +2618,42 @@ $(function(){
 	$('#responsive-toolbar ul li a').on('click',function(){
 		theHeight = $('#frameWrapper').height();
 		theWidth = $('#frameWrapper').width();
-		newHeightMobile = (480/theWidth)*theHeight;
-		newHeightTabletSm = (768/theWidth)*theHeight;
-		newHeightTabletLg = (1024/theWidth)*theHeight;
-		newIframeMobile = 1
-		newIframeTabletSm = 0.7;
-		newIframeTabletLg = 0.6;
-		console.log(newIframeTabletLg);
+		newScreenMobile = 1 * 480;
+		newScreenTabletSm = 0.7 * 768;
+		newScreenTabletLg = 0.6 * 1024;
 
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
-			$('#screen').css({'width':'480px'});
-			$('#screen').css({'zoom': newIframeMobile});
-			$('#screen').css({'min-height': newHeightMobile});
-			$('#frameWrapper').closest('li').css({"color": "red", "border": "2px solid red"});
+			  $('#screen').css({'width': newScreenMobile})
+				$.each($('.container li.element'),
+					function(){
+						heightIframeNow = $('iframe').height();
+						heightIframe = $('iframe').css({'height': 'auto'});
+						$('.frameCover').css({'height': heightIframe});
+						$(this).css({'height': heightIframe});
+				});
+				$('#screen').css({'height': $('#screen ul').innerHeight})
 		} else if(target == 'tablet-sm'){
-			$('#screen').css({'width':'768px'});
-			$('#screen').css({'zoom': newIframeTabletSm});
-			$('#screen').css({'min-height': newHeightTabletSm});
+				$('#screen').css({'width': newScreenTabletSm})
+				$.each($('.container li.element'),
+					function(){
+						heightIframeNow = $('iframe').height();
+						heightIframe = $('iframe').css({'height': 'auto'});
+						$('.frameCover').css({'height': heightIframe});
+						$(this).css({'height': heightIframe});
+				});
+				$('#screen').css({'height': $('#screen ul').innerHeight})
 		}else if(target == 'tablet-lg'){
-			$('#screen').css({'width':'1024px'});
-			$('#screen').css({'zoom': newIframeTabletLg});
-			$('#screen').css({'min-height': newHeightTabletLg});
+			$('#screen').css({'width': newScreenTabletLg})
+			$.each($('.container li.element'),
+				function(){
+					heightIframeNow = $('iframe').height();
+					heightIframe = $('iframe').css({'height': 'auto'});
+					$('.frameCover').css({'height': heightIframe});
+					$(this).css({'height': heightIframe});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight})
 		}
 	});
 

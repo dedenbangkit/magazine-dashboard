@@ -78,7 +78,7 @@ class PageController extends Controller
     }
     public function iupload(Request $request){
         $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
-        $relative_path = 'builder_front/images/uploads';//specify the relative path from your elements to the upload folder
+        $relative_path = 'images/uploads';//specify the relative path from your elements to the upload folder
 
 
         /* DON'T CHANGE ANYTHING HERE!! */
