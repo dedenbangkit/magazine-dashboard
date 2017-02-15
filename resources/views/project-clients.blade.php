@@ -6,38 +6,38 @@
 
 @section('main-content')
                 <div class="col-md-12">
+
+                  <!-- <?php if($create == true) {?>
+                          <div class="col-md-3  text-center">
+                              <div class="box-content" style="cursor: pointer;" onclick="window.location='/create-project';">
+                                  <div class="box-content-inside-new">
+                                      <img src="{{asset('/img/add new.png')}}"/>
+                          </div>
+                      </div>
+                  </div>
+                  <?php } ?> -->
+
+                  <?php foreach($projects as $i=>$row){ ?>
                   <div class="nav-tabs-custom">
                               <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Tab 1</a></li>
-                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Tab 2</a></li>
-                                <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Tab 3</a></li>
-                                <li class="dropdown">
+                                <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-newspaper-o"></i>&nbsp;{{$row->project_name}}</a></li>
+                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
+                                <li class="dropdown pull-right">
                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                                    Dropdown <span class="caret"></span>
+                                    <i class="fa fa-download"></i> Download
                                   </a>
                                   <ul class="dropdown-menu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                                    <li><img class="img-responsive" src="/img/projects/barcode.gif"></li>
+                                    <li><a class="btn btn-block btn-default btn-flat" href="#"><i class="fa fa-apple"></i>&nbsp; Apple IOS</a></li>
+                                    <li><a class="btn btn-block btn-default btn-flat" href="#"><i class="fa fa-android"></i>&nbsp; Android OS</a></li>
                                   </ul>
                                 </li>
-                                <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                               </ul>
                               <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1">
                                   <div class="box-body">
-                                          <!-- <?php if($create == true) {?>
-                                                  <div class="col-md-3  text-center">
-                                                      <div class="box-content" style="cursor: pointer;" onclick="window.location='/create-project';">
-                                                          <div class="box-content-inside-new">
-                                                              <img src="{{asset('/img/add new.png')}}"/>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <?php } ?> -->
-                                          <?php foreach($projects as $i=>$row){ ?>
+
+
                                   <div class="col-md-3" onclick="window.location='/issue?id={{$row->id}}';" style="cursor:pointer">
                                     <img class="img-responsive" src="{{asset('/img/projects/'.$row->project_cover)}}" alt="Photo">
                                     <ul class="list-group list-group-unbordered">
@@ -84,159 +84,149 @@
                                           <button class="btn btn-primary btn-block btn-flat editor">Edit</button>
                                           <button class="btn btn-primary btn-block btn-flat build">Build Apps</button>
                                       </div>
-                                      <div class="row text-center">
-                                          <label>Download Apps</label>
-                                      </div>
-                                      <div class="row">
-                                          <div class="col-sm-6">
-                                              <button class="btn btn-primary btn-block btn-flat"><i class="fa fa-android"> Android</i></button>
-                                          </div>
-                                          <div class="col-sm-6">
-                                              <button class="btn btn-primary btn-block btn-flat"><i class="fa fa-apple"> Ios</i></button>
-                                          </div>
-
-
-                                      </div>
                                   </div>
-                                </div>  
+
+                                  <?php if($create){?>
+                                  <div class="col-sm-5 editor-content text-center hidden">
+                                      <div class="register-box-body">
+                                          <form action="subscribe-process-update" method="post" enctype="multipart/form-data">
+                                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                              <div class="form-group has-feedback">
+                                                  <input type="text" class="form-control" placeholder="Project Name"
+                                                         name="projectname" value="Magazine Name"/>
+                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                              </div>
+                                              <div class="form-group has-feedback">
+                                                  <input type="text" class="form-control" placeholder="Project Name"
+                                                         name="companyname" value="Company Name"/>
+                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                              </div>
+                                              <div class="form-group has-feedback">
+                                                  <input type="text" class="form-control" placeholder="Project Name"
+                                                         name="companyphone" value="Company phone"/>
+                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                              </div>
+                                              <div class="form-group ">
+                                                  <label for="exampleInputFile">Project Cover</label>
+                                                  <input type="file" name="cover" id="imagefile">
+                                              </div>
+                                              <div class="form-group ">
+                                                  <label for="exampleInputFile">Project Icon</label>
+                                                  <input type="file" name="icon" id="imagefile">
+                                              </div>
+
+
+                                              <div class="row">
+                                                  <div class="col-md-12 ">
+                                                      <button type="submit" class="btn btn-primary btn-block btn-flat">Edit
+                                                      </button>
+                                                  </div>
+                                                  <!-- /.col -->
+                                              </div>
+                                          </form>
+
+                                      </div>
+                                      <!-- /.form-box -->
+                                  </div>
+
+                                </div>
 
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2">
-                                  The European languages are members of the same family. Their separate existence is a myth.
-                                  For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-                                  in their grammar, their pronunciation and their most common words. Everyone realizes why a
-                                  new common language would be desirable: one could refuse to pay expensive translators. To
-                                  achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-                                  words. If several languages coalesce, the grammar of the resulting language is more simple
-                                  and regular than that of the individual languages.
-                                </div>
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="tab_3">
-                                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                  when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                  It has survived not only five centuries, but also the leap into electronic typesetting,
-                                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                                  sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                                  like Aldus PageMaker including versions of Lorem Ipsum.
+                                  <div class="box-body">
+                                  <div class="col-md-12">
+                                    <div class="col-md-6">
+                                  <form class="form-horizontal" action="build-process-update" method="post">
+                                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                          <!-- text input -->
+                                          <div class="form-group">
+                                            <label><i class="fa fa-apple"></i> Application ID</label>
+                                            <input type="text" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
+                                          </div>
+
+                                          <!-- textarea -->
+                                          <div class="form-group">
+                                            <label><i class="fa fa-apple"></i> Prefix</label>
+                                            <input type="text" class="form-control" placeholder="eg. S4G4BK2VSQ">
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label><i class="fa fa-apple"></i> Status</label>
+                                            <select class="form-control">
+                                              <option>Development</option>
+                                              <option>Published</option>
+                                            </select>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label><i class="fa fa-android"></i> API Key</label>
+                                            <input type="text" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
+                                          </div>
+
+                                          </div>
+
+                                          <div class="col-md-6" style="padding-left:50px;">
+
+                                          <div class="form-group">
+                                            <label>Screen Orientation</label>
+                                            <div class="checkbox">
+                                              <label>
+                                                <input type="checkbox">
+                                                Potrait Only
+                                              </label>
+                                            </div>
+                                            <div class="checkbox">
+                                              <label>
+                                                <input type="checkbox">
+                                                Both Orientations
+                                              </label>
+                                            </div>
+                                          </div>
+
+                                          <hr>
+
+                                          <div class="form-group">
+                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Provisioning Profile (.mobiprovision)</label>
+                                          <input type="file" name="cover" id="imagefile">
+                                          </div>
+
+                                          <hr>
+
+                                          <div class="row">
+                                          <div class="col-md-6">
+                                          <div class="form-group">
+                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate (.p12)</label>
+                                          <input type="file" name="cover" id="imagefile" style="margin-top:15px;">
+                                          </div>
+                                          </div>
+
+                                          <div class="col-md-6">
+                                          <div class="form-group">
+                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate Password</label>
+                                          <input type="password" class="form-control">
+                                          </div>
+                                          </div>
+                                          </div>
+
+                                          <hr>
+                                          <div class="form-group">
+                                          <label for="exampleInputFile"><i class="fa fa-android"></i> Kestore File (.keystore)</label>
+                                          <input type="file" name="cover" id="imagefile">
+                                          </div>
+
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </form>
                                 </div>
                                 <!-- /.tab-pane -->
                               </div>
                               <!-- /.tab-content -->
                   </div>
 
-
-                  <div class="box box-default">
-                  <div class="box-header with-border">
-                    <i class="fa fa-warning"></i>
-
-                    <h3 class="box-title"><?=  ucfirst(array_last($activer));?></h3>
-                  </div>
-                  <div class="box-body">
-
-
-
-
-                    <?php if($create){?>
-                    <div class="col-sm-5 editor-content text-center hidden">
-                        <div class="register-box-body">
-                            <form action="subscribe-process-update" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Project Name"
-                                           name="projectname" value="Magazine Name"/>
-                                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Project Name"
-                                           name="companyname" value="Company Name"/>
-                                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Project Name"
-                                           name="companyphone" value="Company phone"/>
-                                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                </div>
-                                <div class="form-group ">
-                                    <label for="exampleInputFile">Project Cover</label>
-                                    <input type="file" name="cover" id="imagefile">
-                                </div>
-                                <div class="form-group ">
-                                    <label for="exampleInputFile">Project Icon</label>
-                                    <input type="file" name="icon" id="imagefile">
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-12 ">
-                                        <button type="submit" class="btn btn-primary btn-block btn-flat">Edit
-                                        </button>
-                                    </div>
-                                    <!-- /.col -->
-                                </div>
-                            </form>
-
-                        </div>
-                        <!-- /.form-box -->
-                    </div>
-                    <div class="col-sm-5 build-content  ">
-                        <h3>Build & Certificate</h3>
-                        <div class="register-box-body">
-                                <table>
-                                    <tr>
-                                        <td><label>Android Certificate</label></td>
-                                        <td class="text-center" width="15px"><label>:</label></td>
-                                        <td><label> Not available</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label>Ios Certificate</label></td>
-                                        <td class="text-center" width="10px" ><label>:</label></td>
-                                        <td><label> Not available</label></td>
-                                    </tr>
-                                </table>
-                            <form action="build-process-update" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="row">
-                                <div class="form-group ">
-                                    <div class="col-sm-6">
-                                        <label for="exampleInputFile">Android Certificate</label>
-                                        <input type="file" name="cover" id="imagefile">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <label for="exampleInputFile">Ios Certificate </label>
-                                        <input type="file" name="cover" id="imagefile">
-                                    </div>
-                                </div>
-                                </div>
-                                <br/>
-                                <div class="row">
-                                    <div class="col-md-12 ">
-                                        <button type="submit" class="btn btn-primary btn-block btn-flat">
-                                            Upload Certificate
-                                        </button>
-                                    </div>
-                                    <!-- /.col -->
-                                </div>
-                            </form>
-                            <br/>
-                            <div class="row">
-                            <div class="col-md-12 ">
-                                <button class="btn btn-primary btn-block btn-flat">
-                                   Build Apps
-                                </button>
-                            </div>
-                            </div>
-                        </div>
-
-                  </div>
-
-                </div>
-                <?php } } ?>
-
-                    </div>
+                    <?php } } ?>
                 </div>
 @endsection
 @section('script-content')
