@@ -46,8 +46,8 @@
                                             <i class="fa fa-bullhorn {{$row->status}}" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'></i>
                                             Publish
                                         </a>
-                                        <a class="btn btn-app">
-                                            <i class="fa fa-edit"></i>
+                                        <a class="btn btn-app edit-issue">
+                                            <i class="fa fa-edit"  data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' ></i>
                                             Edit
                                         </a>
                                         <a class="btn btn-app del-issue" >
@@ -110,6 +110,35 @@
                         });
 
                     });
+                    $('.edit-issue').on('click', '.fa-edit', function () {
+                        var name = $(this).data('name');
+                        var id = $(this).data('id');
+                        bootbox.confirm({
+                            message: "Do you want go to editor " + name,
+                            buttons: {
+                                cancel: {
+                                    label: '<i class="fa fa-times"></i> Cancel'
+                                },
+                                confirm: {
+                                    label: '<i class="fa fa-check"></i> Confirm'
+                                }
+                            },
+                            callback: function (result) {
+                                if (result) {
+                                    $.post("/editor-issue",
+                                            {
+                                                id: id,
+                                                name: name,
+                                                _token: "<?php echo csrf_token();?>"
+                                            },
+                                            function (data, status) {
+                                                window.location.replace(data);
+                                            });
+                                }
+                            }
+                        });
+
+                    });
                     $('.publish-issue').on('click', '.unpublished', function () {
                         var name = $(this).data('name');
                         var id = $(this).data('id');
@@ -144,6 +173,7 @@
 
                     });
                 });
+
                 function remove(id) {
                     var elem = document.getElementById(id);
                     return elem.parentNode.removeChild(elem);
