@@ -2625,35 +2625,32 @@ $(function(){
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
-			  $('#screen').css({'width': newScreenMobile})
-				$.each($('.container li.element'),
-					function(){
-						heightIframeNow = $('iframe').height();
-						heightIframe = $('iframe').css({'height': 'auto'});
-						$('.frameCover').css({'height': heightIframe});
-						$(this).css({'height': heightIframe});
-				});
-				$('#screen').css({'height': $('#screen ul').innerHeight})
+			$('#screen').css({'width': newScreenMobile})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenMobile});
+					newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+					$('iframe').css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
 		} else if(target == 'tablet-sm'){
 				$('#screen').css({'width': newScreenTabletSm})
 				$.each($('.container li.element'),
 					function(){
-						heightIframeNow = $('iframe').height();
-						heightIframe = $('iframe').css({'height': 'auto'});
-						$('.frameCover').css({'height': heightIframe});
-						$(this).css({'height': heightIframe});
+						$('iframe').css({'width':newScreenTabletSm});
+			 			newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+			 			$('iframe').css({'height':newHeight});
 				});
-				$('#screen').css({'height': $('#screen ul').innerHeight})
+				$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'tablet-lg'){
 			$('#screen').css({'width': newScreenTabletLg})
 			$.each($('.container li.element'),
 				function(){
-					heightIframeNow = $('iframe').height();
-					heightIframe = $('iframe').css({'height': 'auto'});
-					$('.frameCover').css({'height': heightIframe});
-					$(this).css({'height': heightIframe});
+					$('iframe').css({'width':newScreenTabletLg});
+					newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+					$('iframe').css({'height':newHeight});
 			});
-			$('#screen').css({'height': $('#screen ul').innerHeight})
+			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
 
