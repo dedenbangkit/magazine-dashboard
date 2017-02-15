@@ -10,6 +10,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\Page;
+use ZipArchive;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -56,12 +59,12 @@ class PageController extends Controller
     }
     public function sample2(Request $request)
     {
-        if(empty($request->session()->get('issue-editor'))){
-            return redirect('issue');
-        }
+//        if(empty($request->session()->get('issue-editor'))){
+//            return redirect('issue');
+//        }
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
-        $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
+        $data['page_list'] = $this->page->getPage(11);
 
         return view('page-editor', $data);
     }
@@ -71,7 +74,7 @@ class PageController extends Controller
         $data='sample-page2';
         return $data;
     }
-    public function getPage()
+    public function getPage(Request $request)
     {
         $data['page_list'] = $this->page->getPage(11);
 

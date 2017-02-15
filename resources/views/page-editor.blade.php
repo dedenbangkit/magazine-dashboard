@@ -1951,7 +1951,7 @@
 
     -->
 
-    <form action="save.php"  id="markupForm" method="post" class="form-horizontal">
+    <form action="save" target="_blank" id="markupForm" method="post" class="form-horizontal">
 
         <input type="hidden" name="markup" value="" id="markupField">
 
@@ -1966,6 +1966,7 @@
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Doc type</label>
                         <div class="col-sm-10">
+                            <input type="text" name="_token" id="token_" value="{{ csrf_token() }}">
                             <input type="text" class="form-control" name="doctype" id="doctype" placeholder="Doc type" value="<!--DOCTYPE html -->">
                         </div>
                     </div>
