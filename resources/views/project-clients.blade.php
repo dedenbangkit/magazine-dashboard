@@ -80,9 +80,18 @@
                                                   <td width="10px" class="text-center" ><label> : </label></td>
                                                   <td>{{$row->service_name}}</td>
                                               </tr>
+                                              <tr>
+                                                  <td><label>Appstore Url</label></td>
+                                                  <td width="10px" class="text-center"><label> : </label></td>
+                                                  <td>https://itunes.apple.com/us/app/cnn/id331786748?mt=8</td>
+                                              </tr>
+                                              <tr>
+                                                  <td><label>Google Play Url</label></td>
+                                                  <td width="10px" class="text-center"><label> : </label></td>
+                                                  <td>https://play.google.com/store/apps/details?id=com.cnn.mobile.android.phone&hl=en</td>
+                                              </tr>
                                           </table>
                                           <button class="btn btn-primary btn-block btn-flat editor">Edit</button>
-                                          <button class="btn btn-primary btn-block btn-flat build">Build Apps</button>
                                       </div>
                                   </div>
 

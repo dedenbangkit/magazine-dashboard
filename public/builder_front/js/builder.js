@@ -2511,8 +2511,10 @@ $(function(){
 	$('.page-panel').on('click','.page-panel-toggler',function(){
 		if($('.page-panel').hasClass('active')){
 			$('.page-panel').removeClass('active');
+			$('.screen').removeClass('active');
 		} else {
 			$('.page-panel').addClass('active');
+			$('.screen').addClass('active');
 		}
 	});
 
@@ -2616,7 +2618,7 @@ $(function(){
 
 
 	$('#responsive-toolbar ul li a').on('click',function(){
-		theHeight = $('#frameWrapper').height();
+		theHeight = theHeight = $('li.element iframe').find('BODY').height();
 		theWidth = $('#frameWrapper').width();
 		newScreenMobile = 1 * 480;
 		newScreenTabletSm = 0.7 * 768;
@@ -2625,12 +2627,14 @@ $(function(){
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
+			console.log(theHeight);
 			$('#screen').css({'width': newScreenMobile})
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobile});
-					newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
 					$('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		} else if(target == 'tablet-sm'){
@@ -2638,8 +2642,9 @@ $(function(){
 				$.each($('.container li.element'),
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
-			 			newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
 			 			$('iframe').css({'height':newHeight});
+						$(this).css({'height':newHeight});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'tablet-lg'){
@@ -2647,8 +2652,9 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
-					newHeight =  $('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
 					$('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
