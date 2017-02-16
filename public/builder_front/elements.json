@@ -23,10 +23,10 @@ var _Elements = {"elements": {
         {"title":"Custom Cell","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/table_1.html"}
     ],
     "Embed":[
-        {"title":"I Frame 16/9","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"I Frame 4/3","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Video 16/9","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Video 4/3","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/content_section2.html"},
+        {"title":"I Frame 16/9","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/youtube.html"},
+        {"title":"I Frame 4/3","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/youtube.html"},
+        {"title":"Video 16/9","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/youtube.html"},
+        {"title":"Video 4/3","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/youtube.html"},
     ]
     }
 }
