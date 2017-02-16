@@ -6,29 +6,21 @@ var _Elements = {"elements": {
         {"title":"4 Column","icon":"builder_front/images/icon/4-column.png","url":"builder_front/elements/layout_4_column.html"}
     ],
     "Text":[
-        {"title":"Paragraf","icon":"builder_front/images/icon/text-paragraf.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Heading 1","icon":"builder_front/images/icon/text-h1.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Heading 2","icon":"builder_front/images/icon/text-h2.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Heading 3","icon":"builder_front/images/icon/text-h3.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Heading 4","icon":"builder_front/images/icon/text-h4.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Blockquote","icon":"builder_front/images/icon/text-blockquote.png","url":"builder_front/elements/content_section2.html"}
+        {"title":"Paragraph","icon":"builder_front/images/icon/text-paragraf.png","url":"builder_front/elements/content_section2.html"},
+        {"title":"Heading 1","icon":"builder_front/images/icon/text-h1.png","url":"builder_front/elements/heading_1.html"},
+        {"title":"Heading 2","icon":"builder_front/images/icon/text-h2.png","url":"builder_front/elements/heading_2.html"},
+        {"title":"Heading 3","icon":"builder_front/images/icon/text-h3.png","url":"builder_front/elements/heading_3.html"},
+        {"title":"Blockquote","icon":"builder_front/images/icon/text-blockquote.png","url":"builder_front/elements/blockquote.html"}
     ],
     "Image":[
-        {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Responsive","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Carousel","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/content_section2.html"}
-    ],
-    "Shape":[
-        {"title":"Rectangle","icon":"builder_front/images/icon/shape-rectangle.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Rounded","icon":"builder_front/images/icon/shape-rounded.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Ellipse","icon":"builder_front/images/icon/shape-ellipse.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Polygon","icon":"builder_front/images/icon/shape-polygon.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Line","icon":"builder_front/images/icon/shape-line.png","url":"builder_front/elements/content_section2.html"}
+        {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
+        {"title":"Responsive","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/image.html"},
+        {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/image.html"},
+        {"title":"Carousel","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/image.html"}
     ],
     "Table":[
-        {"title":"Custom Row","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Custom Cell","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/content_section2.html"}
+        {"title":"Custom Row","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/table_1.html"},
+        {"title":"Custom Cell","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/table_1.html"}
     ],
     "Embed":[
         {"title":"I Frame 16/9","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/content_section2.html"},
