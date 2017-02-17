@@ -43,7 +43,7 @@ class Project extends Model
             ->where('project.status','unpublished')
             ->where('project.id',$id)
             ->orderBy('project.created_at','desc')
-            ->select('project.*','company.company_name','company.company_phone','service.service_name','service.number_of_issue')
+            ->select('project.*','company.company_name','company.company_phone','service.service_name','service.number_of_issue','service.service_price')
             ->get();
     }
     public function getProjectPublish(){
