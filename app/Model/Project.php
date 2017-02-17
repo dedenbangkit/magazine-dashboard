@@ -21,6 +21,15 @@ class Project extends Model
             )
         );
     }
+    public function updateProject($data){
+        return  Project::where('id',$data['project_id'])
+            ->update(
+           [
+                'project_name'=>$data['name'],
+                'project_cover'=>$data['cover']
+            ]
+        );
+    }
     public function getProject(){
         return Project::whereNull('deleted_at')
             ->where('status','unpublished')
@@ -34,7 +43,7 @@ class Project extends Model
             ->where('project.status','unpublished')
             ->where('project.id',$id)
             ->orderBy('project.created_at','desc')
-            ->select('project.*','company.company_name','company.company_phone','service.service_name')
+            ->select('project.*','company.company_name','company.company_phone','service.service_name','service.number_of_issue')
             ->get();
     }
     public function getProjectPublish(){

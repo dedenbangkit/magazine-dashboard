@@ -56,7 +56,7 @@
                                       <div class="row editor-button">
                                           <table>
                                               <tr>
-                                                  <td><label>Magazine Name</label></td>
+                                                  <td width="100px"><label>Magazine Name</label></td>
                                                   <td width="10px" class="text-center" ><label> : </label></td>
                                                   <td>{{$row->project_name}}</td>
                                               </tr>
@@ -102,18 +102,18 @@
                                               <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                               <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Project Name"
-                                                         name="projectname" value="Magazine Name"/>
+                                                  <input type="text" class="form-control" placeholder="Magazine Name"
+                                                         name="projectname" value="{{$row->project_name}}"/>
                                                   <span class="glyphicon glyphicon-book form-control-feedback"></span>
                                               </div>
                                               <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Project Name"
-                                                         name="companyname" value="Company Name"/>
+                                                  <input type="text" class="form-control" placeholder="Company Name"
+                                                         name="companyname" value="{{$row->company_name}}"/>
                                                   <span class="glyphicon glyphicon-book form-control-feedback"></span>
                                               </div>
                                               <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Project Name"
-                                                         name="companyphone" value="Company phone"/>
+                                                  <input type="text" class="form-control" placeholder="Company Phone"
+                                                         name="companyphone" value="{{$row->company_phone}}"/>
                                                   <span class="glyphicon glyphicon-book form-control-feedback"></span>
                                               </div>
                                               <div class="form-group ">

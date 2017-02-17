@@ -47,6 +47,7 @@ Route::get('/user', 'UserController@showUser');
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
 Route::Post('/subscribe-process', 'SubscribeController@subscribeProcessAdd');
+Route::Post('/subscribe-process-update', 'SubscribeController@subscribeProcessUpdate');
 Route::get('/client', 'SubscribeController@showClient');
 Route::get('/client-list', 'SubscribeController@clientList');
 

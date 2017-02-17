@@ -155,8 +155,39 @@ class ProjectController extends Controller
         return $deletingIssue;
     }
     public function publishIssueProcess(Request $request){
-        $deletingIssue=$this->issue->publishIssue($request->id);
-        return $deletingIssue;
+        $publish_auth=$this->project->getProjectById($this->authdata->project_id);
+        $count_issue=count($this->issue->getIssue($this->authdata->project_id));
+        $message='Success To Publish Issue';
+        $publish=true;
+        switch ($publish_auth[0]['service_id']) {
+            case 1:
+                if($count_issue < $publish_auth[0]['number_of_issue']){
+                    $publish=false;
+                    $message='Exceed Issue Limit';
+                }
+                break;
+            case 3:
+                if($count_issue < $publish_auth[0]['number_of_issue']){
+                    $publish=false;
+                    $message='Exceed Issue Limit';
+                }
+                break;
+            case 4:
+                if($count_issue < $publish_auth[0]['number_of_issue']){
+                    $publish=false;
+                    $message='Exceed Issue Limit';
+                }
+                break;
+            default:
+                $message='Success To Publish Issue '.$request->name;
+                $publish=true;
+
+        }
+        if($publish){
+            $publishIssue=$this->issue->publishIssue($request->id);
+        }
+
+        return $message;
     }
     public function history()
     {
