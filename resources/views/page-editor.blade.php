@@ -2105,6 +2105,9 @@
 
 <div class="sandboxes" id="sandboxes" style="display: none"></div>
 
+
+
+
 <!-- Load JS here for greater good =============================-->
 <script src="{{asset('builder_front/js/jquery-1.8.3.min.js')}}"></script>
 <script src="{{asset('builder_front/js/jquery-ui.min.js')}}"></script>

@@ -2654,8 +2654,8 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenMobile});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':(newHeight + 27)});
-					$(this).css({'height':(newHeight + 27)});
+					$('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		} else if(target == 'tablet-sm'){
@@ -2664,8 +2664,8 @@ $(function(){
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
 			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-			 			$('iframe').css({'height':(newHeight + 27)});
-						$(this).css({'height':(newHeight + 27)});
+			 			$('iframe').css({'height':newHeight});
+						$(this).css({'height':newHeight});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'tablet-lg'){
@@ -2674,8 +2674,8 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':(newHeight + 27)});
-					$(this).css({'height':(newHeight + 27)});
+					$('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
@@ -2690,8 +2690,8 @@ $(function(){
 				function(){
 					$('iframe').css({'width':screenWidth});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':(newHeight + 27)});
-					$(this).css({'height':(newHeight + 27)});
+					$('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		});

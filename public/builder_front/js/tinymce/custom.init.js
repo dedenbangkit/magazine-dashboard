@@ -1,6 +1,7 @@
 tinymce.init({
-  selector: 'div',
+  selector: 'div.column',
   theme: 'inlite',
+  element_format : 'html',
   font_formats: 'Lato=Lato;Helvetica=Helvetica;Arial=Arial',
   plugins: 'image table link paste contextmenu textpattern autolink searchreplace textcolor colorpicker media hr',
   insert_toolbar: 'quickimage media hr undo redo',
