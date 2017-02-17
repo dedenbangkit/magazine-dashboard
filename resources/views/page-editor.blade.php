@@ -142,24 +142,27 @@
 
         <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Export Site</a>
 
-        <div class="modes">
-
-            <b>Building mode:</b>
-            <label class="radio primary first">
-                <input type="radio" name="mode" id="modeContent" value="content" data-toggle="radio" disabled="">
-                Content
-            </label>
-            <label class="radio primary first">
-                <input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
-                Details
-            </label>
-            <label class="radio primary first">
-                <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
-                Elements
-            </label>
-
+        <ul class="nav navbar-nav navbar-setting">
+          <li><a href="#" data-toggle="modal" data-target="#page-setting-modal">Page Settings</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#upload-fonts-modal">Upload Fonts</a></li>
+          <li><a href="#">Save</a></li>
+          <li><a href="#">Clear</a></li>
+        </ul>
+    		<div class="modes" id="build-mode">
+    			<label class="radio primary first">
+    				<input type="radio" name="mode" id="modeContent" value="content" data-toggle="radio" disabled="">
+    			  	Content
+    			</label>
+    			<label class="radio primary first">
+    				<input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
+    			  	Details
+    			</label>
+          <label class="radio primary first">
+            <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
+              Elements
+          </label>
         </div>
-
+        
     </header>
 
     <div class="screen" id="screen">

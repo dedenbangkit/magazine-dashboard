@@ -86,6 +86,7 @@ body .btn-file > input[type="file"] {
 
 /* header */
 
+/* header */
 header {
 	margin:0;
 	padding:10px 15px;
@@ -110,10 +111,13 @@ header.affix {
 }
 
 header .modes {
-	margin: 10px 0px 0px;
-	width: 460px;
-	text-align: center;
-	margin-left: 50px;
+	position: fixed;
+	bottom:0;
+	left:300px;
+	right:0;
+	height: 37px;
+	background:#222;
+	padding:0 30px;
 }
 
 header .modes #modeContent {
@@ -128,6 +132,9 @@ header .modes > b {
 }
 
 header .modes > label {
+	border-right:1px solid rgba(255,255,255,0.1);
+	height: 37px;
+	padding:10px 30px;
 }
 
 header .modes > label.radio.primary {
@@ -138,9 +145,19 @@ header .modes > label.radio.primary {
 header .modes > label {
 	margin-right: 20px;
 }
+header .modes > label.disabled{
+	opacity: 0.1;
+}
 
 header .modes > label:last-child {
 	margin-right: 0px;
+}
+header .modes > label .icons{
+	margin-top:10px;
+}
+.navbar-setting li a{
+	font-size:14px;
+	color:#333;
 }
 
 /* end header */
@@ -494,7 +511,7 @@ body .sp-input {
 }
 .page-panel .sideButtons{
 	position: absolute;
-	bottom:0;
+	bottom:37px;
 	left:0;
 	right:0;
 	height: 60px;
@@ -591,10 +608,12 @@ body .sp-input {
 }
 
 #responsive-toolbar{
+	position: fixed;
+	bottom:0;
+	right:0;
+	background:#222;
 	color:#fff;
 	z-index: 9999;
-	float: left;
-	padding: 10px 15px 0;
 }
 #responsive-toolbar ul{
 	list-style: none;
@@ -603,8 +622,6 @@ body .sp-input {
 }
 #responsive-toolbar ul li{
 	float: left;
-	background:rgba(0,0,0,0.8);
-	height: 37px;
 }
 #responsive-toolbar ul li a{
 	display: block;
@@ -622,7 +639,6 @@ body .sp-input {
 #responsive-toolbar ul li.active a{
 	background:#007be8;
 	color:#fff;
-	height: 37px;
 }
 /* side */
 
