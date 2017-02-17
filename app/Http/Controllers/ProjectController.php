@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
+use App\Model\Invoice;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -30,6 +31,7 @@ class ProjectController extends Controller
     protected $activer;
     protected $authdata;
     protected $project;
+    protected $invoice;
     protected $user;
     protected $issue;
     protected $page;
@@ -40,6 +42,7 @@ class ProjectController extends Controller
         $this->access= array('administrator','supervisor','leader');
         $this->project = new Project();
         $this->user = new User();
+        $this->invoice = new Invoice();
         $this->issue = new Issue();
         $this->page = new Page();
         $this->action_log = new Action_log();
@@ -157,7 +160,7 @@ class ProjectController extends Controller
     public function publishIssueProcess(Request $request){
         $publish_auth=$this->project->getProjectById($this->authdata->project_id);
         $count_issue=count($this->issue->getIssue($this->authdata->project_id));
-        $message='Success To Publish Issue';
+        $message='Success To Publish Issue '.$request->name;
         $publish=true;
         switch ($publish_auth[0]['service_id']) {
             case 1:
@@ -180,6 +183,14 @@ class ProjectController extends Controller
                 break;
             default:
                 $message='Success To Publish Issue '.$request->name;
+                $datainvoice=array(
+                  'company_id' => $publish_auth[0]['company_id'],
+                    'project_id' => $publish_auth[0]['id'],
+                    'service_id' => $publish_auth[0]['service_id'],
+                    'nominal' => $publish_auth[0]['service_price'],
+
+                );
+                $this->invoice->insertInvoice($datainvoice);
                 $publish=true;
 
         }
