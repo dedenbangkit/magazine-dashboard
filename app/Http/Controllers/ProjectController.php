@@ -127,7 +127,7 @@ class ProjectController extends Controller
             'name'=>$request->name,
             'cover'=>$cover,
             'master'=>$this->authdata->id,
-            'project_id'=>$request->session()->get('project_id')
+            'project_id'=>$this->authdata->project_id
         );
         $issue_id=$this->issue->insertIssue($data);
         $pagename=$request->pagename ;

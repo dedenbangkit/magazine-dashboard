@@ -118,7 +118,7 @@
 
             <div class="sideButtons clearfix">
                 <a href="#" class="btn btn-primary btn-sm btn-embossed" id="addPage"><span class="fui-plus"></span> Add</a>
-                <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-sm btn-embossed actionButtons"><span class="fui-export"></span> Save</a>
+
             </div>
         </div>
 
@@ -137,32 +137,24 @@
 <div class="container" id="wrapper">
 
     <header>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
 
-        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-trash"></span></a>
+        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
 
-        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Export Site</a>
+        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Compile</a>
+        <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save</a>
 
-        <ul class="nav navbar-nav navbar-setting">
-          <li><a href="#" data-toggle="modal" data-target="#page-setting-modal">Page Settings</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#upload-fonts-modal">Upload Fonts</a></li>
-          <li><a href="#">Save</a></li>
-          <li><a href="#">Clear</a></li>
-        </ul>
     		<div class="modes" id="build-mode">
-    			<label class="radio primary first">
-    				<input type="radio" name="mode" id="modeContent" value="content" data-toggle="radio" disabled="">
-    			  	Content
-    			</label>
     			<label class="radio primary first">
     				<input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
     			  	Details
     			</label>
           <label class="radio primary first">
             <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
-              Elements
+              Sections
           </label>
         </div>
-        
+
     </header>
 
     <div class="screen" id="screen">
@@ -183,7 +175,7 @@
 
     <a href="#" class="close"><span class="fui-cross-inverted"></span></a>
 
-    <h3><span class="fui-new"></span> Detail Editor</h3>
+    <h3 id="editorTittle"><span class="fui-new"></span> Details</h3>
 
     <ul class="breadcrumb">
         <li>Editing:</li>
@@ -2135,7 +2127,36 @@
 <script src="{{asset('builder_front/js/src-min-noconflict/ace.js')}}"></script>
 <script src="{{asset('builder_front/elements.json')}}"></script>
 <script src="{{asset('builder_front/js/builder.js')}}"></script>
+
 <script>
+
+
+
+    //Page Setting
+
+    $('#pageSetting').click(function() {
+        var clickSetting = $(this).data('clickSetting');
+        if (clickSetting) {
+          closeStyleEditor();
+          addStyling();
+        } else {
+          remStyling();
+        }
+        $(this).data("clickSetting", !clickSetting);
+    });
+
+    function remStyling(){
+      $('#pageSetting').removeClass('btn-info');
+      $('#pageSetting').addClass('btn-primary');
+      $('#styleEditor').animate({'left': '0px'}, 250);
+      $('#styleEditor ul.breadcrumb').hide();
+      $('#styleEditor ul.tabcontent').hide();
+      $('#styleEditor .nav').hide();
+      $('#styleEditor .tab-content').hide();
+      $('#styleEditor .margin-bottom-5').hide();
+      $('#styleEditor .sideButtons').hide();
+      $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
+    };
 
     $(function(){
 
@@ -2209,6 +2230,7 @@
                 $(this).find('input').remove();
 
                 $(this).prepend( theLink );
+
 
             }
 

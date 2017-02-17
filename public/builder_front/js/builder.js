@@ -17,12 +17,11 @@ editableItems['.bg.bg1'] = ['background-color'];
 editableItems['.column'] = ['background-color'];
 editableItems['.container'] = ['background-color'];
 editableItems['nav a, a.edit'] = ['color', 'font-weight', 'text-transform'];
-editableItems['h1'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h2'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h3'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h4'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h5'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['p'] = ['color', 'font-size', 'background-color', 'font-family', 'padding'];
+editableItems['h1'] = ['color', 'background-color', 'font-family'];
+editableItems['h2'] = ['color', 'background-color', 'font-family'];
+editableItems['h3'] = ['color', 'background-color', 'font-family'];
+editableItems['h4'] = ['color', 'background-color', 'font-family'];
+editableItems['h5'] = ['color', 'background-color', 'font-family'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
@@ -51,7 +50,6 @@ editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
 editableItemOptions['h1 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
 editableItemOptions['h2 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
 editableItemOptions['h3 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['p : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
 
 
 var editableContent = ['.editContent', '.navbar a', 'button', 'a.btn', '.footer a:not(.fa)', '.tableWrapper'];
@@ -189,7 +187,6 @@ function makeDraggable(theID) {
 
 			},
 			start: function(){
-
 				//switch to block mode
 				$('input:radio[name=mode]').parent().addClass('disabled');
 				$('input:radio[name=mode]#modeBlock').radio('check');
@@ -199,7 +196,6 @@ function makeDraggable(theID) {
 				$('#pageList ul .zoomer-wrapper .zoomer-cover').each(function(){
 
 					$(this).show();
-
 				})
 
 				//deactivate designmode
@@ -672,6 +668,7 @@ function styleClick(el) {
 		$('a#video_Link').parent().show();
 
 		$('a#video_Link').click();
+		addStyling();
 
 		//inject current video ID,check if we're dealing with Youtube or Vimeo
 
@@ -720,6 +717,7 @@ function styleClick(el) {
 	if( $(el).prop('tagName') == 'DIV' ){
 
 		$('a#img_Link').parent().show();
+		addStyling();
 
 		//set the current SRC
 		$('.imageFileTab').find('input#imageURL').val( $(el).css('background-image') )
@@ -1355,14 +1353,31 @@ function styleClick(el) {
 
 }
 
+function addStyling(){
+		$('#pageSetting').addClass('btn-info');
+		$('#pageSetting').removeClass('btn-primary');
+		$('#styleEditor').animate({'background-color': '#f9f9f9'}, 250);
+		$('#styleEditor ul.breadcrumb').show();
+		$('#styleEditor ul.tabcontent').show();
+		$('#styleEditor .nav').show();
+		$('#styleEditor .tab-content').show();
+		$('#styleEditor .margin-bottom-5').show();
+		$('#styleEditor .sideButtons').show();
+		$('#editorTittle').html('<span class="fui-new"></span> Detail Editor');
+		$('#pageSetting').removeData('clickSetting');
+}
+
 
 function closeStyleEditor() {
 
 	//only if visible
+	$('#pageSetting').removeData('clickSetting');
+	$('#pageSetting').addClass('btn-info');
+	$('#pageSetting').removeClass('btn-primary');
 
 	if( $('#styleEditor').css('left') == '0px' ) {
 
-		$('#styleEditor').animate({'left': '-300px'}, 250);
+		$('#styleEditor').animate({'left': '-300px', 'background-color': '#f9f9f9'}, 250);
 
 		$('#pageList ul li iframe').each(function(){
 
@@ -1841,7 +1856,10 @@ $(function(){
 
 		} else if( $(this).val() == 'styling' ) {
 
+
 			//hide all iframe covers and activate designMode
+
+			addStyling();
 
 			$('#pageList ul .frameCover').each(function(){
 
@@ -1857,6 +1875,7 @@ $(function(){
 
 				//remove old click events
 				$(this).contents().find( pageContainer + ' p' ).unbind('click').unbind('hover');
+
 
 
 				for( var key in editableItems ) {
@@ -1884,6 +1903,8 @@ $(function(){
 						e.preventDefault();
 
 						e.stopPropagation();
+
+						addStyling();
 
 						styleClick(this, key)
 
@@ -2617,6 +2638,7 @@ $(function(){
 	});
 
 
+
 	$('#responsive-toolbar ul li a').on('click',function(){
 		theHeight = theHeight = $('li.element iframe').find('BODY').height();
 		theWidth = $('#frameWrapper').width();
@@ -2627,14 +2649,13 @@ $(function(){
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
-			console.log(theHeight);
 			$('#screen').css({'width': newScreenMobile})
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobile});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
-					$(this).css({'height':newHeight});
+					$('iframe').css({'height':(newHeight + 27)});
+					$(this).css({'height':(newHeight + 27)});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		} else if(target == 'tablet-sm'){
@@ -2643,8 +2664,8 @@ $(function(){
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
 			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-			 			$('iframe').css({'height':newHeight});
-						$(this).css({'height':newHeight});
+			 			$('iframe').css({'height':(newHeight + 27)});
+						$(this).css({'height':(newHeight + 27)});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'tablet-lg'){
@@ -2653,11 +2674,26 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
-					$(this).css({'height':newHeight});
+					$('iframe').css({'height':(newHeight + 27)});
+					$(this).css({'height':(newHeight + 27)});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
+
+
+		$('#wrapper').click(
+		function(){
+			screenWidth = $('#screen').width();
+			console.log(screenWidth);
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':screenWidth});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$('iframe').css({'height':(newHeight + 27)});
+					$(this).css({'height':(newHeight + 27)});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+		});
 
 })
