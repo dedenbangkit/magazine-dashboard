@@ -85,6 +85,13 @@ $.fn.sortable = function(options) {
 };
 })(jQuery);
 
+var classChoose = '';
+
+if ($('.column').hasClass('col-12-xs')) {
+    classChoose = 'col-xs-12';
+};
+alert(classChoose);
+
 $('.sortable-function-edit').hide();
 
 function sortableMode(){

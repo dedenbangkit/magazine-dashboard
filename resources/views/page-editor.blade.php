@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>HTML BUILDER</title>
+    <title>DS Page Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -15,7 +15,7 @@
 
     <link href="{{asset('builder_front/css/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('builder_front/css/chosen.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="builder_front/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('builder_front/images/favicon.ico')}}">
     <!-- Font Awesome -->
     <link href="{{asset('builder_front/css/font-awesome.css')}}" rel="stylesheet">
 
@@ -2109,6 +2109,7 @@
 
 
 <!-- Load JS here for greater good =============================-->
+
 <script src="{{asset('builder_front/js/jquery-1.8.3.min.js')}}"></script>
 <script src="{{asset('builder_front/js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('builder_front/js/jquery.ui.touch-punch.min.js')}}"></script>
@@ -2124,12 +2125,11 @@
 <script src="{{asset('builder_front/js/application.js')}}"></script>
 <script src="{{asset('builder_front/js/spectrum.js')}}"></script>
 <script src="{{asset('builder_front/js/chosen.jquery.min.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/redactor.min.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/table.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/bufferButtons.js')}}"></script>
 <script src="{{asset('builder_front/js/src-min-noconflict/ace.js')}}"></script>
 <script src="{{asset('builder_front/elements.json')}}"></script>
 <script src="{{asset('builder_front/js/builder.js')}}"></script>
+<script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
 
 <script>
 
@@ -2228,9 +2228,8 @@
 
             if( $(this).find('input').size() > 0 ) {
 
-                theLink = $('<a href="#">'+$(this).find('input').val()+'</a>');
+                var theLink = $('<a href="#">'+$(this).find('input').val()+'</a>');
 
-                $(this).find('input').remove();
 
                 $(this).prepend( theLink );
 
@@ -2300,7 +2299,7 @@
 
         $('#internalLinksDropdown').append( newItem );
 
-        $('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'})
+        $('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-inverse btn-embossed', menuStyle: 'dropdown-inverse'})
 
         pageNumber = $('#pages li').size()-1;
     }

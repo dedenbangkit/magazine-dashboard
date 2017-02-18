@@ -17,13 +17,14 @@ editableItems['.bg.bg1'] = ['background-color'];
 editableItems['.column'] = ['background-color'];
 editableItems['.container'] = ['background-color'];
 editableItems['nav a, a.edit'] = ['color', 'font-weight', 'text-transform'];
-editableItems['h1'] = ['color', 'background-color', 'font-family'];
-editableItems['h2'] = ['color', 'background-color', 'font-family'];
-editableItems['h3'] = ['color', 'background-color', 'font-family'];
-editableItems['h4'] = ['color', 'background-color', 'font-family'];
-editableItems['h5'] = ['color', 'background-color', 'font-family'];
+editableItems['h1'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h2'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h3'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h4'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['p'] = ['text-align', 'text-indent', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
-editableItems['img'] = ['border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-color', 'border-style', 'border-width'];
+editableItems['img'] = ['border-radius', 'padding', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
@@ -38,6 +39,8 @@ var editableItemOptions = new Array();
 
 editableItemOptions['nav a : font-weight'] = ['400', '700'];
 editableItemOptions['a.btn : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px'];
+editableItemOptions['img : padding'] = ['0px', '5px', '10px', '20px'];
 editableItemOptions['img : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['img : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
@@ -47,9 +50,28 @@ editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 
 editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
 
-editableItemOptions['h1 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['h2 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['h3 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
+editableItemOptions['p : text-align'] = ['left','right','center','justify'];
+editableItemOptions['h1 : text-align'] = ['left','right','center'];
+editableItemOptions['h2 : text-align'] = ['left','right','center'];
+editableItemOptions['h3 : text-align'] = ['left','right','center'];
+editableItemOptions['h4 : text-align'] = ['left','right','center'];
+editableItemOptions['h5 : text-align'] = ['left','right','center'];
+
+editableItemOptions['p : text-indent'] = ['0px','10px','20px','30px','40px'];
+editableItemOptions['p : padding'] = ['0px','10px','20px','30px','40px'];
+
+editableItemOptions['h1 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h2 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h3 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h4 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h5 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['p : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+
+editableItemOptions['h1 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h2 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h3 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h4 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h5 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
 
 
 var editableContent = ['.editContent', '.navbar a', 'button', 'a.btn', '.footer a:not(.fa)', '.tableWrapper'];
@@ -300,7 +322,7 @@ function makeSortable(el) {
 
 					ui.item.find('iframe').uniqueId();
 					ui.item.find('iframe').height(theHeight+"px");
-					ui.item.find('iframe').css('background', '#ffffff url(images/loading.gif) 50% 50% no-repeat');
+					ui.item.find('iframe').css('background', '#ffffff url(builder_front/images/loading.gif) 50% 50% no-repeat');
 
 					ui.item.find('iframe').load(function(){
 
@@ -405,7 +427,7 @@ function buildeStyleElements(el, theSelector) {
 
 			newStyleEl.append( newDropDown );
 
-			newDropDown.selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'});
+			newDropDown.selectpicker({style: 'btn-sm btn-inverse btn-embossed', menuStyle: 'dropdown-inverse'});
 
 
 		} else {
@@ -836,7 +858,7 @@ function styleClick(el) {
 
 
 	//save button
-	$('button#saveStyling').unbind('click').bind('click', function(){
+	$('#styleElements').change().unbind('click').bind('click', function(){
 
 		$('#styleEditor #tab1 .form-group:not(#styleElTemplate) input, #styleEditor #tab1 .form-group:not(#styleElTemplate) select').each(function(){
 
@@ -2654,7 +2676,7 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenMobile});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
+					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
@@ -2664,7 +2686,7 @@ $(function(){
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
 			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-			 			$('iframe').css({'height':newHeight});
+			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
@@ -2674,7 +2696,7 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
+					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
@@ -2690,7 +2712,7 @@ $(function(){
 				function(){
 					$('iframe').css({'width':screenWidth});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
+					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});

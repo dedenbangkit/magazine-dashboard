@@ -1,19 +1,12 @@
 tinymce.init({
-  selector: 'div.column',
+  selector: '.container',
   theme: 'inlite',
   element_format : 'html',
-  font_formats: 'Lato=Lato;Helvetica=Helvetica;Arial=Arial',
+  extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]',
   plugins: 'image table link paste contextmenu textpattern autolink searchreplace textcolor colorpicker media hr',
-  insert_toolbar: 'quickimage media hr undo redo',
-  selection_toolbar: 'fontsizeselect fontselect forecolor backcolor | bold italic | quicklink | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+  selection_toolbar: 'p fontsizeselect forecolor backcolor | bold italic | quicklink | bullist numlist',
   inline: true,
-  paste_data_images: true,
-  preview_styles: 'font-size color',
-  setup: function() {
-            $(document).keypress(function(e) {
-                if(e.which == 13) {
-                    alert('You pressed enter!');
-                }
-            });
-         }
+  force_p_newlines : false,
+  width : 300,
+  preview_styles: 'font-size color'
 });
