@@ -15,7 +15,7 @@
 
     <link href="{{asset('builder_front/css/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('builder_front/css/chosen.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="builder_front/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('builder_front/images/favicon.ico')}}">
     <!-- Font Awesome -->
     <link href="{{asset('builder_front/css/font-awesome.css')}}" rel="stylesheet">
 
