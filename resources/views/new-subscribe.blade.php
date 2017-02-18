@@ -28,8 +28,24 @@
             <form action="subscribe-process" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Company Name" name="companyname" value="{{ old('companyname') }}"/>
+                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Company Phone" name="companyphone" value="{{ old('companyphone') }}"/>
+                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Project Name" name="projectname" value="{{ old('projectname') }}"/>
                     <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <select name="service" class="form-control">
+                        @foreach($service as $i =>$row)
+                            <option value="{{$row->id}}">{{$row->service_name}}</option>
+                        @endforeach
+                    </select>
+                    {{--<span class="glyphicon glyphicon-book form-control-feedback"></span>--}}
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.fullname') }}" name="name" value="{{ old('name') }}"/>
