@@ -12,7 +12,9 @@ use App\Model\Page;
 use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
+use App\Model\Company;
 use App\Model\Issue;
+use App\Model\Service;
 use App\Model\Invoice;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
@@ -33,7 +35,9 @@ class ProjectController extends Controller
     protected $project;
     protected $invoice;
     protected $user;
+    protected $company;
     protected $issue;
+    protected $service;
     protected $page;
     protected $access;
     protected $action_log;
@@ -42,8 +46,10 @@ class ProjectController extends Controller
         $this->access= array('administrator','supervisor','leader');
         $this->project = new Project();
         $this->user = new User();
+        $this->company = new Company();
         $this->invoice = new Invoice();
         $this->issue = new Issue();
+        $this->service = new Service();
         $this->page = new Page();
         $this->action_log = new Action_log();
         $this->authdata = $this->authData();
@@ -76,6 +82,7 @@ class ProjectController extends Controller
     public function createProject()
     {
         $data['activer'] = array($this->activer, 'project');
+
         return view('create_project', $data);
     }
 
@@ -85,12 +92,15 @@ class ProjectController extends Controller
             Image::make(Input::file('cover'))->resize(300, 200)->save('img/projects/' . $request->file('cover')->getClientOriginalName());
         }
         $datainput = array(
+            'companyname'=>$request->companyname,
+            'companyphone'=>$request->companyphone,
             'name' => $request->name,
             'cover' => $request->file('cover')->getClientOriginalName(),
             'master' => $this->authdata->id,
             'key' => mt_rand(111111,999999),
         );
-        $this->project->insertProject($datainput);
+        $company_id=$this->company->insertCompany($datainput);
+        $this->project->insertProject($datainput,$company_id);
         return redirect('/projects');
     }
 

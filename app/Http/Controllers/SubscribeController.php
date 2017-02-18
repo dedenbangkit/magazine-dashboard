@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
+use App\Model\Service;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -21,6 +22,7 @@ class SubscribeController extends Controller
     protected $company;
     protected $user;
     protected $issue;
+    protected $service;
     protected $page;
     protected $access;
     protected $action_log;
@@ -31,6 +33,7 @@ class SubscribeController extends Controller
         $this->company = new Company();
         $this->user = new User();
         $this->issue = new Issue();
+        $this->service = new Service();
         $this->page = new Page();
         $this->action_log = new Action_log();
         $this->authdata = $this->authData();
@@ -47,6 +50,7 @@ class SubscribeController extends Controller
     public function showFormSubscribe()
     {
         $data['activer']=array($this->activer,'add subscriber');
+        $data['service']= $this->service->getService();
         return view('new-subscribe',$data);
     }
     /**
@@ -63,12 +67,16 @@ class SubscribeController extends Controller
             $cover=$project_data[0]['project_cover'];
         }
         $datainput = array(
+            'companyname'=>$request->companyname,
+            'companyphone'=>$request->companyphone,
+            'service'=>$request->service,
             'name' => $request->projectname,
             'cover' => $cover,
             'master' => $this->authdata->id,
             'key' => mt_rand(111111,999999),
         );
-        $project_id = $this->project->insertProject($datainput);
+        $company_id=$this->company->insertCompany($datainput);
+        $project_id=$this->project->insertProject($datainput,$company_id);
         $this->user->insertUser($request->all(),$project_id);
         return redirect('/projects');
     }

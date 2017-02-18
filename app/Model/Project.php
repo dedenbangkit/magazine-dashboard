@@ -11,11 +11,13 @@ class Project extends Model
     public $timestamps = true;
     protected $primaryKey = 'id';
 
-    public function insertProject($data){
+    public function insertProject($data,$company_id){
         return  Project::insertGetId(
             array(
                 'project_name'=>$data['name'],
                 'project_master'=>$data['master'],
+                'company_id'=>$company_id,
+                '$service_id'=>$data['service'],
                 'project_cover'=>$data['cover'],
                 'project_key'=>$data['key']
             )
