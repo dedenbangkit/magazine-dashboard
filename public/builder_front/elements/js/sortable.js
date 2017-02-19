@@ -85,12 +85,7 @@ $.fn.sortable = function(options) {
 };
 })(jQuery);
 
-var classChoose = '';
-
-if ($('.column').hasClass('col-12-xs')) {
-    classChoose = 'col-xs-12';
-};
-alert(classChoose);
+chooseClass= $('#sortClass').attr('class') + ' drop-hover';
 
 $('.sortable-function-edit').hide();
 
@@ -102,8 +97,9 @@ function sortableMode(){
 					$('.row').sortable({
 						tolerance: 'pointer',
 						revert: 'invalid',
-						placeholderClass: 'col-xs-12',
-						forceHelperSize: true
+						placeholderClass: chooseClass,
+						forceHelperSize: true,
+						placeholder: chooseClass,
 					});
 	});
 }

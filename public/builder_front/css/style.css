@@ -201,9 +201,10 @@ header .modes > label .icons{
 
 .styleEditor > a.close {
 	position: absolute;
-	top: 20px;
-	right: 15px;
+	top: 0px;
+	right: 0px;
 	font-size: 20px;
+	opacity: 100;
 }
 
 .styleEditor h3 {
@@ -1041,26 +1042,13 @@ ul#pages li > span a:hover.fileEdit {
 }
 
 .screen .frameCover button.btn-danger, .screen .frameCover button.btn-warning, .screen .frameCover button.btn-inverse {
-	border-radius: 29px;
-	padding: 10px 14px;
+	border-radius: 0px;
+	float: right;
+	visibility:hidden;
 	opacity:0;
-	height: 54px;
-	line-height: 45px;
-	text-align: center;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 400;
-	margin: 13px;
-	width: 54px;
-	visibility: hidden;
 	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
-}
-
-.screen .frameCover button.btn-danger span{
-	top:-4px;
-	margin:0px;
 }
 
 .screen .frameCover:hover button.btn-danger, .screen .frameCover:hover button.btn-warning, .screen .frameCover:hover button.btn-inverse {

@@ -333,7 +333,7 @@ function makeSortable(el) {
 				}
 
 				//add a delete button
-				delButton = $('<button type="button" class="btn btn-danger deleteBlock"><span class="fui-trash"></span></button>');
+				delButton = $('<button type="button" class="btn btn-danger deleteBlock"><i class="fui-trash"></i></button>');
 				resetButton = $('<button type="button" class="btn btn-warning resetBlock"><i class="fa fa-refresh"></i> reset</button>');
 				htmlButton = $('<button type="button" class="btn btn-inverse htmlBlock"><i class="fa fa-code"></i> source</button>');
 

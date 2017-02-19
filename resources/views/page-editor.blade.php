@@ -173,7 +173,7 @@
 
 <div id="styleEditor" class="styleEditor">
 
-    <a href="#" class="close"><span class="fui-cross-inverted"></span></a>
+    <a href="#" class="close btn btn-danger btn-embossed"><i class="fui-cross"></i></a>
 
     <h3 id="editorTittle"><span class="fui-new"></span> Details</h3>
 

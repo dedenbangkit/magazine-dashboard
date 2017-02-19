@@ -272,9 +272,9 @@ div.mce-tinymce-inline {
     border-color: #3498db
 }
 
-.mce-croprect-handle-move:focus {
+/*.mce-croprect-handle-move:focus {
     outline: 1px solid #3498db
-}
+}*/
 
 .mce-imagepanel {
     overflow: auto;
