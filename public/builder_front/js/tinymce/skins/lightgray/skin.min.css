@@ -127,7 +127,7 @@ div.mce-edit-area {
 }
 
 .mce-grid td.mce-grid-cell div {
-    border: 1px solid #d6d6d6;
+    border: 1px solid #f9f9f9;
     width: 15px;
     height: 15px;
     margin: 0;
@@ -187,7 +187,7 @@ div.mce-tinymce-inline {
     font-weight: bold;
     font-size: 20px;
     line-height: 16px;
-    color: #707070
+    color: #fff;
 }
 
 .mce-monospace {
@@ -387,7 +387,7 @@ div.mce-tinymce-inline {
 .mce-arrow.mce-arrow-center.mce-arrow.mce-arrow-left:after {
     left: -8px;
     top: 50%;
-    border-right-color: #f0f0f0;
+    border-right-color: #3f4044;
     border-width: 8px 8px 8px 0;
     margin-top: -8px
 }
@@ -563,9 +563,7 @@ div.mce-tinymce-inline {
     background: transparent;
     top: 0;
     left: 0;
-    background: #FFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.25)
+    background: #34495e;
 }
 
 .mce-floatpanel.mce-popover.mce-bottom {
@@ -590,7 +588,8 @@ div.mce-tinymce-inline {
 }
 
 .mce-floatpanel.mce-popover.mce-bottom.mce-start {
-    margin-left: -22px
+    margin-left: -22px;
+    border-radius: 4px;
 }
 
 .mce-floatpanel.mce-popover.mce-bottom.mce-start>.mce-arrow {
@@ -705,6 +704,8 @@ div.mce-fullscreen {
     display: block;
     background-color: #3f4044;
     border-top: 1px solid #333;
+    padding: 0px;
+    box-shadow: inset 0px 0px transparent;
 }
 
 .mce-window-head .mce-dragh {
@@ -722,7 +723,7 @@ div.mce-fullscreen {
 }
 
 .mce-window-body .mce-listbox {
-    border-color: #ccc
+    border-color: transparent;
 }
 
 .mce-rtl .mce-window-head .mce-close {
@@ -1052,7 +1053,9 @@ div.mce-fullscreen {
 
 body .mce-abs-layout-item,
 .mce-abs-end {
-    position: absolute
+    position: absolute;
+    padding: 0px;
+    box-shadow:inset 0px 0px transparent;
 }
 
 .mce-abs-end {
@@ -1863,7 +1866,7 @@ i.mce-i-checkbox {
 
 .mce-menu-item.mce-disabled .mce-text,
 .mce-menu-item.mce-disabled .mce-ico {
-    color: #adadad
+    color: #707f8e
 }
 
 .mce-menu-item:hover .mce-text,
@@ -1906,7 +1909,7 @@ i.mce-i-checkbox {
     margin-right: 6px;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-left: 4px solid #333;
+    border-left: 4px solid #fff;
     border-radius: 2px;
 }
 
@@ -2255,36 +2258,34 @@ i.mce-i-resize {
 
 .mce-tabs {
     display: block;
-    border-bottom: 1px solid #c5c5c5;
+    border-bottom: 1px solid #333;
 }
 
 .mce-tabs,
 .mce-tabs+.mce-container-body {
-    background: #FFF
+    background: transparent;
 }
 
 .mce-tab {
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    border: 1px solid #c5c5c5;
+    border: 1px solid #333;
     border-width: 0 1px 0 0;
-    background: #ffffff;
-    padding: 8px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background: transparent;
+    padding: 12px;
     height: 13px;
     cursor: pointer
 }
 
 .mce-tab:hover {
-    background: #FDFDFD
+    background: lightslategray;
 }
 
 .mce-tab.mce-active {
-    background: #FDFDFD;
+    background: #2d8ac7;
     border-bottom-color: transparent;
     margin-bottom: -1px;
-    height: 14px
 }
 
 .mce-rtl .mce-tabs {
@@ -2325,7 +2326,7 @@ i.mce-i-resize {
 }
 
 .mce-textbox.mce-disabled {
-    color: #adadad
+    color: #707f8e
 }
 
 .mce-rtl .mce-textbox {

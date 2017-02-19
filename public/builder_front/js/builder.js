@@ -213,6 +213,12 @@ function makeDraggable(theID) {
 				$('input:radio[name=mode]').parent().addClass('disabled');
 				$('input:radio[name=mode]#modeBlock').radio('check');
 
+				// Trigger for Clicking Body to close all active element tinymce
+				$.each($('.container li.element'),
+					function(){
+				 $(this).find('iframe')[0].contentWindow.document.body.click();
+				});
+
 				//show all iframe covers and activate designMode
 
 				$('#pageList ul .zoomer-wrapper .zoomer-cover').each(function(){
@@ -450,8 +456,8 @@ function buildeStyleElements(el, theSelector) {
 					allowEmpty: true,
 					showInput: true,
 					palette: [
-						["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
-						["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
+						["#000000","#444444","#666666","#999999","#cccccc","#eeeeee","#f3f3f3","#ffffff"],
+						["#f20000","#ff9000","#ff0000","#00f200","#00f2f2","#2f2fff","#7400c2","#ff00b5"],
 						["#f4cccc","#fce5cd","#fff2cc","#d9ead3","#d0e0e3","#cfe2f3","#d9d2e9","#ead1dc"],
 						["#ea9999","#f9cb9c","#ffe599","#b6d7a8","#a2c4c9","#9fc5e8","#b4a7d6","#d5a6bd"],
 						["#e06666","#f6b26b","#ffd966","#93c47d","#76a5af","#6fa8dc","#8e7cc3","#c27ba0"],
@@ -785,6 +791,8 @@ function styleClick(el) {
 
 		for( var key in editableItems ) {
 
+			$('#editingMode').data('editingStyle');
+
 			$(this).contents().find( pageContainer + ' '+ key ).css({'outline': 'none', 'cursor': 'default'});
 
 			$(this).contents().find( pageContainer + ' '+ key ).hover( function(e){
@@ -851,11 +859,11 @@ function styleClick(el) {
 	//show style editor if hidden
 
 	if( $('#styleEditor').css('left') == '-300px' ) {
-
+		$('#editingMode').removeData('editingStyle');
 		$('#styleEditor').animate({'left': '0px'}, 250);
 		$('#editingMode').addClass('btn-danger');
 		$('#editingMode').removeClass('btn-info');
-
+		$('#editingMode').removeData('editing-mode');
 	}
 
 
@@ -1174,13 +1182,6 @@ function styleClick(el) {
 
 		}
 
-
-		$('#detailsAppliedMessage').fadeIn(600, function(){
-
-			setTimeout(function(){ $('#detailsAppliedMessage').fadeOut(1000) }, 3000)
-
-		})
-
 	});
 
 
@@ -1398,16 +1399,24 @@ function addStyling(){
 		$('#styleEditor .margin-bottom-5').show();
 		$('#styleEditor .sideButtons').show();
 		$('#editorTittle').html('<span class="fui-new"></span> Detail Editor');
-		$('#pageSetting').removeData('clickSetting');
+		$('#pageSetting').data('clickSetting');
+		$('#editingMode').removeData('editingStyle');
+		$('#editingMode').html('<span class="fui-plus"></span> Add Element');
 }
 
 
 function closeStyleEditor() {
 
+	// Trigger for Clicking Body to close all active element tinymce
+	$.each($('.container li.element'),
+		function(){
+	 $(this).find('iframe')[0].contentWindow.document.body.click();
+	});
 
 	$('#editingMode').addClass('btn-info');
 	$('#editingMode').removeClass('btn-danger');
-
+	$('#editingMode').html('<span class="fui-play"></span> Start Editing');
+	$('#editingMode').data('editingStyle');
 	//only if visible
 	$('#pageSetting').removeData('clickSetting');
 	$('#pageSetting').addClass('btn-info');
@@ -1564,13 +1573,6 @@ $(function(){
 		$('.link_Tab .btn-group.select > button .filter-option').text( $('.link_Tab .dropdown-menu li:first').text() )
 
 		this.select();
-
-	})
-
-
-	$('#detailsAppliedMessageHide').click(function(){
-
-		$(this).parent().fadeOut(500)
 
 	})
 
@@ -2684,8 +2686,8 @@ $(function(){
 		theHeight = theHeight = $('li.element iframe').find('BODY').height();
 		theWidth = $('#frameWrapper').width();
 		newScreenMobile = 1 * 480;
-		newScreenTabletSm = 0.7 * 768;
-		newScreenTabletLg = 0.6 * 1024;
+		newScreenTabletSm = 1 * 768;
+		newScreenTabletLg = 1 * 1024;
 
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
@@ -2735,8 +2737,82 @@ $(function(){
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
+			// Trigger for Clicking Body to close all active element tinymce
+      $.each($('.container li.element'),
+        function(){
+       $(this).find('iframe')[0].contentWindow.document.body.click();
+      });
+			// Placeable content without any section
 			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
 			// $('iframe').contents().find('.article__content').append(myContent);
 		});
+
+		// Zoom Function #wrapper
+
+		zoomValue = 1;
+
+		function checkZoomIn(){
+			if(zoomValue > 0.9){
+				$('#zoomIn span').addClass('disabled');
+			}else if(zoomValue <= 0.9){
+				$('#zoomIn span').removeClass('disabled');
+			}
+		};
+
+		function checkZoomOut(){
+			if(zoomValue < 0.3){
+				$('#zoomOut span').addClass('disabled');
+			}else if(zoomValue >= 0.3){
+				$('#zoomOut span').removeClass('disabled');
+			}
+		};
+
+		checkZoomIn();
+		checkZoomOut();
+
+		$('#zoomIn').click(function(){
+		if (zoomValue <= 0.9) {
+				zoomValue = zoomValue + 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+			}
+		});
+
+		$('#zoomOut').click(function(){
+		if (zoomValue >= 0.3) {
+				zoomValue = zoomValue - 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+			}
+		});
+
+		$(document).on('keydown',function(e){
+			if((e.which === 187) && zoomValue <= 0.9){
+					zoomValue = zoomValue + 0.1;
+					$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+					zoomText = Math.floor(zoomValue * 100);
+					$('#zoomValue').html(zoomText + '%');
+					checkZoomIn();
+					checkZoomOut();
+					console.log('Zoom In')
+			}else if ((e.which === 189) && zoomValue >= 0.3){
+				zoomValue = zoomValue - 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+				console.log('Zoom Out')
+			}else{
+				console.log('Ngga bisa Zoom');
+			};
+		});
+
 
 })

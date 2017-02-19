@@ -50,6 +50,12 @@
               </div>
               <div class="subtitle">Issue #11 > <span id="pageTitle"><span>index</span></span></div>
             </div>
+            <div class="toolbar" id="responsive-zoom">
+                <ul>
+                  <li id="zoomIn"><a href="#"><span class="fa fa-plus">&nbsp</span></a></li>
+                  <li id="zoomValue">100%</li>
+                  <li id="zoomOut"><a href="#"><span class="fa fa-minus">&nbsp</span></a></li>
+            </div>
             <div class="toolbar" id="responsive-toolbar">
                 <ul>
                     <li><a href="#" data-responsive="phone"><img src="{{asset('builder_front/images/icon/icon-phone.png')}}" alt=""> Mobile</a></li>
@@ -179,8 +185,8 @@
     <h3 id="editorTittle"><span class="fui-new"></span> Details</h3>
 
     <ul class="breadcrumb">
-        <li>Editing:</li>
         <li class="active" id="editingElement">p</li>
+        <li class="active">Properties</li>
     </ul>
 
     <ul class="nav nav-tabs" id="detailTabs">
@@ -1908,11 +1914,6 @@
 
     </div> <!-- /tab-content -->
 
-    <div class="alert alert-success" style="display: none;" id="detailsAppliedMessage">
-        <button class="close fui-cross" type="button" id="detailsAppliedMessageHide"></button>
-        The changes were applied successfully!
-    </div>
-
     <div class="margin-bottom-5">
         <button type="button" class="btn btn-primary btn-embossed btn-sm btn-block" id="saveStyling"><span class="fui-check-inverted"></span> Apply Changes</button>
     </div>
@@ -2146,6 +2147,9 @@
           $("#modeBlock").click();
         } else {
           remStyling();
+          if ($('iframe').length >= 1){
+            $('#editingMode').html('<span class="fui-tag"></span> Edit Content');
+          };
         }
         $(this).data("clickSetting", !clickSetting);
     });
@@ -2154,7 +2158,8 @@
       $('#pageSetting').removeClass('btn-info');
       $('#pageSetting').addClass('btn-primary');
       $('#editingMode').addClass('btn-info');
-      $('#editingMode').removeClass('btn-danger');
+      $('#editingMode').removeClass('btn-primary');
+      $('#editingMode').html('<span class="fui-plus"></span> Add Element');
       $('#styleEditor').animate({'left': '0px'}, 250);
       $('#styleEditor ul.breadcrumb').hide();
       $('#styleEditor ul.tabcontent').hide();
@@ -2164,13 +2169,29 @@
       $('#styleEditor .sideButtons').hide();
       $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
 
+      // Trigger for Clicking Body to close all active element tinymce
+      $.each($('.container li.element'),
+        function(){
+       $(this).find('iframe')[0].contentWindow.document.body.click();
+      });
+
     };
 
-    jQuery("#editingMode").click(function(){
-       $('#styleEditor').animate({'left': '0px'}, 250);
-       $("#modeStyle").click();
-       $('#editingMode').removeClass('btn-info');
-       $('#editingMode').addClass('btn-danger');
+    $('#editingMode').click(function() {
+        var editingStyle = $(this).data('editingStyle');
+        if (editingStyle) {
+          closeStyleEditor();
+          $("#modeBlock").click();
+          $('#editingMode').addClass('btn-info');
+          $('#editingMode').removeClass('btn-primary');
+        } else {
+          $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
+          $("#modeStyle").click();
+          $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+          $('#editingMode').addClass('btn-primary');
+          $('#editingMode').removeClass('btn-info');
+        }
+        $(this).data("editingStyle", !editingStyle);
     });
 
     $(function(){
