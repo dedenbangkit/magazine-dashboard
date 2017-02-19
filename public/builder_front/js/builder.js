@@ -853,6 +853,8 @@ function styleClick(el) {
 	if( $('#styleEditor').css('left') == '-300px' ) {
 
 		$('#styleEditor').animate({'left': '0px'}, 250);
+		$('#editingMode').addClass('btn-danger');
+		$('#editingMode').removeClass('btn-info');
 
 	}
 
@@ -881,6 +883,16 @@ function styleClick(el) {
 			/* END SANDBOX */
 
 		})
+
+		screenWidth = $('#screen').width();
+		$.each($('.container li.element'),
+			function(){
+				$('iframe').css({'width':screenWidth});
+				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				$(this).find('iframe').css({'height':newHeight});
+				$(this).css({'height':newHeight});
+		});
+		$('#screen').css({'height': $('#screen ul').innerHeight});
 
 
 		//links
@@ -1391,6 +1403,10 @@ function addStyling(){
 
 
 function closeStyleEditor() {
+
+
+	$('#editingMode').addClass('btn-info');
+	$('#editingMode').removeClass('btn-danger');
 
 	//only if visible
 	$('#pageSetting').removeData('clickSetting');
@@ -1986,6 +2002,9 @@ $(function(){
 		e.preventDefault();
 
 		closeStyleEditor();
+
+		$('#modeBlock').click();
+
 
 	})
 

@@ -138,6 +138,7 @@
 
     <header>
         <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="editingMode" ><span class="fui-play"></span> Start Editing</a>
 
         <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
 
@@ -2142,6 +2143,7 @@
         if (clickSetting) {
           closeStyleEditor();
           addStyling();
+          $("#modeBlock").click();
         } else {
           remStyling();
         }
@@ -2151,6 +2153,8 @@
     function remStyling(){
       $('#pageSetting').removeClass('btn-info');
       $('#pageSetting').addClass('btn-primary');
+      $('#editingMode').addClass('btn-info');
+      $('#editingMode').removeClass('btn-danger');
       $('#styleEditor').animate({'left': '0px'}, 250);
       $('#styleEditor ul.breadcrumb').hide();
       $('#styleEditor ul.tabcontent').hide();
@@ -2159,7 +2163,15 @@
       $('#styleEditor .margin-bottom-5').hide();
       $('#styleEditor .sideButtons').hide();
       $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
+
     };
+
+    jQuery("#editingMode").click(function(){
+       $('#styleEditor').animate({'left': '0px'}, 250);
+       $("#modeStyle").click();
+       $('#editingMode').removeClass('btn-info');
+       $('#editingMode').addClass('btn-danger');
+    });
 
     $(function(){
 
