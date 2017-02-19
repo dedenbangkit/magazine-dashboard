@@ -2716,6 +2716,8 @@ $(function(){
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
+			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
+			// $('iframe').contents().find('.article__content').append(myContent);
 		});
 
 })
