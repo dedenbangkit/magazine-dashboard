@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
+<<<<<<< HEAD
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/page-editor.blade.php" afterPath="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
+>>>>>>> 64077d436551b4b734f5c2e9d900a4b7923e35f0
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +32,13 @@
       <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.30523917">
+              <caret line="158" column="5" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
+=======
             <state relative-caret-position="162">
               <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+>>>>>>> 64077d436551b4b734f5c2e9d900a4b7923e35f0
               <folding>
                 <element signature="e#182#204#0#PHP" expanded="true" />
               </folding>
@@ -621,8 +631,13 @@
     <option name="totallyTimeSpent" value="30013000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="65" y="52" width="1855" height="1028" extended-state="0" />
+    <editor active="false" />
+=======
     <frame x="0" y="22" width="1242" height="778" extended-state="6" />
     <editor active="true" />
+>>>>>>> 64077d436551b4b734f5c2e9d900a4b7923e35f0
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18196458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1041,8 +1056,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.30523917">
+          <caret line="158" column="5" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
+=======
         <state relative-caret-position="162">
           <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+>>>>>>> 64077d436551b4b734f5c2e9d900a4b7923e35f0
           <folding>
             <element signature="e#182#204#0#PHP" expanded="true" />
           </folding>
