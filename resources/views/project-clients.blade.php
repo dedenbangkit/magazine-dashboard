@@ -56,7 +56,7 @@
                                       <div class="row editor-button">
                                           <table>
                                               <tr>
-                                                  <td width="100px"><label>Magazine Name</label></td>
+                                                  <td width="150px"><label>Magazine Name</label></td>
                                                   <td width="10px" class="text-center" ><label> : </label></td>
                                                   <td>{{$row->project_name}}</td>
                                               </tr>

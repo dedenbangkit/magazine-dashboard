@@ -17,14 +17,14 @@ editableItems['.bg.bg1'] = ['background-color'];
 editableItems['.column'] = ['background-color'];
 editableItems['.container'] = ['background-color'];
 editableItems['nav a, a.edit'] = ['color', 'font-weight', 'text-transform'];
-editableItems['h1'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h2'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h3'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h4'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['h5'] = ['color', 'font-size', 'background-color', 'font-family'];
-editableItems['p'] = ['color', 'font-size', 'background-color', 'font-family', 'padding'];
+editableItems['h1'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h2'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h3'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h4'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
+editableItems['p'] = ['text-align', 'text-indent', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
-editableItems['img'] = ['border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-color', 'border-style', 'border-width'];
+editableItems['img'] = ['border-radius', 'padding', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
@@ -39,6 +39,8 @@ var editableItemOptions = new Array();
 
 editableItemOptions['nav a : font-weight'] = ['400', '700'];
 editableItemOptions['a.btn : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px'];
+editableItemOptions['img : padding'] = ['0px', '5px', '10px', '20px'];
 editableItemOptions['img : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['img : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
@@ -48,10 +50,28 @@ editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 
 editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
 
-editableItemOptions['h1 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['h2 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['h3 : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
-editableItemOptions['p : font-family'] = ['default', 'Lato', 'Helvetica', 'Arial', 'Times New Roman'];
+editableItemOptions['p : text-align'] = ['left','right','center','justify'];
+editableItemOptions['h1 : text-align'] = ['left','right','center'];
+editableItemOptions['h2 : text-align'] = ['left','right','center'];
+editableItemOptions['h3 : text-align'] = ['left','right','center'];
+editableItemOptions['h4 : text-align'] = ['left','right','center'];
+editableItemOptions['h5 : text-align'] = ['left','right','center'];
+
+editableItemOptions['p : text-indent'] = ['0px','10px','20px','30px','40px'];
+editableItemOptions['p : padding'] = ['0px','10px','20px','30px','40px'];
+
+editableItemOptions['h1 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h2 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h3 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h4 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['h5 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+editableItemOptions['p : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
+
+editableItemOptions['h1 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h2 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h3 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h4 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
+editableItemOptions['h5 : text-transform'] = ['UPPERCASE', 'lowercase', 'Capitalize'];
 
 
 var editableContent = ['.editContent', '.navbar a', 'button', 'a.btn', '.footer a:not(.fa)', '.tableWrapper'];
@@ -189,17 +209,21 @@ function makeDraggable(theID) {
 
 			},
 			start: function(){
-
 				//switch to block mode
 				$('input:radio[name=mode]').parent().addClass('disabled');
 				$('input:radio[name=mode]#modeBlock').radio('check');
+
+				// Trigger for Clicking Body to close all active element tinymce
+				$.each($('.container li.element'),
+					function(){
+				 $(this).find('iframe')[0].contentWindow.document.body.click();
+				});
 
 				//show all iframe covers and activate designMode
 
 				$('#pageList ul .zoomer-wrapper .zoomer-cover').each(function(){
 
 					$(this).show();
-
 				})
 
 				//deactivate designmode
@@ -304,7 +328,7 @@ function makeSortable(el) {
 
 					ui.item.find('iframe').uniqueId();
 					ui.item.find('iframe').height(theHeight+"px");
-					ui.item.find('iframe').css('background', '#ffffff url(images/loading.gif) 50% 50% no-repeat');
+					ui.item.find('iframe').css('background', '#ffffff url(builder_front/images/loading.gif) 50% 50% no-repeat');
 
 					ui.item.find('iframe').load(function(){
 
@@ -315,7 +339,7 @@ function makeSortable(el) {
 				}
 
 				//add a delete button
-				delButton = $('<button type="button" class="btn btn-danger deleteBlock"><span class="fui-trash"></span></button>');
+				delButton = $('<button type="button" class="btn btn-danger deleteBlock"><i class="fui-trash"></i></button>');
 				resetButton = $('<button type="button" class="btn btn-warning resetBlock"><i class="fa fa-refresh"></i> reset</button>');
 				htmlButton = $('<button type="button" class="btn btn-inverse htmlBlock"><i class="fa fa-code"></i> source</button>');
 
@@ -409,7 +433,7 @@ function buildeStyleElements(el, theSelector) {
 
 			newStyleEl.append( newDropDown );
 
-			newDropDown.selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'});
+			newDropDown.selectpicker({style: 'btn-sm btn-inverse btn-embossed', menuStyle: 'dropdown-inverse'});
 
 
 		} else {
@@ -432,8 +456,8 @@ function buildeStyleElements(el, theSelector) {
 					allowEmpty: true,
 					showInput: true,
 					palette: [
-						["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
-						["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
+						["#000000","#444444","#666666","#999999","#cccccc","#eeeeee","#f3f3f3","#ffffff"],
+						["#f20000","#ff9000","#ff0000","#00f200","#00f2f2","#2f2fff","#7400c2","#ff00b5"],
 						["#f4cccc","#fce5cd","#fff2cc","#d9ead3","#d0e0e3","#cfe2f3","#d9d2e9","#ead1dc"],
 						["#ea9999","#f9cb9c","#ffe599","#b6d7a8","#a2c4c9","#9fc5e8","#b4a7d6","#d5a6bd"],
 						["#e06666","#f6b26b","#ffd966","#93c47d","#76a5af","#6fa8dc","#8e7cc3","#c27ba0"],
@@ -672,6 +696,7 @@ function styleClick(el) {
 		$('a#video_Link').parent().show();
 
 		$('a#video_Link').click();
+		addStyling();
 
 		//inject current video ID,check if we're dealing with Youtube or Vimeo
 
@@ -720,6 +745,7 @@ function styleClick(el) {
 	if( $(el).prop('tagName') == 'DIV' ){
 
 		$('a#img_Link').parent().show();
+		addStyling();
 
 		//set the current SRC
 		$('.imageFileTab').find('input#imageURL').val( $(el).css('background-image') )
@@ -764,6 +790,8 @@ function styleClick(el) {
 		//remove borders
 
 		for( var key in editableItems ) {
+
+			$('#editingMode').data('editingStyle');
 
 			$(this).contents().find( pageContainer + ' '+ key ).css({'outline': 'none', 'cursor': 'default'});
 
@@ -831,14 +859,16 @@ function styleClick(el) {
 	//show style editor if hidden
 
 	if( $('#styleEditor').css('left') == '-300px' ) {
-
+		$('#editingMode').removeData('editingStyle');
 		$('#styleEditor').animate({'left': '0px'}, 250);
-
+		$('#editingMode').addClass('btn-danger');
+		$('#editingMode').removeClass('btn-info');
+		$('#editingMode').removeData('editing-mode');
 	}
 
 
 	//save button
-	$('button#saveStyling').unbind('click').bind('click', function(){
+	$('#styleElements').change().unbind('click').bind('click', function(){
 
 		$('#styleEditor #tab1 .form-group:not(#styleElTemplate) input, #styleEditor #tab1 .form-group:not(#styleElTemplate) select').each(function(){
 
@@ -861,6 +891,16 @@ function styleClick(el) {
 			/* END SANDBOX */
 
 		})
+
+		screenWidth = $('#screen').width();
+		$.each($('.container li.element'),
+			function(){
+				$('iframe').css({'width':screenWidth});
+				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				$(this).find('iframe').css({'height':newHeight});
+				$(this).css({'height':newHeight});
+		});
+		$('#screen').css({'height': $('#screen ul').innerHeight});
 
 
 		//links
@@ -1142,13 +1182,6 @@ function styleClick(el) {
 
 		}
 
-
-		$('#detailsAppliedMessage').fadeIn(600, function(){
-
-			setTimeout(function(){ $('#detailsAppliedMessage').fadeOut(1000) }, 3000)
-
-		})
-
 	});
 
 
@@ -1355,14 +1388,43 @@ function styleClick(el) {
 
 }
 
+function addStyling(){
+		$('#pageSetting').addClass('btn-info');
+		$('#pageSetting').removeClass('btn-primary');
+		$('#styleEditor').animate({'background-color': '#f9f9f9'}, 250);
+		$('#styleEditor ul.breadcrumb').show();
+		$('#styleEditor ul.tabcontent').show();
+		$('#styleEditor .nav').show();
+		$('#styleEditor .tab-content').show();
+		$('#styleEditor .margin-bottom-5').show();
+		$('#styleEditor .sideButtons').show();
+		$('#editorTittle').html('<span class="fui-new"></span> Detail Editor');
+		$('#pageSetting').data('clickSetting');
+		$('#editingMode').removeData('editingStyle');
+		$('#editingMode').html('<span class="fui-plus"></span> Add Element');
+}
+
 
 function closeStyleEditor() {
 
+	// Trigger for Clicking Body to close all active element tinymce
+	$.each($('.container li.element'),
+		function(){
+	 $(this).find('iframe')[0].contentWindow.document.body.click();
+	});
+
+	$('#editingMode').addClass('btn-info');
+	$('#editingMode').removeClass('btn-danger');
+	$('#editingMode').html('<span class="fui-play"></span> Start Editing');
+	$('#editingMode').data('editingStyle');
 	//only if visible
+	$('#pageSetting').removeData('clickSetting');
+	$('#pageSetting').addClass('btn-info');
+	$('#pageSetting').removeClass('btn-primary');
 
 	if( $('#styleEditor').css('left') == '0px' ) {
 
-		$('#styleEditor').animate({'left': '-300px'}, 250);
+		$('#styleEditor').animate({'left': '-300px', 'background-color': '#f9f9f9'}, 250);
 
 		$('#pageList ul li iframe').each(function(){
 
@@ -1511,13 +1573,6 @@ $(function(){
 		$('.link_Tab .btn-group.select > button .filter-option').text( $('.link_Tab .dropdown-menu li:first').text() )
 
 		this.select();
-
-	})
-
-
-	$('#detailsAppliedMessageHide').click(function(){
-
-		$(this).parent().fadeOut(500)
 
 	})
 
@@ -1841,7 +1896,10 @@ $(function(){
 
 		} else if( $(this).val() == 'styling' ) {
 
+
 			//hide all iframe covers and activate designMode
+
+			addStyling();
 
 			$('#pageList ul .frameCover').each(function(){
 
@@ -1857,6 +1915,7 @@ $(function(){
 
 				//remove old click events
 				$(this).contents().find( pageContainer + ' p' ).unbind('click').unbind('hover');
+
 
 
 				for( var key in editableItems ) {
@@ -1884,6 +1943,8 @@ $(function(){
 						e.preventDefault();
 
 						e.stopPropagation();
+
+						addStyling();
 
 						styleClick(this, key)
 
@@ -1943,6 +2004,9 @@ $(function(){
 		e.preventDefault();
 
 		closeStyleEditor();
+
+		$('#modeBlock').click();
+
 
 	})
 
@@ -2617,23 +2681,23 @@ $(function(){
 	});
 
 
+
 	$('#responsive-toolbar ul li a').on('click',function(){
 		theHeight = theHeight = $('li.element iframe').find('BODY').height();
 		theWidth = $('#frameWrapper').width();
 		newScreenMobile = 1 * 480;
-		newScreenTabletSm = 0.7 * 768;
-		newScreenTabletLg = 0.6 * 1024;
+		newScreenTabletSm = 1 * 768;
+		newScreenTabletLg = 1 * 1024;
 
 		var target = $(this).data('responsive');
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone'){
-			console.log(theHeight);
 			$('#screen').css({'width': newScreenMobile})
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobile});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
+					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
@@ -2643,7 +2707,7 @@ $(function(){
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
 			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-			 			$('iframe').css({'height':newHeight});
+			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
@@ -2653,11 +2717,102 @@ $(function(){
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$('iframe').css({'height':newHeight});
+					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
+
+
+		$('#wrapper').click(
+		function(){
+			screenWidth = $('#screen').width();
+			console.log(screenWidth);
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':screenWidth});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+			// Trigger for Clicking Body to close all active element tinymce
+      $.each($('.container li.element'),
+        function(){
+       $(this).find('iframe')[0].contentWindow.document.body.click();
+      });
+			// Placeable content without any section
+			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
+			// $('iframe').contents().find('.article__content').append(myContent);
+		});
+
+		// Zoom Function #wrapper
+
+		zoomValue = 1;
+
+		function checkZoomIn(){
+			if(zoomValue > 0.9){
+				$('#zoomIn span').addClass('disabled');
+			}else if(zoomValue <= 0.9){
+				$('#zoomIn span').removeClass('disabled');
+			}
+		};
+
+		function checkZoomOut(){
+			if(zoomValue < 0.3){
+				$('#zoomOut span').addClass('disabled');
+			}else if(zoomValue >= 0.3){
+				$('#zoomOut span').removeClass('disabled');
+			}
+		};
+
+		checkZoomIn();
+		checkZoomOut();
+
+		$('#zoomIn').click(function(){
+		if (zoomValue <= 0.9) {
+				zoomValue = zoomValue + 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+			}
+		});
+
+		$('#zoomOut').click(function(){
+		if (zoomValue >= 0.3) {
+				zoomValue = zoomValue - 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+			}
+		});
+
+		$(document).on('keydown',function(e){
+			if((e.which === 187) && zoomValue <= 0.9){
+					zoomValue = zoomValue + 0.1;
+					$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+					zoomText = Math.floor(zoomValue * 100);
+					$('#zoomValue').html(zoomText + '%');
+					checkZoomIn();
+					checkZoomOut();
+					console.log('Zoom In')
+			}else if ((e.which === 189) && zoomValue >= 0.3){
+				zoomValue = zoomValue - 0.1;
+				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
+				zoomText = Math.floor(zoomValue * 100);
+				$('#zoomValue').html(zoomText + '%');
+				checkZoomIn();
+				checkZoomOut();
+				console.log('Zoom Out')
+			}else{
+				console.log('Ngga bisa Zoom');
+			};
+		});
+
 
 })

@@ -11,8 +11,13 @@ class Service extends Model
     public $timestamps = true;
     protected $primaryKey = 'id';
 
+    public function getService(){
+        return Service::whereNull('deleted_at')
+            ->orderBy('id','asc')
+            ->get();
+    }
     public function getServiceById($id){
-        return Issue::whereNull('deleted_at')
+        return Service::whereNull('deleted_at')
             ->where('id',$id)
             ->orderBy('created_at','desc')
             ->get();

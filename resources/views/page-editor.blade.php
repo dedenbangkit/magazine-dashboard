@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>HTML BUILDER</title>
+    <title>DS Page Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -15,7 +15,7 @@
 
     <link href="{{asset('builder_front/css/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('builder_front/css/chosen.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="builder_front/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('builder_front/images/favicon.ico')}}">
     <!-- Font Awesome -->
     <link href="{{asset('builder_front/css/font-awesome.css')}}" rel="stylesheet">
 
@@ -49,6 +49,12 @@
               <div class="title"><strong>Dalang Lelakon Antasari</strong>
               </div>
               <div class="subtitle">Issue #11 > <span id="pageTitle"><span>index</span></span></div>
+            </div>
+            <div class="toolbar" id="responsive-zoom">
+                <ul>
+                  <li id="zoomIn"><a href="#"><span class="fa fa-plus">&nbsp</span></a></li>
+                  <li id="zoomValue">100%</li>
+                  <li id="zoomOut"><a href="#"><span class="fa fa-minus">&nbsp</span></a></li>
             </div>
             <div class="toolbar" id="responsive-toolbar">
                 <ul>
@@ -118,7 +124,7 @@
 
             <div class="sideButtons clearfix">
                 <a href="#" class="btn btn-primary btn-sm btn-embossed" id="addPage"><span class="fui-plus"></span> Add</a>
-                <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-sm btn-embossed actionButtons"><span class="fui-export"></span> Save</a>
+
             </div>
         </div>
 
@@ -137,32 +143,25 @@
 <div class="container" id="wrapper">
 
     <header>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="editingMode" ><span class="fui-play"></span> Start Editing</a>
 
-        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-trash"></span></a>
+        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
 
-        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Export Site</a>
+        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Compile</a>
+        <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save</a>
 
-        <ul class="nav navbar-nav navbar-setting">
-          <li><a href="#" data-toggle="modal" data-target="#page-setting-modal">Page Settings</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#upload-fonts-modal">Upload Fonts</a></li>
-          <li><a href="#">Save</a></li>
-          <li><a href="#">Clear</a></li>
-        </ul>
     		<div class="modes" id="build-mode">
-    			<label class="radio primary first">
-    				<input type="radio" name="mode" id="modeContent" value="content" data-toggle="radio" disabled="">
-    			  	Content
-    			</label>
     			<label class="radio primary first">
     				<input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
     			  	Details
     			</label>
           <label class="radio primary first">
             <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
-              Elements
+              Sections
           </label>
         </div>
-        
+
     </header>
 
     <div class="screen" id="screen">
@@ -181,13 +180,13 @@
 
 <div id="styleEditor" class="styleEditor">
 
-    <a href="#" class="close"><span class="fui-cross-inverted"></span></a>
+    <a href="#" class="close btn btn-danger btn-embossed"><i class="fui-cross"></i></a>
 
-    <h3><span class="fui-new"></span> Detail Editor</h3>
+    <h3 id="editorTittle"><span class="fui-new"></span> Details</h3>
 
     <ul class="breadcrumb">
-        <li>Editing:</li>
         <li class="active" id="editingElement">p</li>
+        <li class="active">Properties</li>
     </ul>
 
     <ul class="nav nav-tabs" id="detailTabs">
@@ -1915,11 +1914,6 @@
 
     </div> <!-- /tab-content -->
 
-    <div class="alert alert-success" style="display: none;" id="detailsAppliedMessage">
-        <button class="close fui-cross" type="button" id="detailsAppliedMessageHide"></button>
-        The changes were applied successfully!
-    </div>
-
     <div class="margin-bottom-5">
         <button type="button" class="btn btn-primary btn-embossed btn-sm btn-block" id="saveStyling"><span class="fui-check-inverted"></span> Apply Changes</button>
     </div>
@@ -2113,7 +2107,11 @@
 
 <div class="sandboxes" id="sandboxes" style="display: none"></div>
 
+
+
+
 <!-- Load JS here for greater good =============================-->
+
 <script src="{{asset('builder_front/js/jquery-1.8.3.min.js')}}"></script>
 <script src="{{asset('builder_front/js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('builder_front/js/jquery.ui.touch-punch.min.js')}}"></script>
@@ -2129,13 +2127,72 @@
 <script src="{{asset('builder_front/js/application.js')}}"></script>
 <script src="{{asset('builder_front/js/spectrum.js')}}"></script>
 <script src="{{asset('builder_front/js/chosen.jquery.min.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/redactor.min.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/table.js')}}"></script>
-<script src="{{asset('builder_front/js/redactor/bufferButtons.js')}}"></script>
 <script src="{{asset('builder_front/js/src-min-noconflict/ace.js')}}"></script>
 <script src="{{asset('builder_front/elements.json')}}"></script>
 <script src="{{asset('builder_front/js/builder.js')}}"></script>
+<script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
+
 <script>
+
+
+
+    //Page Setting
+
+    $('#pageSetting').click(function() {
+        var clickSetting = $(this).data('clickSetting');
+        if (clickSetting) {
+          closeStyleEditor();
+          addStyling();
+          $("#modeBlock").click();
+        } else {
+          remStyling();
+          if ($('iframe').length >= 1){
+            $('#editingMode').html('<span class="fui-tag"></span> Edit Content');
+          };
+        }
+        $(this).data("clickSetting", !clickSetting);
+    });
+
+    function remStyling(){
+      $('#pageSetting').removeClass('btn-info');
+      $('#pageSetting').addClass('btn-primary');
+      $('#editingMode').addClass('btn-info');
+      $('#editingMode').removeClass('btn-primary');
+      $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+      $('#styleEditor').animate({'left': '0px'}, 250);
+      $('#styleEditor ul.breadcrumb').hide();
+      $('#styleEditor ul.tabcontent').hide();
+      $('#styleEditor .nav').hide();
+      $('#styleEditor .tab-content').hide();
+      $('#styleEditor .margin-bottom-5').hide();
+      $('#styleEditor .sideButtons').hide();
+      $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
+
+      // Trigger for Clicking Body to close all active element tinymce
+      $.each($('.container li.element'),
+        function(){
+       $(this).find('iframe')[0].contentWindow.document.body.click();
+      });
+
+    };
+
+    $('#editingMode').click(function() {
+        var editingStyle = $(this).data('editingStyle');
+        if (editingStyle) {
+          closeStyleEditor();
+          $("#modeBlock").click();
+          $('#editingMode').addClass('btn-info');
+          $('#editingMode').removeClass('btn-primary');
+        } else {
+          $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
+          $("#modeStyle").click();
+          $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+          $('#editingMode').addClass('btn-primary');
+          $('#editingMode').removeClass('btn-info');
+        }
+        $(this).data("editingStyle", !editingStyle);
+    });
 
     $(function(){
 
@@ -2204,11 +2261,11 @@
 
             if( $(this).find('input').size() > 0 ) {
 
-                theLink = $('<a href="#">'+$(this).find('input').val()+'</a>');
+                var theLink = $('<a href="#">'+$(this).find('input').val()+'</a>');
 
-                $(this).find('input').remove();
 
                 $(this).prepend( theLink );
+
 
             }
 
@@ -2275,7 +2332,7 @@
 
         $('#internalLinksDropdown').append( newItem );
 
-        $('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'})
+        $('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-inverse btn-embossed', menuStyle: 'dropdown-inverse'})
 
         pageNumber = $('#pages li').size()-1;
     }

@@ -85,6 +85,8 @@ $.fn.sortable = function(options) {
 };
 })(jQuery);
 
+chooseClass= $('#sortClass').attr('class') + ' drop-hover';
+
 $('.sortable-function-edit').hide();
 
 function sortableMode(){
@@ -95,8 +97,9 @@ function sortableMode(){
 					$('.row').sortable({
 						tolerance: 'pointer',
 						revert: 'invalid',
-						placeholderClass: 'col-xs-12',
-						forceHelperSize: true
+						placeholderClass: chooseClass,
+						forceHelperSize: true,
+						placeholder: chooseClass,
 					});
 	});
 }

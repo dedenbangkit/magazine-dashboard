@@ -201,9 +201,10 @@ header .modes > label .icons{
 
 .styleEditor > a.close {
 	position: absolute;
-	top: 20px;
-	right: 15px;
+	top: 0px;
+	right: 0px;
 	font-size: 20px;
+	opacity: 100;
 }
 
 .styleEditor h3 {
@@ -611,9 +612,10 @@ body .sp-input {
 	position: fixed;
 	bottom:0;
 	right:0;
-	background:#222;
 	color:#fff;
 	z-index: 9999;
+	line-height: 2;
+	height: 37px;
 }
 #responsive-toolbar ul{
 	list-style: none;
@@ -623,6 +625,16 @@ body .sp-input {
 #responsive-toolbar ul li{
 	float: left;
 }
+
+#responsive-toolbar ul li:hover{
+	background-color: #16997f;
+	color: #fff;
+}
+
+#responsive-toolbar ul li#zoomValue:hover{
+	background-color:transparent;
+}
+
 #responsive-toolbar ul li a{
 	display: block;
 	color:#fff;
@@ -640,6 +652,60 @@ body .sp-input {
 	background:#007be8;
 	color:#fff;
 }
+
+/*Zoom*/
+#responsive-zoom{
+	position: fixed;
+	bottom:0;
+	left:300px;
+	color:#fff;
+	z-index: 9999;
+	line-height: 2;
+	height: 37px;
+}
+#responsive-zoom ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+#responsive-zoom ul li{
+	float: left;
+}
+
+#responsive-zoom ul li:hover{
+	background-color: #16997f;
+	color: #fff;
+}
+
+#responsive-zoom ul li span.disabled{
+	opacity:0.2;
+}
+
+#responsive-zoom ul li#zoomValue:hover{
+	background-color:transparent;
+}
+
+#responsive-zoom ul li a{
+	display: block;
+	color:#fff;
+	font-size:9px!important;
+	padding:10px 15px;
+	border-right:1px solid rgba(255,255,255,0.1);
+	border-left:1px solid rgba(255,255,255,0.1);
+	text-transform: uppercase;
+}
+
+#responsive-zoom ul li#zoomValue{
+	padding: 8px;
+	font-weight: bold;
+	width: 50px;
+	text-align: center;
+}
+
+#build-mode .radio{
+	visibility: hidden;
+}
+
 /* side */
 
 .menu {
@@ -983,6 +1049,7 @@ ul#pages li > span a:hover.fileEdit {
 	background: #fff;
 	padding-top: 0px;
 	position: relative;
+	margin-bottom: 80px;
 }
 
 
@@ -1041,26 +1108,13 @@ ul#pages li > span a:hover.fileEdit {
 }
 
 .screen .frameCover button.btn-danger, .screen .frameCover button.btn-warning, .screen .frameCover button.btn-inverse {
-	border-radius: 29px;
-	padding: 10px 14px;
+	border-radius: 0px;
+	float: right;
+	visibility:hidden;
 	opacity:0;
-	height: 54px;
-	line-height: 45px;
-	text-align: center;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 400;
-	margin: 13px;
-	width: 54px;
-	visibility: hidden;
 	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
-}
-
-.screen .frameCover button.btn-danger span{
-	top:-4px;
-	margin:0px;
 }
 
 .screen .frameCover:hover button.btn-danger, .screen .frameCover:hover button.btn-warning, .screen .frameCover:hover button.btn-inverse {
