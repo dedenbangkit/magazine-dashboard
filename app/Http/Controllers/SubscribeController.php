@@ -11,6 +11,7 @@ use App\Model\Project;
 use App\Model\User;
 use App\Model\Issue;
 use App\Model\Service;
+use App\Model\Invoice;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -23,6 +24,7 @@ class SubscribeController extends Controller
     protected $user;
     protected $issue;
     protected $service;
+    protected $invoice;
     protected $page;
     protected $access;
     protected $action_log;
@@ -34,6 +36,7 @@ class SubscribeController extends Controller
         $this->user = new User();
         $this->issue = new Issue();
         $this->service = new Service();
+        $this->invoice = new Invoice();
         $this->page = new Page();
         $this->action_log = new Action_log();
         $this->authdata = $this->authData();
@@ -111,5 +114,25 @@ class SubscribeController extends Controller
         $data['data']=$this->user->getUserClient();
         return $data;
     }
+    public function invoiceList(Request $request){
+        $data['access']=$this->authdata->position;
+        $data['activer']=array($this->activer,'invoice');
+        $data['id_token']=$request->id;
 
+        return view('invoice-list',$data);
+    }
+    public function getInvoiceList(Request $request){
+        $data['data']=$this->invoice->invoiceList();
+        return $data;
+    }
+    public function invoiceDetail(Request $request){
+        $data['access']=$this->authdata->position;
+        $data['activer']=array($this->activer,'invoice');
+        $data['id_token']=$request->id;
+        return view('invoice-detail',$data);
+    }
+    public function getInvoiceDetail(Request $request){
+        $data['data']=$this->invoice->getInvoiceDetail($request->id);
+        return $data;
+    }
 }

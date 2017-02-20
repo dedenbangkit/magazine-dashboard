@@ -50,7 +50,13 @@ Route::Post('/subscribe-process', 'SubscribeController@subscribeProcessAdd');
 Route::Post('/subscribe-process-update', 'SubscribeController@subscribeProcessUpdate');
 Route::get('/client', 'SubscribeController@showClient');
 Route::get('/client-list', 'SubscribeController@clientList');
-
+Route::get('/get-invoice-detail', 'SubscribeController@getInvoiceDetail');
+Route::get('/get-invoice-list', 'SubscribeController@getInvoiceList');
+Route::get('/invoice-list', 'SubscribeController@invoicelist');
+Route::post('/invoice-detail', 'SubscribeController@invoiceDetail');
+Route::get('/invoice-detail', function () {
+    return view('errors.404');
+});
 /* sample */
 Route::get('/sample', function () {
     return view('interact-sample');

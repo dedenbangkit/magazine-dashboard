@@ -37,7 +37,7 @@ class User extends Model
             ->leftjoin('project','users.project_id','=','project.id')
             ->where('users.position','supervisor')
             ->orderBy('project.project_name')
-            ->select('users.*','project.project_name')
+            ->select('users.*','project.project_name','project.company_id')
             ->get();
     }
     public function removeUser($id){
