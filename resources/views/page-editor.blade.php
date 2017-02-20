@@ -2194,6 +2194,23 @@
         $(this).data("editingStyle", !editingStyle);
     });
 
+    $('#pageList').click(function() {
+        var editingStyle = $(this).data('editingStyle');
+        if (editingStyle) {
+          closeStyleEditor();
+          $("#modeBlock").click();
+          $('#editingMode').addClass('btn-info');
+          $('#editingMode').removeClass('btn-primary');
+        } else {
+          $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
+          $("#modeStyle").click();
+          $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+          $('#editingMode').addClass('btn-primary');
+          $('#editingMode').removeClass('btn-info');
+        }
+        $(this).data("editingStyle", !editingStyle);
+    });
+
     $(function(){
 
         var ua = window.navigator.userAgent;
