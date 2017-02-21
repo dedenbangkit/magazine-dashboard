@@ -36,7 +36,6 @@
                     <li <?php if (in_array("project", $activer)) { echo "class='active'";} ?> ><a href="/projects"><i class='fa fa-tags'></i> <span>PROJECT</span></a></li>
                     <li <?php if (in_array("issue", $activer)) { echo "class='active'";} ?>><a href="/issue"><i class='fa fa-newspaper-o'></i> <span>ISSUE</span></a></li>
                     <li <?php if (in_array("history", $activer)) { echo "class='active'";} ?>><a href="/history"><i class='fa fa-history'></i> <span>HISTORY</span></a></li>
-                    <li <?php if (in_array("review", $activer)) { echo "class='active'";} ?>><a href="/review"><i class='fa fa-comments'></i> <span>REVIEW</span></a></li>
                     <li <?php if (in_array("published", $activer)) { echo "class='active'";} ?>><a href="/published"><i class='fa fa-plane'></i> <span>PUBLISHED</span></a></li>
                 </ul>
             </li>
