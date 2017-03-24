@@ -868,7 +868,7 @@ function styleClick(el) {
 
 
 	//save button
-	$('#styleElements').change().unbind('click').bind('click', function(){
+	$('button#saveStyling').change().unbind('click').bind('click', function(){
 
 		$('#styleEditor #tab1 .form-group:not(#styleElTemplate) input, #styleEditor #tab1 .form-group:not(#styleElTemplate) select').each(function(){
 
@@ -1027,8 +1027,8 @@ function styleClick(el) {
 					if( $(el).prop('tagName') == 'IMG' ){
 					$(el).attr('src', response.response);
 					}
-					else{
-					$(el).css('background-image', "url("+ response.response +")");
+					if( $(el).prop('tagName') == 'DIV' ){
+					$(el).css('background-image', 'url('+ response.response +')');
 					}
 					//reset the file upload
 					$('.imageFileTab').find('a.fileinput-exists').click();
@@ -1043,7 +1043,7 @@ function styleClick(el) {
 						elementID = $(el).attr('id');
 						$('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
 						}
-						else{
+						if( $(el).prop('tagName') == 'DIV' ){
 						$('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ response.response +')');
 						}
 					}
