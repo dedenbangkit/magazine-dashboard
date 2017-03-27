@@ -85,6 +85,7 @@ desired effect
         document.body.appendChild(form);
         form.submit();
     }
+
 </script>
 </body>
 </html>

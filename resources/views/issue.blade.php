@@ -5,14 +5,15 @@
 @endsection
 
 @section('main-content')
-    <div class="container spark-screen">
-        <div class="row">
+
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="/create-issue"><i class="fa fa-plus-circle"> </i>
-                                New <?=  ucfirst(array_last($activer));?></a></div>
-                        <div class="panel-body">
+                  <div class="box box-default color-palette-box">
+                      <div class="box-header with-border">
+                              <a class="btn btn-success btn-flat pull-right" href="/create-issue"><i class="fa fa-plus-circle"> </i> 
+                                New <?=  ucfirst(array_last($activer));?></a>
+                              </div>
+                        <div class="box-body">
                             <!-- <?php if($create == true) {?>
                                     <div class="col-md-3  text-center " style="margin-bottom: 10px !important;">
                                         <div class="box-content" style="cursor: pointer;"
@@ -24,59 +25,50 @@
                             </div>
                             <?php } ?>-->
                             <?php foreach($projects as $i=>$row){ ?>
-                            <div class="col-sm-3  text-center" style="margin-bottom: 10px !important;" id="issue-{{$row->id}}">
-                                <div class="box-content">
-                                    <div class="box-content-inside">
-                                        <div class="row">
-                                            <img src="<?php if (empty($row->issue_cover)) {
-                                                echo asset('/img/empty_zine.jpg');
-                                            } else {
-                                                echo asset('/img/projects' . $row->issue_cover);
-                                            } ?>">
+                              <div class="col-sm-3" id="issue-{{$row->id}}">
+                                <div class="box box-solid">
+                                  <div class="box-header with-border" style="border-top: 3px solid #d2d6de;">
+                                    <i class="fa fa-file-text-o"></i>
 
-                                        </div>
-                                        <div class="row">
-                                            <b><?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?></b>
-                                        </div>
-                                        <div class="row">
-                                            <p class="font-light"
-                                               style="color: green">{{date('d-m-Y',strtotime($row->created_at))}}</p>
-                                        </div>
-                                        <a class="btn btn-app publish-issue">
-                                            <i class="fa fa-bullhorn {{$row->status}}" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'></i>
-                                            Publish
-                                        </a>
-                                        <a class="btn btn-app edit-issue">
-                                            <i class="fa fa-edit"  data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' ></i>
-                                            Edit
-                                        </a>
-                                        <a class="btn btn-app del-issue" >
-                                            <i class="fa fa-trash" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'
-                                              <?php
-                                              if(!$buttonAccess){
-                                                  echo 'onclick="this.disabled = true"';
-                                              }
-                                              ?> >
-                                            </i>
-                                            Delete
-                                        </a>
+                                    <h3 class="box-title"><?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?></h3>
+                                    <br>Created at: {{date('d-m-Y',strtotime($row->created_at))}}
+                                  </div>
+                                  <div class="box-body">
+                                    <img class="img-responsive" src="<?php if (empty($row->issue_cover)) {
+                                        echo asset('/img/empty_zine.jpg');
+                                    } else {
+                                        echo asset('/img/projects' . $row->issue_cover);
+                                    } ?>">
+
+                                    <div class="btn-group-vertical" style="width:100%; padding-top:20px;">
+                                      <a class="btn btn-default publish-issue" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
+                                        <i class="fa fa-bullhorn {{$row->status}}"></i> Publish</a>
+                                      <a class="btn btn-default edit-issue"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
+                                        <i class="fa fa-edit"></i> Edit</a>
+                                      <a class="btn btn-default del-issue" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'
+                                        <?php
+                                        if(!$buttonAccess){
+                                            echo 'onclick="this.disabled = true"';
+                                        }
+                                        ?>>
+                                        <i class="fa fa-trash"></i> Delete</a>
                                     </div>
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
                             <?php } ?>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+</section>
         @endsection
 
         @section('script-content')
             <script>
                 $(function () {
-                    $('.del-issue').on('click', '.fa-trash', function () {
+                    $('.del-issue').on('click', function () {
                         var name = $(this).data('name');
                         var id = $(this).data('id');
                         bootbox.confirm({
@@ -110,7 +102,7 @@
                         });
 
                     });
-                    $('.edit-issue').on('click', '.fa-edit', function () {
+                    $('.edit-issue').on('click', function () {
                         var name = $(this).data('name');
                         var id = $(this).data('id');
                         bootbox.confirm({
@@ -139,7 +131,7 @@
                         });
 
                     });
-                    $('.publish-issue').on('click', '.unpublished', function () {
+                    $('.publish-issue').on('click', function () {
                         var name = $(this).data('name');
                         var id = $(this).data('id');
                         bootbox.confirm({

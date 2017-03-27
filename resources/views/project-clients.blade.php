@@ -5,6 +5,7 @@
 @endsection
 
 @section('main-content')
+<div class="row">
                 <div class="col-md-12">
 
                   <!-- <?php if($create == true) {?>
@@ -42,6 +43,9 @@
                                     <img class="img-responsive" src="{{asset('/img/projects/'.$row->project_cover)}}" alt="Photo">
                                     <ul class="list-group list-group-unbordered">
                                       <li class="list-group-item">
+                                        <b>Company Name</b> <a class="pull-right">{{$row->company_name}}</a>
+                                      </li>
+                                      <li class="list-group-item">
                                         <b>Project Name</b> <a class="pull-right">{{$row->project_name}}</a>
                                       </li>
                                       <li class="list-group-item">
@@ -51,95 +55,84 @@
 
                                   </div>
 
-
-                                  <div class="col-sm-4 ">
+                                  <?php if($create){?>
+                                  <div class="col-sm-9">
                                       <div class="row editor-button">
+                                        <form action="subscribe-process-update" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="companyname" value="{{$row->project_name}}">
                                           <table>
-                                              <tr>
-                                                  <td width="150px"><label>Magazine Name</label></td>
-                                                  <td width="10px" class="text-center" ><label> : </label></td>
+                                              <tr class="com-name">
+                                                  <td width="200px"><label>Magazine Name</label></td>
+                                                  <td width="40px" class="text-center" ><label> : </label></td>
                                                   <td>{{$row->project_name}}</td>
                                               </tr>
-                                              <tr>
-                                                  <td><label>Company Name</label></td>
-                                                  <td width="10px" class="text-center"><label> : </label></td>
-                                                  <td>{{$row->company_name}}</td>
+                                              <tr class="editor-content hidden">
+                                                  <td width="200px"><label>Magazine Name</label></td>
+                                                  <td width="40px" class="text-center"><label> : </label></td>
+                                                  <td><div class="form-group has-feedback">
+                                                      <input type="text" class="form-control" placeholder="Magazine Name"
+                                                             name="projectname" value="{{$row->project_name}}"/>
+                                                      <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                                  </div>
+                                                  </td>
                                               </tr>
-                                              <tr>
+                                              <tr class="com-phone">
                                                   <td><label>Company Phone</label></td>
-                                                  <td width="10px" class="text-center" ><label> : </label></td>
+                                                  <td class="text-center" ><label> : </label></td>
                                                   <td>{{$row->company_phone}}</td>
+                                              </tr>
+                                              <tr class="editor-content hidden">
+                                                  <td><label>Company Phone</label></td>
+                                                  <td class="text-center" ><label> : </label></td>
+                                                  <td><div class="form-group has-feedback">
+                                                      <input type="text" class="form-control" placeholder="Company Phone"
+                                                             name="companyphone" value="{{$row->company_phone}}"/>
+                                                      <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                                  </div>
+                                                  </td>
+                                              </tr>
+                                              <tr class="editor-content hidden">
+                                                <td><label>Cover Page</label></td>
+                                                <td class="text-center"><label> : </label></td>
+                                                <td><input type="file" name="cover" id="imagefile"></td>
+                                              </tr>
+                                              <tr class="editor-content hidden">
+                                                <td><label>Project Icon</label></td>
+                                                <td class="text-center"><label> : </label></td>
+                                                <td><input type="file" name="icon" id="imagefile"></td>
                                               </tr>
                                               <tr>
                                                   <td><label>Expired Date </label></td>
-                                                  <td width="10px" class="text-center" ><label> : </label></td>
+                                                  <td class="text-center" ><label> : </label></td>
                                                   <td><?php echo (empty($row->date_0f_redeem)?"":date('d-m-Y',strtotime($row->date_0f_redeem))) ?></td>
                                               </tr>
                                               <tr>
                                                   <td><label>Service </label></td>
-                                                  <td width="10px" class="text-center" ><label> : </label></td>
+                                                  <td class="text-center" ><label> : </label></td>
                                                   <td>{{$row->service_name}}</td>
                                               </tr>
                                               <tr>
                                                   <td><label>Appstore Url</label></td>
-                                                  <td width="10px" class="text-center"><label> : </label></td>
+                                                  <td class="text-center"><label> : </label></td>
                                                   <td>https://itunes.apple.com/us/app/cnn/id331786748?mt=8</td>
                                               </tr>
                                               <tr>
                                                   <td><label>Google Play Url</label></td>
-                                                  <td width="10px" class="text-center"><label> : </label></td>
+                                                  <td class="text-center"><label> : </label></td>
                                                   <td>https://play.google.com/store/apps/details?id=com.cnn.mobile.android.phone&hl=en</td>
                                               </tr>
+
                                           </table>
-                                          <button class="btn btn-primary btn-block btn-flat editor">Edit</button>
+                                          <hr>
+                                          <button type="submit" class="btn btn-primary btn-social btn-flat editor-content hidden"><i class="fa fa-check"></i>Confirm Edit</button>
+                                        </form>
+
+                                          <button class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-edit"></i>Edit Info</button>
                                       </div>
                                   </div>
-
-                                  <?php if($create){?>
-                                  <div class="col-sm-5 editor-content text-center hidden">
-                                      <div class="register-box-body">
-                                          <form action="subscribe-process-update" method="post" enctype="multipart/form-data">
-                                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                              <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Magazine Name"
-                                                         name="projectname" value="{{$row->project_name}}"/>
-                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                              </div>
-                                              <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Company Name"
-                                                         name="companyname" value="{{$row->company_name}}"/>
-                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                              </div>
-                                              <div class="form-group has-feedback">
-                                                  <input type="text" class="form-control" placeholder="Company Phone"
-                                                         name="companyphone" value="{{$row->company_phone}}"/>
-                                                  <span class="glyphicon glyphicon-book form-control-feedback"></span>
-                                              </div>
-                                              <div class="form-group ">
-                                                  <label for="exampleInputFile">Project Cover</label>
-                                                  <input type="file" name="cover" id="imagefile">
-                                              </div>
-                                              <div class="form-group ">
-                                                  <label for="exampleInputFile">Project Icon</label>
-                                                  <input type="file" name="icon" id="imagefile">
-                                              </div>
-
-
-                                              <div class="row">
-                                                  <div class="col-md-12 ">
-                                                      <button type="submit" class="btn btn-primary btn-block btn-flat">Edit
-                                                      </button>
-                                                  </div>
-                                                  <!-- /.col -->
-                                              </div>
-                                          </form>
-
-                                      </div>
                                       <!-- /.form-box -->
                                   </div>
-
-                                </div>
 
                                 </div>
                                 <!-- /.tab-pane -->
@@ -237,6 +230,7 @@
 
                     <?php } } ?>
                 </div>
+</div>
 @endsection
 @section('script-content')
     <script>
@@ -244,6 +238,9 @@
         $('.editor-button').on('click', '.editor', function () {
             $('.editor-content').removeClass("hidden");
             $('.build-content').addClass("hidden");
+            $('.com-phone').addClass("hidden");
+            $('.com-name').addClass("hidden");
+            $(this).addClass("hidden");
         });
 
         $('.editor-button').on('click', '.build', function () {

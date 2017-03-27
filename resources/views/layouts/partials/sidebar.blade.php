@@ -23,7 +23,7 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
+            <li class="header">MAIN MENU</li>
             <!-- Optionally, you can add icons to the links -->
             <li <?php if (in_array("home", $activer)) {
                 echo "class='active'";
@@ -59,8 +59,7 @@
 
                 </ul>
             </li>
-            <li><a href="#"><i class='fa fa-link'></i>
-                    <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
+            <li><a href="/sample-page2"><i class='fa fa-newspaper-o'></i> EDITOR DEMO</a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

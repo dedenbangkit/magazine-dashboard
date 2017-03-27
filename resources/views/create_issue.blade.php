@@ -11,10 +11,6 @@
 
     <body class="hold-transition register-page">
     <div class="row"><div class="col-md-12">
-    <div class="col-md-5">
-        <div class="register-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
-        </div>
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -27,20 +23,37 @@
             </div>
         @endif
 
-        <div class="register-box-body">
-            <p class="login-box-msg">Create Issue</p>
+        <div class="box box-default color-palette-box">
             <form action="create-issue" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Issue Name" name="name" value="{{ old('name') }}"/>
-                    <span class="glyphicon glyphicon-book form-control-feedback" data-id="" ></span>
+                <div class="box-header row with-border">
+                  <div class="col-xs-4">
+                  <div class="form-group has-feedback" style="margin:0px;">
+                      <input type="text" class="form-control" style="margin:0px;" placeholder="Issue Name" name="name" value="{{ old('name') }}"/>
+                      <span class="glyphicon glyphicon-book form-control-feedback" data-id="" ></span>
+                  </div>
                 </div>
-                <div class="form-group ">
-                    <label for="exampleInputFile">Issue Cover</label>
-                    <input type="file" name="cover" id="imagefile" >
+                <div class="col-xs-4">
+                  <div class="input-group">
+                    <label class="input-group-btn">
+                        <a class="btn btn-primary btn-flat">
+                            Choose Cover <input name="cover" id="imageFile" type="file" style="display: none;" multiple>
+                        </a>
+                    </label>
+                    <input type="text" class="form-control" style="margin:0px;" readonly>
+                  </div>
                 </div>
+                    <div class="col-xs-2 ">
+                        <a href="javascript:void(0)" class="btn btn-default btn-flat add" rel=".clone"><i class="fa fa-plus"></i> add more page</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success btn-flat pull-right"><i class="fa fa-check"></i> Finish and Create</button>
+                    </div>
+                </div>
+                <div class="box-body">
                 <div id="checkbox-form">
-                    <div class="form-group clone">
+                  <div class="row">
+                    <div class="form-group clone col-md-4">
                         <div class="row well" style="margin:0px; 10px; padding:5px;">
                             <span class="glyphicon glyphicon-remove pull-right" style="cursor:not-allowed" id=""></span>
                         <div class="col-xs-12">
@@ -59,20 +72,12 @@
                         </div>
 
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4 ">
-                        <a href="javascript:void(0)" class="btn btn-primary btn-block btn-flat add pull-right" rel=".clone">add more</a>
-                    </div>
-                    <div class="col-xs-4 ">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Create</button>
-                    </div><!-- /.col -->
+                  </div>
                 </div>
             </form>
 
         </div><!-- /.form-box -->
-    </div><!-- /.register-box -->
-    </div></div>
+    </div></div></div>
     @include('layouts.partials.scripts_auth')
 
     @include('auth.terms')
@@ -84,6 +89,32 @@
     <script src="{{ asset('/plugins/select2/select2.full.min.js')}}"></script>
     <script>
         $(function () {
+
+              // We can attach the `fileselect` event to all file inputs on the page
+              $(document).on('change', ':file', function() {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+              });
+
+              // We can watch for our custom `fileselect` event like this
+              $(document).ready( function() {
+                  $(':file').on('fileselect', function(event, numFiles, label) {
+
+                      var input = $(this).parents('.input-group').find(':text'),
+                          log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                      if( input.length ) {
+                          input.val(log);
+                      } else {
+                          if( log ) alert(log);
+                      }
+
+                  });
+              });
+
+
             $.fn.relCopy = function(options) {
                 var settings = jQuery.extend({
                     excludeSelector: ".exclude",

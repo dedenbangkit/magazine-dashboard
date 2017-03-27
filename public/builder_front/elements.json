@@ -5,13 +5,6 @@ var _Elements = {"elements": {
         {"title":"3 Column","icon":"builder_front/images/icon/2-column.png","url":"builder_front/elements/layout_3_column.html"},
         {"title":"4 Column","icon":"builder_front/images/icon/4-column.png","url":"builder_front/elements/layout_4_column.html"}
     ],
-    "Text":[
-        {"title":"Paragraph","icon":"builder_front/images/icon/text-paragraf.png","url":"builder_front/elements/content_section2.html"},
-        {"title":"Heading 1","icon":"builder_front/images/icon/text-h1.png","url":"builder_front/elements/heading_1.html"},
-        {"title":"Heading 2","icon":"builder_front/images/icon/text-h2.png","url":"builder_front/elements/heading_2.html"},
-        {"title":"Heading 3","icon":"builder_front/images/icon/text-h3.png","url":"builder_front/elements/heading_3.html"},
-        {"title":"Blockquote","icon":"builder_front/images/icon/text-blockquote.png","url":"builder_front/elements/blockquote.html"}
-    ],
     "Image":[
         {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
         {"title":"Responsive","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/image.html"},

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>DS Page Editor</title>
+    <title>Publixx Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">PIRATE CMS</a>
+            <a class="navbar-brand" href="#">PUBLIXX</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,7 +69,7 @@
                 <li class="dropdown user-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{asset('builder_front/images/avatar/avatar.jpg')}}" alt="">
-                        <span class="name">Maria Ozawa</span>
+                        <span class="name">Sample User</span>
                         <span class="job">Editor</span>
                     </a>
                     <ul class="dropdown-menu">
@@ -131,9 +131,8 @@
     </div><!-- /.main -->
 
     <div class="second" id="second">
-
         <ul id="elements">
-
+            <a>Drag Element to Canvas</a>
         </ul>
 
     </div><!-- /.secondSide -->

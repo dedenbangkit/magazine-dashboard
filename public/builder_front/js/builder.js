@@ -22,7 +22,7 @@ editableItems['h2'] = ['background-color', 'text-align', 'font-family', 'text-tr
 editableItems['h3'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
 editableItems['h4'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
 editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
-editableItems['p'] = ['text-align', 'text-indent', 'font-family', 'padding'];
+editableItems['p'] = ['column-count','text-align', 'text-indent', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['border-radius', 'padding', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
@@ -59,6 +59,7 @@ editableItemOptions['h5 : text-align'] = ['left','right','center'];
 
 editableItemOptions['p : text-indent'] = ['0px','10px','20px','30px','40px'];
 editableItemOptions['p : padding'] = ['0px','10px','20px','30px','40px'];
+editableItemOptions['p : column-count'] = ['1','2','3','4'];
 
 editableItemOptions['h1 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
 editableItemOptions['h2 : font-family'] = ['Lato', 'Helvetica', 'Arial', 'Times New Roman', 'Book Antiqua', 'Andale Mono', 'Georgia'];
@@ -865,6 +866,10 @@ function styleClick(el) {
 		$('#editingMode').removeClass('btn-info');
 		$('#editingMode').removeData('editing-mode');
 	}
+
+	$('#styleElements').click(function(){
+		$('button#saveStyling').click();
+	});
 
 
 	//save button
@@ -2007,7 +2012,10 @@ $(function(){
 
 		$('#modeBlock').click();
 
-
+		var iframeLength = $('iframe').length;
+		for (i=1; i < iframeLength; i++){
+		document.getElementById('ui-id-'+i).contentWindow.sortableClose();
+		}
 	})
 
 
@@ -2813,5 +2821,7 @@ $(function(){
 				console.log('Ngga bisa Zoom');
 			};
 		});
+
+
 
 })

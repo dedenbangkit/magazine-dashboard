@@ -8,10 +8,6 @@
 
     <body class="hold-transition register-page">
     <div class="col-md-8">
-        <div class="register-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
-        </div>
-
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>

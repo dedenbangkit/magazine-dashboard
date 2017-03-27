@@ -858,21 +858,40 @@ ul#elements > li.element.layout{
 	padding: 30px;
 }
 
+.menu .second a {
+	cursor: s-resize;
+	font-size:12px;
+	margin: 0px;
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	color: #aaa;
+}
+
 .menu .second ul li, li.element {
+	cursor: move;
 	list-style: none;
 	list-style-type: none;
 	padding: 15px;
 	color:#fff;
 	font-size:12px;
-	border-bottom: 1px solid rgba(255,255,255,0.1);
 	width: 100%;
-	color:#aaa;
+	color: #aaa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.menu .second ul li{
+	border: 1px #888 dashed;
 }
 
 .menu .second ul li, li.element > img {
 	display: inline-block;
 	vertical-align: middle;
-	margin:-3px 10px 0 0;
+	padding-right: 20px;
 }
 
 li.element {
@@ -882,7 +901,6 @@ li.element {
 .menu .second ul li iframe {
 	border: 0px;
 	width: 270px;
-	background: #fff;
 
 }
 

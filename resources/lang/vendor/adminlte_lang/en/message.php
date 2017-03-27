@@ -52,7 +52,7 @@ return [
     'createdby'               => 'Created by',
     'seecode'                 => 'See code at',
     'online'                  => 'Online',
-    'home'                    => 'Home',
+    'home'                    => 'HOME',
     'header'                  => 'HEADER',
     'anotherlink'             => 'Another Link',
     'multilevel'              => 'Multilevel',

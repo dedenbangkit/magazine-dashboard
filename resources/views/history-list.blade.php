@@ -6,6 +6,7 @@
 
 
 @section('main-content')
+<div class="row">
 	<div class="container spark-screen">
 		<div class="row">
 			<div class="col-md-12">
@@ -49,6 +50,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 @endsection
  @section('script-content')
      <script>
