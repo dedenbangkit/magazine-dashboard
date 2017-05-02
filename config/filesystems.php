@@ -56,10 +56,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key' => env('S3_KEY','AKIAJY4XSMIPS73IBOPQ'),
+            'secret' => env('S3_SECRET','UbEU9SjYQhRxuYP2uyrMOlzAwprS7ZYW50FJZdud'),
+            'region' => env('S3_REGION','ap-southeast-1'),
+            'bucket' => env('S3_BUCKET','publixx-statics'),
         ],
 
     ],
