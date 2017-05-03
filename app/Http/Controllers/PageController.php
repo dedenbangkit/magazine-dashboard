@@ -166,8 +166,11 @@ class PageController extends Controller
 
     }
     public function iupload(Request $request){
+        $s3 = \Storage::disk('s3');
+        $image = $request->file('imageFileField');
+        $file_path= '/images-lib/';
         $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
-        $relative_path = 'images/uploads';//specify the relative path from your elements to the upload folder
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 
         /* DON'T CHANGE ANYTHING HERE!! */
@@ -204,10 +207,9 @@ class PageController extends Controller
 
         }
 
-        $name = $_FILES['imageFileField']['name'];
-
-        if (move_uploaded_file( $_FILES['imageFileField']['tmp_name'], $uploads_dir."/".$name ) ) {
-
+        $name = time().'-'.$_FILES['imageFileField']['name'];
+        if ($s3->put($file_path.''.$name, file_get_contents($image), 'public')) {
+//            $s3->put($file_path.''.$name, file_get_contents($_FILES['imageFileField']['name']), 'public');
             //echo "yes";
 
         } else {
