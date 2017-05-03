@@ -84,7 +84,7 @@ class PageController extends Controller
     public function exportIssue(Request $request){
         $pathToAssets = array("builder_front/elements/bootstrap", "builder_front/elements/css", "builder_front/elements/fonts", "builder_front/elements/images", "builder_front/elements/js");
 
-        $filename = "builder_front/tmp/website.zip"; //use the /tmp folder to circumvent any permission issues on the root folder
+        $filename = "builder_front/tmp/website3.zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
         /* END CONFIG */
 
@@ -125,12 +125,12 @@ class PageController extends Controller
             }
 
         }
+        $pages= $this->page->getPage(11);
 
 
+        foreach( $pages as $page=>$content ) {
 
-        foreach( $request->pages as $page=>$content ) {
-
-            $zip->addFromString($page.".html", $request->doctype."\n".stripslashes($content));
+            $zip->addFromString($page.".html", $request->doctype."\n".stripslashes($content['page_content']));
 
             //echo $content;
 
@@ -151,9 +151,9 @@ class PageController extends Controller
         header("Content-Disposition: attachment; filename=$file_name");
         header("Content-Length: " . filesize($yourfile));
 
-        readfile($yourfile);
+//        readfile($yourfile);
 
-        unlink('website.zip');
+        unlink($filename);
 
         exit;
     }

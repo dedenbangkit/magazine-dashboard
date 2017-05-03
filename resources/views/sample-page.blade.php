@@ -1903,10 +1903,10 @@
 
     -->
 
-    <form action="save.php" target="_blank" id="markupForm" method="post" class="form-horizontal">
+    <form action="save" target="_blank" id="markupForm" method="post" class="form-horizontal">
 
         <input type="hidden" name="markup" value="" id="markupField">
-
+        {{ csrf_field() }}
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
