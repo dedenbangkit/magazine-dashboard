@@ -10,3 +10,4 @@ Homestead.json
 .idea/inspectionProfiles/
 http://idea.imsxm.com/
 
+!/public/builder_front/tmp/website.zip

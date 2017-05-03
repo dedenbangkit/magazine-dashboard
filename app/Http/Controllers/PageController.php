@@ -84,7 +84,7 @@ class PageController extends Controller
     public function exportIssue(Request $request){
         $pathToAssets = array("builder_front/elements/bootstrap", "builder_front/elements/css", "builder_front/elements/fonts", "builder_front/elements/images", "builder_front/elements/js");
 
-        $filename = "builder_front/tmp/website.zip"; //use the /tmp folder to circumvent any permission issues on the root folder
+        $filename = "builder_front/tmp/website3.zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
         /* END CONFIG */
 
@@ -125,12 +125,12 @@ class PageController extends Controller
             }
 
         }
+        $pages= $this->page->getPage(11);
 
 
+        foreach( $pages as $page=>$content ) {
 
-        foreach( $request->pages as $page=>$content ) {
-
-            $zip->addFromString($page.".html", $request->doctype."\n".stripslashes($content));
+            $zip->addFromString($page.".html", $request->doctype."\n".stripslashes($content['page_content']));
 
             //echo $content;
 
@@ -151,9 +151,9 @@ class PageController extends Controller
         header("Content-Disposition: attachment; filename=$file_name");
         header("Content-Length: " . filesize($yourfile));
 
-        readfile($yourfile);
+//        readfile($yourfile);
 
-        unlink('website.zip');
+        unlink($filename);
 
         exit;
     }
@@ -166,8 +166,11 @@ class PageController extends Controller
 
     }
     public function iupload(Request $request){
+        $s3 = \Storage::disk('s3');
+        $image = $request->file('imageFileField');
+        $file_path= '/images-lib/';
         $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
-        $relative_path = 'images/uploads';//specify the relative path from your elements to the upload folder
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 
         /* DON'T CHANGE ANYTHING HERE!! */
@@ -204,10 +207,9 @@ class PageController extends Controller
 
         }
 
-        $name = $_FILES['imageFileField']['name'];
-
-        if (move_uploaded_file( $_FILES['imageFileField']['tmp_name'], $uploads_dir."/".$name ) ) {
-
+        $name = time().'-'.$_FILES['imageFileField']['name'];
+        if ($s3->put($file_path.''.$name, file_get_contents($image), 'public')) {
+//            $s3->put($file_path.''.$name, file_get_contents($_FILES['imageFileField']['name']), 'public');
             //echo "yes";
 
         } else {
