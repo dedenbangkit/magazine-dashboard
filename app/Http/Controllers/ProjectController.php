@@ -94,6 +94,7 @@ class ProjectController extends Controller
         $datainput = array(
             'companyname'=>$request->companyname,
             'companyphone'=>$request->companyphone,
+            'companyemail'=>$request->companyemail,
             'name' => $request->name,
             'cover' => $request->file('cover')->getClientOriginalName(),
             'master' => $this->authdata->id,

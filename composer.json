@@ -11,7 +11,9 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "acacha/admin-lte-template-laravel": "2.*",
         "intervention/image": "^2.3",
-        "league/flysystem-aws-s3-v3": "^1.0"
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "soapbox/laravel-formatter": "^2.0",
+        "jailtonsc/laravel-response-xml": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

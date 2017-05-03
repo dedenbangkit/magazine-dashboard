@@ -22,7 +22,8 @@
                   <div class="nav-tabs-custom">
                               <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-newspaper-o"></i>&nbsp;{{$row->project_name}}</a></li>
-                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
+                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">App Settings</a></li>
+                                <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
                                 <li class="dropdown pull-right">
                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                                     <i class="fa fa-download"></i> Download
@@ -46,7 +47,7 @@
                                         <b>Company Name</b> <a class="pull-right">{{$row->company_name}}</a>
                                       </li>
                                       <li class="list-group-item">
-                                        <b>Project Name</b> <a class="pull-right">{{$row->project_name}}</a>
+                                        <b>Apps Name</b> <a class="pull-right">{{$row->project_name}}</a>
                                       </li>
                                       <li class="list-group-item">
                                         <b>Date Created</b> <a class="pull-right">{{date('d-m-Y',strtotime($row->created_at))}}</a>
@@ -63,7 +64,7 @@
                                             <input type="hidden" name="companyname" value="{{$row->project_name}}">
                                           <table>
                                               <tr class="com-name">
-                                                  <td width="200px"><label>Magazine Name</label></td>
+                                                  <td width="200px"><label>Apps Name</label></td>
                                                   <td width="40px" class="text-center" ><label> : </label></td>
                                                   <td>{{$row->project_name}}</td>
                                               </tr>
@@ -78,9 +79,24 @@
                                                   </td>
                                               </tr>
                                               <tr class="com-phone">
+                                                  <td><label>Company Email</label></td>
+                                                  <td class="text-center" ><label> : </label></td>
+                                                  <td>{{$row->company_email}}</td>
+                                              </tr>
+                                              <tr class="com-phone">
                                                   <td><label>Company Phone</label></td>
                                                   <td class="text-center" ><label> : </label></td>
                                                   <td>{{$row->company_phone}}</td>
+                                              </tr>
+                                              <tr class="editor-content hidden">
+                                                  <td><label>Company Email</label></td>
+                                                  <td class="text-center" ><label> : </label></td>
+                                                  <td><div class="form-group has-feedback">
+                                                      <input type="email" class="form-control" placeholder="Support Email"
+                                                             name="companyemail" value="{{$row->company_email}}"/>
+                                                      <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                                                  </div>
+                                                  </td>
                                               </tr>
                                               <tr class="editor-content hidden">
                                                   <td><label>Company Phone</label></td>
@@ -128,19 +144,37 @@
                                           <button type="submit" class="btn btn-primary btn-social btn-flat editor-content hidden"><i class="fa fa-check"></i>Confirm Edit</button>
                                         </form>
 
-                                          <button class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-edit"></i>Edit Info</button>
+                                          <button class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-edit"></i>Update Info</button>
                                       </div>
                                   </div>
                                       <!-- /.form-box -->
                                   </div>
 
                                 </div>
-                                <!-- /.tab-pane -->
+                                <!-- /.tab-pane app settings -->
                                 <div class="tab-pane" id="tab_2">
+                                  <div class="box-body">
+                                    <div class="col-md-6">
+                                      Since each platform has different image requirements, it’s best to make a source image for the largest size needed, and let the CLI do all the resizing, cropping and copying for you.
+                                    </div>
+                                    <div class="col-md-6">
+                                      <form class="form-horizontal" action="{{url('app-setting-update')}}" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="appid" value="{{$row->id}}">
+                                        <label>Upload splash screen (.zip)</label>
+                                        <input type="file" name="splashscreen" id="splashscreen"><hr>
+                                        <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
+                                      </form>
+                                    </div>
+                                  </div>
+                                  </form>
+                                </div>
+                                <!-- /.tab-pane build settings -->
+                                <div class="tab-pane" id="tab_3">
                                   <div class="box-body">
                                   <div class="col-md-12">
                                     <div class="col-md-6">
-                                  <form class="form-horizontal" action="build-process-update" method="post">
+                                  <form class="form-horizontal" action="{{url('build-setting-update')}}" method="post">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <!-- text input -->
                                           <div class="form-group">
@@ -170,24 +204,6 @@
                                           </div>
 
                                           <div class="col-md-6" style="padding-left:50px;">
-
-                                          <div class="form-group">
-                                            <label>Screen Orientation</label>
-                                            <div class="checkbox">
-                                              <label>
-                                                <input type="checkbox">
-                                                Potrait Only
-                                              </label>
-                                            </div>
-                                            <div class="checkbox">
-                                              <label>
-                                                <input type="checkbox">
-                                                Both Orientations
-                                              </label>
-                                            </div>
-                                          </div>
-
-                                          <hr>
 
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-apple"></i> Provisioning Profile (.mobiprovision)</label>

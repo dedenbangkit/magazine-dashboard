@@ -44,6 +44,10 @@ Route::post('/change-user-password', 'UserController@changeUserPassword');
 Route::post('/change-user-position', 'UserController@changeUserPosition');
 Route::get('/user', 'UserController@showUser');
 
+/*buildController*/
+Route::post('/app-setting-update', 'BuildController@updateApp')->name('updateapp');
+Route::post('/build-setting-update', 'BuildController@buildApp')->name('buildapp');
+
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
 Route::Post('/subscribe-process', 'SubscribeController@subscribeProcessAdd');
