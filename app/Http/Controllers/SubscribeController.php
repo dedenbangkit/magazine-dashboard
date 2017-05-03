@@ -72,6 +72,7 @@ class SubscribeController extends Controller
         $datainput = array(
             'companyname'=>$request->companyname,
             'companyphone'=>$request->companyphone,
+            'companyemail'=>$request->companyemail,
             'service'=>$request->service,
             'name' => $request->projectname,
             'cover' => $cover,
@@ -95,6 +96,7 @@ class SubscribeController extends Controller
         $datainput = array(
             'name' => $request->projectname,
             'company_name'=> $request->companyname,
+            'company_email'=>$request->companyemail,
             'cover' => $cover,
             'phone'=>$request->companyphone,
             'company_id'=>$project_data[0]['company_id'],

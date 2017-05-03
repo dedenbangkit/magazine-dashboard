@@ -207,6 +207,13 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         /*
+         * Other Vendors
+         */
+
+        'Formatter'   => SoapBox\Formatter\Formatter::class,
+        'XmlResponse' => XmlResponse\XmlResponseServiceProvider::class,
+
+        /*
          * Acacha AdminLTE template alias
          */
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
