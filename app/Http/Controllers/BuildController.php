@@ -48,11 +48,11 @@ class BuildController extends Controller
 
       $theproject=Project::where('id','=',$request->appid)->first();
 
-      $data=array('widget' => array(
+      $data = array('widget' => array(
                   'name'        => $theproject->project_name,
                   'description' => $theproject->project_description,
                   'author'      => array(
-                      '_email'      => $theproject->company_mail,
+                      '_email'      => $theproject->company_email,
                       '_href'       => $theproject->company_website,
                       '__text'      => $theproject->company_name,
                       'toString'    =>  array(0 => NULL),
