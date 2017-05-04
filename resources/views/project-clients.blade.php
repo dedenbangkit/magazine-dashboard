@@ -174,8 +174,9 @@
                                   <div class="box-body">
                                   <div class="col-md-12">
                                     <div class="col-md-6">
-                                  <form class="form-horizontal" action="{{url('build-setting-update')}}" method="post">
+                                  <form class="form-horizontal" action="{{url('build-post')}}" method="post" enctype="multipart/form-data">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                          <input type="hidden" name="appid" value="{{$row->id}}">
                                           <!-- text input -->
                                           <div class="form-group">
                                             <label><i class="fa fa-apple"></i> Application ID</label>
@@ -232,6 +233,10 @@
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-android"></i> Kestore File (.keystore)</label>
                                           <input type="file" name="cover" id="imagefile">
+                                          </div>
+
+                                          <div class="form-group">
+                                          <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Build App!</button>
                                           </div>
 
                                         </div>

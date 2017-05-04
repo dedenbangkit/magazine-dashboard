@@ -51,7 +51,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $username = '';
+    protected $username = 'bajaklautmalaka@gmail.com';
     /**
      * Password
      *
@@ -59,7 +59,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $password = '';
+    protected $password = 'Sejutatopanb4d4i';
     /**
      * Simple authentication token, taken from PG account
      *
@@ -67,7 +67,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $token = '';
+    protected $token = 'zHz1xHTxsyzWfEtUB14C';
     /**
      * OAuth2 access token
      *

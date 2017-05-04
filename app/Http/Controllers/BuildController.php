@@ -48,7 +48,10 @@ class BuildController extends Controller
   public function updateApp(Request $request)
   {
 
-      $theproject=Project::where('project.id','=',$request->appid)->leftjoin('company','company.id','=','project.company_id')->first();
+      $theproject=Project::where('project.id','=',$request->appid)
+                          ->leftjoin('company','company.id','=','project.company_id')
+                          ->select('project.*','project.id as project_appid','company.*')
+                          ->first();
 
       $data = array('widget' => array(
                   'name'        => $theproject->project_name,

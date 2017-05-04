@@ -37,7 +37,7 @@ class BuildAPIController extends Controller
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
-      $this->client = new PhoneGap('bajaklautmalaka@gmail.com','Sejutatopanb4d4i');
+      $this->client = new PhoneGap();
   }
   /**
    * Show the application dashboard.
@@ -47,45 +47,35 @@ class BuildAPIController extends Controller
 
    public function getAppInfo(Request $request)
    {
-     $data = $this->client->getProfile();
+     $data = $this->client->getApplication('2599522');
      return $data;
    }
 
    public function postApp(Request $request)
    {
-     $theproject=Project::where('project.id','=',$request->appid)->leftjoin('company','company.id','=','project.company_id')->first();
 
-     $data = $this->client->createApplicationFromFile($theproject->id,'/path/to/archive.zip', array(
-            'title'         => $theproject->project_name,
-            'package'       => 'com.publixx.'.$theproject->domain,
-            'description'   => $theproject->project_description,
-            'create_method' => 'file',
-            'version'       => '0.0.1',
-            'debug'         => false,
+     $theproject=Project::where('project.id','=',$request->appid)
+                         ->leftjoin('company','company.id','=','project.company_id')
+                         ->select('project.*','project.id as project_appid','company.*')
+                         ->first();
+
+     $data = $this->client->createApplication(array(
+            'title'         => 'Phonegap Application',
+            'create_method' => 'remote_repo',
+            'repo'          => 'https://github.com/phonegap/phonegap-start',
+            'version'       => '1.0.0',
             'keys'          => array(
                                 'ios' => array(
-                                  'title'     => $theproject->project_name.' key',
-                                  'default'   => false,
-                                  'id'        => $theproject->company_id,
-                                  'password'  => $request->key_password,
-                                  'link'      => storage_path('key/ios-'.$request->ios_key.'.key'),
-                                ),
-                                'android' => array(
-                                  'title'     => $theproject->project_name.' key',
-                                  'default'   => false,
-                                  'id'        => $theproject->company_id,
-                                  'password'  => $request->key_password,
-                                  'link'      => storage_path('key/android-'.$request->android_key.'.key'),
+                                  'title'     => "Bernard Satriani Added",
+                                  'default'   => true,
+                                  'id'        => 736933,
+                                  'link'      => "/api/v1/keys/ios/736933",
                                 ),
                               ),
-            'private'          => true,
-            'share'            => true,
-            'phonegap_version' => '3.1.0',
-            'hydrates'         => false,
-            // better use methods below or see docs for all options
         )
       );
-      return $data;
+
+    return response()->json($data);
 
    }
 }
