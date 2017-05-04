@@ -7,7 +7,6 @@
 
 namespace App\Http\Controllers;
 
-use Formatter;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -15,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Model\Project;
 use App\Model\Company;
 use App\Model\Action_log;
+use Formatter;
 
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -46,7 +46,7 @@ class BuildController extends Controller
   public function updateApp(Request $request)
   {
 
-      $theproject=Project::where('id','=',$request->appid)->first();
+      $theproject=Project::where('project.id','=',$request->appid)->leftjoin('company','company.id','=','project.company_id')->first();
 
       $data = array('widget' => array(
                   'name'        => $theproject->project_name,
@@ -330,7 +330,16 @@ class BuildController extends Controller
           '_version' => '0.0.1',
         ),
       );
-
-      return json_encode($data);
+      header('Content-Type: application/xml');
+      header('Content-Disposition: attachment; filename="downloaded.xml"');
+            $format= $this->formatterModule($data);
+            print $format;
+//       return response()->xml($data);
+//      return json_encode($data);
+    }
+    public function formatterModule($variable){
+        $formatter = Formatter::make($variable, Formatter::ARR);
+        $xml   = $formatter->toXml();
+        return $xml;
     }
 }
