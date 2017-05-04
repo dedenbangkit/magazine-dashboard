@@ -46,7 +46,8 @@ Route::get('/user', 'UserController@showUser');
 
 /*buildController*/
 Route::post('/app-setting-update', 'BuildController@updateApp')->name('updateapp');
-Route::post('/build-setting-update', 'BuildController@buildApp')->name('buildapp');
+Route::post('/build-setting-update', 'BuildApiController@buildApp')->name('buildapp');
+Route::get('/build-info', 'BuildApiController@getAppInfo')->name('getappinfo');
 
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
@@ -73,4 +74,3 @@ Route::get('/sample-page', 'PageController@sample');
 Route::get('/sample-page2', 'PageController@sample2');
 
 });
-
