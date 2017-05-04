@@ -15,7 +15,9 @@ use App\Model\Project;
 use App\Model\Company;
 use App\Model\Action_log;
 use Formatter;
-
+use View;
+use Response;
+use File;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -330,16 +332,19 @@ class BuildController extends Controller
           '_version' => '0.0.1',
         ),
       );
-      header('Content-Type: application/xml');
-      header('Content-Disposition: attachment; filename="downloaded.xml"');
-            $format= $this->formatterModule($data);
-            print $format;
-//       return response()->xml($data);
-//      return json_encode($data);
-    }
+
+      $content = View::make('xml.xmlformat', $data)->render();
+
+      $storage=File::put(storage_path('file.xml'), $content);
+//      return Response::make($content, 200)->header('Content-Type', 'application/xml');
+ return $storage;
+  }
     public function formatterModule($variable){
         $formatter = Formatter::make($variable, Formatter::ARR);
         $xml   = $formatter->toXml();
         return $xml;
+    }
+    public function XMLDom(){
+
     }
 }
