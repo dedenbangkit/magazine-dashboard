@@ -2245,11 +2245,21 @@
         });
         $("#savePage").click(function () {
             var contentArray= [];
+            var contentIframe=[];
             pageNum =$('#pages li').size()-1;
             for(i=1;i<=pageNum;i++){
                 content=$('#page'+i).html();
+                countli=$('#page'+i+' li').length;
+                countiframe=$('#page'+i+' li iframe').length;
+                console.log('page - '+i+'-'+countli+'-'+countiframe)
+
+                        contentpath=$('#page'+i+' li')[0];
+                            contentlist=contentpath
+                        console.log(contentlist)
+
+
                 id=$('#page'+i).data('id');
-                contentArray[i-1] = {id:id,content:content};
+                contentArray[i-1] = {id:id,content:contentpath};
             }
             $.ajax({
                 type: 'POST',
