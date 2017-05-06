@@ -20,7 +20,7 @@ use Response;
 use File;
 use Illuminate\Support\Facades\Input;
 
-class BuildAPIController extends Controller
+class BuildApiController extends Controller
 {
 
   /**

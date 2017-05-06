@@ -1,7 +1,7 @@
-<widget
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><widget
         xmlns='http://www.w3.org/ns/widgets'
-        xmlns:cdv='http://cordova.apache.org/ns/1.0' id='_xmlnscom.publixx.elle' version='0.0.1'>
-    <name>Elle Magazine</name>
+        xmlns:cdv='http://cordova.apache.org/ns/1.0' id='com.publixx.elle' version='0.0.1'>
+    <name>Elle</name>
     <description>lorem ipsum dolor sit amet</description>
     <author email='info@elle.zine' href=''>
         <toString></toString>
