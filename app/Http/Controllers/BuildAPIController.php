@@ -15,6 +15,7 @@ use App\Model\Project;
 use App\Model\Company;
 use App\Model\Action_log;
 use App\PhoneGap;
+use App\PgBuild;
 use View;
 use Response;
 use File;
@@ -32,12 +33,14 @@ class BuildApiController extends Controller
   protected $authdata;
   protected $project;
   protected $client;
+  protected $build;
 
   public function __construct()
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
       $this->client = new PhoneGap();
+      $this->build = new PgBuild('mail@dedenbangkit.com','Jalanremaja1208');
   }
   /**
    * Show the application dashboard.
@@ -47,11 +50,20 @@ class BuildApiController extends Controller
 
    public function getAppInfo(Request $request)
    {
-     $data = $this->client->getApplication('2599522');
+     $data = $this->build->getApps();
      return $data;
    }
 
-   public function postApp(Request $request)
+   public function testBuild(Request $request)
+   {
+     $title = $request->title;
+     $file = $request->file;
+     $createMethod = 'remote_repo';
+     $data = $this->build->uploadApp($file, $title, $createMethod);
+     return response()->json($data);
+   }
+
+   public function postApp2(Request $request)
    {
 
      $theproject=Project::where('project.id','=',$request->appid)

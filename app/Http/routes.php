@@ -48,6 +48,8 @@ Route::get('/user', 'UserController@showUser');
 Route::post('/app-setting-update', 'BuildController@updateApp')->name('updateapp');
 Route::get('/build-info', 'BuildApiController@getAppInfo')->name('getappinfo');
 Route::post('/build-post', 'BuildApiController@postApp')->name('pastapp');
+/*Testing*/
+Route::post('/build-post-test', 'BuildApiController@testBuild');
 
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');

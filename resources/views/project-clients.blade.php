@@ -24,6 +24,7 @@
                                 <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-newspaper-o"></i>&nbsp;{{$row->project_name}}</a></li>
                                 <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">App Settings</a></li>
                                 <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
+                                <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">Build Testing</a></li>
                                 <li class="dropdown pull-right">
                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                                     <i class="fa fa-download"></i> Download
@@ -245,6 +246,29 @@
                                         </form>
                                 </div>
                                 <!-- /.tab-pane -->
+                                <div class="tab-pane" id="tab_4">
+                                  <div class="row">
+                                  <form action="build-post-test" method="post" enctype="multipart/form-data">
+                                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                  <input type="hidden" name="file" id="file" value="http://www.dedenbangkit.com/testing.zip">
+
+                                  <div class="col-md-12">
+                                  <div class="form-group">
+                                  <label for="exampleInputFile"><i class="fa fa-apple"></i> Title</label>
+                                  <input type="text" class="form-control" name="title" id="title">
+                                  </div>
+                                  </div>
+
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Test Upload!</button>
+                                    </div>
+                                  </div>
+
+                                  </form>
+                                  </div>
+
+                                </div>
                               </div>
                               <!-- /.tab-content -->
                   </div>
