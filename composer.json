@@ -14,7 +14,7 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "soapbox/laravel-formatter": "^2.0",
         "jailtonsc/laravel-response-xml": "^1.1",
-        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle": "^6.2",
         "simplesoftwareio/simple-qrcode": "~1"
     },
     "require-dev": {

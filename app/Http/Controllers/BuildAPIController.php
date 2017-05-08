@@ -21,6 +21,9 @@ use Response;
 use File;
 use Illuminate\Support\Facades\Input;
 
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
+
 class BuildApiController extends Controller
 {
 
@@ -39,8 +42,13 @@ class BuildApiController extends Controller
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
-      $this->client = new PhoneGap();
-      $this->build = new PgBuild('mail@dedenbangkit.com','Jalanremaja1208');
+      $this->build = new PgBuild('bajaklautmalaka@gmail.com','Sejutatopanb4d4i');
+      $this->client = new Client([
+          // Base URI is used with relative requests
+          'base_uri' => 'https://build.phonegap.com/api/v1/',
+          'auth' => ['mail@dedenbangkit.com','Jalanremaja1208'],
+          ['connect_timeout' => 6000]
+      ]);
   }
   /**
    * Show the application dashboard.
@@ -50,44 +58,24 @@ class BuildApiController extends Controller
 
    public function getAppInfo(Request $request)
    {
-     $data = $this->build->getApps();
-     return $data;
+     $data = $this->client->request('GET', 'apps');
+     $result = $data->getBody();
+     return $result;
    }
 
    public function testBuild(Request $request)
    {
-     $title = $request->title;
-     $file = $request->file;
-     $createMethod = 'remote_repo';
-     $data = $this->build->uploadApp($file, $title, $createMethod);
-     return response()->json($data);
-   }
-
-   public function postApp2(Request $request)
-   {
-
-     $theproject=Project::where('project.id','=',$request->appid)
-                         ->leftjoin('company','company.id','=','project.company_id')
-                         ->select('project.*','project.id as project_appid','company.*')
-                         ->first();
-
-     $data = $this->client->createApplication(array(
-            'title'         => 'Phonegap Application',
-            'create_method' => 'remote_repo',
-            'repo'          => 'https://github.com/phonegap/phonegap-start',
-            'version'       => '1.0.0',
-            'keys'          => array(
-                                'ios' => array(
-                                  'title'     => "Bernard Satriani Added",
-                                  'default'   => true,
-                                  'id'        => 736933,
-                                  'link'      => "/api/v1/keys/ios/736933",
-                                ),
-                              ),
-        )
-      );
-
-    return response()->json($data);
-
+     $upload = $this->client->request('POST', 'apps',
+          ['json' =>
+            ['data' => array(
+              'title'         => $request->title,
+              'create_method' => 'remote_repo',
+              'repo'          => 'https://github.com/driftyco/ionic-starter-sidemenu',
+              'private'       => 'false',
+              'share'         => 'true',
+            )]
+          ]);
+      $result = $upload->getBody();
+      return $result;
    }
 }
