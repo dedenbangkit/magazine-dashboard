@@ -47,7 +47,10 @@ Route::get('/user', 'UserController@showUser');
 
 /*buildController*/
 Route::post('/app-setting-update', 'BuildController@updateApp')->name('updateapp');
-Route::post('/build-setting-update', 'BuildController@buildApp')->name('buildapp');
+Route::get('/build-info', 'BuildApiController@getAppInfo')->name('getappinfo');
+Route::post('/build-post', 'BuildApiController@postApp')->name('pastapp');
+/*Testing*/
+Route::post('/build-post-test', 'BuildApiController@testBuild');
 
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
@@ -74,4 +77,3 @@ Route::get('/sample-page', 'PageController@sample');
 Route::get('/sample-page2', 'PageController@sample2');
 
 });
-

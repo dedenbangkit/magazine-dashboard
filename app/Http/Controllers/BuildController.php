@@ -48,7 +48,10 @@ class BuildController extends Controller
   public function updateApp(Request $request)
   {
 
-      $theproject=Project::where('project.id','=',$request->appid)->leftjoin('company','company.id','=','project.company_id')->first();
+      $theproject=Project::where('project.id','=',$request->appid)
+                          ->leftjoin('company','company.id','=','project.company_id')
+                          ->select('project.*','project.id as project_appid','company.*')
+                          ->first();
 
       $data = array('widget' => array(
                   'name'        => $theproject->project_name,
@@ -328,23 +331,21 @@ class BuildController extends Controller
           ),
           '_xmlns' => 'http://www.w3.org/ns/widgets',
           '_xmlns:cdv' => 'http://cordova.apache.org/ns/1.0',
-          '_id' => 'com.publixx'.$theproject->domain,
+          '_id' => 'com.publixx.'.$theproject->domain,
           '_version' => '0.0.1',
         ),
       );
 
       $content = View::make('xml.xmlformat', $data)->render();
-
       $storage=File::put(storage_path('file.xml'), $content);
-//      return Response::make($content, 200)->header('Content-Type', 'application/xml');
- return $storage;
+      return $storage;
   }
-    public function formatterModule($variable){
+  public function formatterModule($variable){
         $formatter = Formatter::make($variable, Formatter::ARR);
         $xml   = $formatter->toXml();
         return $xml;
-    }
-    public function XMLDom(){
+  }
+  public function XMLDom(){
 
-    }
+  }
 }

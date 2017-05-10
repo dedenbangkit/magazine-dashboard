@@ -1,7 +1,7 @@
-
+<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'; ?>
 <widget
         xmlns='{{$widget['_xmlns']}}'
-        xmlns:cdv='{{$widget['_xmlns:cdv']}}' id='_xmlns{{$widget['_id']}}' version='{{$widget['_version']}}'>
+        xmlns:cdv='{{$widget['_xmlns:cdv']}}' id='{{$widget['_id']}}' version='{{$widget['_version']}}'>
     <name>{{$widget['name']}}</name>
     <description>{{$widget['description']}}</description>
     <author email='{{$widget["author"]["_email"]}}' href='{{$widget["author"]["_href"]}}'>

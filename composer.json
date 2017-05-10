@@ -13,14 +13,17 @@
         "intervention/image": "^2.3",
         "league/flysystem-aws-s3-v3": "^1.0",
         "soapbox/laravel-formatter": "^2.0",
-        "jailtonsc/laravel-response-xml": "^1.1"
+        "jailtonsc/laravel-response-xml": "^1.1",
+        "guzzlehttp/guzzle": "^6.2",
+        "simplesoftwareio/simple-qrcode": "~1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
-        "symfony/dom-crawler": "2.8.*|3.0.*"
+        "symfony/dom-crawler": "2.8.*|3.0.*",
+        "symfony/psr-http-message-bridge": "0.2"
     },
     "autoload": {
         "classmap": [

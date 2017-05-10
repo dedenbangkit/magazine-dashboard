@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         XmlResponse\XmlResponseServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         /*
          * Acacha AdminLTE template provider
          */
@@ -212,6 +213,7 @@ return [
 
         'Formatter'   => SoapBox\Formatter\Formatter::class,
         'XmlResponse' => XmlResponse\XmlResponseServiceProvider::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
 
         /*
          * Acacha AdminLTE template alias
