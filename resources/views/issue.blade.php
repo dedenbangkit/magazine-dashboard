@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                   <div class="box box-default color-palette-box">
                       <div class="box-header with-border">
-                              <a class="btn btn-success btn-flat pull-right" href="/create-issue"><i class="fa fa-plus-circle"> </i> 
+                              <a class="btn btn-success btn-flat pull-right" href="/create-issue"><i class="fa fa-plus-circle"> </i>
                                 New <?=  ucfirst(array_last($activer));?></a>
                               </div>
                         <div class="box-body">

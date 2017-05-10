@@ -3,3 +3,9 @@
 dikasih tahu kalau splash screen dan icons adalah mandatory dari itunse store dan google play
 - icon belum ada, tombol exit belum ada
 - element yang ngga dipakai di editor dihapus aja, tapi belum bisa update kalau belum pipeline.
+
+
+Untuk iki (Save)
+
+
+test[1].contentWindow.document.body.innerHTML
