@@ -30,6 +30,7 @@ Route::get('/published', 'ProjectController@published');
 
 /*page*/
 Route::get('/get-page', 'PageController@getPage');
+Route::get('/load-page', 'PageController@loadPage');
 Route::post('/save-page', 'PageController@savePage');
 Route::post('/iupload', 'PageController@iupload');
 Route::post('/editor-issue', 'PageController@editorIssue');
