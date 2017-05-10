@@ -56,6 +56,8 @@ class BuildApiController extends Controller
    * @return Response
    */
 
+   public function appInfo(Request $request)
+
    public function getAppInfo(Request $request)
    {
      $data = $this->client->request('GET', 'apps');
@@ -72,6 +74,7 @@ class BuildApiController extends Controller
               'create_method' => 'remote_repo',
               'repo'          => 'https://github.com/dedenbangkit/gi-info-phgap',
               'share'         => 'true',
+              'private'       => 'false',
             )]
           ]);
       $result = $upload->getBody();

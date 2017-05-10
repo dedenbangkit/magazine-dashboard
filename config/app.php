@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         XmlResponse\XmlResponseServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Chumper\Zipper\ZipperServiceProvider,
         /*
          * Acacha AdminLTE template provider
          */
@@ -214,7 +215,7 @@ return [
         'Formatter'   => SoapBox\Formatter\Formatter::class,
         'XmlResponse' => XmlResponse\XmlResponseServiceProvider::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-
+        'Zipper' => Chumper\Zipper\Zipper,
         /*
          * Acacha AdminLTE template alias
          */
