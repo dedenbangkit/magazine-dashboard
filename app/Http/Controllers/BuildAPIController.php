@@ -56,8 +56,6 @@ class BuildApiController extends Controller
    * @return Response
    */
 
-   public function appInfo(Request $request)
-
    public function getAppInfo(Request $request)
    {
      $data = $this->client->request('GET', 'apps');
