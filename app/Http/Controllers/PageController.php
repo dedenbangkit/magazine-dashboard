@@ -81,6 +81,19 @@ class PageController extends Controller
 
         return $data;
     }
+    public function loadPage(Request $request)
+    {
+        $pages = $this->page->getPage(11);
+        foreach($pages as $i=>$row){
+            $page_array= explode('[/]',$row->test_content);
+            $data['loadpage'][$i]=[
+                'id'=>$row->id,
+                'content_array'=>$page_array
+            ];
+        }
+
+        return $data;
+    }
     public function exportIssue(Request $request){
         $pathToAssets = array("builder_front/elements/bootstrap", "builder_front/elements/css", "builder_front/elements/fonts", "builder_front/elements/images", "builder_front/elements/js");
 
@@ -159,9 +172,18 @@ class PageController extends Controller
     }
     public function savePage(Request $request)
     {
+        $i=1;
             foreach($request->contentArray as $i=>$row){
-                $this->page->savePage($row['id'],$row['content']);
+                $content="";
+                foreach ($row['contentIframe'] as $j=>$child){
+                    $explodecontent=explode('<!-- /#page -->',$child['framecontent']);
+                    $content.= $explodecontent[0]."<!-- end array-->";
+                }
+                $this->page->savePage($row['id'],$row['content'],$content);
+//                $this->page->savePage($row['id'],$content,$row['content']);
+
             }
+            return 'test';
 
 
     }

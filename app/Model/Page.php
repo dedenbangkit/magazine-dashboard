@@ -28,10 +28,11 @@ class Page extends Model
             ->orderBy('id','ASC')
             ->get();
     }
-    public function savePage($id,$content){
+    public function savePage($id,$content,$test){
         return Page::where('id','=',$id)
         ->update([
             'page_content'=>$content,
+            'test_content'=>$test,
             'updated_at'=>Carbon::now()
         ]);
     }

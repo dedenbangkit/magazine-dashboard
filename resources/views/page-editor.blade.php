@@ -2134,7 +2134,27 @@
 
     <script>
 
+        $('iframe').on('load', function() {
+            $.ajax({
+                url: "/load-page"
+            }).done(function(data) {
+                $(data['loadpage']).each(function(index, el) {
+                    console.log(el.id)
+                    loadPage(el.content_array,index)
 
+                });
+
+            });
+        });
+        function loadPage(pageContent,id){
+            //console.log(pageContent[0])
+            console.log('delayed')
+            setTimeout(function () {
+                console.log($('#page'+(id+1)+' li iframe').contents().find('body').html());
+                $('#page'+(id+1)+' li iframe').contents().find('#page').html(pageContent[0])
+            }, 6000)
+
+        }
 
         //Page Setting
 
@@ -2248,18 +2268,18 @@
             var contentIframe=[];
             pageNum =$('#pages li').size()-1;
             for(i=1;i<=pageNum;i++){
-                content=$('#page'+i).html();
+                contentPage=$('#page'+i).html();
                 countli=$('#page'+i+' li').length;
-                countiframe=$('#page'+i+' li iframe').length;
-                console.log('page - '+i+'-'+countli+'-'+countiframe)
-
-                        contentpath=$('#page'+i+' li')[0];
-                            contentlist=contentpath
-                        console.log(contentlist)
-
-
+                var countiframe=$('#page'+i+' li iframe');
+                for(j=0;j<countli;j++) {
+                    var pageli=$('#page'+i+' li').get(j).style.height;
+                    console.log(pageli)
+                    contentpath=countiframe[j].contentWindow.document.body.innerHTML;
+                    console.log(contentpath)
+                    contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
+                }
                 id=$('#page'+i).data('id');
-                contentArray[i-1] = {id:id,content:contentpath};
+                contentArray[i-1] = {id:id,content:contentPage,contentIframe:contentIframe};
             }
             $.ajax({
                 type: 'POST',
@@ -2282,6 +2302,8 @@
             });
 
         });
+
+
         function newPage(pageTittle,pageContent,pageID){
             $('#pages li.active').each(function(){
 
