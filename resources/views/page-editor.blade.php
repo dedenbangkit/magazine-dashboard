@@ -2147,8 +2147,13 @@
             });
         });
         function loadPage(pageContent,id){
-            console.log(pageContent[0])
-            $('#page'+(id+1)+' li iframe').contents().find('#page').html(pageContent[1])
+            //console.log(pageContent[0])
+            console.log('delayed')
+            setTimeout(function () {
+                console.log($('#page'+(id+1)+' li iframe').contents().find('body').html());
+                $('#page'+(id+1)+' li iframe').contents().find('#page').html(pageContent[0])
+            }, 6000)
+
         }
 
         //Page Setting
