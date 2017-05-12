@@ -70,8 +70,23 @@ class BuildApiController extends Controller
             ['data' => array(
               'title'         => $request->title,
               'create_method' => 'remote_repo',
-              'repo'          => 'https://github.com/driftyco/ionic-starter-sidemenu',
+              'repo'          => 'https://github.com/dedenbangkit/gi-info-phgap',
+              'share'         => 'true',
               'private'       => 'false',
+            )]
+          ]);
+      $result = $upload->getBody();
+      return $result;
+   }
+
+   public function testBuildUpdate(Request $request)
+   {
+     $upload = $this->client->request('PUT', 'apps/'.$request->appid,
+          ['json' =>
+            ['data' => array(
+              'title'         => $request->title,
+              'create_method' => 'remote_repo',
+              'repo'          => 'https://github.com/dedenbangkit/gi-info-phgap',
               'share'         => 'true',
             )]
           ]);

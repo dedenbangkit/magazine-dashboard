@@ -156,9 +156,17 @@
                                 <div class="tab-pane" id="tab_2">
                                   <div class="box-body">
                                     <div class="col-md-6">
-                                      Since each platform has different image requirements, it’s best to make a source image for the largest size needed, and let the CLI do all the resizing, cropping and copying for you.
+                                      Since each platform has different image requirements, it’s best to make a source image for the largest size needed,
+                                      these are some services that you can use to generate the splashscreen and Icons automatically:<br><br>
+                                      <ul>
+                                        <li><a href="http://ticons.fokkezb.nl/">http://ticons.fokkezb.nl/</a></li>
+                                        <li><a href="http://pgicons.abiro.com/">http://pgicons.abiro.com/</a></li>
+                                        <li><a href="http://phonegap.appiq.software/">http://phonegap.appiq.software/</a></li>
+                                      </ul>
+
                                     </div>
                                     <div class="col-md-6">
+                                      Once you have the assets with you, please upload them to prepare the build process.
                                       <form class="form-horizontal" action="{{url('app-setting-update')}}" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="appid" value="{{$row->id}}">
@@ -167,6 +175,9 @@
                                         <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
                                       </form>
                                     </div>
+
+                                    <div class="col-md-12"><hr></div>
+                                    <br>
                                   </div>
                                   </form>
                                 </div>

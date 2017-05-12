@@ -15,7 +15,8 @@
         "soapbox/laravel-formatter": "^2.0",
         "jailtonsc/laravel-response-xml": "^1.1",
         "guzzlehttp/guzzle": "^6.2",
-        "simplesoftwareio/simple-qrcode": "~1"
+        "simplesoftwareio/simple-qrcode": "~1",
+        "chumper/zipper": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
