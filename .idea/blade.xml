@@ -17,7 +17,7 @@
       <data directive="@unless" injection="true" prefix="&lt;?php if ( ! (" suffix=")): ?&gt;" />
       <data directive="@append" />
       <data directive="@stop" />
-      <data directive="@endsection" />
+      <data directive="@stop" />
       <data directive="@endfor" />
       <data directive="@overwrite" />
       <data directive="@endforelse" />
