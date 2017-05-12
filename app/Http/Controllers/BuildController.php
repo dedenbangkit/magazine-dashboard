@@ -18,6 +18,8 @@ use Formatter;
 use View;
 use Response;
 use File;
+use ZipArchive;
+use RecursiveArrayIterator;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -348,4 +350,36 @@ class BuildController extends Controller
   public function XMLDom(){
 
   }
+
+  public function setupApp(Request $request)
+  {
+
+    $rootPath = storage_path('application');
+    $zip = new ZipArchive();
+    $zip->open($request->apple_id.'.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+    $files = new RecursiveIterator(
+        new RecursiveDirectoryIterator($rootPath),
+        RecursiveIterator::LEAVES_ONLY
+    );
+
+    foreach ($files as $name => $file)
+    {
+        // Skip directories (they would be added automatically)
+        if (!$file->isDir())
+        {
+            // Get real and relative path for current file
+            $filePath = $file->getRealPath();
+            $relativePath = substr($filePath, strlen($rootPath) + 1);
+
+            // Add current file to archive
+            $zip->addFile($filePath, $relativePath);
+        }
+    }
+
+    $zip->close();
+    return $zip;
+
+  }
+
 }

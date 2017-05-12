@@ -51,7 +51,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $username = 'bajaklautmalaka@gmail.com';
+    protected $username = '';
     /**
      * Password
      *
@@ -59,7 +59,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $password = 'Sejutatopanb4d4i';
+    protected $password = '';
     /**
      * Simple authentication token, taken from PG account
      *
@@ -67,7 +67,7 @@ class PhoneGap
      *
      * @var string
      */
-    protected $token = 'zHz1xHTxsyzWfEtUB14C';
+    protected $token = '';
     /**
      * OAuth2 access token
      *
@@ -81,7 +81,7 @@ class PhoneGap
      *
      * @var bool
      */
-    protected $success = false;
+    protected $success = 'false';
     /**
      * Error string
      *
@@ -184,7 +184,7 @@ class PhoneGap
      *
      * @link http://docs.build.phonegap.com/en_US/developer_api_read.md.html#_get_https_build_phonegap_com_api_v1_me
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getProfile()
     {
@@ -195,7 +195,7 @@ class PhoneGap
      *
      * @link http://docs.build.phonegap.com/en_US/developer_api_read.md.html#_get_https_build_phonegap_com_api_v1_apps
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getApplications()
     {
@@ -208,7 +208,7 @@ class PhoneGap
      *
      * @param mixed: int | string $applicationId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getApplication($applicationId)
     {
@@ -221,7 +221,7 @@ class PhoneGap
      *
      * @param mixed: int | string $applicationId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getApplicationIcon($applicationId)
     {
@@ -235,7 +235,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param string $platform - platform name ('android', 'ios', ...')
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function downloadApplicationPlatform($applicationId, $platform)
     {
@@ -246,7 +246,7 @@ class PhoneGap
      *
      * @link http://docs.build.phonegap.com/en_US/developer_api_read.md.html#_get_https_build_phonegap_com_api_v1_keys
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getKeys()
     {
@@ -259,7 +259,7 @@ class PhoneGap
      *
      * @param string $platform - platform name ('android', 'ios', ...')
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getKeysPlatform($platform)
     {
@@ -273,7 +273,7 @@ class PhoneGap
      * @param string $platform - platform name ('android', 'ios', ...')
      * @param mixed: int | string $keyId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function getKeyPlatform($platform, $keyId)
     {
@@ -288,7 +288,7 @@ class PhoneGap
      * @link http://docs.build.phonegap.com/en_US/developer_api_write.md.html#_post_https_build_phonegap_com_api_v1_apps
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function createApplication($options = array())
     {
@@ -298,13 +298,13 @@ class PhoneGap
             'package' => 'com.phonegap.www',
             'version' => '0.0.1',
             'description' => '',
-            'debug' => false,
+            'debug' => 'false',
             // don't set defaults for keys, as it will throw an error
             // if you want to set keys just pass them as options
             // 'keys' => array(),
-            'private' => true,
+            'private' => 'true',
             'phonegap_version' => '3.1.0',
-            'hydrates' => false,
+            'hydrates' => 'false',
         );
         $options = array_merge($defaults, $options);
         return $this->request('apps', 'post', $options);
@@ -317,7 +317,7 @@ class PhoneGap
      * @param string $source - GitHub repository
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function createApplicationFromRepo($source, $options = array())
     {
@@ -335,7 +335,7 @@ class PhoneGap
      * @param string $source - file path
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function createApplicationFromFile($source, $options = array())
     {
@@ -353,7 +353,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateApplication($applicationId, $options = array())
     {
@@ -369,12 +369,12 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateApplicationFromRepo($applicationId, $options = array())
     {
         $options = array_merge($options, array(
-            'pull' => true,
+            'pull' => 'true',
         ));
         return $this->updateApplication($applicationId, $options);
     }
@@ -387,7 +387,7 @@ class PhoneGap
      * @param string $source - file path
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateApplicationFromFile($applicationId, $source, $options = array())
     {
@@ -404,7 +404,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param string $source - png icon file path
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateApplicationIcon($applicationId, $source)
     {
@@ -419,7 +419,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param array | string $platforms - platform name ('android', 'ios', ...')
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function buildApplication($applicationId, $platforms = array())
     {
@@ -440,7 +440,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param mixed: string | array $platform - platform name ('android', 'ios', ...')
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function buildApplicationPlatform($applicationId, $platform)
     {
@@ -454,7 +454,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function addCollaborator($applicationId, $options = array())
     {
@@ -474,7 +474,7 @@ class PhoneGap
      * @param mixed: int | string $collaboratorId
      * @param array $options- additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateCollaborator($applicationId, $collaboratorId, $options = array())
     {
@@ -494,7 +494,7 @@ class PhoneGap
      * @param string $platform - platform name ('android', 'ios', ...')
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function addKeyPlatform($platform, $options = array())
     {
@@ -509,7 +509,7 @@ class PhoneGap
      * @param string $keystore - keystore file
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function addKeyAndroid($title, $keystore, $options = array())
     {
@@ -533,7 +533,7 @@ class PhoneGap
      * @param string $profile - mobileprovision file
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function addKeyIos($title, $cert, $profile, $options = array())
     {
@@ -557,7 +557,7 @@ class PhoneGap
      * @param mixed: int | string $keyId
      * @param array $options - additional options, see details in API docs
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateKeyPlatform($platform, $keyId, $options = array())
     {
@@ -571,7 +571,7 @@ class PhoneGap
      * @param mixed: int | string $keyId
      * @param string $password - key password
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateKeyIos($keyId, $password)
     {
@@ -587,7 +587,7 @@ class PhoneGap
      * @param string $keyPw - key password
      * @param string $keystorePw - keystore password
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function updateKeyAndroid($keyId, $keyPw, $keystorePw)
     {
@@ -604,7 +604,7 @@ class PhoneGap
      *
      * @param mixed: int | string $applicationId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function deleteApplication($applicationId)
     {
@@ -618,7 +618,7 @@ class PhoneGap
      * @param mixed: int | string $applicationId
      * @param mixed: int | string $collaboratorId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function deleteCollaborator($applicationId, $collaboratorId)
     {
@@ -632,7 +632,7 @@ class PhoneGap
      * @param string $platform - platform name ('android', 'ios', ...')
      * @param mixed: int | string $keyId
      *
-     * @return mixed: array on success | false on fail
+     * @return mixed: array on success | 'false' on fail
      */
     public function deleteKeyPlatform($platform, $keyId)
     {
@@ -672,7 +672,7 @@ class PhoneGap
     protected function setError($error)
     {
         $this->error = $error;
-        return false;
+        return 'false';
     }
     /**
      * Clear last request options
@@ -680,7 +680,7 @@ class PhoneGap
     protected function clear()
     {
         $this->error = '';
-        $this->success = false;
+        $this->success = 'false';
     }
     /**
      * Return file path for curl
@@ -720,7 +720,7 @@ class PhoneGap
     protected function assocToString($array, $keyValueSeparator = ' - ', $pairSeparator = '; ')
     {
         if (! is_array($array)) {
-            return print_r($array, true);
+            return print_r($array, 'true');
         }
         foreach ($array as $key => &$value) {
             $value = $key . $keyValueSeparator . $value;
@@ -734,7 +734,7 @@ class PhoneGap
      * @param string $method - request method
      * @param array $options - api request parameters
      *
-     * @return array (if succeeded) | boolean (false, if failed)
+     * @return array (if succeeded) | boolean ('false', if failed)
      */
     protected function request($uri, $method = 'get', $options = array())
     {
@@ -765,7 +765,7 @@ class PhoneGap
             curl_setopt($handle, CURLOPT_USERPWD, $this->username . ':' . $this->password);
         }
         curl_setopt($handle, CURLOPT_URL, $url);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, 'true');
         curl_setopt($handle, CURLOPT_CUSTOMREQUEST, strtoupper($method));
         curl_setopt($handle, CURLOPT_HTTPHEADER, array(
             'Content-type: multipart/form-data;',
@@ -793,13 +793,13 @@ class PhoneGap
         if (curl_errno($handle)) {
             $this->setError(curl_error($handle));
             curl_close($handle);
-            return false;
+            return 'false';
         }
         // get httd code to identify if request was successful
         $httpcode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         $this->success = in_array($httpcode, $this->codes);
         curl_close($handle);
-        $decoded = json_decode($response, true);
+        $decoded = json_decode($response, 'true');
         // request may be successful, but also can have errors, for example, about keys
         if (isset($decoded['error']) && $error = $decoded['error']) {
             if (is_array($error)) {
@@ -808,7 +808,7 @@ class PhoneGap
             $this->setError($error);
         }
         if (! $this->success) {
-            return false;
+            return 'false';
         }
         return $decoded;
     }

@@ -186,24 +186,24 @@
                                   <div class="box-body">
                                   <div class="col-md-12">
                                     <div class="col-md-6">
-                                  <form class="form-horizontal" action="{{url('build-post')}}" method="post" enctype="multipart/form-data">
+                                  <form class="form-horizontal" action="{{url('setup-app')}}" method="post" enctype="multipart/form-data">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" name="appid" value="{{$row->id}}">
                                           <!-- text input -->
                                           <div class="form-group">
                                             <label><i class="fa fa-apple"></i> Application ID</label>
-                                            <input type="text" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
+                                            <input type="text" name="apple_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
                                           </div>
 
                                           <!-- textarea -->
                                           <div class="form-group">
                                             <label><i class="fa fa-apple"></i> Prefix</label>
-                                            <input type="text" class="form-control" placeholder="eg. S4G4BK2VSQ">
+                                            <input type="text" name="apple_prefix" class="form-control" placeholder="eg. S4G4BK2VSQ">
                                           </div>
 
                                           <div class="form-group">
                                             <label><i class="fa fa-apple"></i> Status</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="apple_status">
                                               <option>Development</option>
                                               <option>Published</option>
                                             </select>
@@ -211,7 +211,7 @@
 
                                           <div class="form-group">
                                             <label><i class="fa fa-android"></i> API Key</label>
-                                            <input type="text" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
+                                            <input type="text" name="android_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
                                           </div>
 
                                           </div>
@@ -220,7 +220,7 @@
 
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-apple"></i> Provisioning Profile (.mobiprovision)</label>
-                                          <input type="file" name="cover" id="imagefile">
+                                          <input type="file" name="apple_provision" id="imagefile">
                                           </div>
 
                                           <hr>
@@ -229,14 +229,14 @@
                                           <div class="col-md-6">
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate (.p12)</label>
-                                          <input type="file" name="cover" id="imagefile" style="margin-top:15px;">
+                                          <input type="file" name="apple_certificate" id="imagefile" style="margin-top:15px;">
                                           </div>
                                           </div>
 
                                           <div class="col-md-6">
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate Password</label>
-                                          <input type="password" class="form-control">
+                                          <input type="password" name="apple_password" class="form-control">
                                           </div>
                                           </div>
                                           </div>
@@ -244,7 +244,7 @@
                                           <hr>
                                           <div class="form-group">
                                           <label for="exampleInputFile"><i class="fa fa-android"></i> Kestore File (.keystore)</label>
-                                          <input type="file" name="cover" id="imagefile">
+                                          <input type="file" name="android_key" name="cover" id="imagefile">
                                           </div>
 
                                           <div class="form-group">
@@ -259,7 +259,7 @@
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_4">
                                   <div class="row">
-                                  <form action="build-post-test" method="post" enctype="multipart/form-data">
+                                  <form action="build-app" method="post" enctype="multipart/form-data">
                                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                   <input type="hidden" name="file" id="file" value="http://www.dedenbangkit.com/testing.zip">
 

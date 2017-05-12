@@ -1,0 +1,266 @@
+/*lenovo*/
+@media (device-aspect-ratio: 720/1280) and (orientation : portrait){
+	.page-head {
+    font-size: 60px;
+    line-height: 60px;
+    color: #222;
+	}
+	.hidden-xs{
+		display: none;
+	}
+	.page-head-ctn{
+		font-size: 120px;
+    line-height: 100px;
+	}
+	.float-letter{
+		font-size: 140px;
+		line-height: 80px;
+	}
+	p{
+		font-size: 24px;
+	}
+	.title-page-cover{
+		font-family: 'Antenna';
+		margin:0px;
+		font-size: 45px;
+	  color:#d1252a;
+	}
+	.title-page-cover-last{
+		font-family: 'Antenna';
+		margin:0px;
+		font-size: 40px;
+	  letter-spacing: 2px;
+	  color:red;
+	}
+	.title-page-cover-second{
+		font-family: 'AntennaCond';
+		font-size: 40px;
+	}
+	.page-menu{
+		font-size:20px;
+	}
+
+	.page-menu-nu{
+		font-size:20px;
+	}
+
+	.contributor{
+		font-size:24px;
+	}
+
+	.contributor-list{
+		font-size:22px;
+	}
+
+	.contributor-note{
+		font-size:18px;
+	}
+
+	.content-text-no-indent{
+	  font-size: 23px;
+	}
+
+	.content-text{
+		text-indent: 25px;
+	  font-size: 23px;
+	}
+
+	.content-text-block{
+	  font-size: 28px;
+		padding: 27px;
+	}
+
+	.content-author{
+		font-size: 24px;
+	}
+	.content-author-sub{
+		font-size: 30px;
+		margin-top: 16px;
+	}
+	.title-page-two{
+		font-family:'AntennaCond';
+		font-size:50px;
+		font-weight:100;
+		line-height:30px;
+	}
+
+	.title-page-two-line-two{
+		font-weight:500;
+		font-size:35px;
+	}
+
+	.title-page-two-line-three{
+		font-weight:300;
+		font-size:30px
+	}
+	.tirta{
+		width:300px;
+		position:absolute;
+		bottom:0px;
+		right:0;
+		z-index:1
+	}
+	.page-menu{
+		font-family: 'Antenna';
+		font-size:27px;
+		font-weight: 600;
+		color:#222;
+		margin-left: 15px;
+	}
+
+	.page-menu-nu{
+		font-family: 'AntennaCond';
+		font-size:25px;
+		color:#888;
+		margin-left: 26px;
+		display: block;
+	}
+	.tirta{
+		width: 50%;
+	}
+	.title-alternative{
+		font-size: 62px;
+    line-height: 60px;
+	}
+	.advertisement-text{
+		font-size: 40px;
+	}
+	.subtitle-alternative{
+		font-size: 30px;
+	}
+	.hidden-xs{
+		display: none;
+	}
+}
+
+@media (device-aspect-ratio: 720/1280) and (orientation : landscape) {
+	.hidden-sm{
+		display: none;
+	}
+
+	.page-head-ctn{
+		font-size: 120px;
+    line-height: 100px;
+	}
+	.float-letter{
+		font-size: 140px;
+		line-height: 80px;
+	}
+	p{
+		font-size: 24px;
+	}
+	.title-page-cover{
+		font-family: 'Antenna';
+		margin:0px;
+		font-size: 42px;
+	  color:#d1252a;
+		text-align: right;
+	}
+	.title-page-cover-last{
+		font-family: 'Antenna';
+		margin:0px;
+		font-size: 42px;
+	  letter-spacing: 2px;
+	  color:red;
+		text-align: right;
+	}
+	.title-page-cover-second{
+		font-family: 'AntennaCond';
+		font-size: 30px;
+		position: fixed;
+
+	}
+	.page-menu{
+		font-size:20px;
+	}
+
+	.page-menu-nu{
+		font-size:20px;
+	}
+
+	.contributor{
+		font-size:24px;
+	}
+
+	.contributor-list{
+		font-size:22px;
+	}
+
+	.contributor-note{
+		font-size:18px;
+	}
+
+	.content-text-no-indent{
+	  font-size: 23px;
+	}
+
+	.content-text{
+		text-indent: 25px;
+	  font-size: 23px;
+	}
+
+	.content-text-block{
+	  font-size: 28px;
+		padding: 27px;
+	}
+
+	.content-author{
+		font-size: 24px;
+	}
+	.content-author-sub{
+		font-size: 30px;
+		margin-top: 16px;
+	}
+	.title-page-two{
+		font-family:'AntennaCond';
+		font-size:50px;
+		font-weight:100;
+		line-height:30px;
+	}
+
+	.title-page-two-line-two{
+		font-weight:500;
+		font-size:35px;
+	}
+
+	.title-page-two-line-three{
+		font-weight:300;
+		font-size:30px
+	}
+	.tirta{
+		width:300px;
+		position:absolute;
+		bottom:0px;
+		right:0;
+		z-index:1
+	}
+	.page-menu{
+		font-family: 'Antenna';
+		font-size:27px;
+		font-weight: 600;
+		color:#222;
+		margin-left: 15px;
+	}
+
+	.page-menu-nu{
+		font-family: 'AntennaCond';
+		font-size:22px;
+		color:#888;
+		margin-left: 26px;
+		display: block;
+	}
+	.tirta{
+		width: 20%;
+	}
+	.title-alternative{
+		font-size: 62px;
+    line-height: 60px;
+	}
+	.advertisement-text{
+		font-size: 40px;
+	}
+	.subtitle-alternative-tablet{
+		font-size: 30px;
+	}
+
+}
