@@ -172,18 +172,16 @@ class PageController extends Controller
     }
     public function savePage(Request $request)
     {
-        $i=1;
-            foreach($request->contentArray as $i=>$row){
-                $content="";
-                foreach ($row['contentIframe'] as $j=>$child){
+               var_dump($request->id);
+                $contents="";
+                foreach ($request->contentIframe as $j=>$child){
                     $explodecontent=explode('<!-- /#page -->',$child['framecontent']);
-                    $content.= $explodecontent[0]."<!-- end array-->";
+                    $contents.= $explodecontent[0]."<!-- end array-->";
                 }
-                $this->page->savePage($row['id'],$row['content'],$content);
+                $this->page->savePage($request->id,$request->content,$contents);
 //                $this->page->savePage($row['id'],$content,$row['content']);
 
-            }
-            return 'test';
+            return $request->id;
 
 
     }
