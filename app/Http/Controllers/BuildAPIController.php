@@ -42,7 +42,7 @@ class BuildApiController extends Controller
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
-      $this->build = new PgBuild('bajaklautmalaka@gmail.com','Sejutatopanb4d4i');
+      $this->build = new Phonegap('mail@dedenbangkit.com','Jalanremaja1208');
       $this->client = new Client([
           // Base URI is used with relative requests
           'base_uri' => 'https://build.phonegap.com/api/v1/',
@@ -63,34 +63,49 @@ class BuildApiController extends Controller
      return $result;
    }
 
-   public function testBuild(Request $request)
+   public function Build(Request $request)
    {
-     $upload = $this->client->request('POST', 'apps',
-          ['json' =>
-            ['data' => array(
-              'title'         => $request->title,
-              'create_method' => 'remote_repo',
-              'repo'          => 'https://github.com/dedenbangkit/gi-info-phgap',
-              'share'         => 'true',
-              'private'       => 'false',
-            )]
-          ]);
-      $result = $upload->getBody();
+      $zip_path = storage_path('zip/testing.zip');
+      $data = $this->client->request('POST', 'apps', [
+                  'multipart' => [
+                      ['name' => 'file',
+                       'contents' => fopen($zip_path, 'r'),
+                      ],
+                      ['name' => 'data',
+                       'contents' => json_encode(
+                          [
+                              'title' => $request->title,
+                              'create_method' => 'file',
+                              'share' => 'true',
+                              'private' => 'true',
+                          ]),
+                      ]
+                  ]
+              ]);
+      $result = $data->getBody();
       return $result;
    }
 
-   public function testBuildUpdate(Request $request)
+   public function buildUpdate(Request $request)
    {
-     $upload = $this->client->request('PUT', 'apps/'.$request->appid,
-          ['json' =>
-            ['data' => array(
-              'title'         => $request->title,
-              'create_method' => 'remote_repo',
-              'repo'          => 'https://github.com/dedenbangkit/gi-info-phgap',
-              'share'         => 'true',
-            )]
-          ]);
-      $result = $upload->getBody();
-      return $result;
+     $zip_path = storage_path('zip/testing.zip');
+     $data = $this->client->request('PUT', 'apps/'.$request->appid, [
+                 'multipart' => [
+                     ['name' => 'file',
+                      'contents' => fopen($zip_path, 'r'),
+                     ],
+                     ['name' => 'data',
+                      'contents' => json_encode(
+                         [
+                             'title' => $request->title,
+                             'create_method' => 'file',
+                             'share' => 'true',
+                             'private' => 'true',
+                         ]),
+                     ]
+                 ]
+             ]);
+     $result = $data->getBody();
+     return $result;
    }
 }

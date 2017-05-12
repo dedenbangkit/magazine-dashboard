@@ -1,0 +1,517 @@
+.cover-title{
+	font-weight:600;
+	margin-top:40%
+}
+
+.title-page-cover{
+	font-family: 'Antenna';
+	margin:0px;
+	font-size: 32px;
+  color:#d1252a;
+}
+.title-page-cover-last{
+	font-family: 'Antenna';
+	margin:0px;
+	font-size: 18px;
+  letter-spacing: 1px;
+  color:red;
+}
+.title-page-cover-second{
+	font-family: 'AntennaCond';
+	font-size: 12px;
+	margin-top:3%;
+	color:#004d7d;
+	font-weight:600;
+	text-align: right;
+}
+.title-page-cover-third{
+	text-align: center;
+}
+
+.page-head{
+	font-family:'Gotham';
+	font-weight: 100;
+	font-size: 30px;
+	line-height: 30px;
+	color:#222;
+}
+
+.page-head-ctn{
+	font-family:'Gotham';
+	font-weight: 100;
+	font-size: 50px;
+	line-height: 37px;
+	color:#222;
+	text-align: right;
+	padding-right: 20px;
+	margin-bottom:20px
+}
+
+.chevron-menu{
+	color:#96979b;
+}
+
+.page-menu{
+	font-family: 'Antenna';
+	font-size:14px;
+	font-weight: 600;
+	color:#222;
+	margin-left: 15px;
+}
+
+.page-menu-nu{
+	font-family: 'AntennaCond';
+	font-size:9px;
+	color:#888;
+	margin-left: 27px;
+	display: block;
+}
+.redaction{
+	border-top:solid #999 1px;
+	margin-top: 30px;
+	padding-top:20px
+}
+
+.contributor{
+	font-family: 'AntennaCond';
+	font-size:10px;
+	color:#000;
+	font-weight: 600;
+	display: block;
+}
+
+.contributor-list{
+	font-family: 'AntennaCond';
+	font-size:10px;
+	color:#000;
+	font-weight: 300;
+	display: block;
+}
+
+.contributor-note{
+	font-family: 'AntennaCond';
+	font-size:10px;
+	color:#FFF;
+	font-weight: 300;
+	display: block;
+	background-color: #888;
+}
+
+.float-letter{
+	font-family: 'Slant';
+  font-size: 90px;
+  float: left;
+  color: #b8926c;
+  padding-right: 10px;
+  line-height: 58px;
+}
+
+.content-text-no-indent{
+	line-height: normal;
+  font-family: 'pt-sans';
+  font-size: 11px;
+}
+
+.content-text{
+	line-height: normal;
+	text-indent: 15px;
+  font-family: 'pt-sans';
+  font-size: 11px;
+}
+
+.content-text-block{
+	line-height: normal;
+  font-family: 'pt-sans';
+	color: #fff;
+  font-size: 12px;
+	background-color: #7e563e;
+	padding: 10px;
+}
+
+.content-author{
+	font-family: 'blacksword';
+	color:#000;
+	font-size: initial;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.content-author-sub{
+	font-family: 'pt-sans';
+	color:#000;
+	font-size: 10px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.title-page-two{
+	font-family:'AntennaCond';
+	font-size:20px;
+	font-weight:100;
+	line-height:20px;
+}
+
+.title-page-two-line-two{
+	font-weight:500;
+	font-size:24px;
+}
+
+.title-page-two-line-three{
+	font-weight:300;
+	font-size:15px
+}
+
+.tirta{
+	width:200px;
+	position:absolute;
+	bottom:0px;
+	right:0;
+	z-index:1
+}
+
+.title-alternative{
+	font-family: 'gabo-drive';
+  color: #fff;
+  font-size: 35px;
+  line-height: 30px;
+}
+
+.subtitle-alternative{
+	font-family: 'antenna';
+  font-size: 12px;
+	display: block;
+	margin-top: 20px;
+}
+
+.subtitle-alternative-tablet{
+	font-family: 'antenna';
+  color: #fff;
+  font-size: 12px;
+	display: block;
+	margin-top: 20px;
+}
+
+.advertisement-text{
+  font-family: 'Gotham';
+	font-size: 24px;
+  color: #222;
+  display: block;
+  text-align: center;
+	font-weight: 300;
+}
+
+@media (min-device-width : 320px) and (max-device-width : 736px)
+and (orientation : landscape) {
+	.img-landscape{
+		max-width: 50%;
+	}
+	.img-cover-logo{
+		max-width: 50%;
+		position: absolute;
+		right: 0px;
+	}
+	.cover-title{
+		font-weight:600;
+		margin-top:20%;
+		padding-bottom: 10px;
+	}
+	.cover-title p{
+		margin:0px
+	}
+
+	.title-page-cover-third{
+		text-align: left;
+	}
+
+
+
+}
+
+@media (min-device-width : 320px) and (max-device-width : 736px)
+and (orientation : landscape) and (max-width: 991px) {
+	.img-landscape{
+		max-width: 50%;
+	}
+	.img-cover-logo{
+		max-width: 50%;
+		position: absolute;
+		right: 0px;
+	}
+	.cover-title{
+		font-weight:600;
+		margin-top:20%;
+		padding-bottom: 10px;
+	}
+	.title-page-cover-second{
+		text-align: left;
+		margin-top: 40px;
+	}
+	.redaction{
+		border-top:none;
+		margin-top: 30px;
+		padding-top:20px
+	}
+	.contributor{
+		font-size: 8px;
+	}
+	.contributor-list{
+		font-size: 8px;
+	}
+}
+
+/*Ipad*/
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1280px)
+and (orientation : landscape) {
+	.img-cover-logo{
+		max-width: 30%;
+		position: absolute;
+		right: 0px;
+	}
+	img.img.img-responsive.img-cover-title{
+		right:0px;
+		width: 50%;
+    margin-top: 20px;
+	}
+	.cover-title{
+		font-weight:600;
+		margin-top:20%;
+		padding-bottom: 10px;
+	}
+	.img-cover-logo{
+		max-width: 50%;
+		position: absolute;
+		right: 0px;
+	}
+	.cover-title p{
+		margin:0px;
+		font-size: 200%;
+	}
+	.title-page-cover-second{
+		text-align: left;
+		margin-top: 10px;
+	}
+
+	.title-page-cover{
+		font-size:300%;
+	}
+	.title-page-cover-second {
+		font-size: 150%;
+		display: block;
+		text-align: right;
+	}
+	.title-page-cover-last{
+		font-size:200%;
+	}
+
+	.title-page-cover-third{
+		text-align: right;
+	}
+	.page-menu{
+		font-size: 25px;
+	}
+	.page-menu-nu{
+		font-size: 20px;
+	}
+
+	.contributor{
+		font-size: 15px;
+	}
+	.contributor-list{
+		font-size: 15px;
+	}
+	.contributor-note{
+		font-size: 15px;
+	}
+
+	.page-head-ctn{
+		font-size: 120px;
+    line-height: 80px;
+	}
+	.float-letter{
+		font-size: 200px;
+		line-height: 140px;
+	}
+
+	.content-text-no-indent{
+	  font-size: 22px;
+	}
+
+	.content-text{
+		text-indent: 50px;
+		font-size: 22px;
+	}
+
+	.content-text-block{
+	  font-size: 24px;
+		padding: 10px;
+	}
+
+	.content-author{
+		font-size: 50px;
+    text-align: left;
+    margin-top: 0px;
+    margin-left: 10px;
+	}
+
+	.content-author-sub{
+		font-size: 20px;
+		text-align: left;
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+
+	.img-circle{
+		width: 100%;
+	}
+	.title-page-two{
+		font-size: 50px;
+    line-height: 50px;
+	}
+	.title-page-two-line-two{
+		font-size: 30px;
+	}
+	.title-page-two-line-three{
+		font-size: 24px;
+	}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1280px)
+and (orientation : portrait) {
+	.img-landscape{
+		left: -5%;
+		position: fixed;
+		top: 15%;
+	}
+	.img-cover-logo{
+		min-width: 100%;
+		position: absolute;
+		right: 0px;
+	}
+	.img-cover-title{
+		right:0px;
+		margin-bottom: 20px;
+	}
+	.cover-title{
+		padding-top:10%;
+	}
+	.cover-title p{
+		margin-top:0px;
+		font-size: 200%;
+	}
+	.title-page-cover{
+		font-size:400%;
+	}
+	.title-page-cover-second {
+		font-size: 200%;
+	}
+	.title-page-cover-last{
+		font-size:250%;
+	}
+
+	.page-menu{
+		font-size: 25px;
+	}
+	.page-menu-nu{
+		font-size: 20px;
+	}
+
+	.contributor{
+		font-size: 15px;
+	}
+	.contributor-list{
+		font-size: 15px;
+	}
+	.contributor-note{
+		font-size: 15px;
+	}
+
+	.page-head-ctn{
+		font-size: 120px;
+    line-height: 80px;
+	}
+	.float-letter{
+		font-size: 200px;
+		line-height: 140px;
+	}
+
+	.content-text-no-indent{
+	  font-size: 22px;
+	}
+
+	.content-text{
+		text-indent: 50px;
+		font-size: 22px;
+	}
+
+	.content-text-block{
+	  font-size: 24px;
+		padding: 10px;
+	}
+
+	.content-author{
+		font-size: 35px;
+		text-align: center;
+		margin-top: 0px;
+	}
+
+	.content-author-sub{
+		font-size: 24px;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.img-circle{
+		width: 100%;
+	}
+
+	.tirta{
+		width:300px;
+		position:absolute;
+		bottom:0px;
+		right:0;
+		z-index:1
+	}
+	.title-page-two{
+		font-size: 50px;
+    line-height: 50px;
+	}
+	.title-page-two-line-two{
+		font-size: 30px;
+	}
+	.title-page-two-line-three{
+		font-size: 24px;
+	}
+	.title-alternative{
+		font-size: 75px;
+		line-height: 60px;
+	}
+	.subtitle-alternative{
+		font-size: 25px;
+	}
+}
+
+/*Iphone 6Plus*/
+@media only screen and (device-width : 414px) and (device-height : 736px)
+and (orientation : portrait) {
+	.page-menu{
+		font-size: 20px;
+	}
+	.page-menu-nu{
+		font-size: 12px;
+	}
+	.content-text-no-indent{
+	  font-size: 14px;
+	}
+
+	.content-text{
+		text-indent: 50px;
+		font-size: 14px;
+	}
+
+	.content-text-block{
+	  font-size: 16px;
+		padding: 10px;
+	}
+}

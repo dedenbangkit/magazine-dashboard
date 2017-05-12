@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['middleware' => ['web']], function () {
+//Route::group(['middleware' => ['auth']], function () {
 /* home controler*/
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
@@ -46,10 +46,11 @@ Route::get('/user', 'UserController@showUser');
 
 /*buildController*/
 Route::post('/app-setting-update', 'BuildController@updateApp')->name('updateapp');
+Route::post('/setup-app', 'BuildController@setupApp')->name('setupapp');
 Route::get('/build-info', 'BuildApiController@getAppInfo')->name('getappinfo');
-Route::post('/build-post', 'BuildApiController@postApp')->name('pastapp');
 /*Testing*/
-Route::post('/build-post-test', 'BuildApiController@testBuild');
+Route::post('/build-app', 'BuildApiController@Build');
+Route::post('/build-update', 'BuildApiController@updateBuild');
 
 /*subscribe*/
 Route::get('/new-subscribe', 'SubscribeController@showFormSubscribe');
@@ -75,4 +76,4 @@ Route::get('/page', 'PageController@index');
 Route::get('/sample-page', 'PageController@sample');
 Route::get('/sample-page2', 'PageController@sample2');
 
-});
+//});
