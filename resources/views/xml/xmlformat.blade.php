@@ -5,7 +5,7 @@
     <name>{{$widget['name']}}</name>
     <description>{{$widget['description']}}</description>
     <author email='{{$widget["author"]["_email"]}}' href='{{$widget["author"]["_href"]}}'>
-        <toString>{{$widget["author"]["toString"][0]}}</toString>
+        {{$widget["author"]["_text"]}}
     </author>
     <content src='{{$widget["content"]["_src"]}}'/>
     <access origin='{{$widget["access"]["_origin"]}}'/>
@@ -45,13 +45,11 @@
         <splash src='{{$widget["platform"][0]["splash"][2]["_src"]}}' width='1242' height='2208'></splash>
         <splash src='{{$widget["platform"][0]["splash"][3]["_src"]}}' width='2208' height='1242'></splash>
         <splash src='{{$widget["platform"][0]["splash"][4]["_src"]}}' width='2048' height='1536'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][5]["_src"]}}' width='2732' height='2048'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][6]["_src"]}}' width='1024' height='768'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][7]["_src"]}}' width='1536' height='2048'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][8]["_src"]}}' width='2048' height='2732'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][9]["_src"]}}' width='768' height='1024'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][10]["_src"]}}' width='640' height='960'></splash>
-        <splash src='{{$widget["platform"][0]["splash"][11]["_src"]}}' width='320' height='480'></splash>
+        <splash src='{{$widget["platform"][0]["splash"][5]["_src"]}}' width='1024' height='768'></splash>
+        <splash src='{{$widget["platform"][0]["splash"][6]["_src"]}}' width='1536' height='2048'></splash>
+        <splash src='{{$widget["platform"][0]["splash"][7]["_src"]}}' width='768' height='1024'></splash>
+        <splash src='{{$widget["platform"][0]["splash"][8]["_src"]}}' width='640' height='960'></splash>
+        <splash src='{{$widget["platform"][0]["splash"][9]["_src"]}}' width='320' height='480'></splash>
     </platform>
     <platform name='android'>
         <icon src='{{$widget["platform"][1]["icon"][0]["_src"]}}' density='ldpi'></icon>
@@ -64,14 +62,10 @@
         <splash src='{{$widget["platform"][1]["splash"][1]["_src"]}}' density='land-mdpi'></splash>
         <splash src='{{$widget["platform"][1]["splash"][2]["_src"]}}' density='land-hdpi'></splash>
         <splash src='{{$widget["platform"][1]["splash"][3]["_src"]}}' density='land-xhdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][4]["_src"]}}' density='land-xxhdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][5]["_src"]}}' density='land-xxxhdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][6]["_src"]}}' density='port-ldpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][7]["_src"]}}' density='port-mdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][8]["_src"]}}' density='port-hdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][9]["_src"]}}' density='port-xhdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][10]["_src"]}}' density='port-xxhdpi'></splash>
-        <splash src='{{$widget["platform"][1]["splash"][11]["_src"]}}' density='port-xxxhdpi'></splash>
+        <splash src='{{$widget["platform"][1]["splash"][4]["_src"]}}' density='port-ldpi'></splash>
+        <splash src='{{$widget["platform"][1]["splash"][5]["_src"]}}' density='port-mdpi'></splash>
+        <splash src='{{$widget["platform"][1]["splash"][6]["_src"]}}' density='port-hdpi'></splash>
+        <splash src='{{$widget["platform"][1]["splash"][7]["_src"]}}' density='port-xhdpi'></splash>
     </platform>
     <icon src='{{$widget["icon"][0]["_src"]}}'></icon>
 </widget>

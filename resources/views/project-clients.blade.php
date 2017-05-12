@@ -171,7 +171,7 @@
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="appid" value="{{$row->id}}">
                                         <label>Upload splash screen (.zip)</label>
-                                        <input type="file" name="splashscreen" id="splashscreen"><hr>
+                                        <input type="file" name="splashicon" id="splashicon"><hr>
                                         <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
                                       </form>
                                     </div>

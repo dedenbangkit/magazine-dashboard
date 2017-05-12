@@ -19,7 +19,8 @@ use View;
 use Response;
 use File;
 use ZipArchive;
-use RecursiveArrayIterator;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -47,9 +48,49 @@ class BuildController extends Controller
    * @return Response
    */
 
-  public function updateApp(Request $request)
+  public function makeTemp($src,$dst)
+  {
+      $dir = opendir($src);
+      @mkdir($dst);
+      while(false !== ( $file = readdir($dir)) ) {
+           if (( $file != '.' ) && ( $file != '..' )) {
+               if ( is_dir($src . '/' . $file) ) {
+                   $this->makeTemp($src . '/' . $file,$dst . '/' . $file);
+               }
+               else {
+                   copy($src . '/' . $file,$dst . '/' . $file);
+               }
+             }
+         }
+      closedir($dir);
+  }
+
+  public function splashIcon($src, $dst)
   {
 
+    $zip = new ZipArchive();
+    $x = $zip->open($src);  // open the zip file to extract
+    if ($x === true) {
+        $zip->extractTo($dst.'/www'); // place in the directory with same name
+        $zip->close();
+        unlink($src); //Deleting the Zipped file
+    }
+  }
+
+  public function updateApp(Request $request)
+  {
+      //creating temporary folder
+
+
+      $src = storage_path('application');
+      $dst = storage_path('tmp/'.time());
+      $this->makeTemp($src,$dst);
+      $zipfile = $request->file('splashicon');
+      $zipfile->move($dst, 'splashicon');
+      $this->splashIcon($dst.'/splashicon', $dst);
+
+
+      //Generate XML File
       $theproject=Project::where('project.id','=',$request->appid)
                           ->leftjoin('company','company.id','=','project.company_id')
                           ->select('project.*','project.id as project_appid','company.*')
@@ -61,8 +102,7 @@ class BuildController extends Controller
                   'author'      => array(
                       '_email'      => $theproject->company_email,
                       '_href'       => $theproject->company_website,
-                      '__text'      => $theproject->company_name,
-                      'toString'    =>  array(0 => NULL),
+                      '_text'      => $theproject->company_name,
                       ),
                   'content'     => array('_src'    => 'index.html'),
                   'access'      => array('_origin' => '*'),
@@ -98,153 +138,143 @@ class BuildController extends Controller
                   0 => array(
                     'icon' => array(
                         0 => array(
-                            '_src'    => 'www/icons/iosicon/icon.png',
+                            '_src'    => 'www/res/icons/ios/icon.png',
                             '_width'  => '57',
                             '_height' => '57',
                             ),
                         1 => array(
-                            '_src'    => 'www/icons/iosicon/icon@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon@2x.png',
                             '_width'  => '114',
                             '_height' => '114',
                             ),
                         2 => array(
-                            '_src'    => 'www/icons/iosicon/icon-40.png',
+                            '_src'    => 'www/res/icons/ios/icon-40.png',
                             '_width'  => '40',
                             '_height' => '40',
                             ),
                         3 => array(
-                            '_src'    => 'www/icons/iosicon/icon-40@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-40@2x.png',
                             '_width'  => '80',
                             '_height' => '80',
                             ),
                         4 => array(
-                            '_src'    => 'www/icons/iosicon/icon-40@3x.png',
+                            '_src'    => 'www/res/icons/ios/icon-40@3x.png',
                             '_width'  => '120',
                             '_height' => '120',
                             ),
                         5 => array(
-                            '_src'    => 'www/icons/iosicon/icon-50.png',
+                            '_src'    => 'www/res/icons/ios/icon-50.png',
                             '_width'  => '50',
                             '_height' => '50',
                             ),
                         6 => array(
-                            '_src'    => 'www/icons/iosicon/icon-50@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-50@2x.png',
                             '_width'  => '100',
                             '_height' => '100',
                             ),
                         7 => array(
-                            '_src'    => 'www/icons/iosicon/icon-60.png',
+                            '_src'    => 'www/res/icons/ios/icon-60.png',
                             '_width'  => '60',
                             '_height' => '60',
                             ),
                         8 => array(
-                            '_src'    => 'www/icons/iosicon/icon-60@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-60@2x.png',
                             '_width'  => '120',
                             '_height' => '120',
                             ),
                         9 => array(
-                            '_src'    => 'www/icons/iosicon/icon-60@3x.png',
+                            '_src'    => 'www/res/icons/ios/icon-60@3x.png',
                             '_width'  => '180',
                             '_height' => '180',
                             ),
                         10 => array(
-                            '_src'    => 'www/icons/iosicon/icon-72.png',
+                            '_src'    => 'www/res/icons/ios/icon-72.png',
                             '_width'  => '72',
                             '_height' => '72',
                             ),
                         11 => array(
-                            '_src'    => 'www/icons/iosicon/icon-72@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-72@2x.png',
                             '_width'  => '144',
                             '_height' => '144',
                             ),
                         12 => array(
-                            '_src'    => 'www/icons/iosicon/icon-76.png',
+                            '_src'    => 'www/res/icons/ios/icon-76.png',
                             '_width'  => '76',
                             '_height' => '76',
                             ),
                         13 => array(
-                            '_src'    => 'www/icons/iosicon/icon-76@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-76@2x.png',
                             '_width'  => '152',
                             '_height' => '152',
                             ),
                         14 => array(
-                            '_src'    => 'www/icons/iosicon/icon-83.5@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-83.5@2x.png',
                             '_width'  => '167',
                             '_height' => '167',
                             ),
                         15 => array(
-                            '_src'    => 'www/icons/iosicon/icon-small.png',
+                            '_src'    => 'www/res/icons/ios/icon-small.png',
                             '_width'  => '29',
                             '_height' => '29',
                             ),
                         16 => array(
-                            '_src'    => 'www/icons/iosicon/icon-small@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-small@2x.png',
                             '_width'  => '58',
                             '_height' => '58',
                             ),
                         17 => array(
-                            '_src'      => 'www/icons/iosicon/icon-small@3x.png',
+                            '_src'      => 'www/res/icons/ios/icon-small@3x.png',
                             '_width'    => '87',
                             '_height'   => '87',
                             ),
                     ),'splash' => array(
                         0 => array(
-                            '_src'    => 'www/images/ios/splash/Default-568h@2x~iphone.png',
+                            '_src'    => 'www/res/screens/ios/screen-iphone-568h-2x.png',
                             '_width'  => '640',
                             '_height' => '1136',
                             ),
                         1 => array(
-                            '_src'    => 'www/images/ios/splash/Default-667h.png',
+                            '_src'    => 'www/res/screens/ios/screen-iphone-portrait-667h.png',
                             '_width'  => '750',
                             '_height' => '1334',
                         ),
                         2 => array(
-                            '_src'    => 'www/images/ios/splash/Default-736h.png',
+                            '_src'    => 'www/res/screens/ios/screen-iphone-portrait-736h.png',
                             '_width'  => '1242',
                             '_height' => '2208',
                         ),
                         3 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Landscape-736h.png',
+                            '_src'    => 'www/res/screens/ios/screen-iphone-landscape-736h.png',
                             '_width'  => '2208',
                             '_height' => '1242',
                         ),
                         4 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Landscape@2x~ipad.png',
+                            '_src'    => 'www/res/screens/ios/screen-ipad-landscape-2x.png',
                             '_width'  => '2048',
                             '_height' => '1536',
                         ),
-                        5 =>  array(
-                            '_src'    => 'www/images/ios/splash/Default-Landscape@~ipadpro.png',
-                            '_width'  => '2732',
-                            '_height' => '2048',
-                        ),
-                        6 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Landscape~ipad.png',
+                        5 => array(
+                            '_src'    => 'www/res/screens/ios/screen-ipad-landscape.png',
                             '_width'  => '1024',
                             '_height' => '768',
                         ),
-                        7 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Portrait@2x~ipad.png',
+                        6 => array(
+                            '_src'    => 'www/res/screens/ios/screen-ipad-portrait-2x.png',
                             '_width'  => '1536',
                             '_height' => '2048',
                         ),
-                        8 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Portrait@~ipadpro.png',
-                            '_width'  => '2048',
-                            '_height' => '2732',
-                        ),
-                        9 => array(
-                            '_src'    => 'www/images/ios/splash/Default-Portrait~ipad.png',
+                        7 => array(
+                            '_src'    => 'www/res/screens/ios/screen-ipad-portrait.png',
                             '_width'  => '768',
                             '_height' => '1024',
                         ),
-                        10 => array(
-                            '_src'    => 'www/images/ios/splash/Default@2x~iphone.png',
+                        8 => array(
+                            '_src'    => 'www/res/screens/ios/screen-iphone-portrait-2x.png',
                             '_width'  => '640',
                             '_height' => '960',
                         ),
-                        11 => array(
-                            '_src'    => 'www/images/ios/splash/Default~iphone.png',
+                        9 => array(
+                            '_src'    => 'www/res/screens/ios/screen-iphone-portrait.png',
                             '_width'  => '320',
                             '_height' => '480',
                         ),
@@ -252,83 +282,67 @@ class BuildController extends Controller
                   1 => array(
                     'icon' => array(
                         0 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-ldpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-ldpi-36.png',
                           '_density' => 'ldpi',
                         ),
                         1 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-mdpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-mdpi-48.png',
                           '_density' => 'mdpi',
                         ),
                         2 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-hdpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-hdpi-72.png',
                           '_density' => 'hdpi',
                         ),
                         3 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-xhdpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-xhdpi-96.png',
                           '_density' => 'xhdpi',
                         ),
                         4 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-xxhdpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-xxhdpi-144.png',
                           '_density' => 'xxhdpi',
                         ),
                         5 => array(
-                          '_src'     => 'www/icons/androidicon/drawable-xxxhdpi-icon.png',
+                          '_src'     => 'www/res/icons/android/icon-xxxhdpi-192.png',
                           '_density' => 'xxxhdpi',
                         ),
                       ),'splash' => array(
                         0 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-ldpi-screen.png',
+                          '_src'     => 'www/res/screens/android/screen-ldpi-landscape.png',
                           '_density' => 'land-ldpi',
                         ),
                         1 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-mdpi-screen.png',
+                          '_src'     => 'www/res/screens/android/screen-mdpi-landscape.png',
                           '_density' => 'land-mdpi',
                         ),
                         2 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-hdpi-screen.png',
+                          '_src'     => 'www/res/screens/android/screen-hdpi-landscape.png',
                           '_density' => 'land-hdpi',
                         ),
                         3 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-xhdpi-screen.png',
+                          '_src'     => 'www/res/screens/android/screen-xhdpi-landscape.png',
                           '_density' => 'land-xhdpi',
                         ),
                         4 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-xxhdpi-screen.png',
-                          '_density' => 'land-xxhdpi',
-                        ),
-                        5 => array(
-                          '_src'     => 'www/images/android/splash/drawable-land-xxxhdpi-screen.png',
-                          '_density' => 'land-xxxhdpi',
-                        ),
-                        6 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-ldpi-screen.png',
+                          '_src'     => 'www/res/screens/android/screen-ldpi-portrait.png',
                           '_density' => 'port-ldpi',
                         ),
-                        7 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-mdpi-screen.png',
+                        5 => array(
+                          '_src'     => 'www/res/screens/android/screen-mdpi-portrait.png',
                           '_density' => 'port-mdpi',
                         ),
-                        8 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-hdpi-screen.png',
+                        6 => array(
+                          '_src'     => 'www/res/screens/android/screen-hdpi-portrait.png',
                           '_density' => 'port-hdpi',
                         ),
-                        9 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-xhdpi-screen.png',
+                        7 => array(
+                          '_src'     => 'www/res/screens/android/screen-xhdpi-portrait.png',
                           '_density' => 'port-xhdpi',
-                        ),
-                        10 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-xxhdpi-screen.png',
-                          '_density' => 'port-xxhdpi',
-                        ),
-                        11 => array(
-                          '_src'     => 'www/images/android/splash/drawable-port-xxxhdpi-screen.png',
-                          '_density' => 'port-xxxhdpi',
                         ),
                       ),'_name' => 'android',
                     ),
                   ),
           'icon' => array( 0 => array(
-              '_src' => 'www/icons/androidicon/drawable-xhdpi-icon.png',
+              '_src' => 'www/res/icons/android/icon-xhdpi-96.png',
             ),
           ),
           '_xmlns' => 'http://www.w3.org/ns/widgets',
@@ -339,28 +353,21 @@ class BuildController extends Controller
       );
 
       $content = View::make('xml.xmlformat', $data)->render();
-      $storage=File::put(storage_path('file.xml'), $content);
+      $storage= File::put($dst.'/config.xml', $content);
       return $storage;
-  }
-  public function formatterModule($variable){
-        $formatter = Formatter::make($variable, Formatter::ARR);
-        $xml   = $formatter->toXml();
-        return $xml;
-  }
-  public function XMLDom(){
-
   }
 
   public function setupApp(Request $request)
   {
 
     $rootPath = storage_path('application');
-    $zip = new ZipArchive();
-    $zip->open($request->apple_id.'.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
 
-    $files = new RecursiveIterator(
+    $zip = new ZipArchive();
+    $destPath = storage_path('clientsapp/'.$request->apple_id.'-'.time().'.zip');
+    $zip->open($destPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+    $files = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($rootPath),
-        RecursiveIterator::LEAVES_ONLY
+        RecursiveIteratorIterator::LEAVES_ONLY
     );
 
     foreach ($files as $name => $file)
@@ -378,7 +385,7 @@ class BuildController extends Controller
     }
 
     $zip->close();
-    return $zip;
+    return $destPath;
 
   }
 
