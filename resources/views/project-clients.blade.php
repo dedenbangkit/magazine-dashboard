@@ -128,17 +128,13 @@
                                                   <td class="text-center" ><label> : </label></td>
                                                   <td>{{$row->service_name}}</td>
                                               </tr>
+                                              @if(!empty($row->build_id))
                                               <tr>
-                                                  <td><label>Appstore Url</label></td>
+                                                  <td><label>Download Url</label></td>
                                                   <td class="text-center"><label> : </label></td>
-                                                  <td>https://itunes.apple.com/us/app/cnn/id331786748?mt=8</td>
+                                                  <td><a href="https://build.phonegap.com/apps/{{$row->build_id}}">https://build.phonegap.com/apps/{{$row->build_id}}</a></td>
                                               </tr>
-                                              <tr>
-                                                  <td><label>Google Play Url</label></td>
-                                                  <td class="text-center"><label> : </label></td>
-                                                  <td>https://play.google.com/store/apps/details?id=com.cnn.mobile.android.phone&hl=en</td>
-                                              </tr>
-
+                                              @endif
                                           </table>
                                           <hr>
                                           <button type="submit" class="btn btn-primary btn-social btn-flat editor-content hidden"><i class="fa fa-check"></i>Confirm Edit</button>

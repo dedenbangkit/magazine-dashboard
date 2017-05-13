@@ -7,14 +7,70 @@
 @section('main-content')
 	<div class="container spark-screen">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?=  ucfirst(array_last($activer));?></div>
-					<div class="panel-body">
-						{{ trans('adminlte_lang::message.logged') }}
-					</div>
-				</div>
-			</div>
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>Projects Setup</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-cog"></i>
+            </div>
+            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Edit Issue</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-android-create"></i>
+            </div>
+            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>Documentation</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-information"></i>
+            </div>
+            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Billing</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-card"></i>
+            </div>
+            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <div class="col-md-2"></div>
 		</div>
 	</div>
 @endsection
