@@ -49,7 +49,8 @@ class Project extends Model
             ->update(
            [
                 'apple_key'       => $data['apple_key'],
-                'apple_password'  => $data['apple_password']
+                'apple_password'  => $data['apple_password'],
+                'build_id'        => $data['build_id']
            ]
         );
     }

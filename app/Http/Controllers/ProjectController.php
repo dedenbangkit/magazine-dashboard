@@ -19,6 +19,9 @@ use App\Model\Invoice;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
+
 /**
  * Class ProjectController
  * @package App\Http\Controllers
@@ -33,6 +36,7 @@ class ProjectController extends Controller
     protected $activer;
     protected $authdata;
     protected $project;
+    protected $client;
     protected $invoice;
     protected $user;
     protected $company;
@@ -45,6 +49,12 @@ class ProjectController extends Controller
     {
         $this->access= array('administrator','supervisor','leader');
         $this->project = new Project();
+        $this->client = new Client([
+            'base_uri' => 'https://build.phonegap.com/api/v1/',
+            'auth' => ['mail@dedenbangkit.com','Jalanremaja1208'],
+            ['connect_timeout' => 6000]
+        ]);
+
         $this->user = new User();
         $this->company = new Company();
         $this->invoice = new Invoice();

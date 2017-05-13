@@ -44,7 +44,6 @@ class BuildApiController extends Controller
       $this->middleware('auth');
       $this->build = new Phonegap('mail@dedenbangkit.com','Jalanremaja1208');
       $this->client = new Client([
-          // Base URI is used with relative requests
           'base_uri' => 'https://build.phonegap.com/api/v1/',
           'auth' => ['mail@dedenbangkit.com','Jalanremaja1208'],
           ['connect_timeout' => 6000]
@@ -75,7 +74,7 @@ class BuildApiController extends Controller
       $certificate = $request->file('apple_certificate');
       $mobileprovision = $request->file('apple_provision');
       $dst = storage_path('key');
-      if(!empty($certificate)){
+      if(!empty($certificate) || !empty($mobileprovision)){
       $keyname = time().'-'.$theproject->company_name;
       $certificate->move($dst, $keyname.'.p12');
       $mobileprovision->move($dst, $keyname.'.mobileprovision');
@@ -104,7 +103,7 @@ class BuildApiController extends Controller
           'title' => $theproject->company_name.'-ioskey',
           'id'    => substr($theproject->apple_key, strrpos($theproject->apple_key, '/') + 1),
           'link'  => $theproject->apple_key
-          ); 
+          );
       }
 
       $zip_path = storage_path('clientsapp/'.$theproject->repo);
@@ -130,15 +129,14 @@ class BuildApiController extends Controller
                       ]
                   ]
               ]);
-      $result['apps'] = $data->getBody();
-
+      $result = json_decode($data->getBody(), true);
       $update['id'] = $request->appid;
-
       $update['apple_key'] = $storedkey['link'];
       $update['apple_password'] = $request->apple_password;
+      $update['build_id'] = $result['id'];
       $this->project->updateBuild($update);
 
-      return $result;
+      return redirect()->action('ProjectController@project');
    }
 
    public function buildUpdate(Request $request)

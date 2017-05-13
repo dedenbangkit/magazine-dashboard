@@ -31,17 +31,18 @@
                                 <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">App Settings</a></li>
                                 <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
                                 @endif
+                                @if(!empty($row->build_id))
                                 <li class="dropdown pull-right">
-                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                  <a class="dropdown-toggle" style="color:#367fa9;font-weight:600;" data-toggle="dropdown" href="https://build.phonegap.com/apps/{{$row->build_id}}" aria-expanded="false">
                                     <i class="fa fa-download"></i> Download
                                   </a>
                                   <ul class="dropdown-menu">
-                                    <li><img class="img-responsive" src="/img/projects/barcode.gif"></li>
-                                    <li><a class="btn btn-block btn-default btn-flat" href="#"><i class="fa fa-apple"></i>&nbsp; Apple IOS</a></li>
-                                    <li><a class="btn btn-block btn-default btn-flat" href="#"><i class="fa fa-android"></i>&nbsp; Android OS</a></li>
+                                    <li>{!! QrCode::size(200)->margin(0)->generate('https://build.phonegap.com/apps/'.$row->build_id); !!}</li>
                                   </ul>
                                 </li>
+                                @endif
                               </ul>
+
                               <div class="tab-content">
                                 @if(session()->has('success'))
                                 <div class="tab-pane" id="tab_1">
@@ -116,16 +117,6 @@
                                                       <span class="glyphicon glyphicon-book form-control-feedback"></span>
                                                   </div>
                                                   </td>
-                                              </tr>
-                                              <tr class="editor-content hidden">
-                                                <td><label>Cover Page</label></td>
-                                                <td class="text-center"><label> : </label></td>
-                                                <td><input type="file" name="cover" id="imagefile"></td>
-                                              </tr>
-                                              <tr class="editor-content hidden">
-                                                <td><label>Project Icon</label></td>
-                                                <td class="text-center"><label> : </label></td>
-                                                <td><input type="file" name="icon" id="imagefile"></td>
                                               </tr>
                                               <tr>
                                                   <td><label>Expired Date </label></td>
