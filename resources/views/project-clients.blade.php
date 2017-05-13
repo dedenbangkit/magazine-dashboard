@@ -5,6 +5,7 @@
 @endsection
 
 @section('main-content')
+
 <div class="row">
                 <div class="col-md-12">
 
@@ -21,10 +22,15 @@
                   <?php foreach($projects as $i=>$row){ ?>
                   <div class="nav-tabs-custom">
                               <ul class="nav nav-tabs">
+                                @if(session()->has('success'))
+                                <li class=""><a href="#tab_1" data-toggle="tab" aria-expanded="false"><i class="fa fa-newspaper-o"></i>&nbsp;{{$row->project_name}}</a></li>
+                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">App Settings</a></li>
+                                <li class="active"><a href="#tab_3" data-toggle="tab" aria-expanded="true">Build Settings</a></li>
+                                @else
                                 <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><i class="fa fa-newspaper-o"></i>&nbsp;{{$row->project_name}}</a></li>
                                 <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">App Settings</a></li>
                                 <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Build Settings</a></li>
-                                <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">Build Testing</a></li>
+                                @endif
                                 <li class="dropdown pull-right">
                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                                     <i class="fa fa-download"></i> Download
@@ -37,10 +43,12 @@
                                 </li>
                               </ul>
                               <div class="tab-content">
-                                <div class="tab-pane active" id="tab_1">
+                                @if(session()->has('success'))
+                                <div class="tab-pane" id="tab_1">
+                                @else
+                                  <div class="tab-pane active" id="tab_1">
+                                @endif
                                   <div class="box-body">
-
-
                                   <div class="col-md-3" onclick="window.location='/issue?id={{$row->id}}';" style="cursor:pointer">
                                     <img class="img-responsive" src="{{asset('/img/projects/'.$row->project_cover)}}" alt="Photo">
                                     <ul class="list-group list-group-unbordered">
@@ -156,17 +164,103 @@
                                 <div class="tab-pane" id="tab_2">
                                   <div class="box-body">
                                     <div class="col-md-6">
-                                      Since each platform has different image requirements, it’s best to make a source image for the largest size needed,
-                                      these are some services that you can use to generate the splashscreen and Icons automatically:<br><br>
+                                      Since each platform has different image requirements, it’s best to make a source image for the largest size needed.
+                                      This Photoshop templates provides the recommended size and guidelines of the artwork’s safe zone:<br><br>
+                                      <ul>
+                                        <li><a href="{{asset('img/res/icon.psd')}}">Icon.psd</a></li>
+                                        <li><a href="{{asset('img/res/splash.psd')}}">Splash Screen.psd</a></li>
+                                      </ul>
+                                      <hr>
+                                      And here are some services that you can use to generate the splashscreen and Icons automatically:<br><br>
                                       <ul>
                                         <li><a href="http://ticons.fokkezb.nl/">http://ticons.fokkezb.nl/</a></li>
                                         <li><a href="http://pgicons.abiro.com/">http://pgicons.abiro.com/</a></li>
                                         <li><a href="http://phonegap.appiq.software/">http://phonegap.appiq.software/</a></li>
                                       </ul>
-
                                     </div>
+
                                     <div class="col-md-6">
-                                      Once you have the assets with you, please upload them to prepare the build process.
+                                      Once you have the assets with you, please upload compressed (.zip) of <strong>res folder</strong> to prepare the build process.
+                                      follow this file structure before uploading your zip file.
+                                      <hr>
+                                    <div class="row">
+                                      <div class="col-md-6" style="padding-left:5%;">
+                                      <div>
+                                          <strong><a id="collapseAll" href="#"><i class="fa fa-file-zip-o"></i> res.zip</a></strong>
+                                      </div>
+                                      <ul id="treeview" class="treeview-black">
+                                      	<li>
+                                          <span>icons</span>
+                                          <ul>
+                                            <li></li>
+                                            <li>
+                                              <span>android</span>
+                                              <ul>
+                                                <li>icon-144-xxhdpi.png</li>
+                                                <li>icon-192-xxxhdpi.png</li>
+                                                <li>icon-36-ldpi.png</li>
+                                                <li>icon-48-mdpi.png</li>
+                                                <li>icon-72-hdpi.png</li>
+                                                <li>icon-96-xhdpi.png</li>
+                                              </ul>
+                                            </li>
+                                            <li>
+                                              <span>ios</span>
+                                              <ul>
+                                                <li>icon-40.png</li>
+                                                <li>icon-50-2x.png</li>
+                                                <li>icon-57-2x.png</li>
+                                                <li>icon-57.png</li>
+                                                <li>icon-60-2x.png</li>
+                                                <li>icon-60-3x.png</li>
+                                                <li>icon-72-2x.png</li>
+                                                <li>icon-72.png</li>
+                                                <li>icon-80-2x.png</li>
+                                                <li>icon-80.png</li>
+                                                <li>icon-small-2x.png</li>
+                                                <li>icon-small.png</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </li>
+
+                                        <li>
+                                          <span>screens</span>
+                                          <ul>
+                                            <li></li>
+                                            <li>
+                                              <span>android</span>
+                                              <ul>
+                                                <li>screen-hdpi-landscape.png</li>
+                                                <li>screen-hdpi-portrait.png</li>
+                                                <li>screen-ldpi-landscape.png</li>
+                                                <li>screen-ldpi-portrait.png</li>
+                                                <li>screen-mdpi-landscape.png</li>
+                                                <li>screen-mdpi-portrait.png</li>
+                                                <li>screen-xhdpi-landscape.png</li>
+                                                <li>screen-xhpi-portrait.png</li>
+                                              </ul>
+                                            </li>
+                                            <li>
+                                              <span>ios</span>
+                                              <ul>
+                                                <li>screen-ipad-landscape-2x.png</li>
+                                                <li>screen-ipad-landscape.png</li>
+                                                <li>screen-ipad-portrait-2x.png</li>
+                                                <li>screen-ipad-portrait.png</li>
+                                                <li>screen-iphone-568h-2x.png</li>
+                                                <li>screen-iphone-landscape-736h.png</li>
+                                                <li>screen-iphone-portrait-2x.png</li>
+                                                <li>screen-iphone-portrait-667h.png</li>
+                                                <li>screen-iphone-portrait-736h.png</li>
+                                                <li>screen-iphone-portrait.png</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                      </div>
+                                      <div class="col-md-6">
                                       <form class="form-horizontal" action="{{url('app-setting-update')}}" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="appid" value="{{$row->id}}">
@@ -175,6 +269,10 @@
                                         <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
                                       </form>
                                     </div>
+                                  </div>
+
+                                      <hr>
+                                    </div>
 
                                     <div class="col-md-12"><hr></div>
                                     <br>
@@ -182,11 +280,23 @@
                                   </form>
                                 </div>
                                 <!-- /.tab-pane build settings -->
+                                @if(session()->has('success'))
+                                <div class="tab-pane active" id="tab_3">
+                                @else
                                 <div class="tab-pane" id="tab_3">
+                                @endif
+
+                                @if(session()->has('success'))
+                                <div class="alert alert-success alert-dismissible">
+                                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                  <h4><i class="icon fa fa-check"></i> Settings Updated!</h4>
+                                  Your Application is ready to build.
+                                </div>
+                                @endif
                                   <div class="box-body">
                                   <div class="col-md-12">
                                     <div class="col-md-6">
-                                  <form class="form-horizontal" action="{{url('setup-app')}}" method="post" enctype="multipart/form-data">
+                                  <form class="form-horizontal" action="{{url('build-app')}}" method="post" enctype="multipart/form-data">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" name="appid" value="{{$row->id}}">
                                           <!-- text input -->
@@ -248,38 +358,14 @@
                                           </div>
 
                                           <div class="form-group">
-                                          <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Build App!</button>
+                                          <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="glyphicon glyphicon-play-circle"></i>Build Now!</button>
                                           </div>
 
                                         </div>
                                         </div>
                                         </div>
                                         </form>
-                                </div>
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="tab_4">
-                                  <div class="row">
-                                  <form action="build-app" method="post" enctype="multipart/form-data">
-                                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                  <input type="hidden" name="file" id="file" value="http://www.dedenbangkit.com/testing.zip">
-
-                                  <div class="col-md-12">
-                                  <div class="form-group">
-                                  <label for="exampleInputFile"><i class="fa fa-apple"></i> Title</label>
-                                  <input type="text" class="form-control" name="title" id="title">
-                                  </div>
-                                  </div>
-
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Test Upload!</button>
                                     </div>
-                                  </div>
-
-                                  </form>
-                                  </div>
-
-                                </div>
                               </div>
                               <!-- /.tab-content -->
                   </div>

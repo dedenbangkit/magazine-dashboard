@@ -65,7 +65,12 @@ class BuildApiController extends Controller
 
    public function Build(Request $request)
    {
-      $zip_path = storage_path('zip/testing.zip');
+     $theproject=Project::where('project.id','=',$request->appid)
+                         ->leftjoin('company','company.id','=','project.company_id')
+                         ->select('project.*','project.id as project_appid','company.*')
+                         ->first();
+
+      $zip_path = storage_path('clientsapp/'.$theproject->repo);
       $data = $this->client->request('POST', 'apps', [
                   'multipart' => [
                       ['name' => 'file',
@@ -74,7 +79,6 @@ class BuildApiController extends Controller
                       ['name' => 'data',
                        'contents' => json_encode(
                           [
-                              'title' => $request->title,
                               'create_method' => 'file',
                               'share' => 'true',
                               'private' => 'true',

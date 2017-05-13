@@ -32,6 +32,16 @@ class Project extends Model
             ]
         );
     }
+
+    public function updateRepo($data){
+        return  Project::where('id',$data['id'])
+            ->update(
+           [
+                'repo'=>$data['repo'],
+           ]
+        );
+    }
+
     public function getProject(){
         return Project::whereNull('deleted_at')
             ->where('status','unpublished')

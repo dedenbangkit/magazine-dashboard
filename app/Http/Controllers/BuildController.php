@@ -19,6 +19,7 @@ use View;
 use Response;
 use File;
 use ZipArchive;
+use Zipper;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Illuminate\Support\Facades\Input;
@@ -40,6 +41,7 @@ class BuildController extends Controller
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
+      $this->project = new Project;
   }
 
   /**
@@ -67,34 +69,43 @@ class BuildController extends Controller
 
   public function splashIcon($src, $dst)
   {
-
-    $zip = new ZipArchive();
-    $x = $zip->open($src);  // open the zip file to extract
-    if ($x === true) {
-        $zip->extractTo($dst.'/www'); // place in the directory with same name
-        $zip->close();
-        unlink($src); //Deleting the Zipped file
-    }
+    Zipper::make($src)->extractTo($dst.'/www');
+    // $zip = new ZipArchive();
+    // $x = $zip->open($src);  // open the zip file to extract
+    // if ($x === true) {
+    //     $zip->extractTo($dst.'/www'); // place in the directory with same name
+    //     $zip->close();
+    //     unlink($src); //Deleting the Zipped file
+    // }
+    unlink($src);
   }
 
   public function updateApp(Request $request)
   {
-      //creating temporary folder
+      //Get Project Info
 
-
-      $src = storage_path('application');
-      $dst = storage_path('tmp/'.time());
-      $this->makeTemp($src,$dst);
-      $zipfile = $request->file('splashicon');
-      $zipfile->move($dst, 'splashicon');
-      $this->splashIcon($dst.'/splashicon', $dst);
-
-
-      //Generate XML File
       $theproject=Project::where('project.id','=',$request->appid)
                           ->leftjoin('company','company.id','=','project.company_id')
                           ->select('project.*','project.id as project_appid','company.*')
                           ->first();
+
+      //Upload Splashscreen and Icon
+
+      $src = storage_path('application');
+      $newname = $theproject->company_name.'-'.time();
+      $dst = storage_path('tmp/'.$newname);
+      $this->makeTemp($src,$dst);
+      $zipfile = $request->file('splashicon');
+      $zipfile->move($dst, 'splashicon.zip');
+      $this->splashIcon($dst.'/splashicon.zip', $dst);
+
+      //Update Project Info
+      $update['id'] = $request->appid;
+      $update['repo'] = $newname.'.zip';
+      $this->project->updateRepo($update);
+
+
+      //Generate XML File
 
       $data = array('widget' => array(
                   'name'        => $theproject->project_name,
@@ -143,7 +154,7 @@ class BuildController extends Controller
                             '_height' => '57',
                             ),
                         1 => array(
-                            '_src'    => 'www/res/icons/ios/icon@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-2x.png',
                             '_width'  => '114',
                             '_height' => '114',
                             ),
@@ -153,12 +164,12 @@ class BuildController extends Controller
                             '_height' => '40',
                             ),
                         3 => array(
-                            '_src'    => 'www/res/icons/ios/icon-40@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-40-2x.png',
                             '_width'  => '80',
                             '_height' => '80',
                             ),
                         4 => array(
-                            '_src'    => 'www/res/icons/ios/icon-40@3x.png',
+                            '_src'    => 'www/res/icons/ios/icon-40-3x.png',
                             '_width'  => '120',
                             '_height' => '120',
                             ),
@@ -168,7 +179,7 @@ class BuildController extends Controller
                             '_height' => '50',
                             ),
                         6 => array(
-                            '_src'    => 'www/res/icons/ios/icon-50@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-50-2x.png',
                             '_width'  => '100',
                             '_height' => '100',
                             ),
@@ -178,12 +189,12 @@ class BuildController extends Controller
                             '_height' => '60',
                             ),
                         8 => array(
-                            '_src'    => 'www/res/icons/ios/icon-60@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-60-2x.png',
                             '_width'  => '120',
                             '_height' => '120',
                             ),
                         9 => array(
-                            '_src'    => 'www/res/icons/ios/icon-60@3x.png',
+                            '_src'    => 'www/res/icons/ios/icon-60-3x.png',
                             '_width'  => '180',
                             '_height' => '180',
                             ),
@@ -193,7 +204,7 @@ class BuildController extends Controller
                             '_height' => '72',
                             ),
                         11 => array(
-                            '_src'    => 'www/res/icons/ios/icon-72@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-72-2x.png',
                             '_width'  => '144',
                             '_height' => '144',
                             ),
@@ -203,12 +214,12 @@ class BuildController extends Controller
                             '_height' => '76',
                             ),
                         13 => array(
-                            '_src'    => 'www/res/icons/ios/icon-76@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-76-2x.png',
                             '_width'  => '152',
                             '_height' => '152',
                             ),
                         14 => array(
-                            '_src'    => 'www/res/icons/ios/icon-83.5@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-83.5-2x.png',
                             '_width'  => '167',
                             '_height' => '167',
                             ),
@@ -218,12 +229,12 @@ class BuildController extends Controller
                             '_height' => '29',
                             ),
                         16 => array(
-                            '_src'    => 'www/res/icons/ios/icon-small@2x.png',
+                            '_src'    => 'www/res/icons/ios/icon-small-2x.png',
                             '_width'  => '58',
                             '_height' => '58',
                             ),
                         17 => array(
-                            '_src'      => 'www/res/icons/ios/icon-small@3x.png',
+                            '_src'      => 'www/res/icons/ios/icon-small-3x.png',
                             '_width'    => '87',
                             '_height'   => '87',
                             ),
@@ -354,7 +365,12 @@ class BuildController extends Controller
 
       $content = View::make('xml.xmlformat', $data)->render();
       $storage= File::put($dst.'/config.xml', $content);
-      return $storage;
+
+      $compiled = glob($dst);
+      $finalpath = storage_path('clientsapp/'.$newname.'.zip');
+      Zipper::make($finalpath)->add($compiled)->close();
+
+      return redirect()->back()->with('success', 'Ready to Build');
   }
 
   public function setupApp(Request $request)
