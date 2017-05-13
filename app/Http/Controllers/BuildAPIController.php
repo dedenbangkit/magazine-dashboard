@@ -49,6 +49,7 @@ class BuildApiController extends Controller
           'auth' => ['mail@dedenbangkit.com','Jalanremaja1208'],
           ['connect_timeout' => 6000]
       ]);
+      $this->project = new Project;
   }
   /**
    * Show the application dashboard.
@@ -70,6 +71,42 @@ class BuildApiController extends Controller
                          ->select('project.*','project.id as project_appid','company.*')
                          ->first();
 
+      //Add Ios Key
+      $certificate = $request->file('apple_certificate');
+      $mobileprovision = $request->file('apple_provision');
+      $dst = storage_path('key');
+      if(!empty($certificate)){
+      $keyname = time().'-'.$theproject->company_name;
+      $certificate->move($dst, $keyname.'.p12');
+      $mobileprovision->move($dst, $keyname.'.mobileprovision');
+
+      $ioskey = $this->client->request('POST', 'keys/ios', [
+                  'multipart' => [
+                      ['name' => 'cert',
+                       'contents'  => fopen($dst.'/'.$keyname.'.p12', 'r')
+                      ],
+                      ['name' => 'profile',
+                       'contents'  => fopen($dst.'/'.$keyname.'.mobileprovision', 'r')
+                      ],
+                      ['name' => 'data',
+                       'contents' => json_encode(
+                         [
+                              'title' => $theproject->company_name.'-ioskey',
+                              'password'  => $request->apple_password
+                         ]),
+                      ]
+
+                  ]
+      ]);
+      $storedkey = json_decode($ioskey->getBody(), true);
+      }else{
+        $storedkey = array(
+          'title' => $theproject->company_name.'-ioskey',
+          'id'    => substr($theproject->apple_key, strrpos($theproject->apple_key, '/') + 1),
+          'link'  => $theproject->apple_key
+          ); 
+      }
+
       $zip_path = storage_path('clientsapp/'.$theproject->repo);
       $data = $this->client->request('POST', 'apps', [
                   'multipart' => [
@@ -82,11 +119,25 @@ class BuildApiController extends Controller
                               'create_method' => 'file',
                               'share' => 'true',
                               'private' => 'true',
+                              'keys' => [
+                                   'ios' => [
+                                       'title' => $storedkey['title'],
+                                       'id' => $storedkey['id'],
+                                       'link' => $storedkey['link']
+                                     ],
+                                ],
                           ]),
                       ]
                   ]
               ]);
-      $result = $data->getBody();
+      $result['apps'] = $data->getBody();
+
+      $update['id'] = $request->appid;
+
+      $update['apple_key'] = $storedkey['link'];
+      $update['apple_password'] = $request->apple_password;
+      $this->project->updateBuild($update);
+
       return $result;
    }
 

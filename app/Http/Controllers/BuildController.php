@@ -70,13 +70,6 @@ class BuildController extends Controller
   public function splashIcon($src, $dst)
   {
     Zipper::make($src)->extractTo($dst.'/www');
-    // $zip = new ZipArchive();
-    // $x = $zip->open($src);  // open the zip file to extract
-    // if ($x === true) {
-    //     $zip->extractTo($dst.'/www'); // place in the directory with same name
-    //     $zip->close();
-    //     unlink($src); //Deleting the Zipped file
-    // }
     unlink($src);
   }
 
@@ -101,6 +94,9 @@ class BuildController extends Controller
 
       //Update Project Info
       $update['id'] = $request->appid;
+
+      $update['dev_id'] = $request->dev_id;
+      $update['prefix'] = $request->apple_prefix;
       $update['repo'] = $newname.'.zip';
       $this->project->updateRepo($update);
 
@@ -108,6 +104,7 @@ class BuildController extends Controller
       //Generate XML File
 
       $data = array('widget' => array(
+                  '_id'          => $request->dev_id,
                   'name'        => $theproject->project_name,
                   'description' => $theproject->project_description,
                   'author'      => array(
@@ -370,7 +367,21 @@ class BuildController extends Controller
       $finalpath = storage_path('clientsapp/'.$newname.'.zip');
       Zipper::make($finalpath)->add($compiled)->close();
 
+      //Destroy Everything
+      $this->removeDirectory($dst);
+
       return redirect()->back()->with('success', 'Ready to Build');
+  }
+
+  //Removing Tmp folder
+  public function removeDirectory($path) {
+    $files = glob(preg_replace('/(\*|\?|\[)/', '[$1]', $path).'/{,.}*', GLOB_BRACE);
+    foreach ($files as $file) {
+        if ($file == $path.'/.' || $file == $path.'/..') { continue; }
+        is_dir($file) ? $this->removeDirectory($file) : unlink($file);
+    }
+    rmdir($path);
+    return;
   }
 
   public function setupApp(Request $request)

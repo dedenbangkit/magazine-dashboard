@@ -177,14 +177,13 @@
                                         <li><a href="http://pgicons.abiro.com/">http://pgicons.abiro.com/</a></li>
                                         <li><a href="http://phonegap.appiq.software/">http://phonegap.appiq.software/</a></li>
                                       </ul>
-                                    </div>
-
-                                    <div class="col-md-6">
+                                      <hr>
+                                      <div class="row">
+                                      <div class="col-md-8">
                                       Once you have the assets with you, please upload compressed (.zip) of <strong>res folder</strong> to prepare the build process.
                                       follow this file structure before uploading your zip file.
-                                      <hr>
-                                    <div class="row">
-                                      <div class="col-md-6" style="padding-left:5%;">
+                                      </div>
+                                      <div class="col-md-4">
                                       <div>
                                           <strong><a id="collapseAll" href="#"><i class="fa fa-file-zip-o"></i> res.zip</a></strong>
                                       </div>
@@ -260,18 +259,28 @@
                                         </li>
                                       </ul>
                                       </div>
-                                      <div class="col-md-6">
-                                      <form class="form-horizontal" action="{{url('app-setting-update')}}" method="post" enctype="multipart/form-data">
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                      <form action="{{url('app-setting-update')}}" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="appid" value="{{$row->id}}">
+                                        <div class="form-group">
+                                          <label><i class="fa fa-apple"></i> Bundle ID</label>
+                                          <input type="text" name="dev_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp" value="{{$row->dev_id}}">
+                                        </div>
+                                        <div class="form-group">
+                                          <label><i class="fa fa-apple"></i> Prefix</label>
+                                          <input type="text" name="apple_prefix" id="apple_prefix" class="form-control" placeholder="eg. S4G4BK2VSQ" value="{{$row->prefix}}">
+                                        </div>
+                                        <div class="form-group">
                                         <label>Upload splash screen (.zip)</label>
-                                        <input type="file" name="splashicon" id="splashicon"><hr>
+                                        <input type="file" name="splashicon" id="splashicon">
+                                        </div>
+                                        <hr>
                                         <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
                                       </form>
-                                    </div>
-                                  </div>
-
-                                      <hr>
                                     </div>
 
                                     <div class="col-md-12"><hr></div>
@@ -293,77 +302,78 @@
                                   Your Application is ready to build.
                                 </div>
                                 @endif
+                                <form action="{{url('build-app')}}" method="post" enctype="multipart/form-data">
                                   <div class="box-body">
-                                  <div class="col-md-12">
                                     <div class="col-md-6">
-                                  <form class="form-horizontal" action="{{url('build-app')}}" method="post" enctype="multipart/form-data">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <input type="hidden" name="appid" value="{{$row->id}}">
                                           <!-- text input -->
+                                          <h4 class="box-title">Apple Certificate and Mobile Provision</h4>
+                                          Read documentation for <a href="https://developer.apple.com/support/certificates/">Apple Certificate</a> and <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html">Apple Mobile Provision</a>
+                                          <hr>
+                                          <div class="row">
+                                          <div class="col-md-6">
                                           <div class="form-group">
-                                            <label><i class="fa fa-apple"></i> Application ID</label>
-                                            <input type="text" name="apple_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
+                                          <label for="apple_mobiprovision"><i class="fa fa-apple"></i> Provisioning Profile (.mobiprovision)</label>
+                                          <input type="file" name="apple_provision" id="apple_provision" style="margin-top:15px;">
                                           </div>
-
-                                          <!-- textarea -->
-                                          <div class="form-group">
-                                            <label><i class="fa fa-apple"></i> Prefix</label>
-                                            <input type="text" name="apple_prefix" class="form-control" placeholder="eg. S4G4BK2VSQ">
                                           </div>
-
+                                          <div class="col-md-6">
                                           <div class="form-group">
                                             <label><i class="fa fa-apple"></i> Status</label>
                                             <select class="form-control" name="apple_status">
                                               <option>Development</option>
-                                              <option>Published</option>
+                                              <option>Distribution</option>
                                             </select>
                                           </div>
-
-                                          <div class="form-group">
-                                            <label><i class="fa fa-android"></i> API Key</label>
-                                            <input type="text" name="android_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp">
                                           </div>
-
                                           </div>
-
-                                          <div class="col-md-6" style="padding-left:50px;">
-
-                                          <div class="form-group">
-                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Provisioning Profile (.mobiprovision)</label>
-                                          <input type="file" name="apple_provision" id="imagefile">
-                                          </div>
-
-                                          <hr>
 
                                           <div class="row">
                                           <div class="col-md-6">
                                           <div class="form-group">
-                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate (.p12)</label>
-                                          <input type="file" name="apple_certificate" id="imagefile" style="margin-top:15px;">
+                                          <label for="apple_certificate"><i class="fa fa-apple"></i> Certificate (.p12)</label>
+                                          <input type="file" name="apple_certificate" id="apple_certificate" style="margin-top:15px;">
                                           </div>
                                           </div>
-
                                           <div class="col-md-6">
                                           <div class="form-group">
-                                          <label for="exampleInputFile"><i class="fa fa-apple"></i> Certificate Password</label>
-                                          <input type="password" name="apple_password" class="form-control">
+                                          <label for="apple_password"><i class="fa fa-apple"></i> Certificate Password</label>
+                                          <input type="password" name="apple_password" id="apple_password" class="form-control">
+                                          </div>
                                           </div>
                                           </div>
                                           </div>
 
+                                          <div class="col-md-6" style="padding-left:50px;">
+                                            <h4 class="box-title">Android Keystore</h4>
+                                            Read documentation for <a href="https://developer.android.com/studio/publish/app-signing.html">Android Signing Key</a>
+                                            <hr>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label for="android_key"><i class="fa fa-android"></i> Kestore File (.keystore)</label>
+                                            <input type="file" name="android_key" name="cover" id="android_key" style="margin-top:15px;">
+                                            </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label><i class="fa fa-android"></i> Keystore Password</label>
+                                              <input type="password" name="android_password" id="android_password" class="form-control">
+                                            </div>
+                                            </div>
+                                            </div>
+                                          </div>
+
+
+                                          <div class="col-md-12">
                                           <hr>
-                                          <div class="form-group">
-                                          <label for="exampleInputFile"><i class="fa fa-android"></i> Kestore File (.keystore)</label>
-                                          <input type="file" name="android_key" name="cover" id="imagefile">
-                                          </div>
-
                                           <div class="form-group">
                                           <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="glyphicon glyphicon-play-circle"></i>Build Now!</button>
                                           </div>
+                                          </div>
+                                        </div>
 
-                                        </div>
-                                        </div>
-                                        </div>
                                         </form>
                                     </div>
                               </div>

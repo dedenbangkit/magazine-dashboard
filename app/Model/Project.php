@@ -17,7 +17,7 @@ class Project extends Model
                 'project_name'=>$data['name'],
                 'project_master'=>$data['master'],
                 'company_id'=>$company_id,
-                '$service_id'=>$data['service'],
+                'service_id'=>$data['service'],
                 'project_cover'=>$data['cover'],
                 'project_key'=>$data['key']
             )
@@ -37,7 +37,19 @@ class Project extends Model
         return  Project::where('id',$data['id'])
             ->update(
            [
-                'repo'=>$data['repo'],
+                'repo'            => $data['repo'],
+                'prefix'          => $data['prefix'],
+                'dev_id'          => $data['dev_id'],
+           ]
+        );
+    }
+
+    public function updateBuild($data){
+        return  Project::where('id',$data['id'])
+            ->update(
+           [
+                'apple_key'       => $data['apple_key'],
+                'apple_password'  => $data['apple_password']
            ]
         );
     }
