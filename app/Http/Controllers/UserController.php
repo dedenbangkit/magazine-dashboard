@@ -11,7 +11,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\User;
 use App\Model\Action_log;
-use Validator;
+use Illuminate\Support\Facades\Validator;
+use Redirect;
 
 /**
  * Class HomeController
@@ -53,6 +54,21 @@ class UserController extends Controller
      * @return redirect to user page
      */
     public function registrationProcess(Request $request){
+        $data=$request->all();
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|max:255|email',
+            'name' => 'required|max:30|alpha_num',
+            'phone' => 'required|max:30|regex:/^([0-9])+$/i',
+            'password' => 'required|max:30|alpha_num|confirmed',
+            'password_confirmation'=>'required'
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()
+                ->with('msg', 'fail')
+                ->withErrors($validator,'create')
+                ->withInput();
+        };
         $this->user->insertUser($request->all(),$this->authdata->project_id);
         $this->action_log->create_log('Creating User '.$request->name.' position '.$request->position,$this->authdata->id);
         return redirect('/user');

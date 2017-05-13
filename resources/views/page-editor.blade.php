@@ -2133,25 +2133,24 @@
     <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
 
     <script>
-
-        $('iframe').on('load', function() {
-            $.ajax({
-                url: "/load-page"
-            }).done(function(data) {
-                $(data['loadpage']).each(function(index, el) {
-                    console.log(el.id)
-                    loadPage(el.content_array,index)
-
-                });
+        $.ajax({
+            url: "/load-page"
+        }).done(function(data) {
+            $(data['loadpage']).each(function(index, el) {
+                loadPage(el.content_array,index)
 
             });
+
+        });
+        $('iframe').on('load', function() {
+
         });
         function loadPage(pageContent,id){
             //console.log(pageContent[0])
             console.log('delayed')
             setTimeout(function () {
-                console.log($('#page'+(id+1)+' li iframe').contents().find('body').html());
-                $('#page'+(id+1)+' li iframe').contents().find('#page').html(pageContent[0])
+               // console.log($('#page'+(id+1)+' li iframe').contents().find('body').html());
+                $('#page'+(id+1)+' li iframe').contents().find('#page').replaceWith(pageContent[id])
             }, 6000)
 
         }
@@ -2266,25 +2265,25 @@
         $("#savePage").click(function () {
             var contentArray= [];
             var contentIframe=[];
+            var pages=$('#pages .active').data('page')
+            console.log(pages)
             pageNum =$('#pages li').size()-1;
-            for(i=1;i<=pageNum;i++){
-                contentPage=$('#page'+i).html();
-                countli=$('#page'+i+' li').length;
-                var countiframe=$('#page'+i+' li iframe');
+                contentPage=$('#page'+pages).html();
+                countli=$('#page'+pages+' li').length;
+                var countiframe=$('#page'+pages+' li iframe');
                 for(j=0;j<countli;j++) {
-                    var pageli=$('#page'+i+' li').get(j).style.height;
+                    var pageli=$('#page'+pages+' li').get(j).style.height;
                     console.log(pageli)
                     contentpath=countiframe[j].contentWindow.document.body.innerHTML;
-                    console.log(contentpath)
+//                    console.log(contentpath)
                     contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
                 }
-                id=$('#page'+i).data('id');
-                contentArray[i-1] = {id:id,content:contentPage,contentIframe:contentIframe};
-            }
+                id=$('#page'+pages).data('id');
+                contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
             $.ajax({
                 type: 'POST',
                 url: "save-page",
-                data: {'contentArray':contentArray,'_token':'<?= csrf_token() ?>'},
+                data: {'id':id,'content':contentPage,'contentIframe':contentIframe,'_token':'<?= csrf_token() ?>'},
                 success: function(resultData) {
                     console.log(resultData);
                 }
@@ -2297,14 +2296,14 @@
         }).done(function(data) {
             $(data['page_list']).each(function(index, el) {
                 page_content = el.page_content;
-                newPage(el.page_name,el.page_content,el.id)
+                newPage(el.page_name,el.page_content,el.id,index)
 
             });
 
         });
 
 
-        function newPage(pageTittle,pageContent,pageID){
+        function newPage(pageTittle,pageContent,pageID,index){
             $('#pages li.active').each(function(){
 
                 if( $(this).find('input').size() > 0 ) {
@@ -2325,6 +2324,8 @@
             newPageLI.css('display', 'block');
             newPageLI.find('input').val( pageTittle );
             newPageLI.attr('id', '');
+            newPageLI.attr('data-id', pageID);
+            newPageLI.attr('data-page', index+1);
 
             $('ul#pages').append( newPageLI );
 
