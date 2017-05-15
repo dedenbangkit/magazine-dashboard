@@ -24,7 +24,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
-
+use Storage;
 class BuildController extends Controller
 {
 
@@ -415,5 +415,8 @@ class BuildController extends Controller
     return $destPath;
 
   }
-
+    public function s3($pathname){
+        $s3 = \Storage::disk('s3');
+        $s3->put($pathname, 'public');
+    }
 }
