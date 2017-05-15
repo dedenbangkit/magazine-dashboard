@@ -135,6 +135,7 @@ class BuildApiController extends Controller
       $update['apple_password'] = $request->apple_password;
       $update['build_id'] = $result['id'];
       $this->project->updateBuild($update);
+      unlink(storage_path('clientsapp/'.$theproject->repo));
 
       return redirect()->action('ProjectController@project');
    }

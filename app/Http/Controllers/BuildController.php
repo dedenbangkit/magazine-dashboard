@@ -373,12 +373,11 @@ class BuildController extends Controller
       "platform": "free"}';
 
       $storageJson = File::put($dst.'/www/appinfo.json', $contentJson);
-
       $compiled = glob($dst);
       $s3 = \Storage::disk('s3');
-      $s3->put('clientsapp/'.$newname.'.zip', 'public');
       $finalpath = storage_path('clientsapp/'.$newname.'.zip');
       Zipper::make($finalpath)->add($compiled)->close();
+      $s3->put('clientsapp/'.$newname.'.zip', file_get_contents($finalpath), 'public');
 
       //Destroy Everything
       $this->removeDirectory($dst);
