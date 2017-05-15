@@ -2143,16 +2143,28 @@
 
         });
         $('iframe').on('load', function() {
+            $.ajax({
+                url: "/load-page"
+            }).done(function(data) {
+                $(data['loadpage']).each(function(index, el) {
+                    loadPage(el.content_array,index)
+                    page=index+1
+                });
+            });
 
         });
         function loadPage(pageContent,id){
             //console.log(pageContent[0])
             console.log('delayed')
-            setTimeout(function () {
-               // console.log($('#page'+(id+1)+' li iframe').contents().find('body').html());
-                $('#page'+(id+1)+' li iframe').contents().find('#page').replaceWith(pageContent[id])
-            }, 6000)
-
+            var path =0;
+            $('#page'+(id+1)+' li iframe').load(function() {
+                console.log(id+'-'+pageContent)
+                $('#page'+(id+1)+' li iframe').each(function(a) {
+                    console.log('test')
+                    $(this).contents().find('body').children('#page').replaceWith(pageContent[path]);
+                    path = path+1
+                });
+            });
         }
 
         //Page Setting
@@ -2266,14 +2278,13 @@
             var contentArray= [];
             var contentIframe=[];
             var pages=$('#pages .active').data('page')
-            console.log(pages)
             pageNum =$('#pages li').size()-1;
                 contentPage=$('#page'+pages).html();
                 countli=$('#page'+pages+' li').length;
                 var countiframe=$('#page'+pages+' li iframe');
                 for(j=0;j<countli;j++) {
                     var pageli=$('#page'+pages+' li').get(j).style.height;
-                    console.log(pageli)
+//                    console.log(pageli)
                     contentpath=countiframe[j].contentWindow.document.body.innerHTML;
 //                    console.log(contentpath)
                     contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
