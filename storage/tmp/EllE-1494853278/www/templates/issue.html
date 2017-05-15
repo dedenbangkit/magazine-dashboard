@@ -1,0 +1,19 @@
+
+
+<ion-view view-title="Issue #01">
+  <ion-nav-buttons side="right">
+      <button class="button button-icon" ng-click="showImage()">
+        <i class="icon ion-help-circled"></i>
+      </button>
+    </ion-nav-buttons>
+  <ion-content class="iframe-wrapper">
+    <iframe src="content/demo.html"></iframe>
+    <script id="image-modal.html" type="text/ng-template">
+             <div class="modal image-modal transparent" ng-click="closeModal()">
+                 <ion-pane class="transparent">
+                    <img ng-src="{{imageSrc}}" class="fullscreen-image"/>
+                 </ion-pane>
+             </div>
+    </script>
+  </ion-content>
+</ion-view>

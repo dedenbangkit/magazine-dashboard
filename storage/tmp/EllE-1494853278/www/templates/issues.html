@@ -1,0 +1,11 @@
+<ion-view view-title="Issues">
+  <ion-content>
+    <ion-list>
+      <ion-item class='item item-thumbnail-left' ng-repeat="Issue in Issues" href="#/app/issues/{{issue.id}}">
+          <img src="img/{{Issue.cover}}">
+        <h2>{{Issue.title}}: {{Issue.desc}}</h2>
+        <p>{{Issue.date}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
