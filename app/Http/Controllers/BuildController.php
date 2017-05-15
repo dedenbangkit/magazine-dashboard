@@ -361,7 +361,7 @@ class BuildController extends Controller
       );
 
       $content = View::make('xml.xmlformat', $data)->render();
-      $contentJson=[ "company_name": "Elle",
+      $contentJson=[ "company_name": $theproject->company_name,
   "project_name": $theproject->project_name,
   "dev_id": $request->dev_id,
   "build_id": $theproject->build_id,
