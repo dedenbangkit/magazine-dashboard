@@ -106,7 +106,7 @@ class BuildApiController extends Controller
           );
       }
 
-      $zip_path = storage_path('clientsapp/'.$theproject->repo);
+      $zip_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/clientsapp/'.$theproject->repo;
       $data = $this->client->request('POST', 'apps', [
                   'multipart' => [
                       ['name' => 'file',

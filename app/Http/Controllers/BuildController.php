@@ -363,12 +363,25 @@ class BuildController extends Controller
       $content = View::make('xml.xmlformat', $data)->render();
       $storage= File::put($dst.'/config.xml', $content);
 
+      $contentJson='{ "company_name": "'.$theproject->company_name.'",
+      "project_name": "'.$theproject->project_name.'",
+      "dev_id": "'.$request->dev_id.'",
+      "build_id": "'.$theproject->build_id.'",
+      "project_description": "'.$theproject->project_appid.'",
+      "company_id": "'.$request->company_id.'",
+      "project_id": "'.$request->dev_id.'",
+      "platform": "free"}';
+
+      $storageJson = File::put($dst.'/www/appinfo.json', $contentJson);
+
       $compiled = glob($dst);
+      $s3 = \Storage::disk('s3');
+      $s3->put('clientsapp/'.$newname.'.zip', 'public');
       $finalpath = storage_path('clientsapp/'.$newname.'.zip');
       Zipper::make($finalpath)->add($compiled)->close();
 
       //Destroy Everything
-      // $this->removeDirectory($dst);
+      $this->removeDirectory($dst);
 
       return redirect()->back()->with('success', 'Ready to Build');
   }
