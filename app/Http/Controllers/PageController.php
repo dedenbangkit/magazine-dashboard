@@ -45,7 +45,7 @@ class PageController extends Controller
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
-        $data['page_list'] = $this->page->getPage(11);
+        $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
 
         return view('page', $data);
     }
@@ -54,7 +54,7 @@ class PageController extends Controller
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
-        $data['page_list'] = $this->page->getPage(11);
+        $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
 
         return view('sample-page', $data);
     }
@@ -65,7 +65,7 @@ class PageController extends Controller
 //        }
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
-        $data['page_list'] = $this->page->getPage(11);
+        $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
 
         return view('page-editor', $data);
     }
@@ -77,21 +77,24 @@ class PageController extends Controller
     }
     public function getPage(Request $request)
     {
-        $data['page_list'] = $this->page->getPage(11);
+        $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
 
         return $data;
     }
     public function loadPage(Request $request)
     {
-        $pages = $this->page->getPage(11);
+        $pages = $this->page->getPage($request->session()->get('issue-editor'));
         foreach($pages as $i=>$row){
-            $page_array= explode('[/]',$row->test_content);
+            $page_array= explode('<!-- end array-->',$row->test_content);
+//            $page_array=str_replace(" <!-- end array--> ",'"]["',$row->test_content);
             $data['loadpage'][$i]=[
                 'id'=>$row->id,
                 'content_array'=>$page_array
             ];
         }
-
+        $abcd="abcd<!-- end array-->efgh<!-- end array-->";
+//        return explode('<!-- end array-->',$abcd);
+//        return $data['loadpage'][1]['content_array'][1];
         return $data;
     }
     public function exportIssue(Request $request){
@@ -176,7 +179,8 @@ class PageController extends Controller
                 $contents="";
                 foreach ($request->contentIframe as $j=>$child){
                     $explodecontent=explode('<!-- /#page -->',$child['framecontent']);
-                    $contents.= $explodecontent[0]."<!-- end array-->";
+                    $explodecontent[0]= str_replace(" <!-- end array--> ","",$explodecontent[0]);
+                    $contents.= $explodecontent[0]." <!-- end array--> ";
                 }
                 $this->page->savePage($request->id,$request->content,$contents);
 //                $this->page->savePage($row['id'],$content,$row['content']);

@@ -2133,35 +2133,38 @@
     <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
 
     <script>
-        $.ajax({
-            url: "/load-page"
-        }).done(function(data) {
-            $(data['loadpage']).each(function(index, el) {
-                loadPage(el.content_array,index)
-
-            });
-
-        });
+//        $.ajax({
+//            url: "/load-page"
+//        }).done(function(data) {
+//            $(data['loadpage']).each(function(index, el) {
+//                loadPage(el.content_array,index)
+//
+//            });
+//
+//        });
         $('iframe').on('load', function() {
             $.ajax({
                 url: "/load-page"
             }).done(function(data) {
+                i=1
                 $(data['loadpage']).each(function(index, el) {
-                    loadPage(el.content_array,index)
-                    page=index+1
+                    loadPage(el.content_array,i)
+//                    console.log(i)
+                    i=i+1
                 });
             });
 
         });
         function loadPage(pageContent,id){
-            //console.log(pageContent[0])
-            console.log('delayed')
+//            console.log('squence - '+id)
             var path =0;
-            $('#page'+(id+1)+' li iframe').load(function() {
-                console.log(id+'-'+pageContent)
-                $('#page'+(id+1)+' li iframe').each(function(a) {
-                    console.log('test')
-                    $(this).contents().find('body').children('#page').replaceWith(pageContent[path]);
+            $('#page'+(id)+' li iframe').load(function() {
+
+                $('#page'+(id)+' li iframe').each(function(a) {
+//                    console.log(id+" path "+a)
+                       $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
+//                console.log(id+'-'+pageContent)
+               //
                     path = path+1
                 });
             });
