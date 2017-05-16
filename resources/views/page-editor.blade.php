@@ -2161,7 +2161,7 @@
                 console.log(id+'-'+pageContent)
                 $('#page'+(id+1)+' li iframe').each(function(a) {
                     console.log('test')
-                    $(this).contents().find('body').children('#page').replaceWith(pageContent[path]);
+                    $(this).contents().find('body').children('#page').replaceWith(pageContent[0]);
                     path = path+1
                 });
             });
