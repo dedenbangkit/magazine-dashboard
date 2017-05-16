@@ -1187,6 +1187,12 @@ function styleClick(el) {
 
 		}
 
+		$('#detailsAppliedMessage').fadeIn(600, function(){
+
+			setTimeout(function(){ $('#detailsAppliedMessage').fadeOut(1000) }, 3000)
+
+		})
+
 	});
 
 
@@ -1578,6 +1584,12 @@ $(function(){
 		$('.link_Tab .btn-group.select > button .filter-option').text( $('.link_Tab .dropdown-menu li:first').text() )
 
 		this.select();
+
+	})
+
+	$('#detailsAppliedMessageHide').click(function(){
+
+		$(this).parent().fadeOut(500)
 
 	})
 
