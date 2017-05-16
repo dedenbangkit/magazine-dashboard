@@ -95,7 +95,7 @@
                             <li><a href="#">Sample 3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa fa-times-circle text-danger"></i></a></li>
+                    <li><a href="/issue"><i class="fa fa-times-circle text-danger"></i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
@@ -1950,7 +1950,7 @@
         <form action="save" target="_blank" id="markupForm" method="post" class="form-horizontal">
 
             <input type="hidden" name="markup" value="" id="markupField">
-
+            <input type="text" class=""hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1962,7 +1962,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Doc type</label>
                             <div class="col-sm-10">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                 <input type="text" class="form-control" name="doctype" id="doctype" placeholder="Doc type" value="<!--DOCTYPE html -->">
                             </div>
                         </div>
@@ -2103,7 +2103,10 @@
         <img src="{{asset('builder_front/images/loading.gif')}}" alt="Loading...">
         Loading elements...
     </div>
-
+    <div id="loaderSave" class="loaderSave" style="display:none">
+        <img src="{{asset('builder_front/images/loading.gif')}}" alt="Loading...">
+        Saving Pages...
+    </div>
     <div class="sandboxes" id="sandboxes" style="display: none"></div>
 
 
@@ -2282,6 +2285,7 @@
         $("#savePage").click(function () {
             var contentArray= [];
             var contentIframe=[];
+            $('.loaderSave').show();
             var pages=$('#pages .active').data('page')
             pageNum =$('#pages li').size()-1;
                 contentPage=$('#page'+pages).html();
@@ -2301,6 +2305,7 @@
                 url: "save-page",
                 data: {'id':id,'content':contentPage,'contentIframe':contentIframe,'_token':'<?= csrf_token() ?>'},
                 success: function(resultData) {
+                    $('.loaderSave').hide();
                     console.log(resultData);
                 }
             });

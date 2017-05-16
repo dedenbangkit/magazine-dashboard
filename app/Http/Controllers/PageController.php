@@ -99,8 +99,8 @@ class PageController extends Controller
     }
     public function exportIssue(Request $request){
         $pathToAssets = array("builder_front/elements/bootstrap", "builder_front/elements/css", "builder_front/elements/fonts", "builder_front/elements/images", "builder_front/elements/js");
-
-        $filename = "builder_front/tmp/website3.zip"; //use the /tmp folder to circumvent any permission issues on the root folder
+        $newname=time().'-'.$request->session()->get('issue-editor');
+        $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
         /* END CONFIG */
 
@@ -141,12 +141,13 @@ class PageController extends Controller
             }
 
         }
-        $pages= $this->page->getPage(11);
+        $pages= $this->page->getPage($request->session()->get('issue-editor'));
 
 
         foreach( $pages as $page=>$content ) {
-
-            $zip->addFromString($page.".html", $request->doctype."\n".stripslashes($content['page_content']));
+            $html="<html><head></head><body>";
+            $htmlclose="</body></html>";
+            $zip->addFromString($content['page_name'].".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
             //echo $content;
 
@@ -168,9 +169,11 @@ class PageController extends Controller
         header("Content-Length: " . filesize($yourfile));
 
 //        readfile($yourfile);
-
-        unlink($filename);
-
+        $s3 = \Storage::disk('s3');
+        $s3->put('issue-lib/'.$newname.'.zip', file_get_contents($file_name), 'public');
+//        unlink($filename);
+        echo $newname;
+//die();
         exit;
     }
     public function savePage(Request $request)
