@@ -2158,6 +2158,7 @@
         function loadPage(pageContent,id){
 //            console.log('squence - '+id)
             var path =0;
+
             $('#page'+(id)+' li iframe').load(function() {
 
                 $('#page'+(id)+' li iframe').each(function(a) {
@@ -2165,6 +2166,7 @@
                        $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
 //                console.log(id+'-'+pageContent)
                //
+
                     path = path+1
                 });
             });
