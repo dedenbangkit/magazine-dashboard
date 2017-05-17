@@ -194,6 +194,7 @@
             <li style="display: none;"><a href="#image_Tab" id="img_Link"><span class="fui-image"></span> Image</a></li>
             <li style="display: none;"><a href="#icon_Tab" id="icon_Link"><span class="fa fa-flag"></span> Icons</a></li>
             <li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-youtube-play"></span> Video</a></li>
+            <li style="display: none;"><a href="#audio_Tab" id="audio_Link"><span class="fa fa-soundcloud"></span> Audio</a></li>
         </ul><!-- /tabs -->
 
         <div class="tab-content">
@@ -271,6 +272,30 @@
                 </form>
 
             </div><!-- /.tab-pane -->
+
+            <div class="tab-pane audioFileTab" id="audio_Tab">
+                <label>Enter audio path:</label>
+                <input type="text" class="form-control" id="audioURL" placeholder="Enter an audio URL" value="">
+                <p class="text-center or">
+                    <span>OR</span>
+                </p>
+                <form id="audioUploadForm" action="aupload">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label>Upload audio:</label>
+                    <div class="form-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="buttons">
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file">
+                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-volume"></span>&nbsp;&nbsp;Select audio</span>
+                                        <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
+                                        <input type="file" name="audioFileField" id="audioFileField">
+                                    </span>
+                                <a href="#" class="btn btn-default btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>&nbsp;&nbsp;Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
             <!-- /tabs -->
             <div class="tab-pane iconTab" id="icon_Tab">
@@ -2155,6 +2180,7 @@
 //                    console.log(i)
                     i=i+1
                 });
+
             });
 
         });

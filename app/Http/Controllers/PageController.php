@@ -269,4 +269,67 @@ class PageController extends Controller
 
         echo json_encode( $return );
     }
+
+    public function aupload(Request $request){
+        $s3 = \Storage::disk('s3');
+        $audio = $request->file('audioFileField');
+        $file_path= '/audio-lib/';
+        $uploads_dir = 'builder_front/elements/audio/uploads';//specify the upload folder, make sure it's writable!
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/audio-lib';//specify the relative path from your elements to the upload folder
+
+
+        /* DON'T CHANGE ANYTHING HERE!! */
+
+        $return = array();
+
+
+        //does the folder exist?
+        if( !file_exists( $uploads_dir ) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "The specified upload location does not exist. Please provide a correct folder in /aupload.php";
+
+            die( json_encode( $return ) );
+
+        }
+
+        //is the folder writable?
+        if( !is_writable( $uploads_dir ) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "The specified upload location is not writable. Please make sure the specified folder has the correct write permissions set for it.";
+
+            die( json_encode( $return ) );
+
+        }
+
+        if ( !isset($_FILES['audioFileField']['error']) || is_array($_FILES['audioFileField']['error']) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "Something went wrong with the file upload; please refresh the page and try again.";
+
+            die( json_encode( $return ) );
+
+        }
+
+        $name = time().'-'.$_FILES['audioFileField']['name'];
+        if ($s3->put($file_path.''.$name, file_get_contents($audio), 'public')) {
+    //            $s3->put($file_path.''.$name, file_get_contents($_FILES['audioFileField']['name']), 'public');
+            //echo "yes";
+
+        } else {
+
+            $return['code'] = 0;
+            $return['response'] = "The uploaded file couldn't be saved. Please make sure you have provided a correct upload folder and that the upload folder is writable.";
+
+        }
+
+        //print_r ($_FILES);
+
+        $return['code'] = 1;
+        $return['response'] = $relative_path."/".$name;
+
+        echo json_encode( $return );
+    }
+
 }
