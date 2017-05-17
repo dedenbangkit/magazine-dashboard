@@ -149,8 +149,30 @@ class PageController extends Controller
 
 
         foreach( $pages as $page=>$content ) {
-            $html="<html><head></head><body>";
-            $htmlclose="</body></html>";
+            $html="<html><head>
+<!-- Loading Bootstrap -->
+    <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
+
+        <!-- Froala -->
+    <link rel='stylesheet' type='text/css' href='assets/content-tools.min.css'>
+
+    <!-- Loading Flat UI -->
+    <link href='css/flat-ui.css' rel='stylesheet'>
+
+    <link href='css/style.css' rel='stylesheet'>
+    <link href='css/style-content.css' rel='stylesheet'>
+
+    <!-- Font Awesome -->
+    <link href='css/font-awesome.css' rel='stylesheet'>
+</head><body>";
+            $htmlclose=" <script src='js/jquery-1.8.3.min.js'></script>
+    <script src='js/jquery-ui-1.10.3.custom.min.js'></script> <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap-select.js'></script>
+    <script src='js/bootstrap-switch.js'></script>
+    <script src='js/flatui-checkbox.js'></script>
+    <script src='js/flatui-radio.js'></script>
+    <script src='js/jquery.tagsinput.js'></script>
+    <script src='js/jquery.placeholder.js'></script></body></html>";
             $zip->addFromString($content['page_name'].".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
             //echo $content;
@@ -166,6 +188,8 @@ class PageController extends Controller
         $yourfile = $filename;
 
         $file_name = basename($yourfile);
+        header("Content-Type: application/zip");
+        header("Content-Transfer-Encoding: Binary");
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
         unlink($filename);
@@ -213,7 +237,7 @@ class PageController extends Controller
         $image = $request->file('imageFileField');
         $file_path= '/images-lib/';
         $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
-        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
+        $relative_path = ' ';//specify the relative path from your elements to the upload folder
 
 
         /* DON'T CHANGE ANYTHING HERE!! */
