@@ -121,7 +121,7 @@
         $(".column").not(':first').remove();
         $(".column").html(combinedHTML);
         checkColTot();
-        bindHeightWidth();
+        parent.bindHeightWidth();
       };
     });
 
@@ -133,12 +133,12 @@
         $(".column").not(':first').html('');
         $('#sortableEdit').show();
         checkColTot();
-        bindHeightWidth();
+        parent.bindHeightWidth();
       }else{
         $('.column').removeClass('col-xs-12').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-6');
         checkColTot();
         $('#sortableEdit').show();
-        bindHeightWidth();
+        parent.bindHeightWidth();
       }
     });
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Header</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-headers.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div id="page" class="page">
+    				<div class="row banner" data-editable data-name='article2'>
+
+    					<div class="col-md-10 col-md-offset-1">
+
+    						<div id="myCarousel" class="carousel carousel1 slide margin-top-40 margin-bottom-80" data-interval="false">
+    						  	<!-- Wrapper for slides -->
+
+    						  	<div class="carousel-inner">
+    						    	<div class="item active text-center">
+    						      		<p class="lead editContent article__by-line">
+    						      			Phasellus aliquet velit sit amet ex egestas posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis eu scelerisque diam. Praesent nunc justo, sagittis ac aliquam nec, dictum at enim.
+    						      		</p>
+    						    	</div>
+    						    	<div class="item text-center">
+    						      		<p class="lead editContent article__by-line">
+    						      			Phasellus aliquet velit sit amet ex egestas posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis eu scelerisque diam. Praesent nunc justo, sagittis ac aliquam nec, dictum at enim.
+    						      		</p>
+    						    	</div>
+    						    	<div class="item text-center">
+    						      		<p class="lead editContent article__by-line">
+    						      			Phasellus aliquet velit sit amet ex egestas posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis eu scelerisque diam. Praesent nunc justo, sagittis ac aliquam nec, dictum at enim.
+    						      		</p>
+    						    	</div>
+    						  	</div>
+    						  	<!-- Indicators -->
+    						  	<ol class="carousel-indicators">
+    						  		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    						  		<li data-target="#myCarousel" data-slide-to="1"></li>
+    						  		<li data-target="#myCarousel" data-slide-to="2"></li>
+    						  	</ol>
+    						</div>
+
+    					</div>
+
+    				</div><!-- /.row -->
+    </div><!-- /#page -->
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src='js/jquery-1.8.3.min.js'></script>
+    <script src='js/jquery-ui-1.10.3.custom.min.js'></script>
+    <script src='../js/tinymce/jquery.tinymce.min.js'></script>
+    <script src='../js/tinymce/tinymce.min.js'></script>
+    <script>
+    function activetiny(){
+    tinymce.init({
+      selector: '.editContent',
+      theme: 'inlite',
+      element_format : 'html',
+      extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]',
+      plugins: 'image table link paste contextmenu textpattern autolink searchreplace textcolor colorpicker media hr',
+      selection_toolbar: 'fontsizeselect forecolor backcolor | bold italic | quicklink | bullist numlist',
+      contextmenu: 'undo redo | link image',
+      inline: true,
+      force_p_newlines : false,
+      width : 300,
+      preview_styles: 'font-size color',
+      setup: function (selection_toolbar) {
+        selection_toolbar.addButton('mybutton', {
+          text: 'My button',
+          icon: false,
+          onclick: function () {
+            selection_toolbar.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;');
+          }
+        });
+      }
+    });
+    };
+
+    activetiny();
+    </script>
+    <!-- <script src='assets/editor.js'></script> -->
+    <script src='js/jquery.ui.touch-punch.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap-select.js'></script>
+    <script src='js/bootstrap-switch.js'></script>
+    <script src='js/flatui-checkbox.js'></script>
+    <script src='js/flatui-radio.js'></script>
+    <script src='js/jquery.tagsinput.js'></script>
+    <script src='js/jquery.placeholder.js'></script>
+    <script src='js/application.js'></script>
+</body>
+</html>
