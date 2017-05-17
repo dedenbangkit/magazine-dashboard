@@ -46,14 +46,15 @@ form .row {
 .page o.sortable-function{
 	z-index: 100;
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 	line-height: 0px;
 	opacity: 0;
-	left: 0px;
-	top:0px;
 	visibility: hidden;
-	position: absolute;
 	cursor: pointer;
+	font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+	margin:-2px;
 	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
@@ -71,14 +72,16 @@ o.sortable-function:hover {
 .page o.sortable-function-edit{
 	z-index: 100;
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 	line-height: 0px;
 	opacity: 0;
 	left: 0px;
 	top:0px;
-	position: absolute;
 	cursor: pointer;
-	visibility: hidden;
+	font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+	margin:-2px;
 	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
 	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
@@ -101,7 +104,6 @@ o.sortable-function:hover {
 }
 
 .item.content, .item.portfolio, .item.team, .item.pricing, .item.contact {
-	padding-top: 8px;
 	padding-bottom: 8px;
 }
 
