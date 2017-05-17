@@ -1,5 +1,9 @@
 function activetiny(){
 tinymce.init({
+  force_p_newlines : false,
+  force_br_newlines : true,
+  convert_newlines_to_brs : false,
+  remove_linebreaks : true,
   selector: '.container',
   theme: 'inlite',
   element_format : 'html',
@@ -8,7 +12,6 @@ tinymce.init({
   selection_toolbar: 'fontsizeselect forecolor backcolor | bold italic | quicklink | bullist numlist',
   contextmenu: 'undo redo',
   inline: true,
-  force_p_newlines : false,
   width : 300,
   preview_styles: 'font-size color',
   setup: function (selection_toolbar) {

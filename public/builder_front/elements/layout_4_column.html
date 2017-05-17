@@ -38,17 +38,18 @@
     <div id='page' class='page'>
 
     	<div class='item content' id='content_section1'>
-        <o class='btn btn-inverse btn-embossed sortable-function' onclick='sortableMode()'><i class='glyphicon glyphicon-move'></i></o>
-        <o class='btn btn-success btn-embossed sortable-function-edit' onclick='sortableClose()'><i class='glyphicon glyphicon-move'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function' id="sortableEdit" onclick='sortableMode()'><i class='fa fa-arrows-h'></i></o>
+        <o class='btn btn-success btn-embossed sortable-function-edit' onclick='sortableClose()'><i class='fa fa-arrows-h'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='one-col'>1 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='two-col'>2 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='three-col'>3 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='four-col'>4 <i class='fa fa-navicon'></i></o>
 
     		<div class='container'>
           <article class='article'>
     			<div class='row article__content' id='demos'>
 
             <div class='column col-xs-6 col-sm-3' id='sortClass'  data-editable data-name='article'>
-
-                        <h3 class='article__by-line'>Layout 1 Columns</h3>
-
                         <p class='article__by-line'>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
                         </p>
@@ -57,8 +58,6 @@
 
     				<div class='column col-xs-6 col-sm-3' data-editable data-name='article2'>
 
-    					<h3 class='article__by-line'>Layout 2 Columns</h3>
-
     					<p class='article__by-line'>
     						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
     					</p>
@@ -66,9 +65,6 @@
     				</div>
 
             <div class='column col-xs-6 col-sm-3' data-editable data-name='article3'>
-
-    					<h3 class='article__by-line'>Layout 3 Columns</h3>
-
     					<p class='article__by-line'>
     						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
     					</p>
@@ -76,8 +72,6 @@
     				</div>
 
             <div class='column col-xs-6 col-sm-3' data-editable data-name='article4'>
-
-    					<h3 class='article__by-line'>Layout 3 Columns</h3>
 
     					<p class='article__by-line'>
     						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
@@ -118,5 +112,6 @@
     <script src='js/application.js'></script>
     <!-- Latest compiled and minified JavaScript -->
 	<script src='js/sortable.js'></script>
+  <script src='js/autolayout.js'></script>
 </body>
 </html>
