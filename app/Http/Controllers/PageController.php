@@ -164,8 +164,9 @@ class PageController extends Controller
     <!-- Font Awesome -->
     <link href='elements/css/font-awesome.css' rel='stylesheet'>
 </head><body>";
-            $htmlclose=" <script src='js/jquery-1.8.3.min.js'></script>
-    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script> <script src='js/bootstrap.min.js'></script>
+            $htmlclose=" <script src='elements/js/jquery-1.8.3.min.js'></script>
+    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script> 
+    <script src='elements/js/bootstrap.min.js'></script>
     <script src='elements/js/bootstrap-select.js'></script>
     <script src='elements/js/bootstrap-switch.js'></script>
     <script src='elements/js/flatui-checkbox.js'></script>
@@ -177,7 +178,7 @@ class PageController extends Controller
 
         }
 
-      
+
         $zip->close();
 
 
