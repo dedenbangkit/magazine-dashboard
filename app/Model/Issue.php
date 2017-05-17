@@ -41,4 +41,11 @@ class Issue extends Model
                 'updated_at'=>Carbon::now()
             ]);
     }
+    public function compileIssue($id,$name){
+        return Issue::where('id',$id)
+            ->update([
+                'compiled'=>$name,
+                'updated_at'=>Carbon::now()
+            ]);
+    }
 }

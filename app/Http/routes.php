@@ -62,6 +62,7 @@ Route::get('/get-invoice-detail', 'SubscribeController@getInvoiceDetail');
 Route::get('/get-invoice-list', 'SubscribeController@getInvoiceList');
 Route::get('/invoice-list', 'SubscribeController@invoicelist');
 Route::post('/invoice-detail', 'SubscribeController@invoiceDetail');
+Route::get('/services', 'SubscribeController@getService');
 Route::get('/invoice-detail', function () {
     return view('errors.404');
 });

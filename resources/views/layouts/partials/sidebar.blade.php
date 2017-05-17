@@ -35,7 +35,7 @@
                 <a href="javascript:void(0)"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li <?php if (in_array("subscribe service", $activer)) { echo "class='active'";} ?> ><a href="/user"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE SERVICE</span></a></li>
+                    <li <?php if (in_array("subscribe service", $activer)) { echo "class='active'";} ?> ><a href="/services"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE SERVICE</span></a></li>
                     <li <?php if (in_array("add subscriber", $activer)) { echo "class='active'";} ?>><a href="/new-subscribe"><i class='fa fa-sign-in'></i> <span>ADD CLIENT</span></a></li>
                     <li <?php if (in_array("subscriber list", $activer)) { echo "class='active'";} ?>><a href="/client"><i class='fa fa-list-alt'></i> <span>CLIENT LIST</span></a></li>
                     <li <?php if (in_array("invoice", $activer)) { echo "class='active'";} ?>><a href="/invoice-list"><i class='fa fa-money'></i> <span>INVOICE</span></a></li>

@@ -158,19 +158,24 @@ class PageController extends Controller
         $yourfile = $filename;
 
         $file_name = basename($yourfile);
-
-        header("Content-Type: application/zip");
-        header("Content-Transfer-Encoding: Binary");
-        header("Content-Disposition: attachment; filename=$file_name");
-        header("Content-Length: " . filesize($yourfile));
+        $s3 = \Storage::disk('s3');
+        $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
+        unlink($filename);
+        $this->page->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
+        return redirect('/issue') ;
+//        header("Content-Type: application/zip");
+//        header("Content-Transfer-Encoding: Binary");
+//        header("Content-Disposition: attachment; filename=$file_name");
+//        header("Content-Length: " . filesize($yourfile));
 
 //        readfile($yourfile);
-        $s3 = \Storage::disk('s3');
-        $s3->put('issue-lib/'.$newname.'.zip', file_get_contents($file_name), 'public');
-//        unlink($filename);
-        echo $newname;
+//        $s3 = \Storage::disk('s3');
+//        $test=$s3->put('issue-lib/'.$newname.'.zip', file_get_contents($file_name), 'public');
+
+
+
 //die();
-        exit;
+
     }
     public function savePage(Request $request)
     {

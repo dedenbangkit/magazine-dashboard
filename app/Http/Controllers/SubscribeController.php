@@ -137,4 +137,9 @@ class SubscribeController extends Controller
         $data['data']=$this->invoice->getInvoiceDetail($request->id);
         return $data;
     }
+    public function getService(Request $request){
+        $data['activer']=array($this->activer,'subscribe service');
+        $data['list']=$this->service->getService();
+        return view('service-list',$data);
+    }
 }
