@@ -17,6 +17,7 @@ use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 use Storage;
 use Session;
+use Zipper;
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -149,26 +150,45 @@ class PageController extends Controller
 
 
         foreach( $pages as $page=>$content ) {
-            $html="<html><head></head><body>";
-            $htmlclose="</body></html>";
+            $html="<html><head>
+<!-- Loading Bootstrap -->
+    <link href='elements/bootstrap/css/bootstrap.css' rel='stylesheet'>
+
+
+    <!-- Loading Flat UI -->
+    <link href='elements/css/flat-ui.css' rel='stylesheet'>
+
+    <link href='elements/elements/css/style.css' rel='stylesheet'>
+    <link href='elements/css/style-content.css' rel='stylesheet'>
+
+    <!-- Font Awesome -->
+    <link href='elements/css/font-awesome.css' rel='stylesheet'>
+</head><body>";
+            $htmlclose=" <script src='js/jquery-1.8.3.min.js'></script>
+    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script> <script src='js/bootstrap.min.js'></script>
+    <script src='elements/js/bootstrap-select.js'></script>
+    <script src='elements/js/bootstrap-switch.js'></script>
+    <script src='elements/js/flatui-checkbox.js'></script>
+    <script src='elements/js/flatui-radio.js'></script>
+    <script src='elements/js/jquery.tagsinput.js'></script>
+    <script src='elements/js/jquery.placeholder.js'></script></body></html>";
             $zip->addFromString($content['page_name'].".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
-            //echo $content;
 
         }
 
-        //$zip->addFromString("testfilephp.txt" . time(), "#1 This is a test string added as testfilephp.txt.\n");
-        //$zip->addFromString("testfilephp2.txt" . time(), "#2 This is a test string added as testfilephp2.txt.\n");
-
+      
         $zip->close();
 
 
         $yourfile = $filename;
 
         $file_name = basename($yourfile);
+        $file_path = public_path($filename);
+
         $s3 = \Storage::disk('s3');
-        $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
-        // unlink($filename);
+        $test=$s3->put('issue-lib/'.$newname.'.zip',file_get_contents(public_path($filename)), 'public');
+         unlink($filename);
 
         $this->issue->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
         $issue=$this->page->getPageIssue($request->session()->get('issue-editor'));
@@ -177,20 +197,8 @@ class PageController extends Controller
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
 
-        return redirect('/issue') ;
-//        header("Content-Type: application/zip");
-//        header("Content-Transfer-Encoding: Binary");
-//        header("Content-Disposition: attachment; filename=$file_name");
-//        header("Content-Length: " . filesize($yourfile));
-
-//        readfile($yourfile);
-//        $s3 = \Storage::disk('s3');
-//        $test=$s3->put('issue-lib/'.$newname.'.zip', file_get_contents($file_name), 'public');
-
-
-
-//die();
-
+        return redirect('/issue');
+//
     }
     public function savePage(Request $request)
     {
