@@ -23,29 +23,68 @@ checkColTot();
 
 $('#one-col').click(function(){
   coltotal = $('.column').length;
-  if(coltotal > 1){
-    $('.column').removeClass('col-xs-6').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-12');
-    var combinedHTML = "";
-    $(".column").each(function () {
-        combinedHTML += $(this).html();
-    });
-    $(".column").not(':first').remove();
-    $(".column").html(combinedHTML);
-    $(".new-col").remove();
+  if(coltotal == 1){
     checkColTot();
-  };
+    $('#sortableEdit').hide();
+  }else if(coltotal == 2){
+    var content = $(".row .column:last").children().html();
+    $('.row .column:first').append(content);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-6').addClass('col-xs-12');
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 3){
+    var content = $(".row .column:last").children().html();
+    $('.row .column:first').append(content);
+    $('.row > .column').slice(-1).remove();
+    var content2 = $(".row .column:last").children().html();
+    $('.row .column:first').append(content2);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-4').addClass('col-xs-12');
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 4){
+    var content1 = $(".row .column:last").children().html();
+    $('.row .column:first').append(content1);
+    $('.row > .column').slice(-1).remove();
+    var content2 = $(".row .column:last").children().html();
+    $('.row .column:first').append(content2);
+    $('.row > .column').slice(-1).remove();
+    var content3 = $(".row .column:last").children().html();
+    $('.row .column:first').append(content3);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-3').addClass('col-xs-12');
+    checkColTot();
+    $('#sortableEdit').show();
+  }
 });
 
 $('#two-col').click(function(){
   coltotal = $('.column').length;
-  if(coltotal < 2){
-    $('.column').clone().appendTo('.row');
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-6');
-    $('.column').not(':first').html('<br data-mce-bogus="1">').addClass('second');
+  if(coltotal == 1){
+    $('.row').append("<div class='column col-xs-6'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-12').addClass('col-xs-6');
+    $('.column').not(':first').html('<br data-mce-bogus="1">');
     $('#sortableEdit').show();
     checkColTot();
-  }else{
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-6');
+  }else if(coltotal == 2){
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 3){
+    var content = $(".row .column:last").children().html();
+    $('.row .column:first').append(content);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-4').addClass('col-xs-6');
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 4){
+    var content = $(".row .column:last").children().html();
+    $('.row .column:nth-child(2)').append(content);
+    $('.row > .column').slice(-1).remove();
+    var content = $(".row .column:last").children().html();
+    $('.row .column:first').append(content);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-3').addClass('col-xs-6');
     checkColTot();
     $('#sortableEdit').show();
   }
@@ -53,24 +92,57 @@ $('#two-col').click(function(){
 
 $('#three-col').click(function(){
   coltotal = $('.column').length;
-  if(coltotal = 1){
-    $('.column').clone().appendTo('.row');
-    $('.column').not(':first').clone().appendTo('.row');
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
-    $('.column').not(':first').html('<br data-mce-bogus="1">').addClass('third');
+  if(coltotal == 1){
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-12').addClass('col-xs-4');
     $('#sortableEdit').show();
     checkColTot();
-  }if(coltotal = 2){
-    $('.column').not(':first').clone().appendTo('.row');
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
-    $('.column').not(':first').html('<br data-mce-bogus="1">').addClass('third');
+  }if(coltotal == 2){
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-6').addClass('col-xs-4');
     $('#sortableEdit').show();
     checkColTot();
-  }else if(coltotal = 3){
+    $('#sortableEdit').show();
+  }else if(coltotal == 3){
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 4){
+    var content = $(".row .column:last").children().html();
+    $('.row .column:nth-child(2)').append(content);
+    $('.row > .column').slice(-1).remove();
+    var content = $(".row .column:last").children().html();
+    $('.row .column:nth-child(3)').append(content);
+    $('.row > .column').slice(-1).remove();
+    $('.column').removeClass('col-xs-3').addClass('col-xs-4');
+    checkColTot();
+    $('#sortableEdit').show();
+  }
+});
+
+$('#four-col').click(function(){
+  coltotal = $('.column').length;
+  if(coltotal == 1){
+    $('.row').append("<div class='column col-xs-3'><br data-mce-bogus='1'></div>");
+    $('.row').append("<div class='column col-xs-3'><br data-mce-bogus='1'></div>");
+    $('.row').append("<div class='column col-xs-3'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-12').addClass('col-xs-3');
+    $('#sortableEdit').show();
+    checkColTot();
+  }if(coltotal == 2){
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-6').addClass('col-xs-3');
+    $('#sortableEdit').show();
+    checkColTot();
+    $('#sortableEdit').show();
+  }else if(coltotal == 3){
+    $('.row').append("<div class='column col-xs-4'><br data-mce-bogus='1'></div>");
+    $('.column').removeClass('col-xs-4').addClass('col-xs-3');
+    $('#sortableEdit').show();
     checkColTot();
     $('#sortableEdit').show();
   }else{
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
     checkColTot();
     $('#sortableEdit').show();
   }
