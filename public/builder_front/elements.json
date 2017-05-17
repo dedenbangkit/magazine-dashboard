@@ -4,10 +4,11 @@ var _Elements = {"elements": {
         {"title":"2 Column","icon":"builder_front/images/icon/2-column.png","url":"builder_front/elements/layout_2_column.html"},
         {"title":"3 Column","icon":"builder_front/images/icon/2-column.png","url":"builder_front/elements/layout_3_column.html"},
         {"title":"4 Column","icon":"builder_front/images/icon/4-column.png","url":"builder_front/elements/layout_4_column.html"},
-        {"title":"Slider Text","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slider.html"}
+        {"title":"Slider Text","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slider.html"},
+        {"title":"Divider","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/divider.html"}
     ],
     "Image":[
-        {"title":"Image","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/image.html"},
+        {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
         {"title":"Slide Show","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slideshow.html"},
         {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/image.html"}
     ],

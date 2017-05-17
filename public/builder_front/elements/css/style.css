@@ -215,7 +215,7 @@ header .navbar-white a {
 
 .audioWrapper {
 	position: relative;
-	padding-bottom: 20px; /* 16:9 */
+	padding-bottom: 10px; /* 16:9 */
 	padding-top: 20px;
 	height: 0;
 }

@@ -3,6 +3,7 @@
 var pageContainer = "#page";
 var editableItems = new Array();
 
+editableItems['.frameCover'] = [];
 editableItems['span.fa'] = ['color', 'font-size'];
 editableItems['.bg.bg1'] = ['background-color', 'background-size'];
 editableItems['.container'] = ['background-color'];
@@ -661,43 +662,7 @@ function styleClick(el) {
 
 		//Audio
 
-		if( $('a#audio_Link').css('display') == 'block' && $('input#audioFileField').val() != '' ) {
-		  var form = $('form#audioUploadForm');
-		  var formdata = false;
-		  if (window.FormData){
-		    formdata = new FormData(form[0]);
-		  }
-		  var formAction = form.attr('action');
-		  $.ajax({
-		    url : formAction,
-		    data : formdata ? formdata : form.serialize(),
-		    cache : false,
-		    contentType : false,
-		    processData : false,
-		    dataType: "json",
-		    type : 'POST',
-		  }).done(function(response){
-		    if( response.code == 1 ) {//success
-		      $('input#audioURL').val( response.response );
-		      if( $(el).prop('tagName') == 'audio' ){
-		      $(el).prev().children('source').attr('src', response.response);
-		      }
-		      //reset the file upload
-		      $('.audioFileTab').find('a.fileinput-exists').click();
-		      /* SANDBOX */
-		      sandboxID = hasSandbox( $(el) )
-		      if( sandboxID ) {
-		        if( $(el).prop('tagName') == 'audio' ){
-		        elementID = $(el).attr('id').prev().children('source');
-		        $('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
-		        }
-		      }
-		      /* END SANDBOX */
-		    } else if( response.code == 0 ) {//error
-		      alert('Something went wrong: '+response.response)
-		    }
-		  })
-		} else if( $('a#audio_Link').css('display') == 'block' ) {
+		if( $('a#audio_Link').css('display') == 'block' ) {
 		  //no audio to upload, just a SRC change
 		  if( $('input#audioURL').val() != '' && $('input#audioURL').val() != $(el).attr('src') ) {
 		    $(el).prev().children('source').attr('src', $('input#audioURL').val());

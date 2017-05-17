@@ -276,25 +276,6 @@
             <div class="tab-pane audioFileTab" id="audio_Tab">
                 <label>Enter audio path:</label>
                 <input type="text" class="form-control" id="audioURL" placeholder="Enter an audio URL" value="">
-                <p class="text-center or">
-                    <span>OR</span>
-                </p>
-                <form id="audioUploadForm" action="aupload">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <label>Upload audio:</label>
-                    <div class="form-group">
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="buttons">
-                                    <span class="btn btn-primary btn-sm btn-embossed btn-file">
-                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-volume"></span>&nbsp;&nbsp;Select audio</span>
-                                        <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
-                                        <input type="file" name="audioFileField" id="audioFileField">
-                                    </span>
-                                <a href="#" class="btn btn-default btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>&nbsp;&nbsp;Remove</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
 
             <!-- /tabs -->
