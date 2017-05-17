@@ -102,6 +102,8 @@ function sortableMode(){
 						placeholder: chooseClass,
 					});
 	});
+		// disable contenteditable
+		$('.container').tinymce().remove();
 }
 function sortableClose(){
 	$('.column').removeClass('sortable-mode');
@@ -110,4 +112,6 @@ function sortableClose(){
 	$(function() {
 					$('.row').sortable("destroy");
 	});
+	// enable contenteditable
+	activetiny();
 }
