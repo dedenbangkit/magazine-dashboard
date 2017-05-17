@@ -41,6 +41,12 @@ class Issue extends Model
                 'updated_at'=>Carbon::now()
             ]);
     }
+    public function getProjectPublish(){
+        return Issue::whereNull('deleted_at')
+            ->where('status','published')
+            ->orderBy('created_at','desc')
+            ->paginate(12);
+    }
     public function compileIssue($id,$name){
         return Issue::where('id',$id)
             ->update([

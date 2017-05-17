@@ -217,6 +217,8 @@ class ProjectController extends Controller
         }
         if($publish){
             $publishIssue=$this->issue->publishIssue($request->id);
+            $issues=$this->page->getPageIssue($request->session()->get('issue-editor'));
+            $this->action_log->create_log('Publish Issue '.$issues['issue_name'],$this->authdata->id);
         }
 
         return $message;
@@ -239,7 +241,8 @@ class ProjectController extends Controller
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'published');
-        $data['projects'] = $this->project->getProjectPublish();
+        $data['projects'] = $this->issue->getProjectPublish();
+
         return view('project', $data);
     }
 }

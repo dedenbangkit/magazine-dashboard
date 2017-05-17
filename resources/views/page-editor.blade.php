@@ -46,9 +46,9 @@
             <div class="collapse navbar-collapse topnavigation">
                 <div class="navbar-left navbar-issue">
                   <i class="fa fa-copy"></i>
-                  <div class="title"><strong>Dalang Lelakon Antasari</strong>
+                  <div class="title"><strong>{{$issue->issue_name}}</strong>
                   </div>
-                  <div class="subtitle">Issue #11 > <span id="pageTitle"><span>index</span></span></div>
+                  <div class="subtitle">{{date('d-m-Y H:I:s',strtotime($issue->created_at))}} > <span id="pageTitle"><span>index</span></span></div>
                 </div>
                 <div class="toolbar" id="responsive-zoom">
                     <ul>
@@ -69,31 +69,31 @@
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{asset('builder_front/images/avatar/avatar.jpg')}}" alt="">
-                            <span class="name">Sample User</span>
-                            <span class="job">Editor</span>
+                            <span class="name">{{Auth::user()->name}}</span>
+                            <span class="job">{{Auth::user()->position}}</span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="documentation/doc.html" target="_blank">Documentation</a></li>
-                            <li><a href="#">Setting</a></li>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Log Out</a></li>
-                        </ul>
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="documentation/doc.html" target="_blank">Documentation</a></li>--}}
+                            {{--<li><a href="#">Setting</a></li>--}}
+                            {{--<li><a href="#">Profile</a></li>--}}
+                            {{--<li><a href="#">Log Out</a></li>--}}
+                        {{--</ul>--}}
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Sample 1</a></li>
-                            <li><a href="#">Sample 2</a></li>
-                            <li><a href="#">Sample 3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Sample 1</a></li>
-                            <li><a href="#">Sample 2</a></li>
-                            <li><a href="#">Sample 3</a></li>
-                        </ul>
+                    {{--<li class="dropdown">--}}
+                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i></a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Sample 1</a></li>--}}
+                            {{--<li><a href="#">Sample 2</a></li>--}}
+                            {{--<li><a href="#">Sample 3</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li class="dropdown">--}}
+                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i></a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Sample 1</a></li>--}}
+                            {{--<li><a href="#">Sample 2</a></li>--}}
+                            {{--<li><a href="#">Sample 3</a></li>--}}
+                        {{--</ul>--}}
                     </li>
                     <li><a href="/issue"><i class="fa fa-times-circle text-danger"></i></a></li>
                 </ul>
