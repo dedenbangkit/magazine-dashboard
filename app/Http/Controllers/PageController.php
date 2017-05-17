@@ -188,8 +188,8 @@ class PageController extends Controller
         $yourfile = $filename;
 
         $file_name = basename($yourfile);
-        header("Content-Type: application/zip");
-        header("Content-Transfer-Encoding: Binary");
+//        header("Content-Type: application/zip");
+//        header("Content-Transfer-Encoding: Binary");
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
         // unlink($filename);
@@ -200,8 +200,8 @@ class PageController extends Controller
             $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
-
-        return redirect('/issue') ;
+exit();
+//        return redirect('/issue') ;
 //        header("Content-Type: application/zip");
 //        header("Content-Transfer-Encoding: Binary");
 //        header("Content-Disposition: attachment; filename=$file_name");
@@ -237,7 +237,7 @@ class PageController extends Controller
         $image = $request->file('imageFileField');
         $file_path= '/images-lib/';
         $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
-        $relative_path = ' ';//specify the relative path from your elements to the upload folder
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 
         /* DON'T CHANGE ANYTHING HERE!! */
