@@ -24,6 +24,7 @@ editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-tr
 editableItems['p'] = ['column-count','text-align', 'text-indent', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['width','border-radius','float','margin', 'border-color', 'border-style', 'border-width'];
+editableItems['.carousels'] = [];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
@@ -38,7 +39,7 @@ var editableItemOptions = new Array();
 
 editableItemOptions['nav a : font-weight'] = ['400', '700'];
 editableItemOptions['a.btn : border-radius'] = ['0px', '4px', '10px'];
-editableItemOptions['img : width'] = ['100%', '50%', '25%'];
+editableItemOptions['img : width'] = ['none','100%', '50%', '25%'];
 editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px', '100%'];
 editableItemOptions['img : margin'] = ['0px', '5px', '10px', '20px'];
 editableItemOptions['img : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
@@ -93,18 +94,45 @@ $(function(){
 
 })
 
+$('#wrapper').click(
+function(){
+
+	closeStyleEditor();
+	bindHeightWidth();
+	// Placeable content without any section
+	// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
+	// $('iframe').contents().find('.article__content').append(myContent);
+});
+
 
 /* END SETTINGS */
 
 var mainMenuWidth = 230;
 var secondMenuWidth = 300;
 
+function bindHeightWidth(){
+	screenWidth = $('#screen').width();
+	console.log(screenWidth);
+	$.each($('.container li.element'),
+		function(){
+			$('iframe').css({'width':screenWidth});
+			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			$(this).find('iframe').css({'height':newHeight});
+			$(this).css({'height':newHeight});
+	});
+	$('#screen').css({'height': $('#screen ul').innerHeight});
+	// Trigger for Clicking Body to close all active element tinymce
+	$.each($('.container li.element'),
+		function(){
+	 $(this).find('iframe')[0].contentWindow.document.body.click();
+	});
+}
+
 $( window ).load(function() {
 
 	$('#loader').fadeOut(function(){
 
-		//$('#menu').animate({'left': '-190px'}, 1000);
-		bindHeightWidth();
+	bindHeightWidth();
 
 	});
 
@@ -2749,34 +2777,6 @@ $(function(){
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
-
-
-		$('#wrapper').click(
-		function(){
-			bindHeightWidth()
-			closeStyleEditor();
-			// Placeable content without any section
-			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
-			// $('iframe').contents().find('.article__content').append(myContent);
-		});
-
-		function bindHeightWidth(){
-			screenWidth = $('#screen').width();
-			console.log(screenWidth);
-			$.each($('.container li.element'),
-				function(){
-					$('iframe').css({'width':screenWidth});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-					$(this).find('iframe').css({'height':newHeight});
-					$(this).css({'height':newHeight});
-			});
-			$('#screen').css({'height': $('#screen ul').innerHeight});
-			// Trigger for Clicking Body to close all active element tinymce
-      $.each($('.container li.element'),
-        function(){
-       $(this).find('iframe')[0].contentWindow.document.body.click();
-      });
-		}
 
 		// Zoom Function #wrapper
 

@@ -7,10 +7,9 @@ var _Elements = {"elements": {
         {"title":"Slider Text","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slider.html"}
     ],
     "Image":[
-        {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
-        {"title":"Responsive","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/image.html"},
-        {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/image.html"},
-        {"title":"Slide Show","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slideshow.html"}
+        {"title":"Responsive Image","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/image.html"},
+        {"title":"Slide Show","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slideshow.html"},
+        {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/image.html"}
     ],
     "Table":[
         {"title":"Custom Row","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/table_1.html"},

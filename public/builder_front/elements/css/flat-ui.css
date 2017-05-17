@@ -452,6 +452,7 @@ p {
   font-size: 28px;
   line-height: 1.46428571;
   font-weight: 300;
+  padding: 10px;
 }
 @media (min-width: 768px) {
   .lead {
