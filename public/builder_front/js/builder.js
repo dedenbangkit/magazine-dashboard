@@ -11,7 +11,7 @@ var pageContainer = "#page";
 
 var editableItems = new Array();
 
-editableItems['.frameCover'] = [];
+editableItems['.frameCover'] = ['width'];
 editableItems['span.fa'] = ['color', 'font-size'];
 editableItems['.bg.bg1'] = ['background-color', 'background-size'];
 editableItems['.container'] = ['background-color'];
@@ -23,25 +23,27 @@ editableItems['h4'] = ['background-color', 'text-align', 'font-family', 'text-tr
 editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
 editableItems['p'] = ['column-count','text-align', 'text-indent', 'font-family', 'padding'];
 editableItems['a.btn, button.btn'] = ['border-radius', 'font-size', 'background-color'];
-editableItems['img'] = ['border-radius', 'padding', 'border-color', 'border-style', 'border-width'];
+editableItems['img'] = ['width','border-radius','float','margin', 'border-color', 'border-style', 'border-width'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
 editableItems['.footer a'] = ['color'];
 editableItems['.bg.bg1, .bg.bg2'] = ['background-image','background-color','background-size'];
 editableItems['.container'] = ['background-size','border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
-editableItems['.column'] = ['background-color','background-size','opacity', 'border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
-editableItems['.page'] = ['background-color','background-size','border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.column'] = ['background-color','background-size','opacity', 'border-color', 'border-style', 'border-width', 'padding', 'border-radius'];
+editableItems['.page'] = ['background-color','background-size','border-color', 'border-style', 'border-width', 'padding','border-radius'];
 editableItems['#nivoSlider img.edit'] = [];
 
 var editableItemOptions = new Array();
 
 editableItemOptions['nav a : font-weight'] = ['400', '700'];
 editableItemOptions['a.btn : border-radius'] = ['0px', '4px', '10px'];
-editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px'];
-editableItemOptions['img : padding'] = ['0px', '5px', '10px', '20px'];
+editableItemOptions['img : width'] = ['100%', '50%', '25%'];
+editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px', '100%'];
+editableItemOptions['img : margin'] = ['0px', '5px', '10px', '20px'];
 editableItemOptions['img : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['img : border-width'] = ['1px', '2px', '3px', '4px'];
+editableItemOptions['img : float'] = ['none', 'left', 'right'];
 editableItemOptions['.column : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.column : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.column : border-radius'] = ['0px', '4px', '10px'];
@@ -49,6 +51,7 @@ editableItemOptions['.column : background-size'] = ['cover', 'contain', 'initial
 editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['.frameCover : width'] = ['25%','50%','100%'];
 
 editableItemOptions['p : text-align'] = ['left','right','center','justify'];
 editableItemOptions['h1 : text-align'] = ['left','right','center'];
@@ -101,6 +104,7 @@ $( window ).load(function() {
 	$('#loader').fadeOut(function(){
 
 		//$('#menu').animate({'left': '-190px'}, 1000);
+		bindHeightWidth();
 
 	});
 
@@ -452,10 +456,11 @@ function buildeStyleElements(el, theSelector) {
 				}
 
 				newStyleEl.find('input').spectrum({
-					preferredFormat: "hex",
+					preferredFormat: "rgb",
 					showPalette: true,
 					allowEmpty: true,
 					showInput: true,
+					showAlpha: true,
 					palette: [
 						["#000000","#444444","#666666","#999999","#cccccc","#eeeeee","#f3f3f3","#ffffff"],
 						["#f20000","#ff9000","#ff0000","#00f200","#00f2f2","#2f2fff","#7400c2","#ff00b5"],
@@ -1241,7 +1246,8 @@ function styleClick(el) {
 
 					toDel.remove();
 
-					heightAdjustment(randomEl[0])
+
+					bindHeightWidth();
 
 				})
 
@@ -1338,7 +1344,7 @@ function styleClick(el) {
 
 		//possible height adjustments
 
-		heightAdjustment(el);
+		bindHeightWidth();
 
 	})
 
@@ -2239,7 +2245,7 @@ $(function(){
 		/* END SANDBOX */
 
 		//height adjustment
-		heightAdjustment( $(this).closest('li').find('iframe').attr('id'), true );
+		bindHeightWidth();
 
 
 		$(this).parent().fadeOut(500, function(){
@@ -2747,6 +2753,14 @@ $(function(){
 
 		$('#wrapper').click(
 		function(){
+			bindHeightWidth()
+			closeStyleEditor();
+			// Placeable content without any section
+			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
+			// $('iframe').contents().find('.article__content').append(myContent);
+		});
+
+		function bindHeightWidth(){
 			screenWidth = $('#screen').width();
 			console.log(screenWidth);
 			$.each($('.container li.element'),
@@ -2762,10 +2776,7 @@ $(function(){
         function(){
        $(this).find('iframe')[0].contentWindow.document.body.click();
       });
-			// Placeable content without any section
-			// var myContent = $('iframe')[0].contentWindow.document.getElementsByClassName('column');
-			// $('iframe').contents().find('.article__content').append(myContent);
-		});
+		}
 
 		// Zoom Function #wrapper
 
