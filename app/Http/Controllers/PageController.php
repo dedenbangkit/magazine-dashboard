@@ -10,10 +10,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Model\Page;
+use App\Model\Issue;
+use App\Model\Action_log;
 use ZipArchive;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 use Storage;
+use Session;
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -28,11 +31,15 @@ class PageController extends Controller
     protected $activer;
     protected $authdata;
     protected $page;
+    protected $action_log;
+    protected $issue;
     public function __construct()
     {
         $this->authdata = $this->authData();
         $this->activer = 'home';
         $this->page = new Page();
+        $this->issue = new Issue();
+        $this->action_log = new Action_log();
         $this->middleware('auth');
     }
 
@@ -66,6 +73,7 @@ class PageController extends Controller
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
         $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
+        $data['issue'] = $this->page->getPageIssue($request->session()->get('issue-editor'));
 
         return view('page-editor', $data);
     }
@@ -161,7 +169,14 @@ class PageController extends Controller
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
         unlink($filename);
-        $this->page->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
+
+        $this->issue->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
+        $issue=$this->page->getPageIssue($request->session()->get('issue-editor'));
+        if($test){
+            $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
+        }
+        $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
+
         return redirect('/issue') ;
 //        header("Content-Type: application/zip");
 //        header("Content-Transfer-Encoding: Binary");

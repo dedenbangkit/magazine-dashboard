@@ -10,6 +10,14 @@
                 <div class="col-md-12">
                   <div class="box box-default color-palette-box">
                       <div class="box-header with-border">
+                          @if(Session::has('status_msg'))
+                              <div class="pull-left">
+                                  <div class="callout callout-warning">
+                                      <p>{{Session::get('status_msg')}}</p>
+                                  </div>
+
+                              </div>
+                          @endif
                               <a class="btn btn-success btn-flat pull-right" href="/create-issue"><i class="fa fa-plus-circle"> </i>
                                 New <?=  ucfirst(array_last($activer));?></a>
                               </div>

@@ -5,7 +5,6 @@
 @endsection
 
 @section('main-content')
-    <div class="container spark-screen">
         <div class="row">
             <div class="row">
                 <div class="col-md-12">
@@ -26,14 +25,14 @@
                                 <div class="box-content" style="cursor: pointer;" onclick="window.location='/issue?id={{$row->id}}';">
                                     <div class="box-content-inside">
                                         <div class="row">
-                                            <img src="{{asset('/img/projects/'.$row->project_cover)}}">
+                                            <img src="{{asset('/img/projects/'.$row->issue_cover)}}">
                                         </div>
                                         <div class="row">
-                                            <b>{{$row->project_name}}</b>
+                                            <b>{{$row->issue_name}}</b>
                                         </div>
                                         <div class="row">
                                             <p class="font-light"
-                                               style="color: green">{{date('d-m-Y',strtotime($row->created_at))}}</p>
+                                               style="color: green">{{date('d-m-Y',strtotime($row->updated_at))}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +41,11 @@
 
 
                         </div>
+                        <div class="pull-right" style="margin-right:20px;">
+                            {{ $projects->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
 @endsection

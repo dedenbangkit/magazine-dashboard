@@ -28,6 +28,12 @@ class Page extends Model
             ->orderBy('id','ASC')
             ->get();
     }
+    public function getPageIssue($id){
+        return Page::whereNull('page.deleted_at')
+            ->where('issue_id',$id)
+            ->leftjoin('issue','page.issue_id','=','issue.id')
+            ->first();
+    }
     public function savePage($id,$content,$test){
         return Page::where('id','=',$id)
         ->update([
