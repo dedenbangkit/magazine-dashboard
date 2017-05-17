@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Header</title>
+    <title>Divider</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -12,7 +12,7 @@
     <link href="css/flat-ui.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-headers.css" rel="stylesheet">
+    <link href="css/style-dividers.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -25,44 +25,20 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="bodyPaddingLess">
 
     <div id="page" class="page">
-    				<div class="row banner" data-editable data-name='article2'>
+      <div class='container'>
+    		<div class="col-md-12" data-editable data-name='article2'>
 
-    					<div class="col-md-10 col-md-offset-1">
+    			<div class="divider dashed">
 
-                <div id="myCarousel" class="carousel slide" data-interval="false">
+    				<span class="editContent article__by-line">divider text</span>
 
-	    						<!-- Indicators -->
-	    						<ol class="carousel-indicators">
-		    						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		    						<li data-target="#myCarousel" data-slide-to="1"></li>
-		    						<li data-target="#myCarousel" data-slide-to="2"></li>
-		    					</ol>
+    			</div><!-- /.divider -->
 
-		    					<!-- Wrapper for slides -->
-		    					<div class="carousel-inner">
-		    						<div class="item active">
-						    			<img class="carousels" src="images/carousel/image-05.png" alt="" />
-							    	</div>
-			    					<div class="item">
-				    					<img class="carousels" src="images/carousel/image-04.png" alt="" />
-					    			</div>
-
-							    	<div class="item">
-								    	<img class="carousels" src="images/carousel/image-06.png" alt="" />
-									</div>
-								</div>
-
-								<!-- Controls -->
-								<a class="left carousel-control fui-arrow-left" href="#myCarousel" data-slide="prev"></a>
-								<a class="right carousel-control fui-arrow-right" href="#myCarousel" data-slide="next"></a>
-							</div>
-
-    					</div>
-
-    				</div><!-- /.row -->
+    		</div><!-- /.col -->
+      </div>
     </div><!-- /#page -->
 
 
@@ -71,6 +47,29 @@
     <script src='js/jquery-ui-1.10.3.custom.min.js'></script>
     <script src='../js/tinymce/jquery.tinymce.min.js'></script>
     <script src='../js/tinymce/tinymce.min.js'></script>
+    <script>
+    function activetiny(){
+    tinymce.init({
+      selector: '.container',
+      theme: 'inlite',
+      element_format : 'html',
+      inline: true,
+      force_p_newlines : false,
+      width : 300,
+      preview_styles: 'font-size color',
+      setup: function (selection_toolbar) {
+        selection_toolbar.addButton('mybutton', {
+          text: 'My button',
+          icon: false,
+          onclick: function () {
+            selection_toolbar.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;');
+          }
+        });
+      }
+    });
+    };
+    activetiny();
+    </script>
     <!-- <script src='assets/editor.js'></script> -->
     <script src='js/jquery.ui.touch-punch.min.js'></script>
     <script src='js/bootstrap.min.js'></script>

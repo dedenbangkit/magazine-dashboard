@@ -194,6 +194,7 @@
             <li style="display: none;"><a href="#image_Tab" id="img_Link"><span class="fui-image"></span> Image</a></li>
             <li style="display: none;"><a href="#icon_Tab" id="icon_Link"><span class="fa fa-flag"></span> Icons</a></li>
             <li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-youtube-play"></span> Video</a></li>
+            <li style="display: none;"><a href="#audio_Tab" id="audio_Link"><span class="fa fa-soundcloud"></span> Audio</a></li>
         </ul><!-- /tabs -->
 
         <div class="tab-content">
@@ -271,6 +272,11 @@
                 </form>
 
             </div><!-- /.tab-pane -->
+
+            <div class="tab-pane audioFileTab" id="audio_Tab">
+                <label>Enter audio path:</label>
+                <input type="text" class="form-control" id="audioURL" placeholder="Enter an audio URL" value="">
+            </div>
 
             <!-- /tabs -->
             <div class="tab-pane iconTab" id="icon_Tab">
@@ -2155,6 +2161,7 @@
 //                    console.log(i)
                     i=i+1
                 });
+
             });
 
         });

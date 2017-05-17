@@ -192,7 +192,7 @@ class PageController extends Controller
         header("Content-Transfer-Encoding: Binary");
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip', public_path($filename), 'public');
-        unlink($filename);
+        // unlink($filename);
 
         $this->issue->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
         $issue=$this->page->getPageIssue($request->session()->get('issue-editor'));
@@ -293,4 +293,5 @@ class PageController extends Controller
 
         echo json_encode( $return );
     }
+
 }
