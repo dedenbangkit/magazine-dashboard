@@ -32,7 +32,6 @@ Route::get('/get-page', 'PageController@getPage');
 Route::get('/load-page', 'PageController@loadPage');
 Route::post('/save-page', 'PageController@savePage');
 Route::post('/iupload', 'PageController@iupload');
-Route::post('/aupload', 'PageController@aupload');
 Route::post('/editor-issue', 'PageController@editorIssue');
 Route::post('/save', 'PageController@exportIssue');
 

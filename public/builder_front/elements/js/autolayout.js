@@ -51,16 +51,26 @@ $('#two-col').click(function(){
   }
 });
 
-$('#two-col').click(function(){
+$('#three-col').click(function(){
   coltotal = $('.column').length;
-  if(coltotal < 2){
+  if(coltotal = 1){
     $('.column').clone().appendTo('.row');
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-6');
+    $('.column').not(':first').clone().appendTo('.row');
+    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
     $('.column').not(':first').html('<br data-mce-bogus="1">').addClass('third');
     $('#sortableEdit').show();
     checkColTot();
+  }if(coltotal = 2){
+    $('.column').not(':first').clone().appendTo('.row');
+    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
+    $('.column').not(':first').html('<br data-mce-bogus="1">').addClass('third');
+    $('#sortableEdit').show();
+    checkColTot();
+  }else if(coltotal = 3){
+    checkColTot();
+    $('#sortableEdit').show();
   }else{
-    $('.column').removeClass('col-xs-12').removeClass('col-xs-4').removeClass('col-xs-3').addClass('col-xs-6');
+    $('.column').removeClass('col-xs-12').removeClass('col-xs-6').removeClass('col-xs-3').addClass('col-xs-4');
     checkColTot();
     $('#sortableEdit').show();
   }
