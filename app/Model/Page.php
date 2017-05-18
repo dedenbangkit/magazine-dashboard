@@ -35,6 +35,9 @@ class Page extends Model
             ->leftjoin('issue','page.issue_id','=','issue.id')
             ->first();
     }
+    public function deletePage($id){
+        return Page::where('id', $id)->delete();
+    }
     public function savePage($id,$content,$test){
         return Page::where('id','=',$id)
         ->update([
