@@ -84,6 +84,19 @@ class PageController extends Controller
         $data='sample-page2';
         return $data;
     }
+    public function addPage(Request $request)
+    {
+        $team = array($this->authdata->id);
+        $input=[
+            'issue'=>$request->session()->get('issue-editor'),
+            'name'=>$request->id,
+            'team'=>$team,
+            'description'=>''
+        ];
+        $data = $this->page->insertPage($input);
+
+        return $data;
+    }
     public function getPage(Request $request)
     {
         $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));

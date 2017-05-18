@@ -1586,7 +1586,7 @@ $(function(){
 	$('#addPage').click(function(e){
 
 		e.preventDefault();
-
+		var pageID='';
 		//turn inputs into links
 		$('#pages li.active').each(function(){
 
@@ -1608,6 +1608,16 @@ $(function(){
 		newPageLI.css('display', 'block');
 		newPageLI.find('input').val( 'page'+$('#pages li').size() );
 		newPageLI.attr('id', '');
+        $.ajax({
+            type: 'GET',
+            url: "/add-page",
+            data: {'id':'page'+$('#pages li').size()},
+        }).done(function(data) {
+        	pageIDs=data;
+            newPageLI.attr('data-id', data);
+        });
+	console.log(pageIDs)
+        newPageLI.attr('data-page',$('#pages li').size());
 
 		$('ul#pages').append( newPageLI );
 
@@ -1634,7 +1644,7 @@ $(function(){
 		newPageList = $('<ul></ul>');
 		newPageList.css('display','block');
 		newPageList.attr('id', 'page'+($('#pages li').size()-1) );
-
+        newPageList.attr('data-id', pageIDs);
 		$('#pageList > ul').hide();
 		$('#pageList').append( newPageList );
 

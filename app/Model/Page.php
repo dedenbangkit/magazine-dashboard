@@ -28,6 +28,7 @@ class Page extends Model
             ->orderBy('id','ASC')
             ->get();
     }
+
     public function getPageIssue($id){
         return Page::whereNull('page.deleted_at')
             ->where('issue_id',$id)
