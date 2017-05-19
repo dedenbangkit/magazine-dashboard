@@ -200,7 +200,7 @@ class PageController extends Controller
   $('div .frameCover').remove();
 </script>
 </body></html>";
-            $zip->addFromString($content['page_name'].".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
+            $zip->addFromString($page.".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
 
         }
