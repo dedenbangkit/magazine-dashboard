@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/magazineapp.iml" afterPath="$PROJECT_DIR$/.idea/magazineapp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Issue.php" afterPath="$PROJECT_DIR$/app/Model/Issue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/issue.blade.php" afterPath="$PROJECT_DIR$/resources/views/issue.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/page-editor.blade.php" afterPath="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -77,26 +72,24 @@
       <file leaf-file-name="issue.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/issue.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="780">
               <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-editor.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page-editor.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
-              <caret line="2306" column="35" lean-forward="false" selection-start-line="2306" selection-start-column="35" selection-end-line="2306" selection-end-column="35" />
-              <folding>
-                <marker date="1495443370000" expanded="true" signature="83917:85400" ph="{...}" />
-              </folding>
+            <state relative-caret-position="3102">
+              <caret line="2334" column="16" lean-forward="false" selection-start-line="2334" selection-start-column="16" selection-end-line="2334" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_issue.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_issue.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/edit_issue.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -180,7 +173,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" />
         <option value="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
         <option value="$PROJECT_DIR$/public/builder_front/js/builder.js" />
-        <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/issue.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/issue.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -189,6 +181,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
         <option value="$PROJECT_DIR$/resources/views/edit_issue.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
       </list>
     </option>
   </component>
@@ -659,12 +652,12 @@
       <workItem from="1483973202468" duration="1149000" />
       <workItem from="1485093341439" duration="1500000" />
       <workItem from="1487451254114" duration="4229000" />
-      <workItem from="1495438381248" duration="7372000" />
+      <workItem from="1495438381248" duration="8815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37385000" />
+    <option name="totallyTimeSpent" value="38828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1064,16 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="2306" column="35" lean-forward="false" selection-start-line="2306" selection-start-column="35" selection-end-line="2306" selection-end-column="35" />
-          <folding>
-            <marker date="1495443370000" expanded="true" signature="83917:85400" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Project.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1110,18 +1093,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/edit_issue.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="50" column="131" lean-forward="false" selection-start-line="50" selection-start-column="131" selection-end-line="50" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/issue.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="780">
           <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/edit_issue.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="50" column="131" lean-forward="false" selection-start-line="50" selection-start-column="131" selection-end-line="50" selection-end-column="131" />
+        <state relative-caret-position="3102">
+          <caret line="2334" column="16" lean-forward="false" selection-start-line="2334" selection-start-column="16" selection-end-line="2334" selection-end-column="16" />
           <folding />
         </state>
       </provider>

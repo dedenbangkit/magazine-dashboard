@@ -148,7 +148,7 @@
             <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
 
             <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right  actionButtons"><span class="fui-export"></span> Compile</a>
-            <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save</a>
+            <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save Current Page</a>
 
                 <div class="modes" id="build-mode">
                     <label class="radio primary first">
@@ -2136,18 +2136,52 @@
     <script src="{{asset('builder_front/js/spectrum.js')}}"></script>
     <script src="{{asset('builder_front/js/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('builder_front/js/src-min-noconflict/ace.js')}}"></script>
+    <script src="{{asset('/js/bootbox.min.js') }}" type="text/javascript"></script>
     <script src="{{asset('builder_front/elements.json')}}"></script>
     <script src="{{asset('builder_front/js/builder.js')}}"></script>
     <script>
-        //        $.ajax({
-        //            url: "/load-page"
-        //        }).done(function(data) {
-        //            $(data['loadpage']).each(function(index, el) {
-        //                loadPage(el.content_array,index)
-        //
-        //            });
-        //
-        //        });
+        $.ajax({
+            url: "/get-page"
+        }).done(function(data) {
+            $(data['page_list']).each(function(index, el) {
+                page_content = el.page_content;
+                newPage(el.page_name,el.page_content,el.id,index)
+
+            });
+
+        });
+
+        $('iframe').on('load', function() {
+            $.ajax({
+                url: "/load-page"
+            }).done(function(data) {
+                i=1
+                $(data['loadpage']).each(function(index, el) {
+                    loadPage(el.content_array,i)
+//                    console.log(i)
+                    i=i+1
+                });
+                $('#page1').css("display","block");
+                $('li[data-page="1"]').addClass('active')
+            });
+
+        });
+        function loadPage(pageContent,id){
+//            console.log('squence - '+id)
+            var path =0;
+
+            $('#page'+(id)+' li iframe').load(function() {
+
+                $('#page'+(id)+' li iframe').each(function(a) {
+//                    console.log(id+" path "+a)
+                    $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
+//                console.log(id+'-'+pageContent)
+                    //
+
+                    path = path+1
+                });
+            });
+        }
 
 
         //Page Setting
@@ -2258,50 +2292,52 @@
             }
         });
         $("#savePage").click(function () {
-            var contentArray= [];
-            var contentIframe=[];
-            $('.loaderSave').show();
-            var pages=$('#pages .active').data('page')
-            pageNum =$('#pages li').size()-1;
-            contentPage=$('#page'+pages).html();
-            countli=$('#page'+pages+' li').length;
-            var countiframe=$('#page'+pages+' li iframe');
-            for(j=0;j<countli;j++) {
-                var pageli=$('#page'+pages+' li').get(j).style.height;
+            bootbox.confirm({
+                title: "Save Current Page",
+                message: "Are You Sure?",
+                buttons: {
+                    cancel: {
+                        label: '<i class="fa fa-times"></i> Cancel'
+                    },
+                    confirm: {
+                        label: '<i class="fa fa-check"></i> Confirm'
+                    }
+                },
+                callback: function (result) {
+                    if(result ==1){
+                    var contentArray= [];
+                    var contentIframe=[];
+                    $('.loaderSave').show();
+                    var pages=$('#pages .active').data('page')
+                    pageNum =$('#pages li').size()-1;
+                    contentPage=$('#page'+pages).html();
+                    countli=$('#page'+pages+' li').length;
+                    var countiframe=$('#page'+pages+' li iframe');
+                    for(j=0;j<countli;j++) {
+                        var pageli=$('#page'+pages+' li').get(j).style.height;
 //                    console.log(pageli)
-                contentpath=countiframe[j].contentWindow.document.body.innerHTML;
+                        contentpath=countiframe[j].contentWindow.document.body.innerHTML;
 //                    console.log(contentpath)
-                contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
-            }
-            id=$('#page'+pages).data('id');
-            contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
-            $.ajax({
-                type: 'POST',
-                url: "save-page",
-                data: {'id':id,'content':contentPage,'contentIframe':contentIframe,'_token':'<?= csrf_token() ?>'},
-                success: function(resultData) {
-                    $('.loaderSave').hide();
-                    console.log(resultData);
+                        contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
+                    }
+                    id=$('#page'+pages).data('id');
+                    contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
+                    $.ajax({
+                        type: 'POST',
+                        url: "save-page",
+                        data: {'id':id,'content':contentPage,'contentIframe':contentIframe,'_token':'<?= csrf_token() ?>'},
+                        success: function(resultData) {
+                            $('.loaderSave').hide();
+                            console.log(resultData);
+                        }
+                    });
+                }
                 }
             });
 
-        });
-
-        $.ajax({
-            url: "/get-page"
-        }).done(function(data) {
-            $(data['page_list']).each(function(index, el) {
-                page_content = el.page_content;
-                newPage(el.page_name,el.page_content,el.id,index);
-            });
-            //Tambahan loaderSave
-            $('#pageList ul li iframe').each(function(){
-    					this.contentDocument.designMode = "off";
-    				})
-            pageEmpty();
-            allEmpty();
 
         });
+
 
 
         function newPage(pageTittle,pageContent,pageID,index){
@@ -2345,7 +2381,7 @@
 
             } )
 
-            newPageLI.addClass('active').addClass('edit');
+            newPageLI.addClass('');
 
 
             //create the page structure
@@ -2355,7 +2391,7 @@
                 newPageList = $('<ul>'+pageContent+'</ul>');
             }
 
-            newPageList.css('display','block');
+            newPageList.css('display','none');
             newPageList.attr('id', 'page'+($('#pages li').size()-1) );
             newPageList.attr('data-id', pageID);
 
