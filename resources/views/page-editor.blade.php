@@ -113,9 +113,9 @@
 
                 <ul id="pages">
                     <li style="display: none;" id="newPageLI">
-                        <input type="text" value="index" name="page">
+                        <input type="text" value="index" name="page" readonly>
                     <span class="pageButtons">
-                      <a href="" class="fileEdit"><span class="fui-new"></span></a>
+                      {{--<a href="" class="fileEdit"><span class="fui-new"></span></a>--}}
                       <a href="" class="fileDel"><span class="fui-cross"></span></a>
                       <a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
                     </span>
@@ -2138,103 +2138,71 @@
     <script src="{{asset('builder_front/js/src-min-noconflict/ace.js')}}"></script>
     <script src="{{asset('builder_front/elements.json')}}"></script>
     <script src="{{asset('builder_front/js/builder.js')}}"></script>
-    <script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
-
     <script>
-//        $.ajax({
-//            url: "/load-page"
-//        }).done(function(data) {
-//            $(data['loadpage']).each(function(index, el) {
-//                loadPage(el.content_array,index)
-//
-//            });
-//
-//        });
-        $('iframe').on('load', function() {
-            $.ajax({
-                url: "/load-page"
-            }).done(function(data) {
-                i=1
-                $(data['loadpage']).each(function(index, el) {
-                    loadPage(el.content_array,i)
-//                    console.log(i)
-                    i=i+1
-                });
+        //        $.ajax({
+        //            url: "/load-page"
+        //        }).done(function(data) {
+        //            $(data['loadpage']).each(function(index, el) {
+        //                loadPage(el.content_array,index)
+        //
+        //            });
+        //
+        //        });
 
-            });
-
-        });
-        function loadPage(pageContent,id){
-//            console.log('squence - '+id)
-            var path =0;
-
-            $('#page'+(id)+' li iframe').load(function() {
-
-                $('#page'+(id)+' li iframe').each(function(a) {
-//                    console.log(id+" path "+a)
-                       $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
-//                console.log(id+'-'+pageContent)
-               //
-
-                    path = path+1
-                });
-            });
-        }
 
         //Page Setting
 
         $('#pageSetting').click(function() {
             var clickSetting = $(this).data('clickSetting');
             if (clickSetting) {
-              closeStyleEditor();
-              addStyling();
-              $("#modeBlock").click();
+                closeStyleEditor();
+                addStyling();
+                $("#modeBlock").click();
             } else {
-              remStyling();
-              if ($('iframe').length >= 1){
-                $('#editingMode').html('<span class="fui-tag"></span> Edit Content');
-              };
+                remStyling();
+                if ($('iframe').length >= 1){
+                    $('#editingMode').html('<span class="fui-tag"></span> Edit Content');
+                };
             }
             $(this).data("clickSetting", !clickSetting);
         });
 
         function remStyling(){
-          $('#pageSetting').removeClass('btn-info');
-          $('#pageSetting').addClass('btn-primary');
-          $('#editingMode').addClass('btn-info');
-          $('#editingMode').removeClass('btn-primary');
-          $('#editingMode').html('<span class="fui-plus"></span> Add Element');
-          $('#styleEditor').animate({'left': '0px'}, 250);
-          $('#styleEditor ul.breadcrumb').hide();
-          $('#styleEditor ul.tabcontent').hide();
-          $('#styleEditor .nav').hide();
-          $('#styleEditor .tab-content').hide();
-          $('#styleEditor .margin-bottom-5').hide();
-          $('#styleEditor .sideButtons').hide();
-          $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
+            $('#pageSetting').removeClass('btn-info');
+            $('#pageSetting').addClass('btn-primary');
+            $('#editingMode').addClass('btn-info');
+            $('#editingMode').removeClass('btn-primary');
+            $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+            $('#styleEditor').animate({'left': '0px'}, 250);
+            $('#styleEditor ul.breadcrumb').hide();
+            $('#styleEditor ul.tabcontent').hide();
+            $('#styleEditor .nav').hide();
+            $('#styleEditor .tab-content').hide();
+            $('#styleEditor .margin-bottom-5').hide();
+            $('#styleEditor .sideButtons').hide();
+            $('#editorTittle').html('<span class="fui-gear"></span> Page Setting');
 
-          // Trigger for Clicking Body to close all active element tinymce
-          $.each($('.container li.element'),
-            function(){
-           $(this).find('iframe')[0].contentWindow.document.body.click();
-          });
+            // Trigger for Clicking Body to close all active element tinymce
+            $.each($('.container li.element'),
+                function(){
+                    $(this).find('iframe')[0].contentWindow.document.body.click();
+                });
 
         };
 
         $('#editingMode').click(function() {
             var editingStyle = $(this).data('editingStyle');
             if (editingStyle) {
-              closeStyleEditor();
-              $("#modeBlock").click();
-              $('#editingMode').addClass('btn-info');
-              $('#editingMode').removeClass('btn-primary');
+                closeStyleEditor();
+                $("#modeBlock").click();
+                $('#editingMode').addClass('btn-info');
+                $('#editingMode').removeClass('btn-primary');
             } else {
-              $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
-              $("#modeStyle").click();
-              $('#editingMode').html('<span class="fui-plus"></span> Add Element');
-              $('#editingMode').addClass('btn-primary');
-              $('#editingMode').removeClass('btn-info');
+                $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
+                $("#modeStyle").click();
+                $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+                $('#editingMode').addClass('btn-primary');
+                $('#editingMode').removeClass('btn-info');
             }
             $(this).data("editingStyle", !editingStyle);
         });
@@ -2242,16 +2210,16 @@
         $('#pageList').click(function() {
             var editingStyle = $(this).data('editingStyle');
             if (editingStyle) {
-              closeStyleEditor();
-              $("#modeBlock").click();
-              $('#editingMode').addClass('btn-info');
-              $('#editingMode').removeClass('btn-primary');
+                closeStyleEditor();
+                $("#modeBlock").click();
+                $('#editingMode').addClass('btn-info');
+                $('#editingMode').removeClass('btn-primary');
             } else {
-              $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
-              $("#modeStyle").click();
-              $('#editingMode').html('<span class="fui-plus"></span> Add Element');
-              $('#editingMode').addClass('btn-primary');
-              $('#editingMode').removeClass('btn-info');
+                $('#styleEditor').animate({'left': '0px', 'background-color': '#f9f9f9'}, 250);
+                $("#modeStyle").click();
+                $('#editingMode').html('<span class="fui-plus"></span> Add Element');
+                $('#editingMode').addClass('btn-primary');
+                $('#editingMode').removeClass('btn-info');
             }
             $(this).data("editingStyle", !editingStyle);
         });
@@ -2295,18 +2263,18 @@
             $('.loaderSave').show();
             var pages=$('#pages .active').data('page')
             pageNum =$('#pages li').size()-1;
-                contentPage=$('#page'+pages).html();
-                countli=$('#page'+pages+' li').length;
-                var countiframe=$('#page'+pages+' li iframe');
-                for(j=0;j<countli;j++) {
-                    var pageli=$('#page'+pages+' li').get(j).style.height;
+            contentPage=$('#page'+pages).html();
+            countli=$('#page'+pages+' li').length;
+            var countiframe=$('#page'+pages+' li iframe');
+            for(j=0;j<countli;j++) {
+                var pageli=$('#page'+pages+' li').get(j).style.height;
 //                    console.log(pageli)
-                    contentpath=countiframe[j].contentWindow.document.body.innerHTML;
+                contentpath=countiframe[j].contentWindow.document.body.innerHTML;
 //                    console.log(contentpath)
-                    contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
-                }
-                id=$('#page'+pages).data('id');
-                contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
+                contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
+            }
+            id=$('#page'+pages).data('id');
+            contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
             $.ajax({
                 type: 'POST',
                 url: "save-page",
@@ -2415,5 +2383,9 @@
         }
 
     </script>
+    <script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
+
+
     </body>
     </html>

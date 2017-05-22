@@ -97,6 +97,13 @@ class PageController extends Controller
 
         return $data;
     }
+    public function deletePage(Request $request)
+    {
+
+        $data = $this->page->deletePage($request->id);
+
+        return $data;
+    }
     public function getPage(Request $request)
     {
         $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
@@ -116,7 +123,7 @@ class PageController extends Controller
         return $data;
     }
     public function exportIssue(Request $request){
-        $pathToAssets = array("builder_front/elements/bootstrap", "builder_front/elements/css", "builder_front/elements/fonts", "builder_front/elements/images", "builder_front/elements/js");
+        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js");
         $newname=time().'-'.$request->session()->get('issue-editor');
         $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
@@ -185,8 +192,15 @@ class PageController extends Controller
     <script src='elements/js/flatui-checkbox.js'></script>
     <script src='elements/js/flatui-radio.js'></script>
     <script src='elements/js/jquery.tagsinput.js'></script>
-    <script src='elements/js/jquery.placeholder.js'></script></body></html>";
-            $zip->addFromString($content['page_name'].".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
+    <script src='elements/js/jquery.placeholder.js'></script>
+    <script>
+  $('o').remove();
+  $('p').removeAttr('contenteditable').removeAttr('data-editable').removeAttr('data-selector');
+  $('div').removeAttr('contenteditable').removeAttr('data-editable').removeAttr('data-selector');
+  $('div .frameCover').remove();
+</script>
+</body></html>";
+            $zip->addFromString($page.".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
 
         }

@@ -99,7 +99,7 @@
                                             },
                                             function (data, status) {
                                                 bootbox.alert({
-                                                    message: data,
+                                                    message: 'Success Delete Issue!',
                                                     backdrop: true,
                                                     size: 'small'
                                                 });

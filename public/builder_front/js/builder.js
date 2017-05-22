@@ -1585,9 +1585,9 @@ $(function(){
 	})
 
 	$('#addPage').click(function(e){
-
+			$(this).addClass('disabled');
 		e.preventDefault();
-		var pageID='';
+		var pageIDs='';
 		//turn inputs into links
 		$('#pages li.active').each(function(){
 
@@ -1616,8 +1616,9 @@ $(function(){
         }).done(function(data) {
         	pageIDs=data;
             newPageLI.attr('data-id', data);
+            $('#addPage').removeClass('disabled');
         });
-	console.log(pageIDs)
+
         newPageLI.attr('data-page',$('#pages li').size());
 
 		$('ul#pages').append( newPageLI );
@@ -1637,7 +1638,7 @@ $(function(){
 
 		} )
 
-		newPageLI.addClass('active').addClass('edit');
+		newPageLI.addClass('active');
 
 
 		//create the page structure
@@ -1778,7 +1779,14 @@ $(function(){
 		$('#deletePage').off('click').on('click', '#deletePageConfirm', function(){
 
 			$('#deletePage').modal('hide');
+            console.log($('#pages li.active').data('id'));
+            $.ajax({
+                type: 'GET',
+                url: "/del-page",
+                data: {'id':$('#pages li.active').data('id')},
+            }).done(function(data) {
 
+            });
 			$('#pages li:eq('+theLIIndex+')').remove();
 
 			$('#pageList ul:visible').remove();
