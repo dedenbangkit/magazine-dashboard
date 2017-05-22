@@ -10,7 +10,7 @@ var _Elements = {"elements": {
     "Image":[
         {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
         {"title":"Slide Show","icon":"builder_front/images/icon/image-carousel.png","url":"builder_front/elements/slideshow.html"},
-        {"title":"Center Block","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/image.html"}
+        {"title":"Pan Image","icon":"builder_front/images/icon/image-centerblock.png","url":"builder_front/elements/panner.html"}
     ],
     "Table":[
         {"title":"Custom Row","icon":"builder_front/images/icon/table-row.png","url":"builder_front/elements/table_1.html"},

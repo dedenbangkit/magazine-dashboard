@@ -12,7 +12,7 @@
                 echo "class='active'";
             } ?> ><a href="{{ url('home') }}"><i class='fa fa-home'></i>
                     <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li <?php if (in_array("file", $activer)) { echo "class='active'"; } ?> class="treeview">
+            <li <?php if (in_array("file", $activer)) { echo "class='active'"; } ?>>
                 <a href="javascript:void(0)"><i class='fa fa-file'></i> <span>FILE MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -22,7 +22,7 @@
                     <li <?php if (in_array("published", $activer)) { echo "class='active'";} ?>><a href="/published"><i class='fa fa-plane'></i> <span>PUBLISHED</span></a></li>
                 </ul>
             </li>
-            <li <?php if (in_array("user management", $activer)) { echo "class='active'"; } ?> class="treeview">
+            <li <?php if (in_array("user management", $activer)) { echo "class='active'"; } ?>>
                 <a href="javascript:void(0)"><i class='fa fa-user'></i> <span>USER MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -31,7 +31,7 @@
 
                 </ul>
             </li>
-            <li <?php if (in_array("subscribe", $activer)) { echo "class='active'"; } ?> class="treeview">
+            <li <?php if (in_array("subscribe", $activer)) { echo "class='active'"; } ?>>
                 <a href="javascript:void(0)"><i class='fa fa-newspaper-o'></i> <span>SUBSCRIBE MANAGEMENT</span> <i
                             class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
