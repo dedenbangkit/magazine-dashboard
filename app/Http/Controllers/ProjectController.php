@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-
+use Storage;
 /**
  * Class ProjectController
  * @package App\Http\Controllers
@@ -138,18 +138,32 @@ class ProjectController extends Controller
         $data['activer'] = array($this->activer, 'issue');
         return view('create_issue', $data);
     }
+    public function editIssue(Request $request,$id)
+    {
+        $data['users']=  $this->user->getUser();
+        $data['activer'] = array($this->activer, 'issue');
+        $data['issue'] = $this->issue->getIssueId($id);
+        $data['page'] =$this->page->getPage($id);
+        return view('edit_issue', $data);
+    }
 
     public function createIssueProcess(Request $request)
     {
+        $s3 = \Storage::disk('s3');
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-issue';
+        $file_path= '/images-issue/';
         $request->session()->get('project_id');
         $cover=null;
+
         if(!empty($request->file('cover')) && $request->file('cover')->isValid()){
             $cover=$request->file('cover').'.'.$request->file('cover')->clientExtension();
+            $name = time().'-'.$_FILES['cover']['name'];
+            $s3->put($file_path.''.$name, file_get_contents($request->file('cover')), 'public');
             $request->file('cover')->move('img/projects/tmp',$cover);
         };
         $data=array(
             'name'=>$request->name,
-            'cover'=>$cover,
+            'cover'=>$relative_path.'/'.$name,
             'master'=>$this->authdata->id,
             'project_id'=>$this->authdata->project_id
         );

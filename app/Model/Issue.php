@@ -28,6 +28,12 @@ class Issue extends Model
             ->orderBy('created_at','desc')
             ->get();
     }
+    public function getIssueId($id){
+        return Issue::whereNull('deleted_at')
+            ->where('id',$id)
+            ->orderBy('created_at','desc')
+            ->first();
+    }
     public function deleteIssue($id){
         return Issue::where('id',$id)
             ->update([
