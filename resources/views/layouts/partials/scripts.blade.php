@@ -11,9 +11,9 @@
 <!-- DataTables -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
-<script src="{{ asset('/js/cstadmin.js')}}"></script>
 <script src="{{ asset('/js/jquery.cookie.js')}}"></script>
 <script src="{{ asset('/js/jquery.treeview.min.js')}}"></script>
+<script src="{{ asset('/js/cstadmin.js')}}"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
