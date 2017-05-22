@@ -22,7 +22,7 @@ editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
 editableItems['.footer a'] = ['color'];
 editableItems['.bg.bg1, .bg.bg2'] = ['background-image','background-color','background-size'];
-editableItems['.container'] = ['border-color', 'border-style', 'border-width', 'margin-top', 'margin-bottom', 'border-radius'];
+editableItems['.container'] = ['border-color', 'border-style', 'border-width', 'width','overflow-y','margin-top', 'margin-bottom', 'border-radius'];
 editableItems['.column'] = ['height','background-color','background-size','opacity', 'border-color', 'border-style', 'border-width', 'padding', 'border-radius'];
 editableItems['.page'] = ['background-color','background-size','border-color', 'border-style', 'border-width', 'padding','border-radius'];
 editableItems['#nivoSlider img.edit'] = [];
@@ -45,6 +45,7 @@ editableItemOptions['.column : background-size'] = ['cover', 'contain', 'initial
 editableItemOptions['.container : border-style'] = ['none', 'dotted', 'dashed', 'solid'];
 editableItemOptions['.container : border-width'] = ['1px', '2px', '3px', '4px'];
 editableItemOptions['.container : border-radius'] = ['0px', '4px', '10px'];
+editableItemOptions['.container : overflow-y'] = ['auto','scroll'];
 
 editableItemOptions['p : text-align'] = ['left','right','center','justify'];
 editableItemOptions['p : border-radius'] = ['0px', '4px', '10px', '100%'];
