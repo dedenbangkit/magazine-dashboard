@@ -2292,9 +2292,14 @@
         }).done(function(data) {
             $(data['page_list']).each(function(index, el) {
                 page_content = el.page_content;
-                newPage(el.page_name,el.page_content,el.id,index)
-
+                newPage(el.page_name,el.page_content,el.id,index);
             });
+            //Tambahan loaderSave
+            $('#pageList ul li iframe').each(function(){
+    					this.contentDocument.designMode = "off";
+    				})
+            pageEmpty();
+            allEmpty();
 
         });
 
