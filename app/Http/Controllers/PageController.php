@@ -123,6 +123,9 @@ class PageController extends Controller
         return $data;
     }
     public function exportIssue(Request $request){
+
+
+      //// Outputnya: Time-Issue->id
         $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js");
         $newname=time().'-'.$request->session()->get('issue-editor');
         $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
@@ -185,7 +188,7 @@ class PageController extends Controller
     <link href='elements/css/font-awesome.css' rel='stylesheet'>
 </head><body>";
             $htmlclose=" <script src='elements/js/jquery-1.8.3.min.js'></script>
-    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script> 
+    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script>
     <script src='elements/js/bootstrap.min.js'></script>
     <script src='elements/js/bootstrap-select.js'></script>
     <script src='elements/js/bootstrap-switch.js'></script>

@@ -2140,6 +2140,8 @@
     <script src="{{asset('builder_front/elements.json')}}"></script>
     <script src="{{asset('builder_front/js/builder.js')}}"></script>
     <script>
+
+    //framenya
         $.ajax({
             url: "/get-page"
         }).done(function(data) {
@@ -2150,7 +2152,7 @@
             });
 
         });
-
+    //kontennya
         $('iframe').on('load', function() {
             $.ajax({
                 url: "/load-page"
@@ -2161,8 +2163,10 @@
 //                    console.log(i)
                     i=i+1
                 });
+                //selesai looping
                 $('#page1').css("display","block");
-                $('li[data-page="1"]').addClass('active')
+                $('li[data-page="1"]').addClass('active');
+
             });
 
         });

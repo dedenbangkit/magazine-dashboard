@@ -13,8 +13,9 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
+              @if(!empty($count_issue))
               <h3>{{$countIssuePub}}</h3>
-
+              @endif
               <p>Published Issue</p>
             </div>
             <div class="icon">
@@ -28,7 +29,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
+              @if(!empty($count_issue))
               <h3>{{(($countIssue-$countIssuePub)/$countIssue)*100}}<sup style="font-size: 20px">%</sup></h3>
+              @endif
 
               <p>Edit Issue</p>
             </div>

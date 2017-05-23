@@ -154,6 +154,7 @@ class ProjectController extends Controller
         $file_path= '/images-issue/';
         $request->session()->get('project_id');
         $cover=null;
+        $name=null;
 
         if(!empty($request->file('cover')) && $request->file('cover')->isValid()){
             $cover=$request->file('cover').'.'.$request->file('cover')->clientExtension();
