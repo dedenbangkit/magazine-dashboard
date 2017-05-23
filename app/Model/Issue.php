@@ -22,6 +22,15 @@ class Issue extends Model
             )
         );
     }
+    public function updateIssue($data){
+        return  Issue::where('id',$data['id'])
+        ->update(
+            [
+                'issue_name'=>$data['name'],
+                'issue_cover'=>$data['cover'],
+            ]
+        );
+    }
     public function getIssue($id){
         return Issue::whereNull('deleted_at')
             ->where('project_id',$id)

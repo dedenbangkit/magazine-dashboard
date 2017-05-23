@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    Register
+    Editing Issue
 @endsection
 
 @section('main-content')
@@ -24,9 +24,10 @@
         @endif
 
         <div class="box box-default color-palette-box">
-            <form action="create-issue" method="post" enctype="multipart/form-data">
+            <form action="/edit-issue" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="id_issue" value="{{$issue->id}}">
+                <input type="hidden" name="image_issue" value="{{$issue->issue_cover}}">
                 <div class="box-header row with-border">
                   <div class="col-xs-4">
                   <div class="form-group has-feedback" style="margin:0px;">
@@ -56,22 +57,35 @@
                 <div id="checkbox-form">
                   <div class="row">
                       @foreach($page as $j=>$child)
+
                           <div class="form-group @if(($j+1)==count($page)) clone @endif col-md-4">
+                              <?php
+                              if(count(unserialize($child->page_team))==1){
+                                  $access=unserialize($child->page_team);
+                              }else{
+                                  $access=unserialize($child->page_team)[1];
+                              };
+                              ?>
+                              <input type="hidden" name="page_id[]" value="{{$child->id}}" >
                               <div class="row well" style="margin:0px; 10px; padding:5px;">
-                                  <span class="glyphicon glyphicon-remove pull-right" style="cursor:not-allowed" id=""></span>
+                                      <label class="label-delete"><input name="delete[{{$j}}]"  type="checkbox" value="Check"> Delete This Page</label>
                                   <div class="col-xs-12">
                                       <input type="text" class="form-control" placeholder="page Name" name="pagename[]" value="{{$child->page_name}}"/>
                                   </div>
                                   <div class="col-xs-6" style="height: 120px; overflow-y: auto;">
                                       @foreach ($users as $i=>$row)
                                           <div class="checkbox">
-                                              <label><input name="team[{{$j}}][]" class="checkbox-member" type="checkbox" @foreach(unserialize($child->page_team) as $k=>$u) @if($row->id==$u) checked @endif @endforeach value="{{$row->id}}">{{$row->name}}</label>
+                                              <label><input name="team[{{$j}}][]" class="checkbox-member" type="checkbox"
+
+                                                            @foreach($access as $k=>$u) @if($row->id==$u) checked @endif @endforeach
+                                                            value="{{$row->id}}">{{$row->name}}</label>
                                           </div>
                                       @endforeach
                                   </div>
                                   <div class="col-xs-6" >
                                       <textarea class="form-control" rows="5" name="description[]" placeholder="Description">{{$child->page_description}}</textarea>
                                   </div>
+
                               </div>
 
                           </div>
@@ -170,11 +184,12 @@
                             var newid = $(this).attr('id') + (counter +1);
                             $(this).attr('id', newid);
                         });
-                        setPointCounter=setPoint+counter;
+                        setPointCounter=setPoint+counter-1;
                         //increae arraychexbox
                         clone.find(".checkbox-member").attr('name',  'team['+setPointCounter+'][]');
                         //increase data value
                         clone.find(".glyphicon-remove").attr('data-id',  setPointCounter);
+                        clone.find(".label-delete").hide;
                         //change style pointer
                         clone.find(".glyphicon-remove").attr('style',  'cursor:pointer');
 

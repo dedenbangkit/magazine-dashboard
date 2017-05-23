@@ -24,7 +24,7 @@
         @endif
 
         <div class="box box-default color-palette-box">
-            <form action="create-issue" method="post" enctype="multipart/form-data">
+            <form action="/create-issue" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="box-header row with-border">
                   <div class="col-xs-4">

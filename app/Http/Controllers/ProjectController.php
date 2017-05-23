@@ -188,6 +188,72 @@ class ProjectController extends Controller
         $this->action_log->create_log('Creating Issue '.$request->name,$this->authdata->id);
         return redirect('/issue');
     }
+    public function editIssueProcess(Request $request)
+    {
+        $s3 = \Storage::disk('s3');
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-issue';
+        $file_path= '/images-issue/';
+        $request->session()->get('project_id');
+        $cover=null;
+        $name=null;
+        $data=array(
+            'id'=>$request->id_issue,
+            'name'=>$request->name,
+            'cover'=>$request->image_issue
+        );
+        if(!empty($request->file('cover')) && $request->file('cover')->isValid()){
+            $cover=$request->file('cover').'.'.$request->file('cover')->clientExtension();
+            $name = time().'-'.$_FILES['cover']['name'];
+            $s3->put($file_path.''.$name, file_get_contents($request->file('cover')), 'public');
+            $request->file('cover')->move('img/projects/tmp',$cover);
+            $data=array(
+                'id'=>$request->id_issue,
+                'name'=>$request->name,
+                'cover'=>$relative_path.'/'.$name
+            );
+        };
+
+
+//            if(in_array($id,$request->page_id)){
+//                var_dump('ss-'.$id);
+//            };
+        $pageArray=$this->page->getPageOnlyId($request->id_issue);
+        $this->issue->updateIssue($data);
+        $pagename=$request->pagename ;
+        foreach($pagename as $i=>$row){
+            $team = array($this->authdata->id);
+            array_push($team,$request->team[$i]);
+            if(!empty($row)){
+                $name=$row;
+            }else{
+                $name= 'page '.($i+1);
+            }
+            $dataPage=array(
+                'id'=>$request->page_id[$i],
+                'issue'=>$request->id_issue,
+                'name'=>$name,
+                'team'=>$team,
+                'description'=>$request->description[$i]
+            );
+            if(!in_array($request->page_id[$i],$pageArray)){
+                if (isset($request->delete[$i])) {
+
+                }else{
+                    $this->page->insertPage($dataPage);
+                }
+
+            }else{
+                if (isset($request->delete[$i])) {
+                    $this->page->deletePage($request->page_id[$i]);
+                }else{
+                $this->page->updatePage($dataPage);
+                }
+            };
+        };
+        $request->session()->flash('status_msg','Success Editing Issue '.$request->name);
+        $this->action_log->create_log('Editing Issue '.$request->name,$this->authdata->id);
+        return redirect('/issue');
+    }
     public function deleteIssueProcess(Request $request){
         $deletingIssue=$this->issue->deleteIssue($request->id);
         return $deletingIssue;

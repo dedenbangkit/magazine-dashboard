@@ -22,13 +22,28 @@ class Page extends Model
             )
         );
     }
+    public function updatePage($data){
+        // restore array use unserialize
+        return  Page::where('id','=',$data['id'])
+            ->update([
+                'page_name'=>$data['name'],
+                'page_team'=>serialize($data['team']),
+                'page_description'=>$data['description']
+            ]);
+    }
     public function getPage($id){
         return Page::whereNull('deleted_at')
             ->where('issue_id',$id)
             ->orderBy('id','ASC')
             ->get();
     }
-
+    public function getPageOnlyId($id){
+        return Page::whereNull('deleted_at')
+            ->where('issue_id',$id)
+            ->orderBy('id','ASC')
+            ->pluck('id')
+            ->toArray();
+    }
     public function getPageIssue($id){
         return Page::whereNull('page.deleted_at')
             ->where('issue_id',$id)
