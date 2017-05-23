@@ -212,11 +212,6 @@ class ProjectController extends Controller
                 'cover'=>$relative_path.'/'.$name
             );
         };
-
-
-//            if(in_array($id,$request->page_id)){
-//                var_dump('ss-'.$id);
-//            };
         $pageArray=$this->page->getPageOnlyId($request->id_issue);
         $this->issue->updateIssue($data);
         $pagename=$request->pagename ;

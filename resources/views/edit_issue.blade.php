@@ -61,9 +61,16 @@
                           <div class="form-group @if(($j+1)==count($page)) clone @endif col-md-4">
                               <?php
                               if(count(unserialize($child->page_team))==1){
-                                  $access=unserialize($child->page_team);
+                                  $access=unserialize($child->page_team)[0];
+                                  if(is_array($access)){
+                                  }else{
+                                      $access=array(access);
+                                  }
                               }else{
                                   $access=unserialize($child->page_team)[1];
+                                  if($access==null){
+                                      $access=array(unserialize($child->page_team)[0]);
+                                  }
                               };
                               ?>
                               <input type="hidden" name="page_id[]" value="{{$child->id}}" >
@@ -77,7 +84,7 @@
                                           <div class="checkbox">
                                               <label><input name="team[{{$j}}][]" class="checkbox-member" type="checkbox"
 
-                                                            @foreach($access as $k=>$u) @if($row->id==$u) checked @endif @endforeach
+                                                           @if(in_array($row->id,$access)) checked @endif 
                                                             value="{{$row->id}}">{{$row->name}}</label>
                                           </div>
                                       @endforeach
