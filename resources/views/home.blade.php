@@ -13,14 +13,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{$countIssuePub}}</h3>
 
-              <p>Projects Setup</p>
+              <p>Published Issue</p>
             </div>
             <div class="icon">
               <i class="ion ion-ios-cog"></i>
             </div>
-            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+            {{--<a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>--}}
           </div>
         </div>
         <!-- ./col -->
@@ -28,14 +28,14 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{(($countIssue-$countIssuePub)/$countIssue)*100}}<sup style="font-size: 20px">%</sup></h3>
 
               <p>Edit Issue</p>
             </div>
             <div class="icon">
               <i class="ion ion-android-create"></i>
             </div>
-            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+            {{--<a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>--}}
           </div>
         </div>
         <!-- ./col -->
@@ -50,7 +50,7 @@
             <div class="icon">
               <i class="ion ion-ios-information"></i>
             </div>
-            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+            {{--<a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>--}}
           </div>
         </div>
         <!-- ./col -->
@@ -58,14 +58,13 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>{{$billing}}</h3>
 
               <p>Billing</p>
             </div>
             <div class="icon">
               <i class="ion ion-card"></i>
             </div>
-            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

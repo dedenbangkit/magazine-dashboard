@@ -30,6 +30,16 @@ class Invoice extends Model
             ->select('invoice.*','company.company_name','project_name','service.service_name')
             ->get();
     }
+    public function getInvoiceDetailByProject($data){
+        return Invoice::where('company.deleted_at',null)
+            ->where('invoice.project_id',$data)
+            ->where('invoice.payment','unpaid')
+            ->leftjoin('company','company.id','=','invoice.company_id')
+            ->leftjoin('project','company.id','=','project.company_id')
+            ->leftjoin('service','service.id','=','project.service_id')
+            ->select('invoice.*','company.company_name','project_name','service.service_name')
+            ->get();
+    }
     public function invoiceList(){
         return Invoice::where('company.deleted_at',null)
             ->where('invoice.payment','unpaid')

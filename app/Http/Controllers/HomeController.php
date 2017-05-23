@@ -9,6 +9,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Model\Project;
+use App\Model\Issue;
+use App\Model\Invoice;
+
 
 /**
  * Class HomeController
@@ -23,10 +27,16 @@ class HomeController extends Controller
      */
     protected $activer;
     protected $authdata;
+    protected $project;
+    protected $issue;
+    protected $invoice;
     public function __construct()
     {
         $this->authdata = $this->authData();
         $this->activer = 'home';
+        $this->invoice = new Invoice();
+        $this->issue = new Issue();
+        $this->project = new Project();
         $this->middleware('auth');
     }
 
@@ -38,6 +48,9 @@ class HomeController extends Controller
     public function index()
     {
         $data['activer'] = array($this->activer);
+        $data['countIssuePub']=count($this->issue->getProjectPublishById($this->authdata->project_id));
+        $data['countIssue']=count($this->issue->getIssue($this->authdata->project_id));
+        $data['billing']=count($this->invoice->getInvoiceDetailByProject($this->authdata->project_id));
         return view('home', $data);
     }
 }

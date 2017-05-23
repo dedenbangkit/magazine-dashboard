@@ -84,7 +84,7 @@
                                           <div class="checkbox">
                                               <label><input name="team[{{$j}}][]" class="checkbox-member" type="checkbox"
 
-                                                           @if(in_array($row->id,$access)) checked @endif 
+                                                           @if(in_array($row->id,$access)) checked @endif
                                                             value="{{$row->id}}">{{$row->name}}</label>
                                           </div>
                                       @endforeach

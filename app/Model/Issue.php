@@ -62,6 +62,13 @@ class Issue extends Model
             ->orderBy('created_at','desc')
             ->paginate(12);
     }
+    public function getProjectPublishById($id){
+        return Issue::whereNull('deleted_at')
+            ->where('status','published')
+            ->where('project_id',$id)
+            ->orderBy('created_at','desc')
+            ->get();
+    }
     public function compileIssue($id,$name){
         return Issue::where('id',$id)
             ->update([
