@@ -24,7 +24,7 @@ class Company extends Model
     }
     public function insertCompany($data){
         // restore array use unserialize
-        return  Invoice::insertGetId(
+        return  Company::insertGetId(
             array(
                 'company_name'=>$data['companyname'],
                 'company_phone'=>$data['companyphone'],
