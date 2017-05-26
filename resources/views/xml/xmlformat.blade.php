@@ -9,6 +9,13 @@
     </author>
     <content src='{{$widget["content"]["_src"]}}'/>
     <access origin='{{$widget["access"]["_origin"]}}'/>
+    <allow-navigation href='http://ionic.local/*' />
+    <allow-intent href='http://*/*' />
+    <allow-intent href='https://*/*' />
+    <allow-intent href='tel:*' />
+    <allow-intent href='sms:*' />
+    <allow-intent href='mailto:*' />
+    <allow-intent href='geo:*' />
     <preference name='{{$widget["preference"][0]["_name"]}}' value='{{$widget["preference"][0]["_value"]}}'></preference>
     <preference name='{{$widget["preference"][1]["_name"]}}' value='{{$widget["preference"][1]["_value"]}}'></preference>
     <preference name='{{$widget["preference"][2]["_name"]}}' value='{{$widget["preference"][2]["_value"]}}'></preference>
@@ -68,4 +75,15 @@
         <splash src='{{$widget["platform"][1]["splash"][7]["_src"]}}' density='port-xhdpi'></splash>
     </platform>
     <icon src='{{$widget["icon"][0]["_src"]}}'></icon>
+    <plugin name='ionic-plugin-keyboard' spec='~2.2.1' />
+    <plugin name='cordova-plugin-whitelist' spec='1.3.1' />
+    <plugin name='cordova-plugin-console' spec='1.0.5' />
+    <plugin name='cordova-plugin-statusbar' spec='2.2.1' />
+    <plugin name='cordova-plugin-device' spec='1.1.4' />
+    <plugin name='cordova-plugin-splashscreen' spec='~4.0.1' />
+    <plugin name='cordova-plugin-zip' spec='https://github.com/MobileChromeApps/zip.git' />
+    <plugin name='com-sarriaroman-photoviewer' spec='^1.1.10' />
+    <plugin name='org.pbernasconi.progressindicator' spec='https://github.com/pbernasconi/cordova-progressIndicator.git' />
+    <plugin name='cordova-plugin-file-transfer' spec='^1.6.3' />
+    <plugin name='cordova-plugin-file' spec='^4.3.3' />
 </widget>

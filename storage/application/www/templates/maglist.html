@@ -1,26 +1,21 @@
-
-<ion-view view-title="{{title}}">
-    <ion-content scroll="false">
-    <ion-slides disable-scroll="false"  options="options" slider="data.slider">
-      <ion-slide-page ng-repeat="detail in details">
-        <p>{{detail.downloadUrl}}</p>
-        <ion-list>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-          <ion-radio ng-model="choice" ng-value="A">Choose A</ion-radio>
-          <ion-radio ng-model="choice" ng-value="B">Choose B</ion-radio>
-        </ion-list>
+<ion-view view-title="Test">
+  <ion-content scroll="false">
+    <ion-slides slider="data.slider" options="options">
+      <ion-slide-page scroll="true">
+        <div ng-include="'contents/1495058338-30/1.html'" delegate-handle="mainScroll"></div>
+      </ion-slide-page>
+      <ion-slide-page scroll="true">
+        <div ng-include="'contents/1495058338-30/2.html'"></div>
+      </ion-slide-page>
+      <ion-slide-page scroll="true">
+        <div ng-include="'contents/1495058338-30/3.html'"></div>
+      </ion-slide-page>
+      <ion-slide-page scroll="true">
+        <div ng-include="'contents/1495058338-30/4.html'"></div>
+      </ion-slide-page>
+      <ion-slide-page scroll="true">
+        <div ng-include="'contents/1495058338-30/5.html'"></div>
       </ion-slide-page>
     </ion-slides>
-    </ion-content>
+  </ion-content>
 </ion-view>
