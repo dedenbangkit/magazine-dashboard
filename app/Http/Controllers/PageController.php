@@ -170,7 +170,17 @@ class PageController extends Controller
 
         }
         $pages= $this->page->getPage($request->session()->get('issue-editor'));
-
+        $issue=$this->issue->getIssueId($request->session()->get('issue-editor'));
+        $image_cover=$issue["issue_cover"];
+        $cover_frame='<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="page" class="page">
+    				<img src="'.$image_cover.'">
+    </div><!-- /#page -->
+</body>
+</html>';
+        $zip->addFromString("0.html", $cover_frame);
 
         foreach( $pages as $page=>$content ) {
             $html="<html><head>
@@ -203,7 +213,7 @@ class PageController extends Controller
   $('div .frameCover').remove();
 </script>
 </body></html>";
-            $zip->addFromString($page.".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
+            $zip->addFromString(($page+1).".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
 
 
         }

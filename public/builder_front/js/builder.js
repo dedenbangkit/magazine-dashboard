@@ -1691,7 +1691,7 @@ $(function(){
 		$(this).addClass('active');
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
-
+        bindHeightWidth();
 	})
 
 
