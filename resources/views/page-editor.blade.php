@@ -2164,8 +2164,8 @@
                     i=i+1
                 });
                 //selesai looping
-                $('#page1').css("display","block");
-                $('li[data-page="1"]').addClass('active');
+//                $('#page1').css("display","block");
+//                $('li[data-page="1"]').addClass('active');
 
             });
 
@@ -2385,7 +2385,7 @@
 
             } )
 
-            newPageLI.addClass('');
+            newPageLI.addClass('active');
 
 
             //create the page structure
@@ -2395,7 +2395,7 @@
                 newPageList = $('<ul>'+pageContent+'</ul>');
             }
 
-            newPageList.css('display','none');
+            newPageList.css('display','block');
             newPageList.attr('id', 'page'+($('#pages li').size()-1) );
             newPageList.attr('data-id', pageID);
 
@@ -2431,6 +2431,12 @@
     <script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
     <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
 
-
+<style>
+    .screen .frameCover:hover button.btn-danger, .screen .frameCover:hover button.btn-warning, .screen .frameCover:hover button.btn-inverse {
+        visibility:visible;
+        opacity:1;
+        transition-delay:0s;
+    }
+</style>
     </body>
     </html>

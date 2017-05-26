@@ -49,7 +49,7 @@
                                     } ?>">
 
                                     <div class="btn-group-vertical" style="width:100%; padding-top:20px;">
-                                      <a class="btn btn-default @if(empty($row->compiled)) publish-issue @else disabled @endif "
+                                      <a class="btn btn-default @if($row->status =='unpublished') publish-issue @else disabled @endif "
                                          data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
                                         <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo !empty($row->compiled) ? 'ed':''; ?> </a>
                                         <a href="/edit-issue/{{ $row->id }}" class="btn btn-default  @if(!empty($row->compiled)) disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
