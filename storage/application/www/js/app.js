@@ -5,7 +5,17 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
-.run(function($ionicPlatform) {
+.run(function($rootScope,
+  $cordovaFile,
+  $ionicPlatform,
+  $cordovaNetwork,
+  $cordovaZip,
+  $cordovaBatteryStatus,
+  $cordovaLocalNotification,
+  $cordovaPush,
+  $cordovaFileTransfer,
+  $cordovaProgress,
+  $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -13,15 +23,57 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    $rootScope.downloadDir = cordova.file.dataDirectory;
+    // // create Directory
+    //
+    // $cordovaFile.createDir(cordova.file.dataDirectory, "content", false)
+    //   .then(function (success) {
+    //     alert('magazine folder created');
+    //   }, function (error) {
+    //     alert('folder created');
+    //   });
+    //
+    // // File Transfer
+    //
+    // var url = "http://cdn.wall-pix.net/albums/art-space/00030109.jpg";
+    // var targetPath = cordova.file.dataDirectory + "/content/testImage.png";
+    // var trustHosts = true;
+    // var options = {};
+    //
+    // $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+    //   .then(function(result) {
+    //     alert('file downloaded');
+    //   }, function(err) {
+    //     alert('file error');
+    //   }, function (progress) {
+    //     $timeout(function () {
+    //       $rootScope.downloadProgress = (progress.loaded / progress.total) * 100;
+    //     });
+    //   });
+
   });
 
 })
+
+.factory('appService', function($http, $rootScope) {
+  var appService = {
+    async: function() {
+      var promise = $http.get('appinfo.json').then(function (response) {
+        $rootScope.applicationsData = response.data;
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return appService;
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
