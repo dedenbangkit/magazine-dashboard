@@ -42,10 +42,10 @@ class BuildApiController extends Controller
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
-      $this->build = new Phonegap('mail@dedenbangkit.com','Jalanremaja1208');
+      $this->build = new Phonegap('bajaklautmalaka@gmail.com','Sejutatopanb4d4i');
       $this->client = new Client([
           'base_uri' => 'https://build.phonegap.com/api/v1/',
-          'auth' => ['mail@dedenbangkit.com','Jalanremaja1208'],
+          'auth' => ['bajaklautmalaka@gmail.com','Sejutatopanb4d4i'],
           ['connect_timeout' => 6000]
       ]);
       $this->project = new Project;
