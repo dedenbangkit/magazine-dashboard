@@ -6,7 +6,7 @@
 
 @section('main-content')
 
-    <body class="hold-transition register-page">
+    <div class="hold-transition register-page row">
     <div class="col-md-8">
         @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -100,7 +100,7 @@
     <script>
 
     </script>
-</body>
+</div>
 
 @endsection
 @section('script-content')
