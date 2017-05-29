@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Company.php" afterPath="$PROJECT_DIR$/app/Model/Company.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/User.php" afterPath="$PROJECT_DIR$/app/Model/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" afterPath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -52,21 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="56" column="11" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="56" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Company.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/Company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            <state relative-caret-position="507">
+              <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -85,8 +75,8 @@
       <file leaf-file-name="SubscribeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="55" />
+            <state relative-caret-position="270">
+              <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
               <folding>
                 <element signature="e#41#63#0#PHP" expanded="true" />
               </folding>
@@ -97,16 +87,17 @@
       <file leaf-file-name="new-subscribe.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="28" column="80" lean-forward="false" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+            <state relative-caret-position="165">
+              <caret line="31" column="86" lean-forward="false" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
               <folding>
                 <element signature="e#1154#1172#0#HTML" expanded="true" />
-                <element signature="e#1555#1573#0#HTML" expanded="true" />
-                <element signature="e#1953#1971#0#HTML" expanded="true" />
-                <element signature="e#2820#2838#0#HTML" expanded="true" />
-                <element signature="e#3234#3252#0#HTML" expanded="true" />
-                <element signature="e#3650#3668#0#HTML" expanded="true" />
-                <element signature="e#4044#4062#0#HTML" expanded="true" />
+                <element signature="e#1554#1572#0#HTML" expanded="true" />
+                <element signature="e#1956#1974#0#HTML" expanded="true" />
+                <element signature="e#2354#2372#0#HTML" expanded="true" />
+                <element signature="e#3221#3239#0#HTML" expanded="true" />
+                <element signature="e#3635#3653#0#HTML" expanded="true" />
+                <element signature="e#4051#4069#0#HTML" expanded="true" />
+                <element signature="e#4445#4463#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,18 +106,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuildController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-333">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -222,10 +203,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
         <option value="$PROJECT_DIR$/app/Model/Issue.php" />
-        <option value="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" />
         <option value="$PROJECT_DIR$/app/Model/User.php" />
         <option value="$PROJECT_DIR$/app/Model/Company.php" />
+        <option value="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" />
       </list>
     </option>
   </component>
@@ -662,12 +643,12 @@
       <workItem from="1495761200300" duration="4458000" />
       <workItem from="1495795222371" duration="74000" />
       <workItem from="1495798578591" duration="342000" />
-      <workItem from="1496050001133" duration="5670000" />
+      <workItem from="1496050001133" duration="6012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62451000" />
+    <option name="totallyTimeSpent" value="62793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1094,40 +1075,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state relative-caret-position="132">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        <state relative-caret-position="507">
+          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="28" column="80" lean-forward="false" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+        <state relative-caret-position="165">
+          <caret line="31" column="86" lean-forward="false" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
           <folding>
             <element signature="e#1154#1172#0#HTML" expanded="true" />
-            <element signature="e#1555#1573#0#HTML" expanded="true" />
-            <element signature="e#1953#1971#0#HTML" expanded="true" />
-            <element signature="e#2820#2838#0#HTML" expanded="true" />
-            <element signature="e#3234#3252#0#HTML" expanded="true" />
-            <element signature="e#3650#3668#0#HTML" expanded="true" />
-            <element signature="e#4044#4062#0#HTML" expanded="true" />
+            <element signature="e#1554#1572#0#HTML" expanded="true" />
+            <element signature="e#1956#1974#0#HTML" expanded="true" />
+            <element signature="e#2354#2372#0#HTML" expanded="true" />
+            <element signature="e#3221#3239#0#HTML" expanded="true" />
+            <element signature="e#3635#3653#0#HTML" expanded="true" />
+            <element signature="e#4051#4069#0#HTML" expanded="true" />
+            <element signature="e#4445#4463#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="85" column="55" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="55" />
+        <state relative-caret-position="270">
+          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
           <folding>
             <element signature="e#41#63#0#PHP" expanded="true" />
           </folding>

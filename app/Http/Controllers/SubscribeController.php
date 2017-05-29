@@ -80,11 +80,11 @@ class SubscribeController extends Controller
             return true;
         });
         $messages = [
-            'companyphonecheck' => 'Number already registered.',
+            'companyphonecheck' => 'Phone already registered.',
             'companyemailcheck' => 'Email already registered.',
         ];
         $validator = Validator::make($request->all(), [
-            'companyemail' => 'required|max:255|email',
+            'companyemail' => 'required|max:255|email|companyemailcheck',
             'companyname' => 'required|max:30|regex:/^([a-zA-Z0-9 ])+$/i',
             'name' => 'required|max:30|regex:/^([a-zA-Z0-9 ])+$/i',
             'email' => 'required|max:255|email|unique:users',
@@ -92,7 +92,7 @@ class SubscribeController extends Controller
             'password' => 'required|max:30|confirmed|regex:/^([a-zA-Z0-9 ])+$/i',
             'companyphone' => 'required|max:30|companyphonecheck|regex:/^([0-9])+$/i',
             'projectname' => 'required|max:30|regex:/^([a-zA-Z0-9#* ])+$/i',
-        ]);
+        ],$messages);
         if ($validator->fails()) {
 
             return Redirect::back()

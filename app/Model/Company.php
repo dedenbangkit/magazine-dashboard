@@ -33,6 +33,7 @@ class Company extends Model
             array(
                 'company_name'=>$data['companyname'],
                 'company_phone'=>$data['companyphone'],
+                'company_email'=>$data['companyemail'],
             )
         );
     }

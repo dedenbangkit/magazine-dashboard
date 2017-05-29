@@ -29,6 +29,11 @@
                     <p style="color: red">{{ $errors->create->first('companyname') }}</p>
                 </div>
                 <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Company Email" name="companyemail" value="{{ old('companyemail') }}"/>
+                    <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('companyemail') }}</p>
+                </div>
+                <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Company Phone" name="companyphone" value="{{ old('companyphone') }}"/>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                     <p style="color: red">{{ $errors->create->first('companyphone') }}</p>
