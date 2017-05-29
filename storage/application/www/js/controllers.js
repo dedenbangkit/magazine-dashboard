@@ -1,19 +1,10 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ui.router'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http, appService) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
+.controller('AppCtrl', function($scope, $timeout, $http, $state, $window, appService, StorageService) {
+  // ApplicationData
   appService.async().then(function(response) {
     $scope.company = response;
-  })
+    });
 
   $http.get('appinfo.json')
     .success(function(data, status, headers,config){
@@ -26,22 +17,30 @@ angular.module('starter.controllers', [])
       things = result.data;
     });
 
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+  $scope.changeStatus = function(active, user) {
+      $scope.isLogged = active;
+      $scope.user = user;
+      console.log($scope.isLogged);
   };
 
-  // Perform the login action when the user submits the login form
+  // Form data for the login
+  $scope.isLogged = parseInt(StorageService.getStatus());
+  $scope.$watch('isLogged', function() {});
+  console.log($scope.isLogged);
+  $scope.loginData = {};
+  userLog = StorageService.getAll();
+  $scope.user = userLog[0];
+  $scope.$watch('user', function() {});
+  console.log(StorageService.getAll());
+
+  // Perform the login action
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
+    StorageService.add({'username': $scope.loginData.username, 'password': $scope.loginData.password});
+    StorageService.changeStatus('1');
+    $scope.changeStatus('1', {'username': $scope.loginData.username, 'password': $scope.loginData.password});
+    // $window.location.reload(true);
+    // $state.go('app.settings');
+    };
 })
 
 .controller('SettingsCtrl', function($scope) {
@@ -55,64 +54,112 @@ angular.module('starter.controllers', [])
   $cordovaProgress,
   $cordovaFile,
   $cordovaFileTransfer,
+  $cordovaZip,
+  $timeout,
+  lodash,
   ) {
-
   $http.get('appinfo.json').success(function(data){
     var project = data['project_id'];
     $http.get('http://api-dev.publixx.id/find/MagzApis/'+ project +'/2JKDLFCUER')
       .success(function(data, status, headers,config){
-        $scope.maglists = data.results;
+        $scope.maglists = _.map(data.results, function(thing) {
+          thing.folderName = thing.zipFile.substring(thing.zipFile.lastIndexOf('/')+1).slice(0,-4);
+          thing.progress = 0;
+          thing.index = thing.magazineId - 1;
+          return thing;
+        });
+        console.log($scope.maglists);
       })
       .error(function(data, status, headers,config){
         console.log('data error');
       })
       .then(function(result){
-        things = result.data;
+        // data = result.data.results[0];
+        // $scope.folderName = data.zipFile.substring(data.zipFile.lastIndexOf('/')+1).slice(0,-4);
+        // console.log(data.zipFile);
       });
   })
-  $scope.loadContent = function(){
-  $cordovaProgress.showDeterminate(false, 100000);
-  }
+  //Downloading File
+  $scope.downloadContent = function (fn, zf, idx){
+    // DownloadService.createFolder(fn);
 
-  var targetPath = $rootScope.downloadDir;
-  var trustHosts = true;
-  var options = {};
+    var url = zf;
+    var targetPath = cordova.file.dataDirectory + "contents/" + fn + ".zip";
+    var unzipPath = cordova.file.dataDirectory + "contents/" + fn + "/";
+    var trustHosts = true;
+    var options = {};
+    alert(targetPath);
 
-  alert(targetPath);
-
-  $scope.downloadContent = function(url){
     $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
-        .then(function(result) {
-          alert('downloaded')
-        }, function(err) {
-          alert('fail download')
-        }, function (progress) {
-          $timeout(function () {
-            $scope.downloadProgress = (progress.loaded / progress.total) * 100;
+      .then(function(result) {
+        $cordovaZip.unzip(targetPath, unzipPath).then(function () {
+          // $scope.removeFile(fn);
+            $cordovaFile.checkDir(cordova.file.dataDirectory, "contents/" + fn + "/")
+                .then(function (data) {
+                  // alert(Object.keys(data));
+                  // alert(Object.keys(data.isFile));
+                  // alert(Object.keys(data.isDirectory));
+                  // alert(Object.keys(data.name[0]));
+                  // Object.keys(data.name).forEach(function (it) {
+                  //   alert(it);
+                  // });
+                  // var folders = Object.key(data.nativeURL);
+                  // isFile, isDirectory, name, fullPath, filesystem, nativeURL, constructor, createReader, getDirectory, removeRecursively, getFile, getMetadata,
+                  // setMetadata, moveTo, copyTo, toInternalURL, toURL, toNativeURL, toURI, remove, getParent,
+                  // for(var property in data.name) {
+                  //     alert(property);
+                });
+          }, function () {
+            console.log('error');
+          }, function (progressEvent) {
+            console.log(progressEvent);
           });
+      }, function(err) {
+        alert('download failed');
+      }, function (progress) {
+        $timeout(function () {
+          progressBar = (progress.loaded / progress.total) * 100;
+          document.getElementById(fn).value = progressBar;
+          $scope.$watch('maglists['+idx+'].progress', function() {});
+          $scope.maglists[idx].progress = progressBar;
         });
-  }
+      });
 
+  };
 
+  //Removing File
+  $scope.removeFile = function (fn) {
+    $cordovaFile.removeFile(cordova.file.dataDirectory + "contents/", fn + ".zip")
+      .then(function (success) {
+        alert('file removed');
+      }, function (error) {
+        alert('file not removed');
+      });
+  };
 
 
 })
 
-.controller('MaglistCtrl', function($scope, $http, $stateParams, $ionicSideMenuDelegate, $ionicScrollDelegate, $timeout, $ionicModal) {
+//Read Page
+
+.controller('MaglistCtrl', function(
+  $scope,
+  $http,
+  $stateParams,
+  $ionicSideMenuDelegate,
+  $ionicScrollDelegate,
+  $timeout,
+  $ionicModal,
+  $cordovaFile,
+  ) {
   $scope.details = [];
-  $scope.title = $stateParams.title;
-  $http.get('http://api-dev.publixx.id/issue/1/magazine/'+ $stateParams.id)
-    .success(function(data, status, headers,config){
-      console.log('data success');
-      console.log(data.results); // for browser console
-      $scope.details = data.results; // for UI
-    })
-    .error(function(data, status, headers,config){
-      console.log('data error');
-    })
-    .then(function(result){
-      things = result.data;
-    });
+  $scope.id = $stateParams.folderName;
+  $scope.title = $stateParams.issueName;
+
+  var N = 10;
+  // $scope.pages = Array.apply(null, {length: N}).map(Number.call, Number);
+  // $scope.path = cordova.file.dataDirectory + "contents/" + $stateParams.folderName + "/";
+  // alert($scope.path);
 
   $scope.options = {
             noSwiping: true,

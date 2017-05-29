@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngStorage', 'ngLodash'])
 .run(function($rootScope,
   $cordovaFile,
   $ionicPlatform,
@@ -26,10 +26,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleBlackOpaque();
+      StatusBar.backgroundColorByName("black");
     }
 
-    $rootScope.downloadDir = cordova.file.dataDirectory;
+    // $rootScope.downloadDir = cordova.file.dataDirectory;
     // // create Directory
     //
     // $cordovaFile.createDir(cordova.file.dataDirectory, "content", false)
@@ -61,6 +62,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
 })
 
+
+//Aplication Service Info
+
 .factory('appService', function($http, $rootScope) {
   var appService = {
     async: function() {
@@ -74,10 +78,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   return appService;
 })
 
+//Local Storage Service
+
+.factory ('StorageService', function ($localStorage, $window, $state) {
+$localStorage = $localStorage.$default({
+  things: [],
+  status: '0'
+});
+var _getStatus = function() {
+  return $localStorage.status;
+}
+
+var _changeStatus = function(thing) {
+  $localStorage.status = thing;
+  return $localStorage.status;
+}
+
+var _getAll = function () {
+  return $localStorage.things;
+}
+var _add = function (thing) {
+  $localStorage.things.push(thing);
+}
+var _remove = function (thing) {
+  $localStorage.things.splice($localStorage.things.indexOf(thing), 1);
+}
+return {
+    changeStatus: _changeStatus,
+    getStatus: _getStatus,
+    getAll: _getAll,
+    add: _add,
+    remove: _remove
+  };
+})
+
+//View and Controller Config
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -95,7 +135,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   })
 
   .state('app.single', {
-    url: '/maglists/:id/:title',
+    url: '/maglists/:folderName/:issueName',
     views: {
       'menuContent': {
         templateUrl: 'templates/maglist.html',
