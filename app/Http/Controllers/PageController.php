@@ -18,6 +18,7 @@ use RecursiveDirectoryIterator;
 use Storage;
 use Session;
 use Zipper;
+use File;
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -123,10 +124,15 @@ class PageController extends Controller
         return $data;
     }
     public function exportIssue(Request $request){
-
-
+        $image_component=$this->testing_get_ur_image($request->session()->get('issue-editor'));
+        $folder='data-'.$request->session()->get('issue-editor');
+        $fileName = 'datafile.json';
+        mkdir(public_path('builder_front/json_file/'.$folder));
+        File::put(public_path('builder_front/json_file/'.$folder.'/'.$fileName),json_encode($image_component));
+//die();
       //// Outputnya: Time-Issue->id
-        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js");
+
+        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js","builder_front/json_file/".$folder);
         $newname=time().'-'.$request->session()->get('issue-editor');
         $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
@@ -169,6 +175,7 @@ class PageController extends Controller
             }
 
         }
+
         $pages= $this->page->getPage($request->session()->get('issue-editor'));
         $issue=$this->issue->getIssueId($request->session()->get('issue-editor'));
         $image_cover=$issue["issue_cover"];
@@ -317,6 +324,24 @@ class PageController extends Controller
         $return['response'] = $relative_path."/".$name;
 
         echo json_encode( $return );
+    }
+    public function testing_get_ur_image($id){
+        $pages= $this->page->getPage($id);
+        foreach( $pages as $page=>$content ) {
+            // read all image tags into an array
+            preg_match_all('/<img[^>]+>/i',stripslashes($content['test_content']), $imgTags);
+//            print_r($imgTags[0]);
+            for ($i = 0; $i < count($imgTags[0]); $i++) {
+                // get the source string
+                preg_match('/src="([^"]+)/i',$imgTags[0][$i], $imgage);
+
+                // remove opening 'src=' tag, can`t get the regex right
+                $origImageSrc[] = str_ireplace( 'src="', '',  $imgage[0]);
+            }
+// will output all your img src's within the html string
+//            print_r($origImageSrc);
+        }
+        return $origImageSrc;
     }
 
 }

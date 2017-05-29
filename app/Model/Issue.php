@@ -49,10 +49,11 @@ class Issue extends Model
                 'deleted_at'=>Carbon::now()
             ]);
     }
-    public function publishIssue($id){
+    public function publishIssue($id,$counter){
         return Issue::where('id',$id)
             ->update([
                 'status'=>'published',
+                'page_counter'=>$counter,
                 'updated_at'=>Carbon::now()
             ]);
     }

@@ -37,6 +37,12 @@ class Page extends Model
             ->orderBy('id','ASC')
             ->get();
     }
+    public function getPageCount($id){
+        return Page::whereNull('deleted_at')
+            ->where('issue_id',$id)
+            ->orderBy('id','ASC')
+            ->count();
+    }
     public function getPageOnlyId($id){
         return Page::whereNull('deleted_at')
             ->where('issue_id',$id)

@@ -292,7 +292,8 @@ class ProjectController extends Controller
 
         }
         if($publish){
-            $publishIssue=$this->issue->publishIssue($request->id);
+            $countPage=$this->page->getPageCount($request->id);
+            $publishIssue=$this->issue->publishIssue($request->id,$countPage);
             $issues=$this->page->getPageIssue($request->session()->get('issue-editor'));
             $this->action_log->create_log('Publish Issue '.$issues['issue_name'],$this->authdata->id);
         }
