@@ -26,14 +26,17 @@
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Company Name" name="companyname" value="{{ old('companyname') }}"/>
                     <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('companyname') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Company Phone" name="companyphone" value="{{ old('companyphone') }}"/>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('companyphone') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Project Name" name="projectname" value="{{ old('projectname') }}"/>
                     <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('projectname') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <select name="service" class="form-control">
@@ -46,18 +49,22 @@
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.fullname') }}" name="name" value="{{ old('name') }}"/>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('name') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email" value="{{ old('email') }}"/>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('email') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.phonenumber') }}" name="phone" value="{{ old('name') }}"/>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    <p style="color: red">{{ $errors->create->first('phone') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
                     <span class="glyphicon glyphicon-lock form-control-feedback" ></span>
+                    <p style="color: red">{{ $errors->create->first('password') }}</p>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.retrypepassword') }}" name="password_confirmation"/>

@@ -22,6 +22,11 @@ class Company extends Model
                 ]
             );
     }
+    public function findCompany($value,$data){
+        return Company::where('deleted_at',null)
+            ->where($value,$data)
+            ->first();
+    }
     public function insertCompany($data){
         // restore array use unserialize
         return  Company::insertGetId(

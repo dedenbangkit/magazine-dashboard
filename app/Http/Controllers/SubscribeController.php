@@ -15,6 +15,8 @@ use App\Model\Invoice;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 class SubscribeController extends Controller
 {
     protected $activer;
@@ -63,6 +65,41 @@ class SubscribeController extends Controller
      */
     public function subscribeProcessAdd(Request $request){
         $project_data=$this->project->getProjectById($this->authdata->project_id);
+        Validator::extend('companyphonecheck', function ($attribute, $value, $parameters)
+        {   $find=$this->company->findCompany('company_phone',$value);
+            if($find){
+                return false;
+            }
+            return true;
+        });
+        Validator::extend('companyemailcheck', function ($attribute, $value, $parameters)
+        {   $find=$this->company->findCompany('company_email',$value);
+            if($find){
+                return false;
+            }
+            return true;
+        });
+        $messages = [
+            'companyphonecheck' => 'Number already registered.',
+            'companyemailcheck' => 'Email already registered.',
+        ];
+        $validator = Validator::make($request->all(), [
+            'companyemail' => 'required|max:255|email',
+            'companyname' => 'required|max:30|regex:/^([a-zA-Z0-9 ])+$/i',
+            'name' => 'required|max:30|regex:/^([a-zA-Z0-9 ])+$/i',
+            'email' => 'required|max:255|email|unique:users',
+            'phone' => 'required|max:30|unique:users|regex:/^([0-9])+$/i',
+            'password' => 'required|max:30|confirmed|regex:/^([a-zA-Z0-9 ])+$/i',
+            'companyphone' => 'required|max:30|companyphonecheck|regex:/^([0-9])+$/i',
+            'projectname' => 'required|max:30|regex:/^([a-zA-Z0-9#* ])+$/i',
+        ]);
+        if ($validator->fails()) {
+
+            return Redirect::back()
+                ->with('msg', 'fail')
+                ->withErrors($validator,'create')
+                ->withInput();
+        };
         if (!empty($request->file('cover'))) {
             Image::make(Input::file('cover'))->resize(300, 200)->save('img/projects/' . $request->file('cover')->getClientOriginalName());
             $cover=$request->file('cover')->getClientOriginalName();
@@ -103,6 +140,7 @@ class SubscribeController extends Controller
             'project_id'=>$this->authdata->project_id,
             'master' => $this->authdata->id,
         );
+
         $this->project->updateProject($datainput);
         $this->company->updateCompany($datainput);
         return redirect('/projects');

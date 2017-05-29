@@ -60,4 +60,9 @@ class User extends Model
                 'updated_at'=>Carbon::now()
             ]);
     }
+    public function findUser($value,$data){
+        return Company::where('deleted_at',null)
+            ->where($value,$data)
+            ->first();
+    }
 }
