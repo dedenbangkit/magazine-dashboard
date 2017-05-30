@@ -62,7 +62,7 @@
                     <p style="color: red">{{ $errors->create->first('email') }}</p>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.phonenumber') }}" name="phone" value="{{ old('name') }}"/>
+                    <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.phonenumber') }}" name="phone" value="{{ old('phone') }}"/>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                     <p style="color: red">{{ $errors->create->first('phone') }}</p>
                 </div>
