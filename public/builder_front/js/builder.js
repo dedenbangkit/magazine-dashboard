@@ -1691,8 +1691,6 @@ $(function(){
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
         bindHeightWidth();
-				console.log('ini apa');
-
 	})
 
 

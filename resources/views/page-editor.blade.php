@@ -2187,33 +2187,8 @@
             pageEmpty();
     				allEmpty();
             addStyling();
-            $('#pageList ul .frameCover').each(function(){
-                $(this).hide();
-            })
-            //active styling mode
-            $('#pageList ul li iframe').each(function(){
-                //remove old click events
-                $(this).contents().find( pageContainer + ' p' ).unbind('click').unbind('hover');
-                for( var key in editableItems ) {
-                    $(this).contents().find( pageContainer + ' '+ key ).hover( function(e){
-                        e.stopPropagation();
-                        if( $(this).closest('body').width() != $(this).width() ) {
-                            $(this).css({'outline': '3px dashed red', 'cursor': 'pointer'});
-                        } else {
-                            $(this).css({'outline': '3px dashed red', 'outline-offset': '-3px', 'cursor': 'pointer'});
-                        }
-                    }, function(){
-                        $(this).css({'outline': '', 'cursor': '', 'outline-offset': ''})
-                    }).click( function(e){
-                        e.preventDefault();
-                        e.stopPropagation();
-                        addStyling();
-                        styleClick(this, key)
-                    }).each( function(){
-                        $(this).attr('data-selector', key)
-                    });
-                }
-            })
+            closeStyleEditor();
+            $('#modeBlock').click();
         }
 
 
