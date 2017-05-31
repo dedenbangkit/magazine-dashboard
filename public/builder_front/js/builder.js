@@ -97,7 +97,6 @@ var secondMenuWidth = 300;
 
 function bindHeightWidth(){
 	screenWidth = $('#screen').width();
-	console.log(screenWidth);
 	$.each($('.container li.element'),
 		function(){
 			$('iframe').css({'width':screenWidth});
@@ -1692,6 +1691,8 @@ $(function(){
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
         bindHeightWidth();
+				console.log('ini apa');
+
 	})
 
 

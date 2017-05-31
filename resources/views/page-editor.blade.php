@@ -2150,7 +2150,6 @@
                 newPage(el.page_name,el.page_content,el.id,index)
 
             });
-
         });
     //kontennya
         $('iframe').on('load', function() {
@@ -2181,10 +2180,12 @@
                     $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
 //                console.log(id+'-'+pageContent)
                     //
-
                     path = path+1
                 });
             });
+            $('#frameWrapper').removeClass('empty');
+            pageEmpty();
+    				allEmpty();
         }
 
 
@@ -2426,6 +2427,10 @@
 
             pageNumber = $('#pages li').size()-1;
         }
+
+        $(document).ready(function(){
+          bindHeightWidth();
+        });
 
     </script>
     <script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
