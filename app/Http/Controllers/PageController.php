@@ -131,11 +131,11 @@ class PageController extends Controller
         $folder='data-'.$request->session()->get('issue-editor');
         $newname=time().'-'.$request->session()->get('issue-editor');
         $fileName = $newname.'.json';
-        File::put(public_path('json_file/'.$fileName),json_encode($image_component));
+//        File::put(public_path('json_file/'.$fileName),json_encode($image_component));
 //die();
       //// Outputnya: Time-Issue->id
 
-        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js","json_file/");
+        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js");
 
         $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
@@ -182,6 +182,7 @@ class PageController extends Controller
         $pages= $this->page->getPage($request->session()->get('issue-editor'));
         $issue=$this->issue->getIssueId($request->session()->get('issue-editor'));
         $image_cover=$issue["issue_cover"];
+        $zip->addFromString("data_json.json", json_encode($image_component));
         $cover_frame='<!DOCTYPE html>
 <html lang="en">
 <body>
@@ -240,7 +241,7 @@ class PageController extends Controller
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip',file_get_contents(public_path($filename)), 'public');
          unlink($filename);
-        unlink('json_file/'.$fileName);
+//        unlink('json_file/'.$fileName);
         $this->issue->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
         $issue=$this->page->getPageIssue($request->session()->get('issue-editor'));
         if($test){
@@ -339,7 +340,8 @@ class PageController extends Controller
                 preg_match('/src="([^"]+)/i',$imgTags[0][$i], $imgage);
 
                 // remove opening 'src=' tag, can`t get the regex right
-                $origImageSrc[] = str_ireplace( 'src="', '',  $imgage[0]);
+                $tempImg=str_ireplace( 'src="', '',  $imgage[0]);
+                $origImageSrc[] = str_ireplace( "\/", '/',  $tempImg);
             }
 // will output all your img src's within the html string
 //            print_r($origImageSrc);
