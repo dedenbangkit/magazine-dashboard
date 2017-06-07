@@ -125,15 +125,18 @@ class PageController extends Controller
     }
     public function exportIssue(Request $request){
         $image_component=$this->testing_get_ur_image($request->session()->get('issue-editor'));
+        if($image_component==''){
+            $image_component=[''];
+        }
         $folder='data-'.$request->session()->get('issue-editor');
-        $fileName = 'datafile.json';
-        mkdir(public_path('builder_front/json_file/'.$folder));
-        File::put(public_path('builder_front/json_file/'.$folder.'/'.$fileName),json_encode($image_component));
+        $newname=time().'-'.$request->session()->get('issue-editor');
+        $fileName = $newname.'.json';
+        File::put(public_path('json_file/'.$fileName),json_encode($image_component));
 //die();
       //// Outputnya: Time-Issue->id
 
-        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js","builder_front/json_file/".$folder);
-        $newname=time().'-'.$request->session()->get('issue-editor');
+        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js","json_file/");
+
         $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
 
         /* END CONFIG */
@@ -237,7 +240,7 @@ class PageController extends Controller
         $s3 = \Storage::disk('s3');
         $test=$s3->put('issue-lib/'.$newname.'.zip',file_get_contents(public_path($filename)), 'public');
          unlink($filename);
-
+        unlink('json_file/'.$fileName);
         $this->issue->compileIssue($request->session()->get('issue-editor'),$newname.'.zip');
         $issue=$this->page->getPageIssue($request->session()->get('issue-editor'));
         if($test){
@@ -340,6 +343,9 @@ class PageController extends Controller
             }
 // will output all your img src's within the html string
 //            print_r($origImageSrc);
+        }
+        if(empty($origImageSrc)){
+            return '';
         }
         return $origImageSrc;
     }
