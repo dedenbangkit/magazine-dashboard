@@ -128,6 +128,7 @@ class PageController extends Controller
         if($image_component==''){
             $image_component=[''];
         }
+        return json_encode($image_component,JSON_UNESCAPED_SLASHES);
         $folder='data-'.$request->session()->get('issue-editor');
         $newname=time().'-'.$request->session()->get('issue-editor');
         $fileName = $newname.'.json';
@@ -182,7 +183,7 @@ class PageController extends Controller
         $pages= $this->page->getPage($request->session()->get('issue-editor'));
         $issue=$this->issue->getIssueId($request->session()->get('issue-editor'));
         $image_cover=$issue["issue_cover"];
-        $zip->addFromString("data_json.json", json_encode($image_component));
+        $zip->addFromString("data_json.json", json_encode($image_component,JSON_UNESCAPED_SLASHES));
         $cover_frame='<!DOCTYPE html>
 <html lang="en">
 <body>
