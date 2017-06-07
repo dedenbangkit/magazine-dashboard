@@ -185,7 +185,7 @@ class PageController extends Controller
         $image_cover=$issue["issue_cover"];
         $cover_frame='<img src="'.$image_cover.'">';
         $zip->addFromString("data_json.json", json_encode($image_component,JSON_UNESCAPED_SLASHES));
-        $cover_frame='<img src="'.$image_cover.'">'
+        $cover_frame='<img src="'.$image_cover.'">';
         $zip->addFromString("0.html", $cover_frame);
 
         foreach( $pages as $page=>$content ) {
