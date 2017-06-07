@@ -128,7 +128,7 @@ class PageController extends Controller
         if($image_component==''){
             $image_component=[''];
         }
-        return json_encode($image_component,JSON_UNESCAPED_SLASHES);
+//        return json_encode($image_component,JSON_UNESCAPED_SLASHES);
         $folder='data-'.$request->session()->get('issue-editor');
         $newname=time().'-'.$request->session()->get('issue-editor');
         $fileName = $newname.'.json';
