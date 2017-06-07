@@ -179,50 +179,16 @@ class PageController extends Controller
         $pages= $this->page->getPage($request->session()->get('issue-editor'));
         $issue=$this->issue->getIssueId($request->session()->get('issue-editor'));
         $image_cover=$issue["issue_cover"];
-        $cover_frame='<!DOCTYPE html>
-<html lang="en">
-<body>
-    <div id="page" class="page">
-    				<img src="'.$image_cover.'">
-    </div><!-- /#page -->
-</body>
-</html>';
+        $cover_frame='<img src="'.$image_cover.'">';
         $zip->addFromString("0.html", $cover_frame);
 
         foreach( $pages as $page=>$content ) {
-            $html="<html><head>
-<!-- Loading Bootstrap -->
-    <link href='elements/bootstrap/css/bootstrap.css' rel='stylesheet'>
-
-
-    <!-- Loading Flat UI -->
-    <link href='elements/css/flat-ui.css' rel='stylesheet'>
-
-    <link href='elements/elements/css/style.css' rel='stylesheet'>
-    <link href='elements/css/style-content.css' rel='stylesheet'>
-
-    <!-- Font Awesome -->
-    <link href='elements/css/font-awesome.css' rel='stylesheet'>
-</head><body>";
-            $htmlclose=" <script src='elements/js/jquery-1.8.3.min.js'></script>
-    <script src='elements/js/jquery-ui-1.10.3.custom.min.js'></script>
-    <script src='elements/js/bootstrap.min.js'></script>
-    <script src='elements/js/bootstrap-select.js'></script>
-    <script src='elements/js/bootstrap-switch.js'></script>
-    <script src='elements/js/flatui-checkbox.js'></script>
-    <script src='elements/js/flatui-radio.js'></script>
-    <script src='elements/js/jquery.tagsinput.js'></script>
-    <script src='elements/js/jquery.placeholder.js'></script>
-    <script>
-  $('o').remove();
-  $('p').removeAttr('contenteditable').removeAttr('data-editable').removeAttr('data-selector');
-  $('div').removeAttr('contenteditable').removeAttr('data-editable').removeAttr('data-selector');
-  $('div .frameCover').remove();
-</script>
-</body></html>";
-            $zip->addFromString(($page+1).".html", $request->doctype."\n".$html."\n".stripslashes($content['test_content'])."\n".$htmlclose);
-
-
+            $html=" ";
+            $htmlclose=" ";
+            $oldcontent = $content['test_content'];
+            $urltodecode = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib/';
+            $newcontent = str_replace($urltodecode, '', $oldcontent);
+            $zip->addFromString(($page+1).".html", $request->doctype."\n".$html."\n".stripslashes($newcontent)."\n".$htmlclose);
         }
 
 
