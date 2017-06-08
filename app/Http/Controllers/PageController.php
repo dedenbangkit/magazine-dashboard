@@ -69,9 +69,9 @@ class PageController extends Controller
     }
     public function sample2(Request $request)
     {
-//        if(empty($request->session()->get('issue-editor'))){
-//            return redirect('issue');
-//        }
+        if(empty($request->session()->get('issue-editor'))){
+            return redirect('issue');
+        }
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
         $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
