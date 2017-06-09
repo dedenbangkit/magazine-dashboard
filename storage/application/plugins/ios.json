@@ -7,27 +7,43 @@
         "files": {}
     },
     "installed_plugins": {
+        "com-sarriaroman-photoviewer": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
-        "cordova-sqlite-storage": {
+        "org.pbernasconi.progressindicator": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "cordova-plugin-zip": {
             "PACKAGE_NAME": "com.ionicframework.publixx579660"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        }
+    }
 }
