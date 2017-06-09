@@ -1586,7 +1586,11 @@ $(function(){
 	$('#addPage').click(function(e){
 			$(this).addClass('disabled');
 		e.preventDefault();
-		var pageIDs='';
+		var pageIDs;
+        function callback(response) {
+            pageIDs = response;
+            //use return_first variable here
+        }
 		//turn inputs into links
 		$('#pages li.active').each(function(){
 
@@ -1611,13 +1615,16 @@ $(function(){
         $.ajax({
             type: 'GET',
             url: "/add-page",
+            async: false,
             data: {'id':'page'+$('#pages li').size()},
         }).done(function(data) {
         	pageIDs=data;
+            callback(pageIDs);
             newPageLI.attr('data-id', data);
             $('#addPage').removeClass('disabled');
         });
 
+console.log(pageIDs)
         newPageLI.attr('data-page',$('#pages li').size());
 
 		$('ul#pages').append( newPageLI );

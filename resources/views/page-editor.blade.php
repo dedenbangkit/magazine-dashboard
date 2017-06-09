@@ -2329,6 +2329,7 @@
                         contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
                     }
                     id=$('#page'+pages).data('id');
+                    console.log(id)
                     contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
                     $.ajax({
                         type: 'POST',
