@@ -69,9 +69,9 @@ class PageController extends Controller
     }
     public function sample2(Request $request)
     {
-//        if(empty($request->session()->get('issue-editor'))){
-//            return redirect('issue');
-//        }
+        if(empty($request->session()->get('issue-editor'))){
+            return redirect('issue');
+        }
         $data['create']=false;
         $data['activer'] = array($this->activer, 'page');
         $data['page_list'] = $this->page->getPage($request->session()->get('issue-editor'));
@@ -194,7 +194,7 @@ class PageController extends Controller
             $oldcontent = $content['test_content'];
             $urltodecode = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib/';
             $newcontent = str_replace($urltodecode, '', $oldcontent);
-            $zip->addFromString(($page+1).".html", $request->doctype."\n".$html."\n".stripslashes($newcontent)."\n".$htmlclose);
+            $zip->addFromString(($page+1).".html", $request->doctype."\n".$html."\n".str_replace('https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib/','',stripslashes($newcontent))."\n".$htmlclose);
         }
 
 
