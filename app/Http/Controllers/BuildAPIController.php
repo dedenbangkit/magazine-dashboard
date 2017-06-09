@@ -110,7 +110,7 @@ class BuildApiController extends Controller
       $data = $this->client->request('POST', 'apps', [
                   'multipart' => [
                       ['name' => 'file',
-                       'contents' => fopen($zip_path, 'r'),
+                       'contents' => fopen(urlencode($zip_path), 'r'),
                       ],
                       ['name' => 'data',
                        'contents' => json_encode(
