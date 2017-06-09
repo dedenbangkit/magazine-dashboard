@@ -25,9 +25,25 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.publixx579660"
         },
-        "cordova-sqlite-storage": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "com-sarriaroman-photoviewer": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "org.pbernasconi.progressindicator": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        },
+        "cordova-plugin-zip": {
             "PACKAGE_NAME": "com.ionicframework.publixx579660"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.publixx579660"
+        }
+    }
 }

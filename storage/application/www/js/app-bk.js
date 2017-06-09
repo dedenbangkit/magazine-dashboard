@@ -30,6 +30,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngStora
       StatusBar.backgroundColorByName("black");
     }
 
+    // $rootScope.downloadDir = cordova.file.dataDirectory;
+    // // create Directory
+    //
+    // $cordovaFile.createDir(cordova.file.dataDirectory, "content", false)
+    //   .then(function (success) {
+    //     alert('magazine folder created');
+    //   }, function (error) {
+    //     alert('folder created');
+    //   });
+    //
+    // // File Transfer
+    //
+    // var url = "http://cdn.wall-pix.net/albums/art-space/00030109.jpg";
+    // var targetPath = cordova.file.dataDirectory + "/content/testImage.png";
+    // var trustHosts = true;
+    // var options = {};
+    //
+    // $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+    //   .then(function(result) {
+    //     alert('file downloaded');
+    //   }, function(err) {
+    //     alert('file error');
+    //   }, function (progress) {
+    //     $timeout(function () {
+    //       $rootScope.downloadProgress = (progress.loaded / progress.total) * 100;
+    //     });
+    //   });
+
   });
 
 })
@@ -54,51 +82,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngStora
 
 .factory ('StorageService', function ($localStorage, $window, $state) {
 $localStorage = $localStorage.$default({
-  login: [],
-  status: '0',
-  content: [],
-  magazine: [],
-  issue: [],
+  things: [],
+  status: '0'
 });
 var _getStatus = function() {
   return $localStorage.status;
 }
+
 var _changeStatus = function(thing) {
   $localStorage.status = thing;
   return $localStorage.status;
 }
-var _auth = function(it) {
-  $localStorage.login.push(it);
-}
-var _getUser = function(){
-  return $localStorage.login;
-}
 
-var _logout = function (thing) {
+var _getAll = function () {
+  return $localStorage.things;
+}
+var _add = function (thing) {
+  $localStorage.things.push(thing);
+}
+var _remove = function (thing) {
   $localStorage.things.splice($localStorage.things.indexOf(thing), 1);
 }
-var _getMagazine = function () {
-  return $localStorage.magazine;
-}
-var _addMagazine = function (it) {
-  $localStorage.magazine.indexOf(it) === -1 ? $localStorage.magazine.push(it) : console.log('downloaded');
-}
-var _cacheIssue = function (it) {
-  return $localStorage.magazine.indexOf(it) === -1 ? 0 : 100;
-}
-var _getIssue = function(it) {
-  return $localStorage.issue['mag'+it];
-}
 return {
-    getStatus: _getStatus,
     changeStatus: _changeStatus,
-    authUser: _auth,
-    getUser: _getUser,
-    logOut: _logout,
-    getMagazine: _getMagazine,
-    addMagazine: _addMagazine,
-    cacheIssue: _cacheIssue,
-    getIssue: _getIssue,
+    getStatus: _getStatus,
+    getAll: _getAll,
+    add: _add,
+    remove: _remove
   };
 })
 
@@ -124,22 +134,12 @@ return {
     }
   })
 
-  .state('app.offline-read', {
-    url: '/offline/:folderName/:issueName/:magazineId/:totalPage',
+  .state('app.single', {
+    url: '/maglists/:folderName/:issueName/:magazineId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/read.html',
-        controller: 'OfflineCtrl'
-      }
-    }
-  })
-
-  .state('app.online-read', {
-    url: '/online/:folderName/:issueName/:magazineId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/read.html',
-        controller: 'OnlineCtrl'
+        templateUrl: 'templates/maglist.html',
+        controller: 'MaglistCtrl'
       }
     }
   })
