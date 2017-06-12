@@ -85,7 +85,7 @@ class BuildController extends Controller
       //Upload Splashscreen and Icon
 
       $src = storage_path('application');
-      $newname = $theproject->company_name.'-'.time();
+      $newname = str_replace(' ', '_'$theproject->company_name).'-'.time();
       $dst = storage_path('tmp/'.$newname);
       $this->makeTemp($src,$dst);
       $zipfile = $request->file('splashicon');
@@ -367,9 +367,9 @@ class BuildController extends Controller
       "project_name": "'.$theproject->project_name.'",
       "dev_id": "'.$request->dev_id.'",
       "build_id": "'.$theproject->build_id.'",
-      "project_description": "'.$theproject->project_appid.'",
-      "company_id": "'.$request->company_id.'",
-      "project_id": "'.$request->dev_id.'",
+      "project_description": "'.$theproject->company_id.'",
+      "company_id": "'.$theproject->company_id.'",
+      "project_id": "'.$theproject->dev_id.'",
       "platform": "free"}';
 
       $storageJson = File::put($dst.'/www/appinfo.json', $contentJson);
