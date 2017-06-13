@@ -54,6 +54,7 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
   })
 
   .controller('MaglistsCtrl', function(
+    $ionicLoading,
     $scope,
     $http,
     $cordovaProgress,
@@ -63,16 +64,28 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
     $timeout,
     $location,
     $localStorage,
+    $ionicPopup,
     StorageService,
-    lodash
+    lodash,
   ) {
+
+    $ionicLoading.show({
+      content: 'Loading',
+      animation: 'fade-in',
+      showBackdrop: true,
+      maxWidth: 200,
+      showDelay: 0
+    });
+
+    $timeout(function () {
+
     $http.get('appinfo.json').success(function(data) {
       var project = data['project_id'];
       $http.get('http://api-dev.publixx.id/find/MagzApis/' + project + '/2JKDLFCUER')
         .success(function(data, status, headers, config) {
           var maglists = _.map(data.results, function(thing, idx) {
             thing.progress = StorageService.cacheIssue(idx);
-            console.log(thing.progress);
+            console.log(idx);
             $http.get('http://api-dev.publixx.id/issue/' + thing.magazineId + '/MagzApis/')
               .success(function(data) {
                 $localStorage.content['issue-' + thing.magazineId] = data.results;
@@ -94,10 +107,13 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
           // console.log(data.zipFile);
         });
     });
+
+    $ionicLoading.hide();
+    }, 2000);
     // var test = StorageService.getIssue(1);
     // console.log(test[0][0]);
 
-    $scope.downloadContent = function(fn, zf, idx) {
+    $scope.downloadContent = function(fn, zf, idx, iName) {
 
       var url = zf;
       var targetPath = cordova.file.cacheDirectory + "contents/" + fn + ".zip";
@@ -107,6 +123,14 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
       var options = {};
 
       $scope.$watch('maglists[' + idx + '].progress', function() {});
+
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Download Offline',
+        template: '<center>Are you sure you want to download ' + iName + '?</center>'
+      });
+
+      confirmPopup.then(function(res) {if(res) {
+
       $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
         .then(function(result) {
           $cordovaZip.unzip(targetPath, unzipPath).then(function(){
@@ -130,7 +154,10 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
           document.getElementById(fn).value = progressBar;
           $scope.maglists[idx].progress = progressBar;
         });
-    };
+
+        }});
+
+      };
 
     //Removing File
     $scope.removeFile = function(fn) {
@@ -154,7 +181,7 @@ angular.module('starter.controllers', ['ionic','ui.router', 'ngSanitize'])
     $ionicScrollDelegate,
     $timeout,
     $ionicModal,
-    $cordovaFile
+    $cordovaFile,
   ) {
     $scope.details = [];
     $scope.id = $stateParams.magazineId;

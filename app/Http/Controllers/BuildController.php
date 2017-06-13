@@ -355,7 +355,7 @@ class BuildController extends Controller
           ),
           '_xmlns' => 'http://www.w3.org/ns/widgets',
           '_xmlns:cdv' => 'http://cordova.apache.org/ns/1.0',
-          '_id' => 'com.publixx.'.$theproject->domain,
+          '_id' => 'com.publixx.'.$theproject->company_name,
           '_version' => '0.0.1',
         ),
       );
@@ -367,9 +367,9 @@ class BuildController extends Controller
       "project_name": "'.$theproject->project_name.'",
       "dev_id": "'.$request->dev_id.'",
       "build_id": "'.$theproject->build_id.'",
-      "project_description": "'.$theproject->company_id.'",
+      "project_description": "'.$theproject->project_description.'",
       "company_id": "'.$theproject->company_id.'",
-      "project_id": "'.$theproject->dev_id.'",
+      "project_id": "'.$theproject->project_appid.'",
       "platform": "free"}';
 
       $storageJson = File::put($dst.'/www/appinfo.json', $contentJson);

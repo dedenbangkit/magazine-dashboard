@@ -255,7 +255,7 @@
                                         <input type="hidden" name="appid" value="{{$row->id}}">
                                         <div class="form-group">
                                           <label><i class="fa fa-apple"></i> Bundle ID</label>
-                                          <input type="text" name="dev_id" class="form-control" placeholder="eg. com.bajaklaut.magazineapp" value="{{$row->dev_id}}">
+                                          <input type="text" name="dev_id" class="form-control" value="com.{{strtolower(str_replace(' ', '_',$row->company_name))}}.{{strtolower(str_replace(' ', '_',$row->project_name))}}" disabled>
                                         </div>
                                         <div class="form-group">
                                           <label><i class="fa fa-apple"></i> Prefix</label>
