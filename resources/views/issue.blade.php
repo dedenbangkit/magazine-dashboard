@@ -51,10 +51,10 @@
                                     <div class="btn-group-vertical" style="width:100%; padding-top:20px;">
                                       <a class="btn btn-default @if($row->status =='unpublished') publish-issue @else disabled @endif "
                                          data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
-                                        <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo !empty($row->compiled) ? 'ed':''; ?> </a>
-                                        <a href="/edit-issue/{{ $row->id }}" class="btn btn-default  @if(!empty($row->compiled)) disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
+                                        <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo ($row->status=='published') ? 'ed':''; ?> </a>
+                                        <a href="/edit-issue/{{ $row->id }}" class="btn btn-default @if($row->status =='published') disabled @endif @if(!empty($row->compiled)) disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
                                             <i class="fa fa-gear"></i> Edit Issue</a>
-                                        <a class="btn btn-default  @if(empty($row->compiled)) edit-issue @else disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
+                                        <a class="btn btn-default @if($row->status =='published') disabled @endif @if(empty($row->compiled)) edit-issue @else disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
                                         <i class="fa fa-edit"></i> Editor</a>
                                       <a class="btn btn-default del-issue" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'
                                         <?php
@@ -169,11 +169,14 @@
                                                     backdrop: true,
                                                     size: 'small'
                                                 });
+
                                             });
                                 }
                             }
-                        });
 
+                        });
+                        $(this).addClass('disabled')
+                        console.log($(this))
                     });
                 });
 

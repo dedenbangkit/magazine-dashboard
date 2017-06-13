@@ -35,13 +35,14 @@
                 </div>
                 <div class="col-xs-4">
                   <div class="input-group">
-                    <label class="input-group-btn">
+                    <label class="input-group-btn" >
                         <a class="btn btn-primary btn-flat">
                             Choose Cover <input name="cover" id="imageFile" type="file" style="display: none;" multiple>
                         </a>
                     </label>
                     <input type="text" class="form-control" style="margin:0px;" readonly>
                   </div>
+                    <span style="color:skyblue" >Recommended size 500 x 650 px</span>
                 </div>
                     <div class="col-xs-2 ">
                         <a href="javascript:void(0)" class="btn btn-default btn-flat add" rel=".clone"><i class="fa fa-plus"></i> add more page</a>

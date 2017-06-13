@@ -82,6 +82,12 @@ class SubscribeController extends Controller
         $messages = [
             'companyphonecheck' => 'Phone already registered.',
             'companyemailcheck' => 'Email already registered.',
+            'required'=> 'Field can not be empty.',
+            'email'=>'Invalid format, must be valid email address.',
+            'regex'=>'Invalid format, must be alphabet or number.',
+            'companyphone.regex'=> 'Invalid format, must be number.',
+            'phone.regex'=> 'Invalid format, must be number.'
+
         ];
         $validator = Validator::make($request->all(), [
             'companyemail' => 'required|max:255|email|companyemailcheck',

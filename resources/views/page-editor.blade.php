@@ -2164,7 +2164,7 @@
                 });
                 //selesai looping
 //                $('#page1').css("display","block");
-//                $('li[data-page="1"]').addClass('active');
+                $('li[data-page="1"]').trigger('click');
 
             });
 

@@ -76,12 +76,9 @@
                     <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                 </div>
                 <div class="form-group ">
-                    <label for="exampleInputFile">Project Cover</label>
+                    <label for="exampleInputFile">Project Logo</label>
                     <input type="file" name="cover" id="imagefile" >
-                </div>
-                <div class="form-group ">
-                    <label for="exampleInputFile">Project Icon</label>
-                    <input type="file" name="icon" id="imagefile" >
+                    <span>Recommended size 360 x 360 px</span>
                 </div>
                 <div class="row">
                     <div class="col-xs-4 ">
