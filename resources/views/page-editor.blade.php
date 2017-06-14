@@ -2144,7 +2144,8 @@
 
     //framenya
         $.ajax({
-            url: "/get-page"
+            url: "/get-page",
+            async:"false"
         }).done(function(data) {
             $(data['page_list']).each(function(index, el) {
                 page_content = el.page_content;
@@ -2155,7 +2156,8 @@
     //kontennya
         $('iframe').on('load', function() {
             $.ajax({
-                url: "/load-page"
+                url: "/load-page",
+                async:"false"
             }).done(function(data) {
                 i=1
                 $(data['loadpage']).each(function(index, el) {
