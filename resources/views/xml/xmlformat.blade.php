@@ -83,5 +83,4 @@
     <plugin name='cordova-plugin-whitelist' spec='1.3.1' />
     <plugin name='cordova-plugin-zip' spec='https://github.com/MobileChromeApps/zip.git' />
     <plugin name='ionic-plugin-keyboard' spec='~2.2.1' />
-    <plugin name='org.pbernasconi.progressindicator' spec='https://github.com/pbernasconi/cordova-progressIndicator.git' />
 </widget>
