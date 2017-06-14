@@ -150,11 +150,11 @@
 
         <div class="modes" id="build-mode">
                 <label class="radio primary first">
-                    <input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio">
+                    <input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
                     Edit Details
                 </label>
           <label class="radio primary first">
-            <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" checked="">
+            <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
               Sections
           </label>
         </div>
