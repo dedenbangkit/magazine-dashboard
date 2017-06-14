@@ -111,9 +111,16 @@ function bindHeightWidth(){
 	});
 }
 
+function autoBindHeight() {
+    setTimeout(function () {
+        bindHeightWidth();
+        autoBindHeight();
+    }, 1000);
+}
+
 $( window ).load(function() {
 	$('#loader').fadeOut(function(){
-	bindHeightWidth();
+	autoBindHeight();
 	});
 });
 
