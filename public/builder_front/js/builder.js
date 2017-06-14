@@ -157,7 +157,7 @@ function allEmpty() {
 			$(this).addClass('disabled');
 		});
 		$('header .modes input').each(function(){
-			$(this).prop('disabled', true).parent().addClass('disabled');
+			// $(this).prop('disabled', true).parent().addClass('disabled');
 		});
 	} else {
 		$('header .modes input').each(function(){
