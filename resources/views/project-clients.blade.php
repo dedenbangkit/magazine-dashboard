@@ -49,6 +49,14 @@
                                 @else
                                   <div class="tab-pane active" id="tab_1">
                                 @endif
+
+                                @if(session()->has('done'))
+                                <div class="alert alert-success alert-dismissible">
+                                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                  <h4><i class="icon fa fa-check"></i>Done Setup Process!</h4>
+                                  Please wait few hours (approximately 1 hour) to download the final applications
+                                </div>
+                                @endif
                                   <div class="box-body">
                                   <div class="col-md-3" onclick="window.location='/issue?id={{$row->id}}';" style="cursor:pointer">
                                     <img class="img-responsive" src="{{asset('/img/projects/'.$row->project_cover)}}" alt="Photo">
@@ -255,7 +263,7 @@
                                         <input type="hidden" name="appid" value="{{$row->id}}">
                                         <div class="form-group">
                                           <label><i class="fa fa-apple"></i> Bundle ID</label>
-                                          <input type="text" name="dev_id" class="form-control" value="com.{{strtolower(str_replace(' ', '_',$row->company_name))}}.{{strtolower(str_replace(' ', '_',$row->project_name))}}" disabled>
+                                          <input type="text" name="dev_id" class="form-control" value="com.{{strtolower(str_replace(' ', '_',$row->company_name))}}.{{strtolower(str_replace(' ', '_',$row->project_name))}}">
                                         </div>
                                         <div class="form-group">
                                           <label><i class="fa fa-apple"></i> Prefix</label>

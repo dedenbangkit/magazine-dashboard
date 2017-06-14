@@ -139,29 +139,32 @@
 
     </div><!-- /.menu -->
 
+    <header>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
+        <a class="btn btn-info btn-embossed actionButtons" href="#" id="editingMode" ><span class="fui-play"></span> Start Editing</a>
+
+        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
+
+        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right  actionButtons"><span class="fui-export"></span> Compile</a>
+        <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save Current Page</a>
+
+        <div class="modes" id="build-mode">
+                <label class="radio primary first">
+                    <input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
+                    Edit Details
+                </label>
+          <label class="radio primary first">
+            <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
+              Sections
+          </label>
+        </div>
+
+    </header>
+
+    <div class="bottom-line">&nbsp;
+    </div>
+
     <div class="container" id="wrapper">
-
-        <header>
-            <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
-            <a class="btn btn-info btn-embossed actionButtons" href="#" id="editingMode" ><span class="fui-play"></span> Start Editing</a>
-
-            <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
-
-            <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right  actionButtons"><span class="fui-export"></span> Compile</a>
-            <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save Current Page</a>
-
-                <div class="modes" id="build-mode">
-                    <label class="radio primary first">
-                        <input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
-                        Details
-                    </label>
-              <label class="radio primary first">
-                <input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
-                  Sections
-              </label>
-            </div>
-
-        </header>
 
         <div class="screen" id="screen">
 
@@ -253,19 +256,17 @@
 
                 <form id="imageUploadForm" action="iupload">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <label>Upload image:</label>
-
                     <div class="form-group">
                         <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
-                            <div class="buttons">
-                                    <span class="btn btn-primary btn-sm btn-embossed btn-file">
-                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Select image</span>
+                            <div class="buttons" style="width:100%">
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
+                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Upload image</span>
                                         <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
                                         <input type="file" name="imageFileField" id="imageFileField">
                                     </span>
                                 <a href="#" class="btn btn-default btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>&nbsp;&nbsp;Remove</a>
                             </div>
+                            <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
                         </div>
                     </div>
 

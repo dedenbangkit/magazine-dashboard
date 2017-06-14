@@ -35,23 +35,14 @@
 
 </head>
 <body>
+    <script src='js/jquery-1.8.3.min.js'></script>
 
     <div id='page' class='page'>
 
-    	<div class='item content' id='content_section1'>
-        <o class='btn btn-inverse btn-embossed sortable-function' onclick='sortableMode()'><i class='glyphicon glyphicon-move'></i></o>
-        <o class='btn btn-success btn-embossed sortable-function-edit' onclick='sortableClose()'><i class='glyphicon glyphicon-move'></i></o>
-
-    		<div class='container'>
-          <article class='article'>
-    			<div class='row article__content' id='demos' data-name='article' style='margin:10px;''>
-
-                        <img class='img img-responsive' src='images/picture2.jpg'></img>
-
-    			</div><!-- /.row -->
-          <article>
-    		</div><!-- /.container -->
-
+    	<div class='item content' id='content_section1' style="width:100%;overflow-x:scroll;">
+        <ion-scroll direction="x" zooming="false" style="height: 300px;" class='do_not_swipe' delegate-handle="horizontal" horizontal-scroll-fix="mainScroll">
+          <img src="http://www.tasmania360.com//panoramas/Lake-Seal-Mt-Field-Fagus-2013/thumb_huge.jpg">
+        </ion-scroll>
     	</div><!-- /.item -->
 
     </div><!-- /#page -->
@@ -60,22 +51,7 @@
     <!-- Load JS here for greater good =============================-->
 
     <!-- <script src='assets/content-tools.js'></script> -->
-    <script src='js/jquery-1.8.3.min.js'></script>
-    <script src='js/jquery-ui-1.10.3.custom.min.js'></script>
-    <script src='../js/tinymce/jquery.tinymce.min.js'></script>
-    <script src='../js/tinymce/tinymce.min.js'></script>
-    <script src='../js/tinymce/custom.init.js'></script>
     <!-- <script src='assets/editor.js'></script> -->
-    <script src='js/jquery.ui.touch-punch.min.js'></script>
-    <script src='js/bootstrap.min.js'></script>
-    <script src='js/bootstrap-select.js'></script>
-    <script src='js/bootstrap-switch.js'></script>
-    <script src='js/flatui-checkbox.js'></script>
-    <script src='js/flatui-radio.js'></script>
-    <script src='js/jquery.tagsinput.js'></script>
-    <script src='js/jquery.placeholder.js'></script>
     <script src='js/application.js'></script>
-    <!-- Latest compiled and minified JavaScript -->
-	<script src='js/sortable.js'></script>
 </body>
 </html>

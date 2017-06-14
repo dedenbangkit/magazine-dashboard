@@ -137,7 +137,7 @@ class BuildApiController extends Controller
       $this->project->updateBuild($update);
       unlink(storage_path('clientsapp/'.$theproject->repo));
 
-      return redirect()->action('ProjectController@project');
+      return redirect()->action('ProjectController@project')->with('done', 'Please wait few hours to download the final apps');;
    }
 
    public function buildUpdate(Request $request)

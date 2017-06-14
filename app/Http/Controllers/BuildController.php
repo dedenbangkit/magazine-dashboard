@@ -85,7 +85,7 @@ class BuildController extends Controller
       //Upload Splashscreen and Icon
 
       $src = storage_path('application');
-      $newname = str_replace(' ', '_'$theproject->company_name).'-'.time();
+      $newname = str_replace(' ', '_',$theproject->company_name).'-'.time();
       $dst = storage_path('tmp/'.$newname);
       $this->makeTemp($src,$dst);
       $zipfile = $request->file('splashicon');

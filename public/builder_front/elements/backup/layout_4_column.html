@@ -26,7 +26,6 @@
     <link href='css/font-awesome.css' rel='stylesheet'>
 
     <link rel='shortcut icon' href='images/favicon.ico'>
-
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src='js/html5shiv.js'></script>
@@ -41,30 +40,41 @@
     	<div class='item content' id='content_section1'>
         <o class='btn btn-inverse btn-embossed sortable-function' id="sortableEdit" onclick='sortableMode()'><i class='fa fa-arrows-h'></i></o>
         <o class='btn btn-success btn-embossed sortable-function-edit' onclick='sortableClose()'><i class='fa fa-arrows-h'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='one-col'>1 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='two-col'>2 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='three-col'>3 <i class='fa fa-navicon'></i></o>
+        <o class='btn btn-inverse btn-embossed sortable-function check-columns' id='four-col'>4 <i class='fa fa-navicon'></i></o>
 
     		<div class='container'>
           <article class='article'>
     			<div class='row article__content' id='demos'>
 
-            <div class='column col-xs-4' id='sortClass' data-editable data-name='article'>
-
+            <div class='column col-xs-6 col-sm-3' id='sortClass'  data-editable data-name='article'>
                         <p class='article__by-line'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo magni debitis perspiciatis quaerat aliquid, nobis sapiente. Voluptate rerum aliquid ratione, veniam odit, consequatur expedita nesciunt deleniti quod cupiditate quo quisquam amet explicabo est, aperiam saepe animi ea.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
                         </p>
 
             </div>
 
-    				<div class='column col-xs-4' data-editable data-name='article2'>
+    				<div class='column col-xs-6 col-sm-3' data-editable data-name='article2'>
+
     					<p class='article__by-line'>
-    						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo magni debitis perspiciatis quaerat aliquid, nobis sapiente. Voluptate rerum aliquid ratione, veniam odit, consequatur expedita nesciunt deleniti quod cupiditate quo quisquam amet explicabo est, aperiam saepe animi ea.
+    						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
     					</p>
 
     				</div>
 
-            <div class='column col-xs-4' data-editable data-name='article3'>
+            <div class='column col-xs-6 col-sm-3' data-editable data-name='article3'>
+    					<p class='article__by-line'>
+    						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
+    					</p>
+
+    				</div>
+
+            <div class='column col-xs-6 col-sm-3' data-editable data-name='article4'>
 
     					<p class='article__by-line'>
-    						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo magni debitis perspiciatis quaerat aliquid, nobis sapiente. Voluptate rerum aliquid ratione, veniam odit, consequatur expedita nesciunt deleniti quod cupiditate quo quisquam amet explicabo est, aperiam saepe animi ea.
+    						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod est tenetur illum dolores quidem nostrum, sunt, deserunt illo.
     					</p>
 
     				</div>
@@ -77,6 +87,8 @@
 
     </div><!-- /#page -->
 
+
+    <!-- Load JS here for greater good =============================-->
 
     <!-- Load JS here for greater good =============================-->
 

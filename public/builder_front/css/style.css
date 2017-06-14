@@ -116,7 +116,7 @@ header {
 	top:60px;
 	left:300px;
 	right:0;
-	z-index: 9999!important;
+	z-index: 999!important;
 }
 
 header.affix {
@@ -129,50 +129,62 @@ header.affix {
     box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.08);
 }
 
-header .modes {
-	position: fixed;
-	bottom:0;
-	left:300px;
-	right:0;
-	height: 37px;
-	background:#222;
-	padding:0 30px;
+.bottom-line{
+	background: #222;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 38px;
+	z-index: 999;
 }
 
-header .modes #modeContent {
+.modes {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	right: 0;
+	height: 42px;
+	width: 320px;
+	background: #FFF;
+	padding: 0 15px;
+}
+
+.modes #modeContent {
 	display: none;
 }
 
-header .modes > b {
+.modes > b {
 	display: block;
 	float: left;
 	text-transform: uppercase;
 	font-size: 13px;
 }
 
-header .modes > label {
+.modes > label {
 	border-right:1px solid rgba(255,255,255,0.1);
-	height: 37px;
-	padding:10px 30px;
+	padding:10px 20px 10px 40px;
 }
 
-header .modes > label.radio.primary {
+.modes > label.radio.primary {
 	display: inline-block;
 	margin-top: 0px !important;
+	background-color: #eee;
+  border-bottom: 2px #ddd solid;
 }
 
-header .modes > label {
-	margin-right: 20px;
+.modes > label {
+	margin-right: 10px;
 }
-header .modes > label.disabled{
+.modes > label.disabled{
 	opacity: 0.1;
 }
 
-header .modes > label:last-child {
+.modes > label:last-child {
 	margin-right: 0px;
 }
-header .modes > label .icons{
-	margin-top:10px;
+.modes > label .icons{
+	margin-top: 10px;
+  margin-left: 10px;
 }
 .navbar-setting li a{
 	font-size:14px;
@@ -199,11 +211,12 @@ header .modes > label .icons{
 }
 
 .styleEditor .tab-content {
-	padding: 0px;
+	padding: 0px 0px 20px 0px;
 	border: 0px;
 	border-radius: 0px;
-	margin-bottom: 20px;
+	height: 50%;
 	border-bottom: 2px dashed #ccc;
+	overflow-y: scroll;
 }
 
 .styleEditor .nav-tabs li span {
@@ -493,8 +506,8 @@ body .sp-input {
 }
 .page-panel ul#pages{
 	position: absolute;
-	top:40px;
-	bottom:60px;
+	top: 70px;
+	bottom: 100px;
 	left:0;
 	right:0;
 	overflow: auto;
@@ -721,9 +734,9 @@ body .sp-input {
 	text-align: center;
 }
 
-#build-mode .radio{
+/*#build-mode .radio{
 	visibility: hidden;
-}
+}*/
 
 /* side */
 

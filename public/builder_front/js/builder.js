@@ -85,7 +85,6 @@ $(function(){
 
 $('#wrapper').click(
 function(){
-	closeStyleEditor();
 	bindHeightWidth();
 });
 
@@ -1262,6 +1261,7 @@ $(function(){
 	$('#styleEditor > a.close').click(function(e){
 		e.preventDefault();
 		closeStyleEditor();
+		bindHeightWidth();
 		$('#modeBlock').click();
 		var iframeLength = $('iframe').length;
 		for (i=1; i < iframeLength; i++){
