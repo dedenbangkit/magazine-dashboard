@@ -921,7 +921,9 @@ function closeStyleEditor() {
 	// Trigger for Clicking Body to close all active element tinymce
 	$.each($('.container li.element'),
 		function(){
+		if( $(this).find('iframe')[0].contentWindow.document.body==''){
 	 $(this).find('iframe')[0].contentWindow.document.body.click();
+		}
 	});
 	$('#editingMode').addClass('btn-info');
 	$('#editingMode').removeClass('btn-danger');

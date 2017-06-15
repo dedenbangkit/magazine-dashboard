@@ -2145,7 +2145,8 @@
     //framenya
         $.ajax({
             url: "/get-page",
-            async:"false"
+            async:"false",
+            dataType: "json",
         }).done(function(data) {
             $(data['page_list']).each(function(index, el) {
                 page_content = el.page_content;
@@ -2157,12 +2158,13 @@
         $('iframe').on('load', function() {
             $.ajax({
                 url: "/load-page",
-                async:"false"
+                async:"false",
+                dataType: "json",
             }).done(function(data) {
                 i=1
                 $(data['loadpage']).each(function(index, el) {
                     loadPage(el.content_array,i)
-//                    console.log(i)
+                    console.log('load'+i)
                     i=i+1
                 });
                 //selesai looping
@@ -2181,7 +2183,7 @@
                 $('#page'+(id)+' li iframe').each(function(a) {
 //                    console.log(id+" path "+a)
                     $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
-//                console.log(id+'-'+pageContent)
+                console.log(id+'-op')
                     //
                     path = path+1
                 });
