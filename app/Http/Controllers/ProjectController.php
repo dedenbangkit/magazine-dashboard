@@ -318,7 +318,7 @@ class ProjectController extends Controller
     {
         $data['create']=false;
         $data['activer'] = array($this->activer, 'published');
-        $data['projects'] = $this->issue->getProjectPublish();
+        $data['projects'] = $this->issue->getProjectPublishById($this->authdata->project_id);
 
         return view('project', $data);
     }
