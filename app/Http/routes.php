@@ -80,6 +80,6 @@ Route::get('/editor-page', function () {
 Route::get('/page', 'PageController@index');
 Route::get('/sample-get-image', 'PageController@testing_get_ur_image');
 Route::get('/sample-page', 'PageController@sample');
-Route::get('/sample-page2', 'PageController@sample2');
+Route::get('/page-editor', 'PageController@sample2');
 
 //});
