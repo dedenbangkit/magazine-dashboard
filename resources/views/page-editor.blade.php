@@ -29,6 +29,9 @@
     </head>
 
     <body>
+      <div class="bottom-line">&nbsp;
+      </div>
+      
     <nav class="navbar navbar-default" id="top-header">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -160,9 +163,6 @@
         </div>
 
     </header>
-
-    <div class="bottom-line">&nbsp;
-    </div>
 
     <div class="container" id="wrapper">
 
