@@ -1,6 +1,5 @@
 function checkColTot(){
   coltotal = $('.column').length;
-  console.log(coltotal);
   if (coltotal == 1){
     $('.check-columns').removeClass('btn-success').addClass('btn-inverse');
     $('#one-col').removeClass('btn-inverse').addClass('btn-success');

@@ -2151,11 +2151,11 @@
             $(data['page_list']).each(function(index, el) {
                 page_content = el.page_content;
                 newPage(el.page_name,el.page_content,el.id,index)
-
+                contentInject();
             });
         });
     //kontennya
-        $('iframe').on('load', function() {
+        function contentInject() {
             $.ajax({
                 url: "/load-page",
                 async:"false",
@@ -2164,7 +2164,6 @@
                 i=1
                 $(data['loadpage']).each(function(index, el) {
                     loadPage(el.content_array,i)
-                    console.log('load'+i)
                     i=i+1
                 });
                 //selesai looping
@@ -2173,7 +2172,8 @@
 
             });
 
-        });
+        };
+
         function loadPage(pageContent,id){
 //            console.log('squence - '+id)
             var path =0;
@@ -2183,7 +2183,6 @@
                 $('#page'+(id)+' li iframe').each(function(a) {
 //                    console.log(id+" path "+a)
                     $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
-                console.log(id+'-op')
                     //
                     path = path+1
                 });
@@ -2442,8 +2441,6 @@
         });
 
     </script>
-    <script src="{{asset('builder_front/js/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('builder_front/js/tinymce/jquery.tinymce.min.js')}}"></script>
 
 <style>
     .screen .frameCover:hover button.btn-danger, .screen .frameCover:hover button.btn-warning, .screen .frameCover:hover button.btn-inverse {

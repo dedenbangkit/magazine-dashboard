@@ -102,8 +102,6 @@ function sortableMode(){
 						placeholder: chooseClass,
 					});
 	});
-		// disable contenteditable
-		$('.container').tinymce().remove();
 }
 function sortableClose(){
 	$('.column').removeClass('sortable-mode');

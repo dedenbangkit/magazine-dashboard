@@ -90,19 +90,16 @@ var secondMenuWidth = 300;
 
 function bindHeightWidth(){
 	screenWidth = $('#screen').width();
-	$.each($('.container li.element'),
-		function(){
-			$('iframe').css({'width':screenWidth});
-			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
-			$(this).find('iframe').css({'height':newHeight});
-			$(this).css({'height':newHeight});
-	});
-	$('#screen').css({'height': $('#screen ul').innerHeight});
-	// Trigger for Clicking Body to close all active element tinymce
-	$.each($('.container li.element'),
-		function(){
-	 $(this).find('iframe')[0].contentWindow.document.body.click();
-	});
+		$.each($('.container li.element'),
+			function(){
+				$('iframe').css({'width':screenWidth});
+				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				if (typeof newHeight !== undefined){
+				$(this).find('iframe').css({'height':newHeight});
+				$(this).css({'height':newHeight});
+				}
+		});
+		$('#screen').css({'height': $('#screen ul').innerHeight});
 }
 
 function autoBindHeight() {
