@@ -82,7 +82,7 @@ class PageController extends Controller
     public function editorIssue(Request $request){
         $request->session()->forget('issue-editor');
         $request->session()->put('issue-editor',$request->id);
-        $data='sample-page2';
+        $data='page-editor';
         return $data;
     }
     public function addPage(Request $request)

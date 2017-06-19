@@ -93,7 +93,10 @@ function bindHeightWidth(){
 		$.each($('.container li.element'),
 			function(){
 				$('iframe').css({'width':screenWidth});
-				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				if($(this).find('iframe')[0].contentWindow.document.body !=''){
+                    newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				}
+
 				if (typeof newHeight !== undefined){
 				$(this).find('iframe').css({'height':newHeight});
 				$(this).css({'height':newHeight});
