@@ -1881,6 +1881,19 @@ console.log(pageIDs)
 		}
 	});
 
+	$('#responsive-orientation ul li a').on('click',function(){
+		theHeight = $('li.element iframe').find('BODY').height();
+		theWidth = $('#frameWrapper').width();
+		if(target == 'portrait'){
+			$('#screen').css({'width': theWidth});
+			$('#screen').css({'height': theHeight});
+			$.each($('.conainer li.element')),function(){
+				$('iframe').css({'width': theHeight});
+				$('iframe').css({'height': theWidth});
+			}
+		}
+	}
+
 		// Zoom Function #wrapper
 
 		zoomValue = 1;

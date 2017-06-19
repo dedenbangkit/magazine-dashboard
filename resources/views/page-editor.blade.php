@@ -31,7 +31,7 @@
     <body>
       <div class="bottom-line">&nbsp;
       </div>
-      
+
     <nav class="navbar navbar-default" id="top-header">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,6 +58,12 @@
                       <li id="zoomIn"><a href="#"><span class="fa fa-plus">&nbsp</span></a></li>
                       <li id="zoomValue">100%</li>
                       <li id="zoomOut"><a href="#"><span class="fa fa-minus">&nbsp</span></a></li>
+                </div>
+                <div class="toolbar" id="responsive-orientation">
+                  <ul>
+                  <li><a href="#" data-responsive="potrait"> Potrait</a></li>
+                  <li><a href="#" data-responsive="landscape"> Landscape</a></li>
+                  </ul>
                 </div>
                 <div class="toolbar" id="responsive-toolbar">
                     <ul>
