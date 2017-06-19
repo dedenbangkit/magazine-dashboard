@@ -1957,7 +1957,7 @@
         <form action="save" target="_blank" id="markupForm" method="post" class="form-horizontal">
 
             <input type="hidden" name="markup" value="" id="markupField">
-            <input type="text" class=""hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="text" class="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1966,7 +1966,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <div class="form-group">
+                        <div class="form-group hidden">
                             <label for="inputEmail3" class="col-sm-2 control-label">Doc type</label>
                             <div class="col-sm-10">
 
