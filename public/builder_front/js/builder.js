@@ -1895,7 +1895,7 @@ console.log(pageIDs)
 				$('iframe').css({'height': theWidth});
 			}
 		}
-	}
+	});
 
 		// Zoom Function #wrapper
 
