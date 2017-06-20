@@ -220,6 +220,104 @@ class PageController extends Controller
         return redirect('/issue');
 //
     }
+
+    public function exportIssueById(Request $request,$id){
+        $image_component=$this->testing_get_ur_image($id);
+        if($image_component==''){
+            $image_component=[''];
+        }
+//        return json_encode($image_component,JSON_UNESCAPED_SLASHES);
+        $folder='data-'.$id;
+        $newname=time().'-'.$id;
+        $fileName = $newname.'.json';
+//        File::put(public_path('json_file/'.$fileName),json_encode($image_component));
+//die();
+        //// Outputnya: Time-Issue->id
+
+        $pathToAssets = array("mobile/elements/bootstrap", "mobile/elements/images","mobile/elements/css", "mobile/elements/fonts", "mobile/elements/images", "mobile/elements/js");
+
+        $filename = "builder_front/tmp/".$newname.".zip"; //use the /tmp folder to circumvent any permission issues on the root folder
+
+        /* END CONFIG */
+
+
+        $zip = new ZipArchive();
+
+        $zip->open($filename, ZipArchive::CREATE);
+
+
+        //add folder structure
+
+        foreach( $pathToAssets as $thePath ) {
+
+            // Create recursive directory iterator
+            $files = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator( $thePath ),
+                RecursiveIteratorIterator::LEAVES_ONLY
+            );
+
+            foreach ($files as $name => $file) {
+
+                if( $file->getFilename() != '.' && $file->getFilename() != '..' ) {
+
+                    // Get real path for current file
+                    $filePath = $file->getRealPath();
+
+                    $temp = explode("/", $name);
+
+                    array_shift( $temp );
+
+                    $newName = implode("/", $temp);
+
+                    // Add current file to archive
+                    $zip->addFile($filePath, $newName);
+
+                }
+
+            }
+
+        }
+
+        $pages= $this->page->getPage($id);
+        $issue=$this->issue->getIssueId($id);
+        $image_cover=$issue["issue_cover"];
+        $cover_frame='<img src="'.$image_cover.'">';
+        $zip->addFromString("data_json.json", json_encode($image_component,JSON_UNESCAPED_SLASHES));
+        $cover_frame='<img src="'.$image_cover.'">';
+        $zip->addFromString("0.html", $cover_frame);
+
+        foreach( $pages as $page=>$content ) {
+            $html=" ";
+            $htmlclose=" ";
+            $oldcontent = $content['test_content'];
+            $urltodecode = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib/';
+            $newcontent = str_replace($urltodecode, '', $oldcontent);
+            $zip->addFromString(($page+1).".html", "<!--DOCTYPE html --> \n".$html."\n".str_replace('https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib/','',stripslashes($newcontent))."\n".$htmlclose);
+        }
+
+
+        $zip->close();
+
+
+        $yourfile = $filename;
+
+        $file_name = basename($yourfile);
+        $file_path = public_path($filename);
+
+        $s3 = \Storage::disk('s3');
+        $test=$s3->put('issue-lib/'.$newname.'.zip',file_get_contents(public_path($filename)), 'public');
+        unlink($filename);
+//        unlink('json_file/'.$fileName);
+        $this->issue->compileIssue($id,$newname.'.zip');
+        $issue=$this->page->getPageIssue($id);
+        if($test){
+            $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
+        }
+        $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
+
+        return redirect('/issue');
+//
+    }
     public function savePage(Request $request)
     {
                var_dump($request->id);

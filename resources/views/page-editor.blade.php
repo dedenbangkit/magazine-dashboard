@@ -251,7 +251,7 @@
 
             <!-- /tabs -->
             <div class="tab-pane imageFileTab" id="image_Tab">
-
+                    <div class="hidden">
                 <label>Enter image path:</label>
 
                 <input type="text" class="form-control" id="imageURL" placeholder="Enter an image URL" value="">
@@ -259,7 +259,7 @@
                 <p class="text-center or">
                     <span>OR</span>
                 </p>
-
+                    </div>
                 <form id="imageUploadForm" action="iupload">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
@@ -1963,7 +1963,7 @@
         <form action="save" target="_blank" id="markupForm" method="post" class="form-horizontal">
 
             <input type="hidden" name="markup" value="" id="markupField">
-            <input type="text" class=""hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="text" class="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1972,7 +1972,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <div class="form-group">
+                        <div class="form-group hidden">
                             <label for="inputEmail3" class="col-sm-2 control-label">Doc type</label>
                             <div class="col-sm-10">
 
