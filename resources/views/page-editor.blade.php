@@ -152,9 +152,9 @@
         <a class="btn btn-info btn-embossed actionButtons" href="#" id="pageSetting" ><span class="fui-gear"></span> Page Settings</a>
         <a class="btn btn-info btn-embossed actionButtons" href="#" id="editingMode" ><span class="fui-play"></span> Start Editing</a>
 
-        <a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>
+        {{--<a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-lock"></span></a>--}}
 
-        <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right  actionButtons"><span class="fui-export"></span> Compile</a>
+        {{--<a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right  actionButtons"><span class="fui-export"></span> Compile</a>--}}
         <a href="javascript:void(0)" id="savePage" data-toggle="modal" class="btn btn-info btn-embossed pull-right actionButtons"><span class="fui-export"></span> Save Current Page</a>
 
         <div class="modes" id="build-mode">
