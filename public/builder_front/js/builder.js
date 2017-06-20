@@ -1628,7 +1628,6 @@ $(function(){
             $('#addPage').removeClass('disabled');
         });
 
-console.log(pageIDs)
         newPageLI.attr('data-page',$('#pages li').size());
 
 		$('ul#pages').append( newPageLI );
@@ -1701,7 +1700,9 @@ console.log(pageIDs)
 		$(this).addClass('active');
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
-        bindHeightWidth();
+        closeStyleEditor();
+		bindHeightWidth();
+
 	})
 
 

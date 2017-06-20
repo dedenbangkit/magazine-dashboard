@@ -27,13 +27,13 @@
       <file leaf-file-name="page-editor.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="2115" column="63" lean-forward="false" selection-start-line="2115" selection-start-column="18" selection-end-line="2115" selection-end-column="63" />
+            <state relative-caret-position="285">
+              <caret line="202" column="82" lean-forward="false" selection-start-line="202" selection-start-column="82" selection-end-line="202" selection-end-column="82" />
               <folding>
-                <marker date="1497946045000" expanded="true" signature="1256:88816" ph="..." />
-                <marker date="1497946045000" expanded="true" signature="9066:69060" ph="..." />
-                <marker date="1497946045000" expanded="true" signature="10215:68039" ph="..." />
-                <marker date="1497946045000" expanded="true" signature="11646:13303" ph="..." />
+                <marker date="1497973086000" expanded="true" signature="1256:88833" ph="..." />
+                <marker date="1497973086000" expanded="true" signature="9083:69077" ph="..." />
+                <marker date="1497973086000" expanded="true" signature="10232:68056" ph="..." />
+                <marker date="1497973086000" expanded="true" signature="11663:13320" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,11 +42,12 @@
       <file leaf-file-name="builder.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="684" column="32" lean-forward="false" selection-start-line="684" selection-start-column="32" selection-end-line="684" selection-end-column="32" />
+            <state relative-caret-position="434">
+              <caret line="1701" column="67" lean-forward="false" selection-start-line="1701" selection-start-column="67" selection-end-line="1701" selection-end-column="67" />
               <folding>
-                <marker date="1497972925000" expanded="true" signature="5709:5710" ph="{...}" />
-                <marker date="1497972925000" expanded="true" signature="61236:61237" ph="{...}" />
+                <marker date="1497974146000" expanded="true" signature="5709:5710" ph="{...}" />
+                <marker date="1497974146000" expanded="true" signature="61238:61239" ph="{...}" />
+                <marker date="1497974146000" expanded="true" signature="66485:66611" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -138,11 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>page</find>
-      <find>pageE</find>
-      <find>bind</find>
-      <find>frameCover</find>
-      <find>editing</find>
       <find>test</find>
       <find>testing_get_ur_image</find>
       <find>newPageLI</find>
@@ -168,6 +164,11 @@
       <find>upl</find>
       <find>saveStyling</find>
       <find>loading</find>
+      <find>Detail Editor</find>
+      <find>editor</find>
+      <find>stylingForm</find>
+      <find>styleEditor</find>
+      <find>pages</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -703,12 +704,12 @@
       <workItem from="1497526801503" duration="2741000" />
       <workItem from="1497610542617" duration="2195000" />
       <workItem from="1497870392164" duration="1365000" />
-      <workItem from="1497945210603" duration="5082000" />
+      <workItem from="1497945210603" duration="5757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105356000" />
+    <option name="totallyTimeSpent" value="106031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1097,24 +1098,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="2115" column="63" lean-forward="false" selection-start-line="2115" selection-start-column="18" selection-end-line="2115" selection-end-column="63" />
+        <state relative-caret-position="285">
+          <caret line="202" column="82" lean-forward="false" selection-start-line="202" selection-start-column="82" selection-end-line="202" selection-end-column="82" />
           <folding>
-            <marker date="1497946045000" expanded="true" signature="1256:88816" ph="..." />
-            <marker date="1497946045000" expanded="true" signature="9066:69060" ph="..." />
-            <marker date="1497946045000" expanded="true" signature="10215:68039" ph="..." />
-            <marker date="1497946045000" expanded="true" signature="11646:13303" ph="..." />
+            <marker date="1497973086000" expanded="true" signature="1256:88833" ph="..." />
+            <marker date="1497973086000" expanded="true" signature="9083:69077" ph="..." />
+            <marker date="1497973086000" expanded="true" signature="10232:68056" ph="..." />
+            <marker date="1497973086000" expanded="true" signature="11663:13320" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="684" column="32" lean-forward="false" selection-start-line="684" selection-start-column="32" selection-end-line="684" selection-end-column="32" />
+        <state relative-caret-position="434">
+          <caret line="1701" column="67" lean-forward="false" selection-start-line="1701" selection-start-column="67" selection-end-line="1701" selection-end-column="67" />
           <folding>
-            <marker date="1497972925000" expanded="true" signature="5709:5710" ph="{...}" />
-            <marker date="1497972925000" expanded="true" signature="61236:61237" ph="{...}" />
+            <marker date="1497974146000" expanded="true" signature="5709:5710" ph="{...}" />
+            <marker date="1497974146000" expanded="true" signature="61238:61239" ph="{...}" />
+            <marker date="1497974146000" expanded="true" signature="66485:66611" ph="{...}" />
           </folding>
         </state>
       </provider>
