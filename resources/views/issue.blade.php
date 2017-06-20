@@ -33,7 +33,7 @@
                             </div>
                             <?php } ?>-->
                             <?php foreach($projects as $i=>$row){ ?>
-                              <div class="col-sm-3" id="issue-{{$row->id}}">
+                              <div class="col-sm-3 col-md-3 col-lg-2" id="issue-{{$row->id}}">
                                 <div class="box box-solid">
                                   <div class="box-header with-border" style="border-top: 3px solid #d2d6de;">
                                     <i class="fa fa-file-text-o"></i>
