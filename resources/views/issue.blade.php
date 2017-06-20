@@ -33,21 +33,28 @@
                             </div>
                             <?php } ?>-->
                             <?php foreach($projects as $i=>$row){ ?>
-                              <div class="col-sm-3 col-md-3 col-lg-2" id="issue-{{$row->id}}">
+                              <div class="col-sm-3" id="issue-{{$row->id}}">
                                 <div class="box box-solid">
-                                  <div class="box-header with-border" style="border-top: 3px solid #d2d6de;">
+                                  <div style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden" class="box-header with-border" style="border-top: 3px solid #d2d6de;">
                                     <i class="fa fa-file-text-o"></i>
 
-                                    <h3 class="box-title"><?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?></h3>
+                                    <h4 style="font-size:16px;" class="box-title">
+                                      @if(empty($row->issue_name))
+                                      <?php echo 'Untitled'?>
+                                      @else
+                                      {{substr($row->issue_name,0,16)}}
+                                      @endif
+                                    </h4>
                                     <br>Created at: {{date('d-m-Y',strtotime($row->created_at))}}
                                   </div>
                                   <div class="box-body">
-                                    <img class="img-responsive" style="height:250px;" src="<?php if (empty($row->issue_cover)) {
+                                    <div class="cover-img">
+                                    <img class="img-responsive" src="<?php if (empty($row->issue_cover)) {
                                         echo asset('/img/empty_zine.jpg');
                                     } else {
                                         echo $row->issue_cover;
                                     } ?>">
-
+                                    </div>
                                     <div class="btn-group-vertical" style="width:100%; padding-top:20px;">
                                         @if(!empty($row->compiled))
                                             <a class="btn btn-default @if($row->status =='unpublished') publish-issue @else disabled @endif "

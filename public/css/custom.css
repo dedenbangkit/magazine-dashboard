@@ -1,3 +1,23 @@
+@media (max-width: 1999px){
+  .cover-img{
+  height: 200px;
+  overflow-y: hidden;
+  }
+  .cover-img img{
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 1200px){
+  .cover-img{
+    height: 280px;
+    overflow-y: hidden;
+  }
+  .cover-img img{
+    min-width: 100%;
+  }
+}
+
 .box-content{
     background-color: transparent;
     /*background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);*/
