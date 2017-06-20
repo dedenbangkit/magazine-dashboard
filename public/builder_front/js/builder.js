@@ -1885,12 +1885,24 @@ console.log(pageIDs)
 	});
 
 	$('#responsive-orientation ul li a').on('click',function(){
-		theHeight = $('li.element iframe').find('BODY').height();
-		theWidth = $('#frameWrapper').width();
+		var target = $(this).data('orientation');
+		$(this).parent().addClass('active').siblings().removeClass('active');
+
 		if(target == 'portrait'){
-			$('#screen').css({'width': theWidth});
-			$('#screen').css({'height': theHeight});
-			$.each($('.conainer li.element')),function(){
+			theHeight = $('li.element iframe').find('BODY').height();
+			theWidth = $('#frameWrapper').width();
+			$('#screen').css({'width': theHeight});
+			$('#screen').css({'height': theWidth});
+			$.each($('.container li.element')),function(){
+				$('iframe').css({'width': theHeight});
+				$('iframe').css({'height': theWidth});
+			}
+		}else if(target == 'landscape'){
+			theHeight = $('li.element iframe').find('BODY').height();
+			theWidth = $('#frameWrapper').width();
+			$('#screen').css({'width': theHeight});
+			$('#screen').css({'height': theWidth});
+			$.each($('.container li.element')),function(){
 				$('iframe').css({'width': theHeight});
 				$('iframe').css({'height': theWidth});
 			}
