@@ -286,6 +286,7 @@ class PageController extends Controller
         $cover_frame='<img src="'.$image_cover.'">';
         $zip->addFromString("0.html", $cover_frame);
 
+
         foreach( $pages as $page=>$content ) {
             $html=" ";
             $htmlclose=" ";
@@ -314,7 +315,7 @@ class PageController extends Controller
             $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
-
+        $request->session()->flash('status_msg','Success Compile Issue.');
         return redirect('/issue');
 //
     }
