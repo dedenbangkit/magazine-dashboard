@@ -42,7 +42,7 @@
                                     <br>Created at: {{date('d-m-Y',strtotime($row->created_at))}}
                                   </div>
                                   <div class="box-body">
-                                    <img class="img-responsive" src="<?php if (empty($row->issue_cover)) {
+                                    <img class="img-responsive" style="height:250px;" src="<?php if (empty($row->issue_cover)) {
                                         echo asset('/img/empty_zine.jpg');
                                     } else {
                                         echo $row->issue_cover;
@@ -53,9 +53,13 @@
                                             <a class="btn btn-default @if($row->status =='unpublished') publish-issue @else disabled @endif "
                                          data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
                                         <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo ($row->status=='published') ? 'ed':''; ?> </a>
+                                        @else
+                                            <a class="btn btn-default "
+                                               data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
+                                                <i class="fa fa-bullhorn {{$row->status}}"></i> Compile </a>
                                         @endif
                                         <a href="/edit-issue/{{ $row->id }}" class="btn btn-default @if($row->status =='published') disabled @endif @if(!empty($row->compiled)) disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
-                                            <i class="fa fa-gear"></i> Edit Issue</a>
+                                            <i class="fa fa-gear"></i> Setting</a>
                                         <a class="btn btn-default @if($row->status =='published') disabled @endif @if(empty($row->compiled)) edit-issue @else disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
                                         <i class="fa fa-edit"></i> Editor</a>
                                       <a class="btn btn-default del-issue" data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'

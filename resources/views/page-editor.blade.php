@@ -251,7 +251,7 @@
 
             <!-- /tabs -->
             <div class="tab-pane imageFileTab" id="image_Tab">
-
+                    <div class="hidden">
                 <label>Enter image path:</label>
 
                 <input type="text" class="form-control" id="imageURL" placeholder="Enter an image URL" value="">
@@ -259,7 +259,7 @@
                 <p class="text-center or">
                     <span>OR</span>
                 </p>
-
+                    </div>
                 <form id="imageUploadForm" action="iupload">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
