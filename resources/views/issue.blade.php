@@ -54,9 +54,9 @@
                                          data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
                                         <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo ($row->status=='published') ? 'ed':''; ?> </a>
                                         @else
-                                            <a class="btn btn-default "
+                                            <a href="/compile/{{ $row->id }}" class="btn btn-default "
                                                data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
-                                                <i class="fa fa-bullhorn {{$row->status}}"></i> Compile </a>
+                                                <i class="fa fa-bullhorn"></i> Compile </a>
                                         @endif
                                         <a href="/edit-issue/{{ $row->id }}" class="btn btn-default @if($row->status =='published') disabled @endif @if(!empty($row->compiled)) disabled @endif"   data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>' >
                                             <i class="fa fa-gear"></i> Setting</a>
