@@ -56,9 +56,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngStora
 $localStorage = $localStorage.$default({
   login: [],
   status: '0',
+  magList: [],
   content: [],
   magazine: [],
   issue: [],
+  html: [],
 });
 var _getStatus = function() {
   return $localStorage.status;
@@ -77,6 +79,15 @@ var _getUser = function(){
 var _logout = function (thing) {
   $localStorage.things.splice($localStorage.things.indexOf(thing), 1);
 }
+
+var _saveList = function (thing) {
+  $localStorage.magList = thing;
+}
+
+var _getList = function (){
+  return $localStorage.magList;
+}
+
 var _getMagazine = function () {
   return $localStorage.magazine;
 }
@@ -89,16 +100,35 @@ var _cacheIssue = function (it) {
 var _getIssue = function(it) {
   return $localStorage.issue['mag'+it];
 }
+
+var _cacheHtml = function(it, comes) {
+  $localStorage.html.indexOf('mag-'+it) === -1 ? $localStorage.html['mag-'+it] = comes : console.log($localStorage.html.it);
+}
+
+var _getHtml = function(it){
+  return $localStorage.html['mag-'+it];
+}
+
+var _clearCache = function(){
+  $localStorage.issue = [];
+  $localStorage.magazine = [];
+}
+
 return {
     getStatus: _getStatus,
     changeStatus: _changeStatus,
     authUser: _auth,
     getUser: _getUser,
     logOut: _logout,
+    saveList: _saveList,
+    getList: _getList,
     getMagazine: _getMagazine,
     addMagazine: _addMagazine,
     cacheIssue: _cacheIssue,
     getIssue: _getIssue,
+    cacheHtml: _cacheHtml,
+    getHtml: _getHtml,
+    clearCache: _clearCache,
   };
 })
 
@@ -125,10 +155,10 @@ return {
   })
 
   .state('app.offline-read', {
-    url: '/offline/:folderName/:issueName/:magazineId/:totalPage',
+    url: '/offline/:folderName/:issueName/:magazineId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/read.html',
+        templateUrl: 'templates/offline.html',
         controller: 'OfflineCtrl'
       }
     }
