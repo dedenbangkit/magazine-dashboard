@@ -29,7 +29,7 @@
                                   </div>
 
                                   <div class="box-body">
-                                    <img class="img-responsive" src="<?php if (empty($row->issue_cover)) {
+                                    <img class="img-responsive" style="height:250px;" src="<?php if (empty($row->issue_cover)) {
                                         echo asset('/img/empty_zine.jpg');
                                     } else {
                                         echo $row->issue_cover;
