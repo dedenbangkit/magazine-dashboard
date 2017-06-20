@@ -682,6 +682,7 @@ function styleClick(el) {
 			if (window.FormData){
 				formdata = new FormData(form[0]);
 			}
+            $(el).attr('src', "/builder_front/images/loading.gif");
 			var formAction = form.attr('action');
 			$.ajax({
 				url : formAction,
