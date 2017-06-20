@@ -682,6 +682,7 @@ function styleClick(el) {
 			if (window.FormData){
 				formdata = new FormData(form[0]);
 			}
+            $(el).attr('src', "/builder_front/images/loading.gif");
 			var formAction = form.attr('action');
 			$.ajax({
 				url : formAction,
@@ -1627,7 +1628,6 @@ $(function(){
             $('#addPage').removeClass('disabled');
         });
 
-console.log(pageIDs)
         newPageLI.attr('data-page',$('#pages li').size());
 
 		$('ul#pages').append( newPageLI );
@@ -1700,7 +1700,9 @@ console.log(pageIDs)
 		$(this).addClass('active');
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
-        bindHeightWidth();
+        closeStyleEditor();
+		bindHeightWidth();
+
 	})
 
 
