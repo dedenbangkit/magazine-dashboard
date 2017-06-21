@@ -101,8 +101,18 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
       showDelay: 0
     });
 
-    $timeout(function() {
+    $scope.maglists = [];
+    $scope.$watch('maglists', function() {});
 
+    $scope.doRefresh = function(){
+      $timeout(function () {
+        $scope.loadAll();
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+    };
+
+    $scope.loadAll = function(){
+    $timeout(function() {
       $http.get('appinfo.json').success(function(data) {
         var promiseDownload = [];
         var project = data['project_id'];
@@ -117,6 +127,12 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
                 .success(function(data) {
                   $localStorage.content['issue-' + thing.magazineId] = data.results;
                   StorageService.cacheHtml(thing.magazineId,data.results);
+                  $cordovaFile.writeFile(cordova.file.cacheDirectory, thing.magazineId.toString() + ".json", data.results, true)
+                  .then(function(success){
+                    console.log("sip")
+                  },function(error){
+                    console.log("failed")
+                  });
                   thing.totalPage = data.results.length;
                 });
               var coverImage = thing.issueCover.substring(thing.issueCover.lastIndexOf('/') + 1);
@@ -135,13 +151,12 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
             $scope.maglists = StorageService.getList();
           })
       });
-
       $ionicLoading.hide();
-    }, 2000);
+    }, 1000);
+    };
 
-    $scope.doRefresh = function(){
-      alert('refresh');
-    }
+    $scope.loadAll();
+
     // var test = StorageService.getIssue(1);
     // console.log(test[0][0]);
 
@@ -209,79 +224,79 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
 
     //In App Purchase
 
-    var productIds = ['com.publixx.magazineapp.5']; // <- Add your product Ids here
-
-    $scope.loadProducts = function() {
-      $ionicLoading.show({
-        template: spinner + 'Loading Products...'
-      });
-      inAppPurchase
-        .getProducts(productIds)
-        .then(function(products) {
-          $ionicLoading.hide();
-          $scope.products = products;
-          // returnnya productId,title,price
-        })
-        .catch(function(err) {
-          $ionicLoading.hide();
-          console.log(err);
-        });
-    };
-
-    $scope.buy = function(productId) {
-
-      $ionicLoading.show({
-        template: spinner + 'Purchasing...'
-      });
-      inAppPurchase
-        .buy(productId)
-        .then(function(data) {
-          console.log(JSON.stringify(data));
-          console.log('consuming transactionId: ' + data.transactionId);
-          return inAppPurchase.consume(data.type, data.receipt, data.signature);
-        })
-        .then(function() {
-          var alertPopup = $ionicPopup.alert({
-            title: 'Purchase was successful!',
-            template: 'Check your console log for the transaction data'
-          });
-          console.log('consume done!');
-          $ionicLoading.hide();
-        })
-        .catch(function(err) {
-          $ionicLoading.hide();
-          console.log(err);
-          $ionicPopup.alert({
-            title: 'Something went wrong',
-            template: 'Check your console log for the error details'
-          });
-        });
-
-    };
-
-    $scope.restore = function() {
-      $ionicLoading.show({
-        template: spinner + 'Restoring Purchases...'
-      });
-      inAppPurchase
-        .restorePurchases()
-        .then(function(purchases) {
-          $ionicLoading.hide();
-          console.log(JSON.stringify(purchases));
-          $ionicPopup.alert({
-            title: 'Restore was successful!',
-            template: 'Check your console log for the restored purchases data'
-          });
-        })
-        .catch(function(err) {
-          $ionicLoading.hide();
-          console.log(err);
-          $ionicPopup.alert({
-            title: 'Something went wrong',
-            template: 'Check your console log for the error details'
-          });
-        });
-    };
+    // var productIds = ['com.publixx.magazineapp.5']; // <- Add your product Ids here
+    //
+    // $scope.loadProducts = function() {
+    //   $ionicLoading.show({
+    //     template: spinner + 'Loading Products...'
+    //   });
+    //   inAppPurchase
+    //     .getProducts(productIds)
+    //     .then(function(products) {
+    //       $ionicLoading.hide();
+    //       $scope.products = products;
+    //       // returnnya productId,title,price
+    //     })
+    //     .catch(function(err) {
+    //       $ionicLoading.hide();
+    //       console.log(err);
+    //     });
+    // };
+    //
+    // $scope.buy = function(productId) {
+    //
+    //   $ionicLoading.show({
+    //     template: spinner + 'Purchasing...'
+    //   });
+    //   inAppPurchase
+    //     .buy(productId)
+    //     .then(function(data) {
+    //       console.log(JSON.stringify(data));
+    //       console.log('consuming transactionId: ' + data.transactionId);
+    //       return inAppPurchase.consume(data.type, data.receipt, data.signature);
+    //     })
+    //     .then(function() {
+    //       var alertPopup = $ionicPopup.alert({
+    //         title: 'Purchase was successful!',
+    //         template: 'Check your console log for the transaction data'
+    //       });
+    //       console.log('consume done!');
+    //       $ionicLoading.hide();
+    //     })
+    //     .catch(function(err) {
+    //       $ionicLoading.hide();
+    //       console.log(err);
+    //       $ionicPopup.alert({
+    //         title: 'Something went wrong',
+    //         template: 'Check your console log for the error details'
+    //       });
+    //     });
+    //
+    // };
+    //
+    // $scope.restore = function() {
+    //   $ionicLoading.show({
+    //     template: spinner + 'Restoring Purchases...'
+    //   });
+    //   inAppPurchase
+    //     .restorePurchases()
+    //     .then(function(purchases) {
+    //       $ionicLoading.hide();
+    //       console.log(JSON.stringify(purchases));
+    //       $ionicPopup.alert({
+    //         title: 'Restore was successful!',
+    //         template: 'Check your console log for the restored purchases data'
+    //       });
+    //     })
+    //     .catch(function(err) {
+    //       $ionicLoading.hide();
+    //       console.log(err);
+    //       $ionicPopup.alert({
+    //         title: 'Something went wrong',
+    //         template: 'Check your console log for the error details'
+    //       });
+    //     });
+    // };
 
 
   })
@@ -336,6 +351,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
   //Read Page Online
   .controller('OfflineCtrl', function(
     $scope,
+    $http,
     $stateParams,
     $ionicSideMenuDelegate,
     $ionicScrollDelegate,
@@ -350,11 +366,10 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
     $scope.id = $stateParams.magazineId;
     $scope.issueName = $stateParams.issueName;
     $scope.folderName = $stateParams.folderName;
-
-    // var olHTML = $localStorage.content['issue-' + $stateParams.magazineId];
-    var olHTML = StorageService.getHtml($scope.id);
     var localAssets = cordova.file.cacheDirectory + "contents/" + $scope.folderName + "/";
-    $scope.pages = _.map(olHTML, function(thing) {
+    var storedHTML = $localStorage.content['issue-' + $scope.id];
+
+    $scope.pages = _.map(storedHTML, function(thing) {
       var newHTML = thing.pageContent.replace(/https:\/\/s3-ap-southeast-1.amazonaws.com\/publixx-statics\/images-lib\//g, localAssets);
       thing.pageContent = newHTML;
       return thing;
