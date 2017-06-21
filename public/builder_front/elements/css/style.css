@@ -241,3 +241,7 @@ header .navbar-white a {
 .column {
 	overflow: auto;
 }
+
+.carousels {
+	min-width: 100%;
+}
