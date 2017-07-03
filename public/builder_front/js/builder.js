@@ -497,7 +497,8 @@ function styleClick(el) {
 		$('a#img_Link').show();
 		$('a#img_Link').parent().show();
 		//set the current SRC
-		$('.imageFileTab').find('input#imageURL').val( $(el).attr('src') )
+		$('.imageFileTab').find('input#imageURL').val( $(el).attr('src') );
+		$('.imageFileTab').find('input#imageURL').val( $(el).attr('ng-click') );
 		//reset the file upload
 		$('.imageFileTab').find('a.fileinput-exists').click();
 	}
@@ -697,8 +698,9 @@ function styleClick(el) {
 					$('input#imageURL').val( response.response );
 					if( $(el).prop('tagName') == 'IMG' ){
 					$(el).attr('src', response.response);
+					$(el).attr('ng-click', 'openModal('+ response.response +')');
 					}
-					if( $(el).prop('tagName') == 'DIV' ){
+					else if( $(el).prop('tagName') == 'DIV' ){
 					$(el).css('background-image', 'url('+ response.response +')');
 					}
 					//reset the file upload
@@ -709,8 +711,9 @@ function styleClick(el) {
 						if( $(el).prop('tagName') == 'IMG' ){
 						elementID = $(el).attr('id');
 						$('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
+						$('#'+sandboxID).contents().find('#'+elementID).attr('ng-click', 'openModal('+ response.response +')');
 						}
-						if( $(el).prop('tagName') == 'DIV' ){
+						else if( $(el).prop('tagName') == 'DIV' ){
 						$('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ response.response +')');
 						}
 					}
@@ -723,6 +726,7 @@ function styleClick(el) {
 			//no image to upload, just a SRC change
 			if( $('input#imageURL').val() != '' && $('input#imageURL').val() != $(el).attr('src') ) {
 				$(el).attr('src', $('input#imageURL').val());
+				$(el).attr('ng-click', $('input#imageURL').val());
 				/* SANDBOX */
 				sandboxID = hasSandbox( $(el) )
 				if( sandboxID ) {
