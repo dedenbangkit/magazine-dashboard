@@ -123,6 +123,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
               thing.progress = StorageService.cacheIssue(thing.folderName);
               thing.magazineId = thing.magazineId;
               thing.issueName = thing.issueName;
+              thing.issueRegex = thing.issueName.replace(/#/g, "");
               $http.get('http://api-dev.publixx.id/issue/' + thing.magazineId + '/MagzApis/')
                 .success(function(data) {
                   $localStorage.content['issue-' + thing.magazineId] = data.results;
@@ -365,7 +366,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
   ) {
     $scope.details = [];
     $scope.id = $stateParams.magazineId;
-    $scope.issueName = $stateParams.issueName;
+    $scope.issueName = $stateParams.issueName.toString();
     $scope.folderName = $stateParams.folderName;
     var localAssets = cordova.file.cacheDirectory + "contents/" + $scope.folderName + "/";
     // var storedHTML = $localStorage.content['issue-' + $scope.id];
