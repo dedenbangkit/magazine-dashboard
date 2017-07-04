@@ -61,7 +61,7 @@
                 </div>
                 <div class="toolbar" id="responsive-orientation">
                   <ul>
-                  <li class="active"><a href="#" data-orientation="potrait"> Potrait</a></li>
+                  <li class="active"><a href="#" data-orientation="portrait"> Portrait</a></li>
                   <li><a href="#" data-orientation="landscape"> Landscape</a></li>
                   </ul>
                 </div>

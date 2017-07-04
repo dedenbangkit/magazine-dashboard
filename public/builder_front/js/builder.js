@@ -1849,15 +1849,22 @@ $(function(){
 
 
 	$('#responsive-toolbar ul li a').on('click',function(){
-		theHeight = theHeight = $('li.element iframe').find('BODY').height();
+		theHeight = $('li.element iframe').find('BODY').height();
 		theWidth = $('#frameWrapper').width();
 		newScreenMobile = 1 * 480;
 		newScreenTabletSm = 1 * 768;
 		newScreenTabletLg = 1 * 1024;
 
+		newScreenMobileLand = 1 * 720;
+		newScreenTabletSmLand = 1 * 1024;
+		newScreenTabletLgLand = 1 * 1600;
+
 		var target = $(this).data('responsive');
+		var orientation = $('#responsive-orientation ul li.active a').data('orientation');
+		console.log(orientation);
+
 		$(this).parent().addClass('active').siblings().removeClass('active');
-		if(target == 'phone'){
+		if(target == 'phone' && orientation == 'portrait'){
 			$('#screen').css({'width': newScreenMobile})
 			$.each($('.container li.element'),
 				function(){
@@ -1867,7 +1874,17 @@ $(function(){
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
-		} else if(target == 'tablet-sm'){
+		}else if(target == 'phone' && orientation == 'landscape'){
+			$('#screen').css({'width': newScreenMobileLand})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenMobileLand});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+		} else if(target == 'tablet-sm' && orientation == 'portrait'){
 				$('#screen').css({'width': newScreenTabletSm})
 				$.each($('.container li.element'),
 					function(){
@@ -1877,7 +1894,17 @@ $(function(){
 						$(this).css({'height':newHeight});
 				});
 				$('#screen').css({'height': $('#screen ul').innerHeight});
-		}else if(target == 'tablet-lg'){
+		}else if(target == 'tablet-sm' && orientation == 'landscape'){
+				$('#screen').css({'width': newScreenTabletSmLand})
+				$.each($('.container li.element'),
+					function(){
+						$('iframe').css({'width':newScreenTabletSmLand});
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			$(this).find('iframe').css({'height':newHeight});
+						$(this).css({'height':newHeight});
+				});
+				$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'tablet-lg' && orientation == 'portrait'){
 			$('#screen').css({'width': newScreenTabletLg})
 			$.each($('.container li.element'),
 				function(){
@@ -1887,31 +1914,95 @@ $(function(){
 					$(this).css({'height':newHeight});
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'tablet-lg' && orientation == 'landscape'){
+			$('#screen').css({'width': newScreenTabletLgLand})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenTabletLgLand});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
 
 	$('#responsive-orientation ul li a').on('click',function(){
-		var target = $(this).data('orientation');
-		$(this).parent().addClass('active').siblings().removeClass('active');
+		theHeight = $('li.element iframe').find('BODY').height();
+		theWidth = $('#frameWrapper').width();
+		newScreenMobile = 1 * 480;
+		newScreenTabletSm = 1 * 768;
+		newScreenTabletLg = 1 * 1024;
 
-		if(target == 'portrait'){
-			theHeight = $('li.element iframe').find('BODY').height();
-			theWidth = $('#frameWrapper').width();
-			$('#screen').css({'width': theHeight});
-			$('#screen').css({'height': theWidth});
-			$.each($('.container li.element')),function(){
-				$('iframe').css({'width': theHeight});
-				$('iframe').css({'height': theWidth});
-			}
-		}else if(target == 'landscape'){
-			theHeight = $('li.element iframe').find('BODY').height();
-			theWidth = $('#frameWrapper').width();
-			$('#screen').css({'width': theHeight});
-			$('#screen').css({'height': theWidth});
-			$.each($('.container li.element')),function(){
-				$('iframe').css({'width': theHeight});
-				$('iframe').css({'height': theWidth});
-			}
+		newScreenMobileLand = 1 * 720;
+		newScreenTabletSmLand = 1 * 1024;
+		newScreenTabletLgLand = 1 * 1600;
+
+		var target = $('#responsive-toolbar ul li.active a').data('responsive');
+		var orientation = $(this).data('orientation');
+		console.log(target);
+
+		$(this).parent().addClass('active').siblings().removeClass('active');
+		if(target == 'phone' && orientation == 'portrait'){
+			$('#screen').css({'width': newScreenMobile})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenMobile});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'phone' && orientation == 'landscape'){
+			$('#screen').css({'width': newScreenMobileLand})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenMobileLand});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+		} else if(target == 'tablet-sm' && orientation == 'portrait'){
+				$('#screen').css({'width': newScreenTabletSm})
+				$.each($('.container li.element'),
+					function(){
+						$('iframe').css({'width':newScreenTabletSm});
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			$(this).find('iframe').css({'height':newHeight});
+						$(this).css({'height':newHeight});
+				});
+				$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'tablet-sm' && orientation == 'landscape'){
+				$('#screen').css({'width': newScreenTabletSmLand})
+				$.each($('.container li.element'),
+					function(){
+						$('iframe').css({'width':newScreenTabletSmLand});
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			$(this).find('iframe').css({'height':newHeight});
+						$(this).css({'height':newHeight});
+				});
+				$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'tablet-lg' && orientation == 'portrait'){
+			$('#screen').css({'width': newScreenTabletLg})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenTabletLg});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
+		}else if(target == 'tablet-lg' && orientation == 'landscape'){
+			$('#screen').css({'width': newScreenTabletLgLand})
+			$.each($('.container li.element'),
+				function(){
+					$('iframe').css({'width':newScreenTabletLgLand});
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					$(this).find('iframe').css({'height':newHeight});
+					$(this).css({'height':newHeight});
+			});
+			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}
 	});
 
