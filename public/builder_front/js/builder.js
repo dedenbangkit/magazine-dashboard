@@ -94,9 +94,8 @@ function bindHeightWidth(){
 			function(){
 				$('iframe').css({'width':screenWidth});
 				if($(this).find('iframe')[0].contentWindow.document.body !=''){
-                    newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+          newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 				}
-
 				if (typeof newHeight !== undefined){
 				$(this).find('iframe').css({'height':newHeight});
 				$(this).css({'height':newHeight});
@@ -605,7 +604,7 @@ function styleClick(el) {
 		$.each($('.container li.element'),
 			function(){
 				$('iframe').css({'width':screenWidth});
-				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+				newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 				$(this).find('iframe').css({'height':newHeight});
 				$(this).css({'height':newHeight});
 		});
@@ -1272,9 +1271,7 @@ $(function(){
 		bindHeightWidth();
 		$('#modeBlock').click();
 		var iframeLength = $('iframe').length;
-		for (i=1; i < iframeLength; i++){
-		document.getElementById('ui-id-'+i).contentWindow.sortableClose();
-		}
+		document.getElementById('ui-id-1').contentWindow.sortableClose();
 	})
 
 	//delete blocks from window
@@ -1869,9 +1866,10 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobile});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
+					console.log(newHeight);
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'phone' && orientation == 'landscape'){
@@ -1879,7 +1877,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobileLand});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1889,7 +1887,7 @@ $(function(){
 				$.each($('.container li.element'),
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
-			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
@@ -1899,7 +1897,7 @@ $(function(){
 				$.each($('.container li.element'),
 					function(){
 						$('iframe').css({'width':newScreenTabletSmLand});
-			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
@@ -1909,7 +1907,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1919,7 +1917,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenTabletLgLand});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1948,7 +1946,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobile});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1958,7 +1956,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenMobileLand});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1968,7 +1966,7 @@ $(function(){
 				$.each($('.container li.element'),
 					function(){
 						$('iframe').css({'width':newScreenTabletSm});
-			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
@@ -1978,7 +1976,7 @@ $(function(){
 				$.each($('.container li.element'),
 					function(){
 						$('iframe').css({'width':newScreenTabletSmLand});
-			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+			 			newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 			 			$(this).find('iframe').css({'height':newHeight});
 						$(this).css({'height':newHeight});
 				});
@@ -1988,7 +1986,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenTabletLg});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
@@ -1998,7 +1996,7 @@ $(function(){
 			$.each($('.container li.element'),
 				function(){
 					$('iframe').css({'width':newScreenTabletLgLand});
-					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
+					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
 			});
