@@ -269,3 +269,7 @@ audio{
 .padding {
   padding: 0px;
 }
+
+iframe {
+  width: 100%;
+}
