@@ -6335,56 +6335,56 @@ button.close {
   overflow: hidden;
 }
 
-.carousel-inner > .item {
+.carousel-inner > ion-slides > .item {
   position: relative;
   display: none;
   -webkit-transition: 0.6s ease-in-out left;
           transition: 0.6s ease-in-out left;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner > ion-slides > .item > img,
+.carousel-inner > ion-slides > .item > a > img {
   display: block;
   height: auto;
   max-width: 100%;
   line-height: 1;
 }
 
-.carousel-inner > .active,
-.carousel-inner > .next,
-.carousel-inner > .prev {
+.carousel-inner > ion-slides > .active,
+.carousel-inner > ion-slides > .next,
+.carousel-inner > ion-slides > .prev {
   display: block;
 }
 
-.carousel-inner > .active {
+.carousel-inner > ion-slides > .active {
   left: 0;
 }
 
-.carousel-inner > .next,
-.carousel-inner > .prev {
+.carousel-inner > ion-slides > .next,
+.carousel-inner > ion-slides > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-.carousel-inner > .next {
+.carousel-inner > ion-slides > .next {
   left: 100%;
 }
 
-.carousel-inner > .prev {
+.carousel-inner > ion-slides > .prev {
   left: -100%;
 }
 
-.carousel-inner > .next.left,
-.carousel-inner > .prev.right {
+.carousel-inner > ion-slides > .next.left,
+.carousel-inner > ion-slides > .prev.right {
   left: 0;
 }
 
-.carousel-inner > .active.left {
+.carousel-inner > ion-slides > .active.left {
   left: -100%;
 }
 
-.carousel-inner > .active.right {
+.carousel-inner > ion-slides > .active.right {
   left: 100%;
 }
 
