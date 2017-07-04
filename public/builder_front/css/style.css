@@ -364,7 +364,7 @@ body .sp-input {
 
 .styleEditor .sideButtons > * {
 	float: left;
-	width: 33.33%;
+	width: 50%;
 }
 
 .styleEditor p.or {
