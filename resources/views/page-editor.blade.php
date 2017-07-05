@@ -2168,7 +2168,12 @@
             }).done(function(data) {
                 i=1
                 $(data['loadpage']).each(function(index, el) {
-                    loadPage(el.content_array,i)
+                    var waitDone = loadPage(el.content_array,i);
+
+                    waitDone.Promise.done(function(){
+                      $('iframe')[0].contentWindow.activetiny();
+                    });
+
                     i=i+1
                 });
                 //selesai looping
