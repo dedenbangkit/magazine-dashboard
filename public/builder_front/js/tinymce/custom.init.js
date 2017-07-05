@@ -4,7 +4,7 @@ tinymce.init({
   force_br_newlines : true,
   convert_newlines_to_brs : false,
   remove_linebreaks : true,
-  selector: '.container',
+  selector: '.article',
   menubar:false,
   element_format : 'html',
   toolbar: 'insertfile undo redo | styleselect fontsizeselect textcolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image',
@@ -26,5 +26,3 @@ tinymce.init({
   }
 });
 };
-
-activetiny();

@@ -2187,17 +2187,21 @@
 
                 $('#page'+(id)+' li iframe').each(function(a) {
 //                    console.log(id+" path "+a)
-                    $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
-                    //
-                    path = path+1
+                      iframeContent = $(this).contents().find('body').children('#page');
+                      // iframeContent.trigger('contentchanged');
+                      iframeContent.replaceWith(pageContent[a]);
+                      // $(document).on('contentchanged', iframeInit, function() {
+                      //   iframeInit.activetiny();
+                      // });
+                      path = path+1
                 });
             });
-            $('#frameWrapper').removeClass('empty');
-            pageEmpty();
-    				allEmpty();
-            addStyling();
-            closeStyleEditor();
-            $('#modeBlock').click();
+              $('#frameWrapper').removeClass('empty');
+              pageEmpty();
+              allEmpty();
+              addStyling();
+              closeStyleEditor();
+              $('#modeBlock').click();
         }
 
 
@@ -2237,7 +2241,6 @@
             $.each($('.container li.element'),
                 function(){
                     $(this).find('iframe')[0].contentWindow.document.body.click();
-                    $(this).find('iframe')[0].contentWindow.document.body.activetiny();
                 });
 
         };
