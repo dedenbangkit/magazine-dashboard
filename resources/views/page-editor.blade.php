@@ -2237,6 +2237,7 @@
             $.each($('.container li.element'),
                 function(){
                     $(this).find('iframe')[0].contentWindow.document.body.click();
+                    $(this).find('iframe')[0].contentWindow.document.body.activetiny();
                 });
 
         };

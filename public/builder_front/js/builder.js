@@ -1271,7 +1271,9 @@ $(function(){
 		bindHeightWidth();
 		$('#modeBlock').click();
 		var iframeLength = $('iframe').length;
-		document.getElementById('ui-id-1').contentWindow.sortableClose();
+    for (i=1; i < iframeLength; i++){
+    	$('iframe')[i].contentWindow.sortableClose();
+	  }
 	})
 
 	//delete blocks from window
