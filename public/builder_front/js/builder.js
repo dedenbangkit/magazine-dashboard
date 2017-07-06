@@ -595,7 +595,7 @@ function styleClick(el) {
 			sandboxID = hasSandbox($(el))
 			if( sandboxID ) {
 				elementID = $(el).attr('id');
-				$('#'+sandboxID).contents().find('#'+elementID).css( $(this).attr('name'),  $(this).val() )
+				$('#'+sandboxID).contents().find('#'+elementID).css( $q )
 			}
 			/* END SANDBOX */
 		})

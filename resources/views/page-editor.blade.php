@@ -2189,6 +2189,7 @@
 //                    console.log(id+" path "+a)
                     $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
                     //
+
                     path = path+1
                 });
             });
@@ -2309,9 +2310,27 @@
             }
         });
         $("#savePage").click(function () {
+            var pages=$('#pages .active').data('page')
+            pageNum =$('#pages li').size()-1;
+            contentPage=$('#page'+pages).html();
+            countli=$('#page'+pages+' li').length;
+            var countiframe=$('#page'+pages+' li iframe');
+            var framePrev='<div class="rule_preview">';
+            for(j=0;j<countli;j++) {
+                var pageli=$('#page'+pages+' li').get(j).style.height;
+                if(j==0){
+                    contentpreview=countiframe[j].contentWindow.document.body.innerHTML;
+                }else{
+                    contentpreview=countiframe[j].contentWindow.document.body.innerHTML;
+                }
+                filter1=$(contentpreview).filter('.page');
+                framePrev=framePrev+' '+filter1[0].innerHTML
+
+            }
+            framePrev=framePrev+' '+'</div>'
             bootbox.confirm({
                 title: "Save Current Page",
-                message: "Are You Sure?",
+                message: framePrev,
                 buttons: {
                     cancel: {
                         label: '<i class="fa fa-times"></i> Cancel'

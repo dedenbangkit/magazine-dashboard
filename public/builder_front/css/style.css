@@ -65,6 +65,9 @@ body .drop-hover {
 	height: 128px;
 	margin: 150px auto 0px;
 }
+.rule_preview > .item > .container{
+	width:100%;
+}
 
 #loaderSave {
 	position: fixed;
