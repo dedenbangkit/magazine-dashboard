@@ -94,7 +94,7 @@ function bindHeightWidth(){
 			function(){
 				$('iframe').css({'width':screenWidth});
 				if($(this).find('iframe')[0].contentWindow.document.body !=''){
-          newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
+          newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
 				}
 				if (typeof newHeight !== undefined){
 				$(this).find('iframe').css({'height':newHeight});

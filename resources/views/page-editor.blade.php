@@ -2169,6 +2169,7 @@
                 i=1
                 $(data['loadpage']).each(function(index, el) {
                   loadPage(el.content_array,i);
+                  i=i+1;
                 });
                 //selesai looping
 //                $('#page1').css("display","block");
@@ -2187,6 +2188,7 @@
                       // iframeContent.promise().done(function() {
                       //   $('iframe')[0].contentWindow.activetiny();
                       // });
+                      console.log(id);
                       path = path+1
                 });
             });
