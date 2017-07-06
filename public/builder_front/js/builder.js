@@ -108,7 +108,7 @@ function autoBindHeight() {
     setTimeout(function () {
         bindHeightWidth();
         autoBindHeight();
-    }, 1000);
+    }, 3000);
 }
 
 $( window ).load(function() {

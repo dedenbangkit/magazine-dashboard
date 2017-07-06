@@ -2168,13 +2168,7 @@
             }).done(function(data) {
                 i=1
                 $(data['loadpage']).each(function(index, el) {
-                    var waitDone = loadPage(el.content_array,i);
-
-                    waitDone.Promise.done(function(){
-                      $('iframe')[0].contentWindow.activetiny();
-                    });
-
-                    i=i+1
+                  loadPage(el.content_array,i);
                 });
                 //selesai looping
 //                $('#page1').css("display","block");
@@ -2185,18 +2179,13 @@
         };
 
         function loadPage(pageContent,id){
-//            console.log('squence - '+id)
             var path =0;
-
             $('#page'+(id)+' li iframe').load(function() {
-
                 $('#page'+(id)+' li iframe').each(function(a) {
 //                    console.log(id+" path "+a)
-                      iframeContent = $(this).contents().find('body').children('#page');
-                      // iframeContent.trigger('contentchanged');
-                      iframeContent.replaceWith(pageContent[a]);
-                      // $(document).on('contentchanged', iframeInit, function() {
-                      //   iframeInit.activetiny();
+                      $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
+                      // iframeContent.promise().done(function() {
+                      //   $('iframe')[0].contentWindow.activetiny();
                       // });
                       path = path+1
                 });
@@ -2207,7 +2196,7 @@
               addStyling();
               closeStyleEditor();
               $('#modeBlock').click();
-        }
+        };
 
 
         //Page Setting

@@ -7,7 +7,7 @@ tinymce.init({
   selector: '.article',
   menubar:false,
   element_format : 'html',
-  toolbar: 'insertfile undo redo | styleselect fontsizeselect textcolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image',
+  toolbar: 'styleselect fontsizeselect textcolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image',
   extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width=100%|height=auto|align|onmouseover|onmouseout|name]',
   plugins: 'image imagetools table link paste contextmenu textpattern autolink lists charmap searchreplace textcolor colorpicker media hr imagetools',
   selection_toolbar: 'fontsizeselect forecolor backcolor | bold italic | quicklink | bullist numlist',
@@ -26,3 +26,5 @@ tinymce.init({
   }
 });
 };
+
+setTimeout(function(){ activetiny(); }, 2000);
