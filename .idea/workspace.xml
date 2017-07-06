@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/css/style.css" afterPath="$PROJECT_DIR$/public/builder_front/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpB3nSGk.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/projects/tmp/phpDZd1Jb.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/audio.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/audio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/divider.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/divider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/image.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/image.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/layout_1_column.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/layout_1_column.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/panner.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/panner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/skeleton.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/skeleton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/slideshow.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/slideshow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/elements/youtube.html" afterPath="$PROJECT_DIR$/public/builder_front/elements/youtube.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/builder.js" afterPath="$PROJECT_DIR$/public/builder_front/js/builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/tinymce/custom.init.js" afterPath="$PROJECT_DIR$/public/builder_front/js/tinymce/custom.init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/page-editor.blade.php" afterPath="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -30,9 +39,11 @@
       <file leaf-file-name="page-editor.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34800">
-              <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="267">
+              <caret line="2193" column="0" lean-forward="false" selection-start-line="2193" selection-start-column="0" selection-end-line="2193" selection-end-column="0" />
+              <folding>
+                <marker date="1499365369000" expanded="true" signature="84170:87029" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,10 +61,10 @@
       <file leaf-file-name="builder.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="597" column="71" lean-forward="false" selection-start-line="597" selection-start-column="71" selection-end-line="597" selection-end-column="71" />
+            <state relative-caret-position="1785">
+              <caret line="596" column="45" lean-forward="true" selection-start-line="596" selection-start-column="45" selection-end-line="596" selection-end-column="45" />
               <folding>
-                <marker date="1499363996000" expanded="true" signature="71183:71187" ph="{...}" />
+                <marker date="1499365278000" expanded="true" signature="71229:71233" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -236,9 +247,9 @@
         <option value="$PROJECT_DIR$/resources/views/issue.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/resources/views/issue.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
         <option value="$PROJECT_DIR$/public/builder_front/css/style.css" />
         <option value="$PROJECT_DIR$/public/builder_front/js/builder.js" />
+        <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
       </list>
     </option>
   </component>
@@ -729,12 +740,12 @@
       <workItem from="1497610542617" duration="2195000" />
       <workItem from="1497870392164" duration="1365000" />
       <workItem from="1497945210603" duration="7941000" />
-      <workItem from="1499245967272" duration="5931000" />
+      <workItem from="1499245967272" duration="6112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114146000" />
+    <option name="totallyTimeSpent" value="114327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1120,18 +1131,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page-editor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34800">
-          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="267">
+          <caret line="2193" column="0" lean-forward="false" selection-start-line="2193" selection-start-column="0" selection-end-line="2193" selection-end-column="0" />
+          <folding>
+            <marker date="1499365369000" expanded="true" signature="84170:87029" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="597" column="71" lean-forward="false" selection-start-line="597" selection-start-column="71" selection-end-line="597" selection-end-column="71" />
+        <state relative-caret-position="1785">
+          <caret line="596" column="45" lean-forward="true" selection-start-line="596" selection-start-column="45" selection-end-line="596" selection-end-column="45" />
           <folding>
-            <marker date="1499363996000" expanded="true" signature="71183:71187" ph="{...}" />
+            <marker date="1499365278000" expanded="true" signature="71229:71233" ph="{...}" />
           </folding>
         </state>
       </provider>

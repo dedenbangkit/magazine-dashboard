@@ -94,7 +94,7 @@ function bindHeightWidth(){
 			function(){
 				$('iframe').css({'width':screenWidth});
 				if($(this).find('iframe')[0].contentWindow.document.body !=''){
-          newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
+          newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight;
 				}
 				if (typeof newHeight !== undefined){
 				$(this).find('iframe').css({'height':newHeight});
@@ -108,7 +108,7 @@ function autoBindHeight() {
     setTimeout(function () {
         bindHeightWidth();
         autoBindHeight();
-    }, 1000);
+    }, 3000);
 }
 
 $( window ).load(function() {
@@ -666,6 +666,7 @@ function styleClick(el) {
 		  //no audio to upload, just a SRC change
 		  if( $('input#audioURL').val() != '' && $('input#audioURL').val() != $(el).attr('src') ) {
 		    $(el).prev().children('source').attr('src', $('input#audioURL').val());
+				$(el).prev().load();
 		    /* SANDBOX */
 		    sandboxID = hasSandbox( $(el) )
 		    if( sandboxID ) {
@@ -1271,7 +1272,9 @@ $(function(){
 		bindHeightWidth();
 		$('#modeBlock').click();
 		var iframeLength = $('iframe').length;
-		document.getElementById('ui-id-1').contentWindow.sortableClose();
+    for (i=1; i < iframeLength; i++){
+    	$('iframe')[i].contentWindow.sortableClose();
+	  }
 	})
 
 	//delete blocks from window

@@ -2168,8 +2168,8 @@
             }).done(function(data) {
                 i=1
                 $(data['loadpage']).each(function(index, el) {
-                    loadPage(el.content_array,i)
-                    i=i+1
+                  loadPage(el.content_array,i);
+                  i=i+1;
                 });
                 //selesai looping
 //                $('#page1').css("display","block");
@@ -2180,26 +2180,27 @@
         };
 
         function loadPage(pageContent,id){
-//            console.log('squence - '+id)
             var path =0;
-
             $('#page'+(id)+' li iframe').load(function() {
-
                 $('#page'+(id)+' li iframe').each(function(a) {
 //                    console.log(id+" path "+a)
-                    $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
-                    //
 
-                    path = path+1
+                      $(this).contents().find('body').children('#page').replaceWith(pageContent[a]);
+                      // iframeContent.promise().done(function() {
+                      //   $('iframe')[0].contentWindow.activetiny();
+                      // });
+                      console.log(id);
+                      path = path+1
+
                 });
             });
-            $('#frameWrapper').removeClass('empty');
-            pageEmpty();
-    				allEmpty();
-            addStyling();
-            closeStyleEditor();
-            $('#modeBlock').click();
-        }
+              $('#frameWrapper').removeClass('empty');
+              pageEmpty();
+              allEmpty();
+              addStyling();
+              closeStyleEditor();
+              $('#modeBlock').click();
+        };
 
 
         //Page Setting
