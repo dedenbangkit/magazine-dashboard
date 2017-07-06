@@ -666,6 +666,7 @@ function styleClick(el) {
 		  //no audio to upload, just a SRC change
 		  if( $('input#audioURL').val() != '' && $('input#audioURL').val() != $(el).attr('src') ) {
 		    $(el).prev().children('source').attr('src', $('input#audioURL').val());
+				$(el).prev().load();
 		    /* SANDBOX */
 		    sandboxID = hasSandbox( $(el) )
 		    if( sandboxID ) {
