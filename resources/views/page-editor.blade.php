@@ -2316,7 +2316,7 @@
             contentPage=$('#page'+pages).html();
             countli=$('#page'+pages+' li').length;
             var countiframe=$('#page'+pages+' li iframe');
-            var framePrev='<div class="rule_preview">';
+            var framePrev='<div class="body_preview"><div class="rule_preview">';
             for(j=0;j<countli;j++) {
                 var pageli=$('#page'+pages+' li').get(j).style.height;
                 if(j==0){
@@ -2328,7 +2328,7 @@
                 framePrev=framePrev+' '+filter1[0].innerHTML
 
             }
-            framePrev=framePrev+' '+'</div>'
+            framePrev=framePrev+' '+'</div></div>'
             bootbox.confirm({
                 title: "Save Current Page",
                 message: framePrev,
