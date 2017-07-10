@@ -270,7 +270,7 @@
                                         <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
                                         <input type="file" name="imageFileField" id="imageFileField">
                                     </span>
-                                <a href="#" class="btn btn-default btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>&nbsp;&nbsp;Remove</a>
+                                <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
                             </div>
                             <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
                         </div>
@@ -2460,10 +2460,6 @@
 
             pageNumber = $('#pages li').size()-1;
         }
-
-        $(document).ready(function(){
-          bindHeightWidth();
-        });
 
     </script>
 

@@ -262,11 +262,11 @@
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="appid" value="{{$row->id}}">
                                         <div class="form-group">
-                                          <label><i class="fa fa-apple"></i> Bundle ID</label>
+                                          <label><i class="fa fa-apple"></i> <i class="fa fa-android"></i> Bundle ID</label>
                                           <input type="text" name="dev_id" class="form-control" value="com.{{strtolower(str_replace(' ', '_',$row->company_name))}}.{{strtolower(str_replace(' ', '_',$row->project_name))}}">
                                         </div>
                                         <div class="form-group">
-                                          <label><i class="fa fa-apple"></i> Prefix</label>
+                                          <label><i class="fa fa-apple"></i> Prefix (IOS ONLY)</label>
                                           <input type="text" name="apple_prefix" id="apple_prefix" class="form-control" placeholder="eg. S4G4BK2VSQ" value="{{$row->prefix}}">
                                         </div>
                                         <div class="form-group">

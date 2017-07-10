@@ -107,7 +107,9 @@ class SubscribeController extends Controller
                 ->withInput();
         };
         if (!empty($request->file('cover'))) {
-            Image::make(Input::file('cover'))->resize(300, 200)->save('img/projects/' . $request->file('cover')->getClientOriginalName());
+            Image::make(Input::file('cover'))->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save('img/projects/' . $request->file('cover')->getClientOriginalName());
             $cover=$request->file('cover')->getClientOriginalName();
         }else{
             $cover=$project_data[0]['project_cover'];
