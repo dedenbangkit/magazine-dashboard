@@ -266,9 +266,9 @@
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="buttons" style="width:100%">
                                     <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
+                                        <input type="file" name="imageFileField" id="imageFileField" style="width:100%">
                                         <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Upload image</span>
                                         <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
-                                        <input type="file" name="imageFileField" id="imageFileField">
                                     </span>
                                 <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
                             </div>

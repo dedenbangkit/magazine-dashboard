@@ -1038,7 +1038,7 @@ $(function(){
 		});
 
 	}).on("blur", "input", function(){
-		$(this).animate({'width': '42%'}, 500, function(){
+		$(this).animate({'width': '100%'}, 500, function(){
 			$(this).css('position', 'relative');
 			$(this).css('right', 'auto');
 		})
