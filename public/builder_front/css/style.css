@@ -85,7 +85,11 @@ body .drop-hover {
 }
 
 .rule_preview > .item {
-	zoom: 25%;
+	zoom: 75%;
+}
+
+.rule_preview > o.btn {
+	display: none;
 }
 
 .rule_preview > .item > .container{
