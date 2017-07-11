@@ -682,7 +682,7 @@ function styleClick(el) {
 			if (window.FormData){
 				formdata = new FormData(form[0]);
 			}
-            $(el).attr('src', "/builder_front/images/loading.gif");
+            $(el).attr('src', "/builder_front/images/loading.gif").css("width", "100%");
 			var formAction = form.attr('action');
 			$.ajax({
 				url : formAction,
@@ -698,7 +698,7 @@ function styleClick(el) {
 					if( $(el).prop('tagName') == 'IMG' ){
 					$(el).attr('src', response.response);
 					}
-					else if( $(el).prop('tagName') == 'DIV' ){
+					else if( $(el).hasClass('column') ){
 					$(el).css('background-image', 'url('+ response.response +')');
 					}
 					//reset the file upload
@@ -710,7 +710,8 @@ function styleClick(el) {
 						elementID = $(el).attr('id');
 						$('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
 						}
-						else if( $(el).prop('tagName') == 'DIV' ){
+						else if( $(el).hasClass('column')){
+						elementID = $(el).attr('id');
 						$('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ response.response +')');
 						}
 					}
