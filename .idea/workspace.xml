@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" afterPath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -38,12 +37,12 @@
       <file leaf-file-name="new-subscribe.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+            <state relative-caret-position="447">
+              <caret line="72" column="78" lean-forward="false" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
               <folding>
-                <marker date="1499788315000" expanded="true" signature="183:5760" ph="..." />
-                <marker date="1499788315000" expanded="true" signature="613:5730" ph="..." />
-                <marker date="1499788315000" expanded="true" signature="769:5714" ph="..." />
+                <marker date="1499788422000" expanded="true" signature="183:5758" ph="..." />
+                <marker date="1499788422000" expanded="true" signature="613:5728" ph="..." />
+                <marker date="1499788422000" expanded="true" signature="769:5712" ph="..." />
               </folding>
             </state>
           </provider>
@@ -710,12 +709,12 @@
       <workItem from="1497870392164" duration="1365000" />
       <workItem from="1497945210603" duration="7941000" />
       <workItem from="1499245967272" duration="6753000" />
-      <workItem from="1499787752080" duration="512000" />
+      <workItem from="1499787752080" duration="580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115480000" />
+    <option name="totallyTimeSpent" value="115548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1108,12 +1107,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="447">
+          <caret line="72" column="78" lean-forward="false" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
           <folding>
-            <marker date="1499788315000" expanded="true" signature="183:5760" ph="..." />
-            <marker date="1499788315000" expanded="true" signature="613:5730" ph="..." />
-            <marker date="1499788315000" expanded="true" signature="769:5714" ph="..." />
+            <marker date="1499788422000" expanded="true" signature="183:5758" ph="..." />
+            <marker date="1499788422000" expanded="true" signature="613:5728" ph="..." />
+            <marker date="1499788422000" expanded="true" signature="769:5712" ph="..." />
           </folding>
         </state>
       </provider>

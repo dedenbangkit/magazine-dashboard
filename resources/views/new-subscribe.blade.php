@@ -70,7 +70,7 @@
                     <p style="color: red">{{ $errors->create->first('companyphone') }}</p>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Project Name" name="projectname" value="{{ old('projectname') }}"/>
+                    <input type="text" class="form-control" placeholder="Issue Name" name="projectname" value="{{ old('projectname') }}"/>
                     <span class="glyphicon glyphicon-book form-control-feedback"></span>
                     <p style="color: red">{{ $errors->create->first('projectname') }}</p>
                 </div>
