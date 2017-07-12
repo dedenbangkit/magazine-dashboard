@@ -24,6 +24,22 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .new-image{
+        position: absolute;
+        left: 15px;
+        z-index: 999;
+        cursor: pointer;
+        top: 80px;
+      }
+      .remove-image{
+        position: absolute;
+        left: 15px;
+        z-index: 999;
+        cursor: pointer;
+        top: 30px;
+      }
+    </style>
 </head>
 <body>
 
@@ -32,14 +48,9 @@
 
     					<div class="col-md-10 col-md-offset-1">
 
-                <div id="myCarousel" class="carousel slide" data-interval="false">
+                <div id="myCarousel" class="carousel slide" data-interval="false" style="height:300px;overflow-x:hidden;">
 
 	    						<!-- Indicators -->
-	    						<ol class="carousel-indicators">
-		    						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		    						<li data-target="#myCarousel" data-slide-to="1"></li>
-		    						<li data-target="#myCarousel" data-slide-to="2"></li>
-		    					</ol>
 
 		    					<!-- Wrapper for slides -->
 		    					<div class="carousel-inner"><ion-slides slider="data.slider" class="do_not_swipe">
@@ -55,6 +66,9 @@
 								</ion-slides></div>
 
 								<!-- Controls -->
+                <o class="carousel-control new-image" id="add-img"><span class="fui-plus"></span></o>
+                <o class="carousel-control remove-image" id="remove-img"><span class="fui-trash"></span></o>
+
 								<a class="left carousel-control fui-arrow-left" href="#myCarousel" data-slide="prev"></a>
 								<a class="right carousel-control fui-arrow-right" href="#myCarousel" data-slide="next"></a>
 							</div>
@@ -81,9 +95,22 @@
     <script src='js/jquery.placeholder.js'></script>
     <script src='js/application.js'></script>
     <script>
-     function sortableClose(){
+     function sortableClose(){};
+     $('#add-img').click(function(){
+       $('ion-slide-page').removeClass('active');
+       image = '<ion-slide-page class="item active"><img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/image-05.png" alt="" /></ion-slide-page>'
+       $('ion-slides').append(image);
+     });
 
-     };
+     $('#remove-img').click(function(){
+       var available = $('ion-slide-page').length;
+       if (available > 1){
+         $('ion-slide-page.active').remove();
+         $('ion-slide-page').first().addClass('active');
+       }else{
+         alert('failed');
+       }
+     });
     </script>
 </body>
 </html>
