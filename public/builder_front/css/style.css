@@ -86,6 +86,7 @@ body .drop-hover {
 
 .rule_preview > .item {
 	zoom: 75%;
+	padding-bottom: 20px;
 }
 
 .rule_preview > o.btn {

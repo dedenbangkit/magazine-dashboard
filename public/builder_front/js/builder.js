@@ -117,7 +117,11 @@ function autoBindHeight() {
 
 $( window ).load(function() {
 	$('#loader').fadeOut();
-	$('#frameWrapper').animateCss('fadeInUp');
+	$('header').animateCss('fadeInDown').promise().done(function() {
+    $('#screen').animateCss('fadeInUp').promise().done(function() {
+			$('ul#elements').animateCss('fadeInUp');
+		});
+  });
 });
 
 

@@ -6,7 +6,7 @@ tinymce.init({
   selector: '.article',
   menubar:false,
   element_format : 'html',
-  toolbar: 'editor styleselect fontsizeselect forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link',
+  toolbar: 'addimage link fontsizeselect forecolor backcolor | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist | styleselect',
   extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width=100%|height=auto|align|onmouseover|onmouseout|name]',
   plugins: 'image imagetools table link paste contextmenu textpattern autolink lists charmap searchreplace textcolor colorpicker media hr imagetools',
   selection_toolbar: 'fontsizeselect forecolor backcolor | bold italic | quicklink | bullist numlist',
@@ -15,7 +15,7 @@ tinymce.init({
   width : 300,
   preview_styles: 'font-size color',
   setup: function (editor) {
-    editor.addButton('editor', {
+    editor.addButton('addimage', {
       text: false,
       icon: 'mce-ico mce-i-image',
       onclick: function () {
