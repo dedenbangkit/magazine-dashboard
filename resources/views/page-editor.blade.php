@@ -20,6 +20,7 @@
         <link href="{{asset('builder_front/css/font-awesome.css')}}" rel="stylesheet">
 
         <link href="{{asset('builder_front/js/redactor/redactor.css')}}" rel="stylesheet">
+        <link href="{{ asset('/css/animate.min.css')}}" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
         <!--[if lt IE 9]>
@@ -2147,6 +2148,16 @@
     <script src="{{asset('builder_front/js/builder.js')}}"></script>
     <script>
 
+    $.fn.extend({
+      animateCss: function (animationName) {
+          var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+          this.addClass('animated ' + animationName).one(animationEnd, function() {
+              $(this).removeClass('animated ' + animationName);
+          });
+          return this;
+      }
+    });
+
     //framenya
         $.ajax({
             url: "/get-page",
@@ -2167,10 +2178,20 @@
                 dataType: "json",
             }).done(function(data) {
                 i=1
+                var total = data.length;
                 $(data['loadpage']).each(function(index, el) {
                   loadPage(el.content_array,i);
                   i=i+1;
+                }).promise().done( function(){
+                  $('#frameWrapper').removeClass('empty');
+                  pageEmpty();
+                  allEmpty();
+                  addStyling();
+                  closeStyleEditor();
+                  $('#modeBlock').click();
+                  autoBindHeight();
                 });
+
                 //selesai looping
 //                $('#page1').css("display","block");
                 $('li[data-page="1"]').trigger('click');
@@ -2189,17 +2210,10 @@
                       // iframeContent.promise().done(function() {
                       //   $('iframe')[0].contentWindow.activetiny();
                       // });
-                      console.log(id);
                       path = path+1
 
                 });
             });
-              $('#frameWrapper').removeClass('empty');
-              pageEmpty();
-              allEmpty();
-              addStyling();
-              closeStyleEditor();
-              $('#modeBlock').click();
         };
 
 
@@ -2331,7 +2345,7 @@
             framePrev=framePrev+' '+'</div></div>'
             bootbox.confirm({
                 title: "Save Current Page",
-                message: framePrev,
+                message: framePrev.replace('outline: red dashed 3px; cursor: pointer;',''),
                 buttons: {
                     cancel: {
                         label: '<i class="fa fa-times"></i> Cancel'
@@ -2358,7 +2372,7 @@
                         contentIframe[j]={j:j,frame:pageli,framecontent:contentpath}
                     }
                     id=$('#page'+pages).data('id');
-                    console.log(id)
+                    // console.log(id)
                     contentArray = {id:id,content:contentPage,contentIframe:contentIframe};
                     $.ajax({
                         type: 'POST',
@@ -2366,7 +2380,7 @@
                         data: {'id':id,'content':contentPage,'contentIframe':contentIframe,'_token':'<?= csrf_token() ?>'},
                         success: function(resultData) {
                             $('.loaderSave').hide();
-                            console.log(resultData);
+                            // console.log(resultData);
                         }
                     });
                 }

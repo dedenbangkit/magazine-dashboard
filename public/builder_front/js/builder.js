@@ -93,15 +93,19 @@ function bindHeightWidth(){
 		$.each($('.container li.element'),
 			function(){
 				$('iframe').css({'width':screenWidth});
-				if($(this).find('iframe')[0].contentWindow.document.body !=''){
           newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
-				}
 				if (typeof newHeight !== undefined){
 				$(this).find('iframe').css({'height':newHeight});
 				$(this).css({'height':newHeight});
 				}
 		});
 		$('#screen').css({'height': $('#screen ul').innerHeight});
+}
+
+function checkPageAvailability(){
+	if($("iframe").length > 1) {
+  	alert('available');
+	}
 }
 
 function autoBindHeight() {
@@ -112,9 +116,8 @@ function autoBindHeight() {
 }
 
 $( window ).load(function() {
-	$('#loader').fadeOut(function(){
-	autoBindHeight();
-	});
+	$('#loader').fadeOut();
+	$('#frameWrapper').animateCss('fadeInUp');
 });
 
 
@@ -1059,7 +1062,6 @@ $(function(){
 				}
 				//newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].thumbnail+'" data-srcc="'+_Elements.elements[key][x].url+'" data-height="'+_Elements.elements[key][x].height+'" data-sandbox="" '+loaderFunction+'></li>')
 				newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].icon+'" data-srcc="'+_Elements.elements[key][x].url+'" data-sandbox="" '+loaderFunction+'>'+_Elements.elements[key][x].title+'</li>')
-				console.log(niceKey);
 			} else {
 				//newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].thumbnail+'" data-srcc="'+_Elements.elements[key][x].url+'" data-height="'+_Elements.elements[key][x].height+'"></li>')
 				newItem = $('<li class="element '+niceKey+'"><img src="'+_Elements.elements[key][x].icon+'" data-srcc="'+_Elements.elements[key][x].url+'">'+_Elements.elements[key][x].title+'</li>')
@@ -1702,8 +1704,6 @@ $(function(){
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
         closeStyleEditor();
-		bindHeightWidth();
-
 	})
 
 
@@ -1791,7 +1791,6 @@ $(function(){
 		$('#deletePage').off('click').on('click', '#deletePageConfirm', function(){
 
 			$('#deletePage').modal('hide');
-            console.log($('#pages li.active').data('id'));
             $.ajax({
                 type: 'GET',
                 url: "/del-page",
@@ -1858,7 +1857,6 @@ $(function(){
 
 		var target = $(this).data('responsive');
 		var orientation = $('#responsive-orientation ul li.active a').data('orientation');
-		console.log(orientation);
 
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone' && orientation == 'portrait'){
@@ -1869,7 +1867,6 @@ $(function(){
 					newHeight = $(this).find('iframe')[0].contentWindow.document.body.clientHeight + 20;
 					$(this).find('iframe').css({'height':newHeight});
 					$(this).css({'height':newHeight});
-					console.log(newHeight);
 			});
 			$('#screen').css({'height': $('#screen ul').innerHeight});
 		}else if(target == 'phone' && orientation == 'landscape'){
@@ -1938,7 +1935,6 @@ $(function(){
 
 		var target = $('#responsive-toolbar ul li.active a').data('responsive');
 		var orientation = $(this).data('orientation');
-		console.log(target);
 
 		$(this).parent().addClass('active').siblings().removeClass('active');
 		if(target == 'phone' && orientation == 'portrait'){
@@ -2057,7 +2053,6 @@ $(function(){
 					$('#zoomValue').html(zoomText + '%');
 					checkZoomIn();
 					checkZoomOut();
-					console.log('Zoom In')
 			}else if ((e.which === 189) && zoomValue >= 0.3){
 				zoomValue = zoomValue - 0.1;
 				$('#screen').css({'transform': 'scale(' + zoomValue + ')'});
@@ -2065,9 +2060,8 @@ $(function(){
 				$('#zoomValue').html(zoomText + '%');
 				checkZoomIn();
 				checkZoomOut();
-				console.log('Zoom Out')
 			}else{
-				console.log('Ngga bisa Zoom');
+				console.log('Zoom Max');
 			};
 		});
 

@@ -42,7 +42,6 @@
 
                 </ul>
             </li>
-            <li><a href="/sample-page2"><i class='fa fa-cubes'></i> <span>EDITOR DEMO</span></li></a>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

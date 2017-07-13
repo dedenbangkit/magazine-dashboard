@@ -978,7 +978,7 @@ ul#elements > li.element.layout{
 
 .menu .second ul {
 	margin: 0px;
-	padding: 30px;
+	padding: 10px;
 }
 
 .menu .second a {
@@ -986,8 +986,6 @@ ul#elements > li.element.layout{
 	font-size:12px;
 	margin: 0px;
 	padding: 15px;
-	margin-top: 10px;
-	margin-bottom: 10px;
 	display: inline-block;
 	width: 100%;
 	text-align: center;
