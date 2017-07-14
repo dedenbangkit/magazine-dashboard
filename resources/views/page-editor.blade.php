@@ -2345,7 +2345,7 @@
             framePrev=framePrev+' '+'</div></div>'
             bootbox.confirm({
                 title: "Save Current Page",
-                message: framePrev.replace('outline: red dashed 3px; cursor: pointer;',''),
+                message: framePrev.replace('outline: red dashed 3px; cursor: pointer;','').replace('ion-slide-page','div').replace('<ion-slides slider="data.slider" class="do_not_swipe">','').replace('</ion-slides>',''),
                 buttons: {
                     cancel: {
                         label: '<i class="fa fa-times"></i> Cancel'
@@ -2359,6 +2359,7 @@
                     var contentArray= [];
                     var contentIframe=[];
                     $('.loaderSave').show();
+                    $('#myCarousels').carousel();
                     var pages=$('#pages .active').data('page')
                     pageNum =$('#pages li').size()-1;
                     contentPage=$('#page'+pages).html();
