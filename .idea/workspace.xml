@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" afterPath="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/builder_front/js/builder.js" afterPath="$PROJECT_DIR$/public/builder_front/js/builder.js" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,23 +28,39 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/builder_front/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+            <state relative-caret-position="1425">
+              <caret line="95" column="22" lean-forward="false" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-subscribe.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new-subscribe.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="72" column="78" lean-forward="false" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
-              <folding>
-                <marker date="1499788422000" expanded="true" signature="183:5758" ph="..." />
-                <marker date="1499788422000" expanded="true" signature="613:5728" ph="..." />
-                <marker date="1499788422000" expanded="true" signature="769:5712" ph="..." />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builder.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="486" column="12" lean-forward="false" selection-start-line="486" selection-start-column="12" selection-end-line="486" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-1.12.4.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/builder_front/js/jquery-1.12.4.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1258">
+              <caret line="1579" column="4" lean-forward="false" selection-start-line="1579" selection-start-column="4" selection-end-line="1579" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>f (/^(IMG|HR)$/.test(e.nodeName)) {</find>
-      <find>upload</find>
       <find>fileinput-new</find>
       <find>iupload</find>
       <find>input#</find>
@@ -150,6 +165,8 @@
       <find>compile</find>
       <find>bind</find>
       <find>IMG</find>
+      <find>match</find>
+      <find>youtube</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -215,9 +232,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/resources/views/issue.blade.php" />
         <option value="$PROJECT_DIR$/public/builder_front/css/style.css" />
-        <option value="$PROJECT_DIR$/public/builder_front/js/builder.js" />
         <option value="$PROJECT_DIR$/resources/views/page-editor.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/new-subscribe.blade.php" />
+        <option value="$PROJECT_DIR$/public/builder_front/js/builder.js" />
       </list>
     </option>
   </component>
@@ -340,7 +357,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -571,7 +588,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,12 +726,13 @@
       <workItem from="1497870392164" duration="1365000" />
       <workItem from="1497945210603" duration="7941000" />
       <workItem from="1499245967272" duration="6753000" />
-      <workItem from="1499787752080" duration="580000" />
+      <workItem from="1499787752080" duration="1026000" />
+      <workItem from="1500278552666" duration="3007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115548000" />
+    <option name="totallyTimeSpent" value="119001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -774,13 +792,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/Action_log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/projects/rs_634x890-140312125920-634.COver-Emma-Watson-Elle-Magazine.jl.031214.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1085,35 +1096,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="2193" column="0" lean-forward="false" selection-start-line="2193" selection-start-column="0" selection-end-line="2193" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="492" column="5" lean-forward="false" selection-start-line="492" selection-start-column="5" selection-end-line="492" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/builder_front/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+        <state relative-caret-position="1425">
+          <caret line="95" column="22" lean-forward="false" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/new-subscribe.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="72" column="78" lean-forward="false" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
-          <folding>
-            <marker date="1499788422000" expanded="true" signature="183:5758" ph="..." />
-            <marker date="1499788422000" expanded="true" signature="613:5728" ph="..." />
-            <marker date="1499788422000" expanded="true" signature="769:5712" ph="..." />
-          </folding>
+        <state relative-caret-position="192">
+          <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/builder_front/js/jquery-1.12.4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="1579" column="4" lean-forward="false" selection-start-line="1579" selection-start-column="4" selection-end-line="1579" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/builder_front/js/builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="486" column="12" lean-forward="false" selection-start-line="486" selection-start-column="12" selection-end-line="486" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
