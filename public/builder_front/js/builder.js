@@ -482,10 +482,10 @@ function styleClick(el) {
 			//console.log(match);
 			$('#video_Tab input#vimeoID').val( match[match.length-1] );
 			$('#video_Tab input#youtubeID').val('');
-		} else {//youtube
+		} else {
 			var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
-			
 			var match = $(el).prev().attr('src').match(regExp);
+			var ngclick = $(el).prev().attr('ng-click', "openWindow('http://www.youtube.com/embed/"+match[1]+"')");
             var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+match[1]+'/0.jpg');
 			$('#video_Tab input#youtubeID').val( match[1] );
 			$('#video_Tab input#vimeoID').val('');

@@ -200,7 +200,7 @@ header .navbar-white a {
 	height: 0;
 }
 
-.videoWrapper > iframe {
+.videoWrapper > img {
 	position: absolute;
 	top: 0;
 	left: 0;

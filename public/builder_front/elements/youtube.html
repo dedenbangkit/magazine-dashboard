@@ -32,23 +32,27 @@
       <script src='js/html5shiv.js'></script>
       <script src='js/respond.min.js'></script>
     <![endif]-->
-
+    <style>
+      #page{
+        margin-top: 10px;
+      }
+      .videoWrapper{
+        padding-bottom: 70.25%;
+      }
+    </style>
 </head>
 <body>
 
     <div id='page' class='page'>
 
     	<div class='item content' id='content_section1'>
-        <o class='btn btn-inverse btn-embossed sortable-function' onclick='sortableMode()'><i class='glyphicon glyphicon-move'></i></o>
-        <o class='btn btn-success btn-embossed sortable-function-edit' onclick='sortableClose()'><i class='glyphicon glyphicon-move'></i></o>
-
     		<div class='container'>
           <article class='article'>
     			<div class='row article__content' id='demos'>
 
                         <div class='videoWrapper'>
-              						<a href src='https://www.youtube.com/embed/-z5_sspsdhk'>
-                            <img width='100%' src='https://i.ytimg.com/vi/-z5_sspsdhk/0.jpg'>
+              						<a src='http://www.youtube.com/embed/-z5_sspsdhk' ng-click=openWindow('http://www.youtube.com/embed/-z5_sspsdhk')>
+                            <img width='100%' src='http://i.ytimg.com/vi/-z5_sspsdhk/0.jpg'>
                           </a>
               						<div class='frameCover' data-type='video'></div>
               					</div>
