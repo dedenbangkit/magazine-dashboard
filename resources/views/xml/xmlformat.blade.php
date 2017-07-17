@@ -85,4 +85,5 @@
     <plugin spec='https://github.com/MobileChromeApps/zip.git#977b57d' />
     <plugin name='ionic-plugin-keyboard' spec='2.2.1' />
     <plugin spec='https://github.com/pbernasconi/cordova-progressIndicator.git#3f2885e' />
+    <plugin name='cordova-plugin-inappbrowser' spec='^1.7.1' />
 </widget>
