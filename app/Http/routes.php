@@ -36,6 +36,7 @@ Route::post('/save-page', 'PageController@savePage');
 Route::get('/add-page', 'PageController@addPage');
 Route::get('/del-page', 'PageController@deletePage');
 Route::post('/iupload', 'PageController@iupload');
+Route::post('/iupload-carousel', 'PageController@iuploadcarousel');
 Route::post('/editor-issue', 'PageController@editorIssue');
 Route::post('/save', 'PageController@exportIssue');
 Route::get('/compile/{id}', 'PageController@exportIssueById');
