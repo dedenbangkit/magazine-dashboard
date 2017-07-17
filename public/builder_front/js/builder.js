@@ -484,6 +484,8 @@ function styleClick(el) {
 			$('#video_Tab input#youtubeID').val('');
 		} else {//youtube
 			var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+			var thmbyt = /.*(?:img.youtube.com\/|v\/|u\/\w\/|vi\/)([^#\&\?]*)(\/0.jpg).*/;
+			var thmb = $(el).prev().children().attr('src', thmbyt);
 			var match = $(el).prev().attr('src').match(regExp);
 			$('#video_Tab input#youtubeID').val( match[1] );
 			$('#video_Tab input#vimeoID').val('');
@@ -1171,7 +1173,9 @@ $(function(){
 						$('#editContentModal #contentToEdit').val( $(this).html() )
 						$('#editContentModal').modal('show');
 						//for the elements below, we'll use a simplyfied editor, only direct text can be done through this one
-						if( this.tagName == 'SMALL' || this.tagName == 'A' || this.tagName == 'LI' || this.tagName == 'SPAN' || this.tagName == 'B' || this.tagName == 'I' || this.tagName == 'TT' || this.tageName == 'CODE' || this.tagName == 'EM' || this.tagName == 'STRONG' || this.tagName == 'SUB' || this.tagName == 'BUTTON' || this.tagName == 'LABEL' || this.tagName == 'P' || this.tagName == 'H1' || this.tagName == 'H2' || this.tagName == 'H2' || this.tagName == 'H3' || this.tagName == 'H4' || this.tagName == 'H5' || this.tagName == 'H6' ) {
+						if( this.tagName == 'SMALL' || this.tagName == 'A' || this.tagName == 'LI' || this.tagName == 'SPAN' || this.tagName == 'B' || this.tagName == 'I' || this.tagName == 'TT' || this.tageName == 'CODE' ||
+						this.tagName == 'EM' || this.tagName == 'STRONG' || this.tagName == 'SUB' || this.tagName == 'BUTTON' || this.tagName == 'LABEL' || this.tagName == 'P' || this.tagName == 'H1' || this.tagName == 'H2' ||
+						this.tagName == 'H2' || this.tagName == 'H3' || this.tagName == 'H4' || this.tagName == 'H5' || this.tagName == 'H6' ) {
 							$('#editContentModal #contentToEdit').redactor({
 								buttons: ['html', 'bold', 'italic', 'deleted'],
 								focus: true,
