@@ -4,7 +4,7 @@ var _Elements = {"elements": {
         {"title":"2 Column","icon":"builder_front/images/icon/2-column.png","url":"builder_front/elements/layout_2_column.html"},
         {"title":"3 Column","icon":"builder_front/images/icon/2-column.png","url":"builder_front/elements/layout_3_column.html"},
         {"title":"4 Column","icon":"builder_front/images/icon/4-column.png","url":"builder_front/elements/layout_4_column.html"},
-        {"title":"Divider","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/divider.html"}
+        {"title":"Divider","icon":"builder_front/images/icon/image-responsive.png","url":"builder_front/elements/divider.html"},
     ],
     "Text":[
         {"title":"Heading 1","icon":"builder_front/images/icon/text-h1.png","url":"builder_front/elements/h1.html"},
@@ -12,7 +12,8 @@ var _Elements = {"elements": {
         {"title":"Heading 3","icon":"builder_front/images/icon/text-h3.png","url":"builder_front/elements/h3.html"},
         {"title":"Heading 4","icon":"builder_front/images/icon/text-h4.png","url":"builder_front/elements/h4.html"},
         {"title":"Paragraph","icon":"builder_front/images/icon/text-paragraf.png","url":"builder_front/elements/layout_1_column.html"},
-        {"title":"Blockquote","icon":"builder_front/images/icon/text-blockquote.png","url":"builder_front/elements/blockquote.html"}
+        {"title":"Blockquote","icon":"builder_front/images/icon/text-blockquote.png","url":"builder_front/elements/blockquote.html"},
+        {"title":"Scrollable","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/scroll.html"}
     ],
     "Image":[
         {"title":"Image","icon":"builder_front/images/icon/image.png","url":"builder_front/elements/image.html"},
