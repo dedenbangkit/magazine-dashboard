@@ -15,7 +15,7 @@ editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-tr
 editableItems['p'] = ['column-count','background-color','text-align', 'text-indent', 'font-family', 'padding', 'border-radius'];
 editableItems['a.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['opacity','width','max-height','border-radius','float','padding', 'border-color', 'border-style', 'border-width'];
-editableItems['.carousels'] = [];
+editableItems['.carousels'] = ['height'];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
@@ -409,8 +409,6 @@ function styleClick(el) {
 	//hide all by default
 	$('a#link_Link').parent().hide();
 	$('a#img_Link').parent().hide();
-	$('a#bg_Link').parent().hide();
-	$('a#slide_Link').parent().hide();
 	$('a#icon_Link').parent().hide();
 	$('a#video_Link').parent().hide();
 	$('a#audio_Link').parent().hide();
@@ -418,8 +416,6 @@ function styleClick(el) {
 	//is the element an ancor tag?
 	if( $(el).prop('tagName') == 'A' || $(el).parent().prop('tagName') == 'A' ) {
 		$('a#img_Link').hide();
-		$('a#bg_Link').hide();
-		$('a#slide_Link').hide();
 		$('a#link_Link').parent().show();
 		if( $(el).prop('tagName') == 'A' ) {
 			theHref = $(el).attr('href');
@@ -477,7 +473,6 @@ function styleClick(el) {
 
 	if( $(el).attr('data-type') == 'video' ) {
 		$('a#img_Link').hide();
-		$('a#bg_Link').hide();
 		$('a#video_Link').parent().show();
 		$('a#video_Link').click();
 		addStyling();
@@ -499,7 +494,6 @@ function styleClick(el) {
 
 	if( $(el).attr('data-type') == 'audio' ) {
 		$('a#img_Link').hide();
-		$('a#bg_Link').hide();
 		$('a#audio_Link').parent().show();
 		$('a#audio_Link').click();
 		addStyling();
@@ -509,8 +503,6 @@ function styleClick(el) {
 
 	if( $(el).prop('tagName') == 'IMG' ){
 		$('a#img_Link').show();
-		$('a#bg_Link').hide();
-		$('a#slide_Link').hide();
 		$('a#img_Link').parent().show();
 		//set the current SRC
 		$('.imageFileTab').find('input#imageURL').val( $(el).attr('src') );
@@ -519,39 +511,23 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('container') ){
-		$('a#bg_Link').show();
-		$('a#img_Link').hide();
-		$('a#slide_Link').hide();
-		$('a#bg_Link').parent().show();
+		$('a#img_Link').show();
+		$('a#img_Link').parent().show();
 		addStyling();
 		//set the current SRC
-		$('.bgFileTab').find('input#bgURL').val( $(el).css('background-image') )
+		$('.imageFileTab').find('input#imageURL').val( $(el).css('background-image') )
 		//reset the file uploa
-		$('.bgFileTab').find('a.fileinput-exists').click();
-	}
-
-	if( $(el).hasClass('carousels') ){
-		$('a#slide_Link').show();
-		$('a#bg_Link').hide();
-		$('a#img_Link').hide();
-		$('a#slide_Link').parent().show();
-		addStyling();
-		//set the current SRC
-		$('.slideFileTab').find('input#slideURL').val( $(el).attr('src') );
-		//reset the file upload
-		$('.slideFileTab').find('a.fileinput-exists').click();
+		$('.imageFileTab').find('a.fileinput-exists').click();
 	}
 
 	if( $(el).hasClass('column') ){
-		$('a#bg_Link').show();
-		$('a#img_Link').hide();
-		$('a#slide_Link').hide();
-		$('a#bg_Link').parent().show();
+		$('a#img_Link').show();
+		$('a#img_Link').parent().show();
 		addStyling();
 		//set the current SRC
-		$('.bgFileTab').find('input#bgURL').val( $(el).css('background-image') )
+		$('.imageFileTab').find('input#imageURL').val( $(el).css('background-image') )
 		//reset the file uploa
-		$('.bgFileTab').find('a.fileinput-exists').click();
+		$('.imageFileTab').find('a.fileinput-exists').click();
 	}
 
 	if( $(el).hasClass('fa') ) {
@@ -710,159 +686,69 @@ function styleClick(el) {
 
 		//do we need to upload an image?
 		if( $('a#img_Link').css('display') == 'block' && $('input#imageFileField').val() != '' ) {
-		  var form = $('form#imageUploadForm');
-		  var formdata = false;
-		  if (window.FormData){
-		    formdata = new FormData(form[0]);
-		  }
-			console.log(form);
-		        $(el).attr('src', "/builder_front/images/loading.gif").css("width", "100%");
-		  var formAction = form.attr('action');
-		  $.ajax({
-		    url : formAction,
-		    data : formdata ? formdata : form.serialize(),
-		    cache : false,
-		    contentType : false,
-		    processData : false,
-		    dataType: "json",
-		    type : 'POST',
-		  }).done(function(response){
-		    if( response.code == 1 ) {//success
-		      $('input#imageURL').val( response.response );
-		      if( $(el).prop('tagName') == 'IMG' ){
-		      $(el).attr('src', response.response);
-		      }
-		      //reset the file upload
-		      $('.imageFileTab').find('a.fileinput-exists').click();
-		      /* SANDBOX */
-		      sandboxID = hasSandbox( $(el) )
-		      if( sandboxID ) {
-		        if( $(el).prop('tagName') == 'IMG' ){
-		        elementID = $(el).attr('id');
-		        $('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
-		        }
-		      }
-		      /* END SANDBOX */
-		    } else if( response.code == 0 ) {//error
-		      alert('Something went wrong: '+response.response)
-		    }
-		  })
+			var form = $('form#imageUploadForm');
+			var formdata = false;
+			if (window.FormData){
+				formdata = new FormData(form[0]);
+			}
+            $(el).attr('src', "/builder_front/images/loading.gif").css("width", "100%");
+			var formAction = form.attr('action');
+			$.ajax({
+				url : formAction,
+				data : formdata ? formdata : form.serialize(),
+				cache : false,
+				contentType : false,
+				processData : false,
+				dataType: "json",
+				type : 'POST',
+			}).done(function(response){
+				if( response.code == 1 ) {//success
+					$('input#imageURL').val( response.response );
+					if( $(el).prop('tagName') == 'IMG' ){
+					$(el).attr('src', response.response);
+					}
+					else if( $(el).hasClass('column') ){
+					$(el).css('background-image', 'url('+ response.response +')');
+					}
+					//reset the file upload
+					$('.imageFileTab').find('a.fileinput-exists').click();
+					/* SANDBOX */
+					sandboxID = hasSandbox( $(el) )
+					if( sandboxID ) {
+						if( $(el).prop('tagName') == 'IMG' ){
+						elementID = $(el).attr('id');
+						$('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
+						}
+						else if( $(el).hasClass('column')){
+						elementID = $(el).attr('id');
+						$('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ response.response +')');
+						}
+					}
+					/* END SANDBOX */
+				} else if( response.code == 0 ) {//error
+					alert('Something went wrong: '+response.response)
+				}
+			})
 		} else if( $('a#img_Link').css('display') == 'block' ) {
-		  //no image to upload, just a SRC change
-		  if( $('input#imageURL').val() != '' && $('input#imageURL').val() != $(el).attr('src') ) {
-		    $(el).attr('src', $('input#imageURL').val());
-		    /* SANDBOX */
-		    sandboxID = hasSandbox( $(el) )
-		    if( sandboxID ) {
-		      elementID = $(el).attr('id');
-		      $('#'+sandboxID).contents().find('#'+elementID).attr('src', $('input#imageURL').val());
-		    }
-		  }
+			//no image to upload, just a SRC change
+			if( $('input#imageURL').val() != '' && $('input#imageURL').val() != $(el).attr('src') ) {
+				$(el).attr('src', $('input#imageURL').val());
+				/* SANDBOX */
+				sandboxID = hasSandbox( $(el) )
+				if( sandboxID ) {
+					elementID = $(el).attr('id');
+					$('#'+sandboxID).contents().find('#'+elementID).attr('src', $('input#imageURL').val());
+				}
+			} else if( $('input#imageURL').val() != '' && $('input#imageURL').val() != $(el).css('background-image') ) {
+				$(el).css('background-image', 'url('+ $('input#imageURL').val() +')');
+				/* SANDBOX */
+				sandboxID = hasSandbox( $(el) )
+				if( sandboxID ) {
+					elementID = $(el).attr('id');
+					$('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ $('input#imageURL').val() +')');
+				}
+			}
 		}
-
-		//do we need to upload background?
-		if( $('a#bg_Link').css('display') == 'block' && $('input#bgFileField').val() != '' ) {
-		  var form = $('form#bgUploadForm');
-		  var formdata = false;
-		  if (window.FormData){
-		    formdata = new FormData(form[0]);
-		  }
-			console.log(form);
-		        $(el).css('background-image', 'url("/builder_front/images/loading.gif")');
-		  var formAction = form.attr('action');
-		  $.ajax({
-		    url : formAction,
-		    data : formdata ? formdata : form.serialize(),
-		    cache : false,
-		    contentType : false,
-		    processData : false,
-		    dataType: "json",
-		    type : 'POST',
-		  }).done(function(response){
-		    if( response.code == 1 ) {//success
-		      $('input#bgURL').val( response.response );
-		      if( $(el).hasClass('column') ){
-		      $(el).css('background-image', 'url('+ response.response +')');
-		      }
-		      //reset the file upload
-		      $('.bgFileTab').find('a.fileinput-exists').click();
-		      /* SANDBOX */
-		      sandboxID = hasSandbox( $(el) )
-		      if( sandboxID ) {
-		        if( $(el).hasClass('column')){
-		        elementID = $(el).attr('id');
-		        $('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ response.response +')');
-		        }
-		      }
-		      /* END SANDBOX */
-		    } else if( response.code == 0 ) {//error
-		      alert('Something went wrong: '+response.response)
-		    }
-		  })
-		} else if( $('a#bg_Link').css('display') == 'block' ) {
-			if( $('input#bgURL').val() != '' && $('input#bgURL').val() != $(el).css('background-image') ) {
-			    $(el).css('background-image', 'url('+ $('input#bgURL').val() +')');
-			    /* SANDBOX */
-			    sandboxID = hasSandbox( $(el) )
-			    if( sandboxID ) {
-			      elementID = $(el).attr('id');
-			      $('#'+sandboxID).contents().find('#'+elementID).css('background-image', 'url('+ $('input#bgURL').val() +')');
-			    }
-			  }
-		}
-
-		//do we need to upload an image?
-		if( $('a#slide_Link').css('display') == 'block' && $('input#slideFileField').val() != '' ) {
-		  var form = $('form#slideUploadForm');
-		  var formdata = false;
-		  if (window.FormData){
-		    formdata = new FormData(form[0]);
-		  }
-		  console.log(form);
-		        $(el).attr('src', "/builder_front/images/loading.gif").css("width", "100%");
-		  var formAction = form.attr('action');
-		  $.ajax({
-		    url : formAction,
-		    data : formdata ? formdata : form.serialize(),
-		    cache : false,
-		    contentType : false,
-		    processData : false,
-		    dataType: "json",
-		    type : 'POST',
-		  }).done(function(response){
-		    if( response.code == 1 ) {//success
-		      $('input#slideURL').val( response.response );
-		      if( $(el).prop('tagName') == 'IMG' ){
-		      $(el).attr('src', response.response);
-		      }
-		      //reset the file upload
-		      $('.slideFileTab').find('a.fileinput-exists').click();
-		      /* SANDBOX */
-		      sandboxID = hasSandbox( $(el) )
-		      if( sandboxID ) {
-		        if( $(el).prop('tagName') == 'IMG' ){
-		        elementID = $(el).attr('id');
-		        $('#'+sandboxID).contents().find('#'+elementID).attr('src', response.response);
-		        }
-		      }
-		      /* END SANDBOX */
-		    } else if( response.code == 0 ) {//error
-		      alert('Something went wrong: '+response.response)
-		    }
-		  })
-		} else if( $('a#slide_Link').css('display') == 'block' ) {
-		  //no image to upload, just a SRC change
-		  if( $('input#slideURL').val() != '' && $('input#slideURL').val() != $(el).attr('src') ) {
-		    $(el).attr('src', $('input#slideURL').val());
-		    /* SANDBOX */
-		    sandboxID = hasSandbox( $(el) )
-		    if( sandboxID ) {
-		      elementID = $(el).attr('id');
-		      $('#'+sandboxID).contents().find('#'+elementID).attr('src', $('input#slideURL').val());
-		    }
-		  }
-		}
-
 
 
 		//icons
@@ -1118,11 +1004,7 @@ $(function(){
 	if (!window.FormData){
 		//not supported, hide file upload
 		$('form#imageUploadForm').hide();
-		$('form#bgUploadForm').hide();
-		$('form#slideUploadForm').hide();
 		$('.imageFileTab .or').hide();
-		$('.bgFileTab .or').hide();
-		$('.slideFileTab .or').hide();
 	}
 	//internal links dropdown
 	$('select#internalLinksDropdown').selectpicker({style: 'btn-sm btn-default', menuStyle: 'dropdown-inverse'});

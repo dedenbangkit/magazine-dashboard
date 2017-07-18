@@ -199,9 +199,11 @@
         </ul>
 
         <ul class="nav nav-tabs" id="detailTabs">
-            <li class="active"><a href="#tab1"><span class="fui-new"></span> Style</a></li>
+            <li class="active"><a href="#tab1" id="css_Setup"><span class="fui-new"></span> Style</a></li>
             <li style="display: none;"><a href="#link_Tab" id="link_Link"><span class="fui-clip"></span> Link</a></li>
             <li style="display: none;"><a href="#image_Tab" id="img_Link"><span class="fui-image"></span> Image</a></li>
+            <li style="display: none;"><a href="#bg_Tab" id="bg_Link"><span class="fui-image"></span> Background</a></li>
+            <li style="display: none;"><a href="#slide_Tab" id="slide_Link"><span class="fui-image"></span> Edit Slides</a></li>
             <li style="display: none;"><a href="#icon_Tab" id="icon_Link"><span class="fa fa-flag"></span> Icons</a></li>
             <li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-youtube-play"></span> Video</a></li>
             <li style="display: none;"><a href="#audio_Tab" id="audio_Link"><span class="fa fa-soundcloud"></span> Audio</a></li>
@@ -269,6 +271,67 @@
                                     <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
                                         <input type="file" name="imageFileField" id="imageFileField" style="width:100%">
                                         <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Upload image</span>
+                                        <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
+                                    </span>
+                                <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
+                            </div>
+                            <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div><!-- /.tab-pane -->
+
+            <div class="tab-pane bgFileTab" id="bg_Tab">
+                    <div class="hidden">
+                <label>Background Image path:</label>
+
+                <input type="text" class="form-control" id="bgURL" placeholder="Enter an background URL" value="">
+
+                <p class="text-center or">
+                    <span>OR</span>
+                </p>
+                    </div>
+                <form id="bgUploadForm" action="bgupload">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="buttons" style="width:100%">
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
+                                        <input type="file" name="bgFileField" id="bgFileField" style="width:100%">
+                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Upload background</span>
+                                        <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
+                                    </span>
+                                <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
+                            </div>
+                            <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div><!-- /.tab-pane -->
+
+            <!-- /tabs -->
+            <div class="tab-pane slideFileTab" id="slide_Tab">
+                    <div class="hidden">
+                <label>Enter slide path:</label>
+
+                <input type="text" class="form-control" id="slideURL" placeholder="Enter an slide URL" value="">
+
+                <p class="text-center or">
+                    <span>OR</span>
+                </p>
+                    </div>
+                <form id="slideUploadForm" action="slideupload">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="buttons" style="width:100%">
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
+                                        <input type="file" name="slideFileField" id="slideFileField" style="width:100%">
+                                        <span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Upload image slide</span>
                                         <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
                                     </span>
                                 <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
