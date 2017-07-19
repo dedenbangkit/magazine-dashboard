@@ -25,6 +25,8 @@ use RecursiveIteratorIterator;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
+use GuzzleHttp\Client;
+
 class BuildController extends Controller
 {
 
@@ -36,12 +38,17 @@ class BuildController extends Controller
   protected $activer;
   protected $authdata;
   protected $project;
+  protected $generator;
 
   public function __construct()
   {
       $this->authdata = $this->authData();
       $this->middleware('auth');
       $this->project = new Project;
+      $this->generator = new Client([
+          'base_uri' => 'https://phonegap.appiq.software/',
+          ['connect_timeout' => 10000]
+      ]);
   }
 
   /**
@@ -88,6 +95,30 @@ class BuildController extends Controller
       $newname = str_replace(' ', '_',$theproject->company_name).'-'.time();
       $dst = storage_path('tmp/'.$newname);
       $this->makeTemp($src,$dst);
+
+      //Generate Icon API phonegap.appiq.software/compiler
+
+      // $iconpng = $request->file('iconpng');
+      // $splashpng = $request->file('splashpng');
+      // $uuid = $request->_token;
+      // $software = $this->generator->request('POST', 'compiler', [
+      //             'multipart' => [
+      //                 ['name' => 'icon',
+      //                  'contents' => fopen($iconpng, 'r'),
+      //                 ],
+      //                 ['name' => 'splash',
+      //                  'contents' => fopen($splashpng, 'r'),
+      //                 ],
+      //                 ['name' => 'uuid',
+      //                  'contents' => $uuid,
+      //                 ]
+      //             ]
+      //         ]);
+      //
+      // $apidownload = json_decode($software->getBody(), true);
+      // copy($apidownload->zip, $dst.'/splashicon.zip');
+
+      ////////////////////////////////////////
       $zipfile = $request->file('splashicon');
       $zipfile->move($dst, 'splashicon.zip');
       $this->splashIcon($dst.'/splashicon.zip', $dst);
