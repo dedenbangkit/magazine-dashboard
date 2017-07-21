@@ -75,7 +75,7 @@
     <icon src='{{$widget["icon"][0]["_src"]}}'></icon>
     <plugin name='com-sarriaroman-photoviewer' spec='1.1.10' />
     <plugin name='cordova-plugin-console' spec='1.0.5' />
-    <plugin name='cordova-plugin-device' spec='1.1.4' />
+    <plugin name='cordova-plugin-device' spec='1.1.6' />
     <plugin name='cordova-plugin-file' spec='4.3.3' />
     <plugin name='cordova-plugin-file-transfer' spec='1.6.3' />
     <plugin name='cordova-plugin-inapppurchase' spec='1.1.0' />
