@@ -518,6 +518,7 @@ class PageController extends Controller
                 $img->fit($img->width(), intval($img->width()/$ratio));
             }
         }
+        $img->resize(768,300);
 
 
     //detach method is the key! Hours to find it... :/
