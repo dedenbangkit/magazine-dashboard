@@ -1974,7 +1974,7 @@
             <!-- /tabs -->
             <div class="tab-pane videoTab" id="video_Tab">
 
-                <label>Youtube video ID:</label>
+                <label>Youtube video URL:</label>
 
                 <input type="text" class="form-control margin-bottom-20" id="youtubeID" placeholder="Enter a Youtube video ID" value="">
 
@@ -1982,7 +1982,7 @@
                     <span>OR</span>
                 </p>
 
-                <label>Vimeo video ID:</label>
+                <label>Vimeo video URL:</label>
 
                 <input type="text" class="form-control margin-bottom-20" id="vimeoID" placeholder="Enter a Vimeo video ID" value="">
 
@@ -2402,7 +2402,7 @@
                     contentpreview=countiframe[j].contentWindow.document.body.innerHTML;
                 }
                 filter1=$(contentpreview).filter('.page');
-                framePrev=framePrev+' '+filter1[0].innerHTML
+                framePrev=framePrev+' '+filter1[0].innerHTML;
 
             }
             framePrev=framePrev+' '+'</div></div>'

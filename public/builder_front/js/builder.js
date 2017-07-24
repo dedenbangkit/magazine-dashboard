@@ -485,17 +485,17 @@ function styleClick(el) {
 		if( $(el).prev().attr('src').indexOf("vimeo.com") > -1 ) {//vimeo
 			match = $(el).prev().attr('src').match(/player\.vimeo\.com\/video\/([0-9]*)/);
 			//console.log(match);
-			$('#video_Tab input#vimeoID').val( match[match.length-1] );
+			$('#video_Tab input#vimeoID').val( 'https://vimeo.com/'+ match[match.length-1] );
 			$('#video_Tab input#youtubeID').val('');
 		} else {
 			var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
-			var ytid = $(el).prev().attr('src').match(regExp);
-			var match = $(el).prev().attr('src');
-			var ngclick = $(el).prev().attr('ng-click', "openWindow('"+match+"')");
-            // var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+match[1]+'/0.jpg');
-			var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid[1]+'/0.jpg');
+			// var ytid = $(el).prev().attr('src').match(regExp);
+			// var match = $(el).prev().attr('src');
+			// var ngclick = $(el).prev().attr('ng-click', "openWindow('"+match+"')");
+      //       // var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+match[1]+'/0.jpg');
+			// var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid[1]+'/0.jpg');
 			// $('#video_Tab input#youtubeID').val( match[1] );
-			$('#video_Tab input#youtubeID').val();
+			$('#video_Tab input#youtubeID').val($(el).prev().attr('src'));
 			$('#video_Tab input#vimeoID').val('');
 		}
 	}
@@ -900,9 +900,15 @@ function styleClick(el) {
 				$(el).prev().attr('ng-click', $('#video_Tab input#youtubeID').val());
 				var regex = /[^/]*$/.exec($('#video_Tab input#youtubeID').val())[0];
 				var ytid = regex.replace("watch?v=", "");
-                $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid+'/0.jpg');
+                $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid+'/maxresdefault.jpg');
 			} else if( $('input#vimeoID').val() != '' ) {
-				$(el).prev().attr('src', "//player.vimeo.com/video/"+$('#video_Tab input#vimeoID').val()+"?title=0&amp;byline=0&amp;portrait=0");
+
+				var vimid = /[^/]*$/.exec($('#video_Tab input#vimeoID').val())[0];
+				$(el).prev().attr('src', 'https://player.vimeo.com/video/' + vimid);
+				$(el).prev().attr('ng-click', 'https://player.vimeo.com/video/' + vimid);
+				$.getJSON('http://www.vimeo.com/api/v2/video/' + vimid + '.json?callback=?', {format: "json"}, function(data) {
+					$(el).prev().children().attr('src', data[0].thumbnail_large);
+			 	});
 			}
 			/* SANDBOX */
 			sandboxID = hasSandbox( $(el) )
@@ -912,10 +918,14 @@ function styleClick(el) {
 					// $('#'+sandboxID).contents().find('#'+elementID).prev().attr('src', "//www.youtube.com/embed/"+$('#video_Tab input#youtubeID').val());
 					$('#'+sandboxID).contents().find('#'+elementID).prev().attr('src', $('#video_Tab input#youtubeID').val());
 					$('#'+sandboxID).contents().find('#'+elementID).prev().attr('ng-click', $('#video_Tab input#youtubeID').val());
-
-					$('#'+sandboxID).contents().find('#'+elementID).prev().children().attr('src', "//www.youtube.com/embed/"+$('#video_Tab input#youtubeID').val()+'/0.jpg');
+					$('#'+sandboxID).contents().find('#'+elementID).prev().children().attr('src', "//www.youtube.com/embed/"+$('#video_Tab input#youtubeID').val()+'/maxresdefault.jpg');
 				} else if( $('input#vimeoID').val() != '' ) {
-					$('#'+sandboxID).contents().find('#'+elementID).prev().attr('src', "//player.vimeo.com/video/"+$('#video_Tab input#vimeoID').val()+"?title=0&amp;byline=0&amp;portrait=0");
+					var vimid = /[^/]*$/.exec($('#video_Tab input#vimeoID').val())[0];
+					$('#'+sandboxID).contents().find('#'+elementID).prev().attr('src', 'https://player.vimeo.com/video/' + vimid);
+					$('#'+sandboxID).contents().find('#'+elementID).prev().attr('ng-click', 'https://player.vimeo.com/video/' + vimid);
+					$.getJSON('http://www.vimeo.com/api/v2/video/' + vimid + '.json?callback=?', {format: "json"}, function(data) {
+						$('#'+sandboxID).contents().find('#'+elementID).prev().children().attr('src', data[0].thumbnail_large);
+				 	});
 				}
 			}
 			/* END SANDBOX */
