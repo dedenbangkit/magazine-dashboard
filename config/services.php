@@ -14,10 +14,10 @@ return [
     |
     */
 
-    'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
-    ],
+    'mailgun' => array(
+        'domain' => 'dev.publixx.id',
+        'secret' => 'key-5873104c203d67ea2e78492e2be0a63a',
+    ),
 
     'ses' => [
         'key' => env('SES_KEY'),
@@ -34,5 +34,6 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
 
 ];

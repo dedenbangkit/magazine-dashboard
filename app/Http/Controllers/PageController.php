@@ -504,7 +504,7 @@ class PageController extends Controller
 
         $name = time().'-'.$_FILES['slideFileField']['name'];
         $img = Image::make($image);
-        $ratio = 16/9;
+        $ratio = 4/3;
         if($img->height()>300)
         {
             if(intval($img->width()/$ratio > $img->height()))
@@ -518,7 +518,7 @@ class PageController extends Controller
                 $img->fit($img->width(), intval($img->width()/$ratio));
             }
         }
-        $img->resize(768,300);
+        $img->resize(768,568);
 
 
     //detach method is the key! Hours to find it... :/
