@@ -72,13 +72,13 @@
       <file leaf-file-name="EmailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+            <state relative-caret-position="462">
+              <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <marker date="1501072147000" expanded="true" signature="143:2114" ph="{...}" />
-                <marker date="1501072147000" expanded="true" signature="213:2112" ph="{...}" />
-                <marker date="1501072147000" expanded="true" signature="1870:2034" ph="{...}" />
+                <marker date="1501086159000" expanded="true" signature="143:2119" ph="{...}" />
+                <marker date="1501086159000" expanded="true" signature="213:2117" ph="{...}" />
+                <marker date="1501086159000" expanded="true" signature="1875:2039" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -650,12 +650,12 @@
       <workItem from="1500554919560" duration="549000" />
       <workItem from="1500635281774" duration="491000" />
       <workItem from="1500991186517" duration="3234000" />
-      <workItem from="1501057114062" duration="3881000" />
+      <workItem from="1501057114062" duration="4048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130410000" />
+    <option name="totallyTimeSpent" value="130577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1067,13 +1067,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        <state relative-caret-position="462">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1501072147000" expanded="true" signature="143:2114" ph="{...}" />
-            <marker date="1501072147000" expanded="true" signature="213:2112" ph="{...}" />
-            <marker date="1501072147000" expanded="true" signature="1870:2034" ph="{...}" />
+            <marker date="1501086159000" expanded="true" signature="143:2119" ph="{...}" />
+            <marker date="1501086159000" expanded="true" signature="213:2117" ph="{...}" />
+            <marker date="1501086159000" expanded="true" signature="1875:2039" ph="{...}" />
           </folding>
         </state>
       </provider>

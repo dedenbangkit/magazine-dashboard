@@ -20,7 +20,7 @@ class EmailController extends Controller
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
-            ]
+            ];
         }elseif($id =2){
             $content = [
                 'target'=>'user',
@@ -29,7 +29,7 @@ class EmailController extends Controller
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
-            ]
+            ];
         }elseif($id =3){
             $content = [
                 'target'=>'user',
@@ -38,7 +38,7 @@ class EmailController extends Controller
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
-            ]
+            ];
         }elseif($id =4){
             $content = [
                 'target'=>'user',
@@ -47,7 +47,7 @@ class EmailController extends Controller
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
-            ]
+            ];
         }else{
             $content = [
                 'target'=>'default',
@@ -56,7 +56,7 @@ class EmailController extends Controller
                 'contenttop'=>'default',
                 'contentmiddle'=>'default',
                 'contentbottom'=>'default'
-            ]
+            ];
         }
 
 
