@@ -15,7 +15,7 @@ class EmailController extends Controller
         if($id =1){
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle'
+                'tittle'=>'tittle',
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
@@ -24,7 +24,7 @@ class EmailController extends Controller
         }elseif($id =2){
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle'
+                'tittle'=>'tittle',
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
@@ -33,7 +33,7 @@ class EmailController extends Controller
         }elseif($id =3){
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle'
+                'tittle'=>'tittle',
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
@@ -42,7 +42,7 @@ class EmailController extends Controller
         }elseif($id =4){
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle'
+                'tittle'=>'tittle',
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',
@@ -51,7 +51,7 @@ class EmailController extends Controller
         }else{
             $content = [
                 'target'=>'default',
-                'tittle'=>'default'
+                'tittle'=>'default',
                 'heading'=>'default',
                 'contenttop'=>'default',
                 'contentmiddle'=>'default',
