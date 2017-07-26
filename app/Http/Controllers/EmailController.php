@@ -8,11 +8,11 @@ use App\Http\Requests;
 use Mail;
 class EmailController extends Controller
 {
-    public function send($id=null,$content = null,Request $request)
+    public function send($id=null,$content = null,$receiver=null,Request $request)
     {
         $title = 'test';
 
-        if($id =1){
+        if($id ==1){
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -21,7 +21,7 @@ class EmailController extends Controller
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
             ];
-        }elseif($id =2){
+        }elseif($id ==2){
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -30,7 +30,7 @@ class EmailController extends Controller
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
             ];
-        }elseif($id =3){
+        }elseif($id ==3){
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -39,7 +39,7 @@ class EmailController extends Controller
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
             ];
-        }elseif($id =4){
+        }elseif($id ==4){
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -59,9 +59,9 @@ class EmailController extends Controller
             ];
         }
 
+if($receiver==null){
 
-
-        Mail::send('mail.mail', ['title' => $title, 'content' => $content], function ($message)
+       $mail= Mail::send('mail.mail', ['title' => $title, 'content' => $content], function ($message)
         {
 
             $message->from('support@publixx.id', 'PUBLIXX');
@@ -70,6 +70,7 @@ class EmailController extends Controller
 
         });
 
-        return response()->json(['message' => 'Request completed']);
+        return $mail;
+    }
     }
 }
