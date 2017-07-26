@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -60,10 +59,13 @@
       <file leaf-file-name="EmailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="62" lean-forward="false" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+            <state relative-caret-position="180">
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
+                <marker date="1501069248000" expanded="true" signature="143:642" ph="{...}" />
+                <marker date="1501069248000" expanded="true" signature="217:640" ph="{...}" />
+                <marker date="1501069248000" expanded="true" signature="398:562" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -623,12 +625,12 @@
       <workItem from="1500554919560" duration="549000" />
       <workItem from="1500635281774" duration="491000" />
       <workItem from="1500991186517" duration="3234000" />
-      <workItem from="1501057114062" duration="944000" />
+      <workItem from="1501057114062" duration="1430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127473000" />
+    <option name="totallyTimeSpent" value="127959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1034,10 +1036,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="62" lean-forward="false" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        <state relative-caret-position="180">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
+            <marker date="1501069248000" expanded="true" signature="143:642" ph="{...}" />
+            <marker date="1501069248000" expanded="true" signature="217:640" ph="{...}" />
+            <marker date="1501069248000" expanded="true" signature="398:562" ph="{...}" />
           </folding>
         </state>
       </provider>
