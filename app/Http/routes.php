@@ -74,7 +74,7 @@ Route::get('/invoice-detail', function () {
     return view('errors.404');
 });
 /*mail service*/
-Route::post('/send', 'EmailController@send');
+Route::get('/send', 'EmailController@send');
 
 /* sample */
 Route::get('/sample', function () {
