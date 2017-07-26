@@ -18,7 +18,7 @@ class EmailController extends Controller
 
             $message->from('support@publixx.id', 'PUBLIXX');
 
-            $message->to('rahardian.rizky@gmail.com')->('test publixx');
+            $message->to('rahardian.rizky@gmail.com')->subject('test publixx');
 
         });
 
