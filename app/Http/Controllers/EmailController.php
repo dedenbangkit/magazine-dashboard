@@ -59,7 +59,7 @@ class EmailController extends Controller
             ];
         }
 
-if($receiver==null){
+
 
        $mail= Mail::send('mail.mail', ['title' => $title, 'content' => $content], function ($message)
         {
@@ -71,6 +71,6 @@ if($receiver==null){
         });
 
         dd('email send');
-    }
+
     }
 }
