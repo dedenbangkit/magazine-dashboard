@@ -897,15 +897,15 @@ function styleClick(el) {
 			if( $('input#youtubeID').val() != '' ) {
 				// $(el).prev().attr('src', "//www.youtube.com/embed/"+$('#video_Tab input#youtubeID').val());
 				$(el).prev().attr('src', $('#video_Tab input#youtubeID').val());
-				$(el).prev().attr('ng-click', $('#video_Tab input#youtubeID').val());
 				var regex = /[^/]*$/.exec($('#video_Tab input#youtubeID').val())[0];
 				var ytid = regex.replace("watch?v=", "");
+								$(el).prev().attr('ng-click', 'openWindow("https://www.youtube.com/embed/' + ytid +'")');
                 $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid+'/maxresdefault.jpg');
 			} else if( $('input#vimeoID').val() != '' ) {
 
 				var vimid = /[^/]*$/.exec($('#video_Tab input#vimeoID').val())[0];
 				$(el).prev().attr('src', 'https://player.vimeo.com/video/' + vimid);
-				$(el).prev().attr('ng-click', 'https://player.vimeo.com/video/' + vimid);
+				$(el).prev().attr('ng-click', 'openWindow("https://player.vimeo.com/video/' + vimid + '")');
 				$.getJSON('http://www.vimeo.com/api/v2/video/' + vimid + '.json?callback=?', {format: "json"}, function(data) {
 					$(el).prev().children().attr('src', data[0].thumbnail_large);
 			 	});
