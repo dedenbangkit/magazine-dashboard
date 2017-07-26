@@ -70,7 +70,7 @@ if($receiver==null){
 
         });
 
-        return $mail;
+        dd('email send');
     }
     }
 }
