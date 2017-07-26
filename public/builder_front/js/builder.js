@@ -897,9 +897,9 @@ function styleClick(el) {
 			if( $('input#youtubeID').val() != '' ) {
 				// $(el).prev().attr('src', "//www.youtube.com/embed/"+$('#video_Tab input#youtubeID').val());
 				$(el).prev().attr('src', $('#video_Tab input#youtubeID').val());
-				$(el).prev().attr('ng-click', 'openWindow("' + $('#video_Tab input#youtubeID').val() +'")');
 				var regex = /[^/]*$/.exec($('#video_Tab input#youtubeID').val())[0];
 				var ytid = regex.replace("watch?v=", "");
+								$(el).prev().attr('ng-click', 'openWindow("https://www.youtube.com/embed/' + ytid +'")');
                 $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid+'/maxresdefault.jpg');
 			} else if( $('input#vimeoID').val() != '' ) {
 
