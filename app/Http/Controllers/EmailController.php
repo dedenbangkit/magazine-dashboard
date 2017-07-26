@@ -8,11 +8,58 @@ use App\Http\Requests;
 use Mail;
 class EmailController extends Controller
 {
-    public function send($tittle=null,$content = null,Request $request)
+    public function send($id=null,$content = null,Request $request)
     {
-        
         $title = 'test';
-        $content = 'content';
+
+        if($id =1){
+            $content = [
+                'target'=>'user',
+                'tittle'=>'tittle'
+                'heading'=>'test',
+                'contenttop'=>'lorem top',
+                'contentmiddle'=>'lorem middle',
+                'contentbottom'=>'lorembutton'
+            ]
+        }elseif($id =2){
+            $content = [
+                'target'=>'user',
+                'tittle'=>'tittle'
+                'heading'=>'test',
+                'contenttop'=>'lorem top',
+                'contentmiddle'=>'lorem middle',
+                'contentbottom'=>'lorembutton'
+            ]
+        }elseif($id =3){
+            $content = [
+                'target'=>'user',
+                'tittle'=>'tittle'
+                'heading'=>'test',
+                'contenttop'=>'lorem top',
+                'contentmiddle'=>'lorem middle',
+                'contentbottom'=>'lorembutton'
+            ]
+        }elseif($id =4){
+            $content = [
+                'target'=>'user',
+                'tittle'=>'tittle'
+                'heading'=>'test',
+                'contenttop'=>'lorem top',
+                'contentmiddle'=>'lorem middle',
+                'contentbottom'=>'lorembutton'
+            ]
+        }else{
+            $content = [
+                'target'=>'default',
+                'tittle'=>'default'
+                'heading'=>'default',
+                'contenttop'=>'default',
+                'contentmiddle'=>'default',
+                'contentbottom'=>'default'
+            ]
+        }
+
+
 
         Mail::send('mail.mail', ['title' => $title, 'content' => $content], function ($message)
         {
