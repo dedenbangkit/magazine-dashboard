@@ -7,6 +7,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\EmailController;
 use App\Http\Requests;
 use App\Model\Page;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Storage;
+
 /**
  * Class ProjectController
  * @package App\Http\Controllers
@@ -254,7 +256,8 @@ class ProjectController extends Controller
         $deletingIssue=$this->issue->deleteIssue($request->id);
         return $deletingIssue;
     }
-    public function publishIssueProcess(Request $request){
+    public function publishIssueProcess(Request $request,EmailController $EmailC){
+
         $publish_auth=$this->project->getProjectById($this->authdata->project_id);
         $count_issue=count($this->issue->getIssue($this->authdata->project_id));
         $message='Success To Publish Issue '.$request->name;
@@ -289,6 +292,8 @@ class ProjectController extends Controller
                 );
                 $this->invoice->insertInvoice($datainvoice);
                 $publish=true;
+                $EmailC->send(1);
+
 
         }
         if($publish){
@@ -296,6 +301,7 @@ class ProjectController extends Controller
             $publishIssue=$this->issue->publishIssue($request->id,$countPage);
             $issues=$this->page->getPageIssue($request->session()->get('issue-editor'));
             $this->action_log->create_log('Publish Issue '.$issues['issue_name'],$this->authdata->id);
+            $EmailC->send(3,$request->id);
         }
 
         return $message;

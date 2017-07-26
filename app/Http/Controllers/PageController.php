@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\EmailController;
 use App\Model\Page;
 use App\Model\Issue;
 use App\Model\Action_log;
@@ -124,7 +125,8 @@ class PageController extends Controller
         }
         return $data;
     }
-    public function exportIssue(Request $request){
+    public function exportIssue(Request $request,EmailController $EmailC){
+        $EmailC->send(2);
         $image_component=$this->testing_get_ur_image($request->session()->get('issue-editor'));
         if($image_component==''){
             $image_component=[''];

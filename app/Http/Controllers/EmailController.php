@@ -8,9 +8,9 @@ use App\Http\Requests;
 use Mail;
 class EmailController extends Controller
 {
-    public function send(Request $request,$tittle=null,$content = null)
+    public function send($tittle=null,$content = null,Request $request)
     {
-        return 'test';
+        return true;
         $title = 'test';
         $content = 'content';
 
