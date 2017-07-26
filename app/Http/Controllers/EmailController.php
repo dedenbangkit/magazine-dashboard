@@ -10,7 +10,7 @@ class EmailController extends Controller
 {
     public function send($tittle=null,$content = null,Request $request)
     {
-        return true;
+        
         $title = 'test';
         $content = 'content';
 
