@@ -72,7 +72,7 @@ class EmailController extends Controller
         }
 
 
-        foreach($datauser as $i=>$row){
+        foreach($datauser as $i => $row){
             $mail= Mail::send('mail.mail', ['title' => 'tittle', 'content' => $content], function ($message)
             {
 
