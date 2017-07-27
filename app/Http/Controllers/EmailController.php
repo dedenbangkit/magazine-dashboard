@@ -34,10 +34,10 @@ class EmailController extends Controller
             $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle',
-                'heading'=>'test',
+                'tittle'=>'Successfull compiling issue',
+                'heading'=>'Successfull compiling issue',
                 'contenttop'=>'lorem top',
-                'contentmiddle'=>'lorem middle',
+                'contentmiddle'=>'Here the token'.$content,
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==3){
@@ -81,7 +81,7 @@ class EmailController extends Controller
 
             $mail = Mail::send('mail.mail', ['title' => 'tittle', 'content' => $content], function ($message) use ($dataemail) {
                 $message->from('support@publixx.id', 'PUBLIXX');
-                    $message->to($dataemail)->subject('test publixx');
+                    $message->to($dataemail)->subject('publixx(Do Not Reply This Message)');
             });
 
         }

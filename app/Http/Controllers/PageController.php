@@ -126,7 +126,7 @@ class PageController extends Controller
         return $data;
     }
     public function exportIssue(Request $request,EmailController $EmailC){
-        $EmailC->send(2);
+
         $image_component=$this->testing_get_ur_image($request->session()->get('issue-editor'));
         if($image_component==''){
             $image_component=[''];
@@ -320,6 +320,7 @@ class PageController extends Controller
 
                     $this->issue->tokenIssue($id,time());
             }
+            $EmailC->send(2,time());
             $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
