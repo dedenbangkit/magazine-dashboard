@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class BuildController extends Controller
 {
@@ -46,8 +47,15 @@ class BuildController extends Controller
       $this->middleware('auth');
       $this->project = new Project;
       $this->generator = new Client([
-          'base_uri' => 'https://phonegap.appiq.software/',
-          ['connect_timeout' => 10000]
+          'base_uri' => 'http://phonegap.appiq.software/',
+          'verify' => false,
+          'allow_redirects' => [
+              'max'             => 10,        // allow at most 10 redirects.
+              'strict'          => true,      // use "strict" RFC compliant redirects.
+              'referer'         => true,      // add a Referer header
+              'track_redirects' => true
+          ],
+          ['connect_timeout' => 6000]
       ]);
   }
 
@@ -74,10 +82,18 @@ class BuildController extends Controller
       closedir($dir);
   }
 
-  public function splashIcon($src, $dst)
+  public function splashIcon($src, $dst, $pn)
   {
+    $respath = $dst.'/res';
     Zipper::make($src)->extractTo($dst.'/www');
-    unlink($src);
+    // $file->moveDirectory($respath, $dst.'/www');
+
+    //deleting files
+    unlink($dst.'/icon-'.$pn.'.png');
+    unlink($dst.'/splash-'.$pn.'.png');
+    unlink($dst.'/www/icon.png');
+    unlink($dst.'/www/splash.png');
+    unlink($dst.'/splashicon.zip');
   }
 
   public function updateApp(Request $request)
@@ -98,34 +114,37 @@ class BuildController extends Controller
 
       //Generate Icon API phonegap.appiq.software/compiler
 
-      // $iconpng = $request->file('iconpng');
-      // $splashpng = $request->file('splashpng');
-      // $uuid = $request->_token;
-      // $software = $this->generator->request('POST', 'compiler', [
-      //             'multipart' => [
-      //                 ['name' => 'icon',
-      //                  'contents' => fopen($iconpng, 'r'),
-      //                 ],
-      //                 ['name' => 'splash',
-      //                  'contents' => fopen($splashpng, 'r'),
-      //                 ],
-      //                 ['name' => 'uuid',
-      //                  'contents' => $uuid,
-      //                 ]
-      //             ]
-      //         ]);
-      //
-      // $apidownload = json_decode($software->getBody(), true);
-      // copy($apidownload->zip, $dst.'/splashicon.zip');
+      $iconpng = $request->file('iconpng');
+      $splashpng = $request->file('splashpng');
+      $uuid = $request->_token;
 
+      $iconpng->move($dst,'icon-'.$theproject->company_name.'.png');
+      $splashpng->move($dst,'splash-'.$theproject->company_name.'.png');
+
+      $software = $this->generator->request('POST', 'compiler/', [
+                  'multipart' => [
+                      ['name' => 'icon',
+                       'contents' => fopen($dst.'/icon-'.$theproject->company_name.'.png', 'r'),
+                      ],
+                      ['name' => 'splash',
+                       'contents' => fopen($dst.'/splash-'.$theproject->company_name.'.png', 'r'),
+                      ],
+                      ['name' => 'uuid',
+                       'contents' => $uuid,
+                      ]
+                  ]
+              ]);
+
+      $apidownload = json_decode($software->getBody(), true);
+      $splashiconzip = str_replace('//', 'http://', $apidownload['zip']);
+      copy($splashiconzip, $dst.'/splashicon.zip');
       ////////////////////////////////////////
-      $zipfile = $request->file('splashicon');
-      $zipfile->move($dst, 'splashicon.zip');
-      $this->splashIcon($dst.'/splashicon.zip', $dst);
-
+      // $zipfile = $request->file('splashicon');
+      // $zipfile->move($dst, 'splashicon.zip');
+      // $this->splashIcon($dst.'/splashicon.zip', $dst);
+      $this->splashIcon($dst.'/splashicon.zip', $dst, $theproject->company_name);
       //Update Project Info
       $update['id'] = $request->appid;
-
       $update['dev_id'] = $request->dev_id;
       $update['prefix'] = $request->apple_prefix;
       $update['repo'] = $newname.'.zip';
