@@ -248,6 +248,7 @@ class ProjectController extends Controller
                 }
             };
         };
+
         $request->session()->flash('status_msg','Success Editing Issue '.$request->name);
         $this->action_log->create_log('Editing Issue '.$request->name,$this->authdata->id);
         return redirect('/issue');

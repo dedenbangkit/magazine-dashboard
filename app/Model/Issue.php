@@ -43,10 +43,23 @@ class Issue extends Model
             ->orderBy('created_at','desc')
             ->first();
     }
+    public function getIssueToken($id){
+        return Issue::whereNull('deleted_at')
+            ->where('id',$id)
+            ->whereNull('token')
+            ->orderBy('created_at','desc')
+            ->first();
+    }
     public function deleteIssue($id){
         return Issue::where('id',$id)
             ->update([
                 'deleted_at'=>Carbon::now()
+            ]);
+    }
+    public function tokenIssue($id,$token){
+        return Issue::where('id',$id)
+            ->update([
+                'token'=>$token,
             ]);
     }
     public function publishIssue($id,$counter){

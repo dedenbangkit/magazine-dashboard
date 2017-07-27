@@ -315,6 +315,11 @@ class PageController extends Controller
         $this->issue->compileIssue($id,$newname.'.zip');
         $issue=$this->page->getPageIssue($id);
         if($test){
+            $token=$this->issue->getIssueToken($id);
+            if(!empty($token)){
+
+                    $this->issue->tokenIssue($id,time());
+            }
             $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);
