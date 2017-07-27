@@ -6,13 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Mail;
+use App\Model\User;
 class EmailController extends Controller
 {
+    public function __construct()
+    {
+        $this->authdata = $this->authData();
+        $this->user = new User();
+        $this->middleware('auth');
+    }
+
     public function send($id=null,$content = null,$receiver=null)
     {
-        $title = 'test';
 
         if($id ==1){
+            $datauser=$this->user->getUserCompany($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -22,6 +30,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==2){
+            $datauser=$this->user->getUserCompany($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -31,6 +40,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==3){
+            $datauser=$this->user->getUserCompany($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -40,6 +50,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==4){
+            $datauser=$this->user->getUserCompany($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -49,6 +60,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }else{
+            $datauser=$this->user->getUserCompany($this->authdata->project_id);
             $content = [
                 'target'=>'default',
                 'tittle'=>'default',
@@ -60,17 +72,19 @@ class EmailController extends Controller
         }
 
 
+        foreach($datauser as $i=>$row){
+            $mail= Mail::send('mail.mail', ['title' => 'tittle', 'content' => $content], function ($message)
+            {
 
-       $mail= Mail::send('mail.mail', ['title' => $title, 'content' => $content], function ($message)
-        {
+                $message->from('support@publixx.id', 'PUBLIXX');
 
-            $message->from('support@publixx.id', 'PUBLIXX');
+                $message->to($row['project_id'])->subject('test publixx');
 
-            $message->to('rahardian.rizky@gmail.com')->subject('test publixx');
+            });
+        }
 
-        });
 
-        dd('email send');
+    return 'success';
 
     }
 }

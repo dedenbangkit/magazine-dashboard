@@ -32,6 +32,12 @@ class User extends Model
             ->orderBy('name')
             ->get();
     }
+    public function getUserCompany($id){
+        return User::whereNull('deleted_at')
+            ->where('project_id','!=',$id)
+            ->orderBy('name')
+            ->get();
+    }
     public function getUserClient(){
         return User::whereNull('users.deleted_at')
             ->leftjoin('project','users.project_id','=','project.id')
