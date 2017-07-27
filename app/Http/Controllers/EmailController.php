@@ -78,7 +78,7 @@ class EmailController extends Controller
 
                 $message->from('support@publixx.id', 'PUBLIXX');
 
-                $message->to($row['project_id'])->subject('test publixx');
+                $message->to($row['email'])->subject('test publixx');
 
             });
         }
