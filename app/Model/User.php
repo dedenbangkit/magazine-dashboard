@@ -32,9 +32,9 @@ class User extends Model
             ->orderBy('name')
             ->get();
     }
-    public function getUserCompany($id){
+    public function getUserCompanyEmail($id){
         return User::whereNull('deleted_at')
-            ->where('project_id','!=',$id)
+            ->where('project_id','=',$id)
             ->orderBy('name')
             ->get();
     }

@@ -19,8 +19,9 @@ class EmailController extends Controller
     public function send($id=null,$content = null,$receiver=null)
     {
 
+
         if($id ==1){
-            $datauser=$this->user->getUserCompany($this->authdata->project_id);
+            $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -30,7 +31,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==2){
-            $datauser=$this->user->getUserCompany($this->authdata->project_id);
+            $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -40,7 +41,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==3){
-            $datauser=$this->user->getUserCompany($this->authdata->project_id);
+            $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -50,7 +51,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==4){
-            $datauser=$this->user->getUserCompany($this->authdata->project_id);
+            $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
                 'tittle'=>'tittle',
@@ -60,7 +61,7 @@ class EmailController extends Controller
                 'contentbottom'=>'lorembutton'
             ];
         }else{
-            $datauser=$this->user->getUserCompany($this->authdata->project_id);
+            $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'default',
                 'tittle'=>'default',
@@ -71,18 +72,19 @@ class EmailController extends Controller
             ];
         }
 
+        if(!empty($datauser)) {
+            $dataemail=[];
+            foreach($datauser as $i =>$row){
+                $dataemail[]=$row->email;
+            }
 
-        foreach($datauser as $i => $row){
-            $mail= Mail::send('mail.mail', ['title' => 'tittle', 'content' => $content], function ($message)
-            {
 
+            $mail = Mail::send('mail.mail', ['title' => 'tittle', 'content' => $content], function ($message) use ($dataemail) {
                 $message->from('support@publixx.id', 'PUBLIXX');
-
-                $message->to($row->email)->subject('test publixx');
-
+                    $message->to($dataemail)->subject('test publixx');
             });
-        }
 
+        }
 
     return 'success';
 
