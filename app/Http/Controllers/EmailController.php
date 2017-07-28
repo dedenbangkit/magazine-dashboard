@@ -64,10 +64,10 @@ class EmailController extends Controller
             $datauser=$this->user->getUserCompanyEmailById($content);
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle',
-                'heading'=>'test',
+                'tittle'=>'Hello '.$datauser['name'],
+                'heading'=>'Welcome to PUBLIXX',
                 'contenttop'=>'lorem top',
-                'contentmiddle'=>'lorem middle',
+                'contentmiddle'=>'<button href="http://dev.publixx.id">Click here to access</button>',
                 'contentbottom'=>'lorembutton'
             ];
         }
