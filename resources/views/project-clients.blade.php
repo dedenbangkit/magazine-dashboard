@@ -269,10 +269,21 @@
                                           <label><i class="fa fa-apple"></i> Prefix (IOS ONLY)</label>
                                           <input type="text" name="apple_prefix" id="apple_prefix" class="form-control" placeholder="eg. S4G4BK2VSQ" value="{{$row->prefix}}">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                         <label>Upload splash screen (.zip)</label>
                                         <input type="file" name="splashicon" id="splashicon">
+                                        </div> -->
+
+                                        <div class="form-group">
+                                        <label>Upload splash screen (.zip)</label>
+                                        <input type="file" name="splashpng" id="splashpng">
                                         </div>
+
+                                        <div class="form-group">
+                                        <label>Upload icon (.zip)</label>
+                                        <input type="file" name="iconpng" id="iconpng">
+                                        </div>
+
                                         <hr>
                                         <button type="submit" class="btn btn-primary btn-flat editor btn-social"><i class="fa fa-gear"></i>Update Settings</button>
                                       </form>
