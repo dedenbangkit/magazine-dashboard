@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Http\EmailController;
+use App\Http\Controllers\EmailController;
 use App\Model\Project;
 use App\Model\Company;
 use App\Model\Action_log;
@@ -63,7 +63,7 @@ class BuildApiController extends Controller
      return $result;
    }
 
-   public function Build(Request $request)
+   public function Build(Request $request,EmailController $EmailC)
    {
      $theproject=Project::where('project.id','=',$request->appid)
                          ->leftjoin('company','company.id','=','project.company_id')
@@ -136,7 +136,7 @@ class BuildApiController extends Controller
       $update['build_id'] = $result['id'];
       $this->project->updateBuild($update);
       unlink(storage_path('clientsapp/'.$theproject->repo));
-//       $EmailC->send();
+       $EmailC->send();
       return redirect()->action('ProjectController@project')->with('done', 'Please wait few hours to download the final apps');;
    }
 

@@ -9,7 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Http\EmailController;
+use App\Http\Controllers\EmailController;
 use App\Model\Page;
 use App\Model\Issue;
 use App\Model\Action_log;
@@ -224,7 +224,7 @@ class PageController extends Controller
 //
     }
 
-    public function exportIssueById(Request $request,$id){
+    public function exportIssueById(Request $request,$id,EmailController $EmailC){
         $image_component=$this->testing_get_ur_image($id);
         if($image_component==''){
             $image_component=[''];

@@ -7,7 +7,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\EmailController;
+use App\Http\Controllers\EmailController;
 use App\Http\Requests;
 use App\Model\Page;
 use Illuminate\Http\Request;
