@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f065271-d3f3-491f-a556-2b482d8dcc62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,24 +71,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EmailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            <state relative-caret-position="147">
+              <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <marker date="1501230078000" expanded="true" signature="392:3407" ph="{...}" />
+                <marker date="1501230837000" expanded="true" signature="392:3506" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+            <state relative-caret-position="-588">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="e#182#204#0#PHP" expanded="true" />
               </folding>
@@ -98,8 +99,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="49" />
+            <state relative-caret-position="279">
+              <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -109,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="138" column="19" lean-forward="false" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
+              <caret line="138" column="22" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
               <folding>
                 <element signature="e#183#205#0#PHP" expanded="true" />
               </folding>
@@ -198,8 +199,8 @@
       <find>publish</find>
       <find>id</find>
       <find>auth</find>
-      <find>compile</find>
       <find>send</find>
+      <find>compile</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/public</dir>
@@ -264,11 +265,11 @@
         <option value="$PROJECT_DIR$/app/Model/Issue.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
+        <option value="$PROJECT_DIR$/resources/views/mail/mail.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php" />
         <option value="$PROJECT_DIR$/app/Model/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/mail/mail.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -718,12 +719,12 @@
       <workItem from="1500635281774" duration="491000" />
       <workItem from="1500991186517" duration="3234000" />
       <workItem from="1501057114062" duration="6336000" />
-      <workItem from="1501171063466" duration="7073000" />
+      <workItem from="1501171063466" duration="7584000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139938000" />
+    <option name="totallyTimeSpent" value="140449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1241" height="778" extended-state="6" />
@@ -1106,38 +1107,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="138" column="19" lean-forward="false" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
-          <folding>
-            <element signature="e#183#205#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="52" column="20" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding>
-            <marker date="1501217701000" expanded="true" signature="9893:10372" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1158,23 +1131,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+        <state relative-caret-position="-588">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1501230078000" expanded="true" signature="392:3407" ph="{...}" />
+            <element signature="e#182#204#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuildAPIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+        <state relative-caret-position="450">
+          <caret line="138" column="22" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
           <folding>
-            <element signature="e#182#204#0#PHP" expanded="true" />
+            <element signature="e#183#205#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <marker date="1501217701000" expanded="true" signature="9893:10372" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <marker date="1501230837000" expanded="true" signature="392:3506" ph="{...}" />
           </folding>
         </state>
       </provider>

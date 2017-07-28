@@ -44,10 +44,10 @@ class EmailController extends Controller
             $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle',
+                'tittle'=>'Successfull Create Your Application',
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
-                'contentmiddle'=>'lorem middle',
+                'contentmiddle'=>'<b>Here the download url <br/><a href="#"><button> click here</button></a></br>',
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==4){
@@ -64,7 +64,7 @@ class EmailController extends Controller
             $datauser=$this->user->getUserCompanyEmailById($content);
             $content = [
                 'target'=>'user',
-                'tittle'=>'Hello '.$datauser['name'],
+                'tittle'=>'Hello '.$datauser[0]['name'],
                 'heading'=>'Welcome to PUBLIXX',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'<button href="http://dev.publixx.id">Click here to access</button>',
