@@ -166,19 +166,21 @@
                                         <li><a href="{{asset('img/res/splash.psd')}}">Splash Screen.psd</a></li>
                                       </ul>
                                       <hr>
+                                      <div class="row">
                                       <div class="col-md-6">
                                         <p>
-                                        <b>Icon Guide</b>
+                                        <b>Icon Guide</b><br>
                                         Format: Portable Network Graphics (.png)<br>
                                         Size: 1024px * 1024px</p><hr>
-                                        <img class="img img-responsive" src="{{ asset('img/your-icon.png') }}">
+                                        <img style="border:1px #DDD solid" class="img img-responsive" src="{{ asset('img/your-icon.png') }}">
                                       </div>
                                       <div class="col-md-6">
                                         <p>
-                                        <b>Splash Screen Guide</b>
+                                        <b>Splash Screen Guide</b><br>
                                         Format: Portable Network Graphics (.png)<br>
                                         Size: 2208px * 2208px</p><hr>
-                                        <img class="img img-responsive" src="{{ asset('img/your-splash.png') }}">
+                                        <img style="border:1px #DDD solid" class="img img-responsive" src="{{ asset('img/your-splash.png') }}">
+                                      </div>
                                       </div>
                                     </div>
 
