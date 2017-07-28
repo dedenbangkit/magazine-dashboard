@@ -24,7 +24,7 @@ class EmailController extends Controller
             $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'user',
-                'tittle'=>'tittle',
+                'tittle'=>'Successfull publish issue '.$content,
                 'heading'=>'test',
                 'contenttop'=>'lorem top',
                 'contentmiddle'=>'lorem middle',

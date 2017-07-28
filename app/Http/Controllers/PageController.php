@@ -319,8 +319,10 @@ class PageController extends Controller
             if(!empty($token)){
 
                     $this->issue->tokenIssue($id,time());
+                $EmailC->send(2,time());
+            }else{
+                $EmailC->send(2,$token->token)
             }
-            $EmailC->send(2,time());
             $request->session()->flash('status_msg','Success Compiling '.$issue['issue_name']);
         }
         $this->action_log->create_log('Compiling Isssue '.$issue['issue_name'],$this->authdata->id);

@@ -57,9 +57,9 @@ class UserController extends Controller
     public function registrationProcess(Request $request,EmailController $EmailC){
         $data=$request->all();
         $validator = Validator::make($request->all(), [
-            'email' => 'required|max:255|email',
+            'email' => 'required|max:255|email|unique:users',
             'name' => 'required|max:30|alpha_num',
-            'phone' => 'required|max:30|regex:/^([0-9])+$/i',
+            'phone' => 'required|unique:users|max:30|regex:/^([0-9])+$/i',
             'password' => 'required|max:30|alpha_num|confirmed',
             'password_confirmation'=>'required'
         ]);
