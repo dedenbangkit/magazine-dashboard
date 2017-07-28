@@ -136,13 +136,13 @@ class ProjectController extends Controller
 
     public function createIssue()
     {
-        $data['users']=  $this->user->getUser();
+        $data['users']=  $this->user->getUser($this->authdata->project_id);
         $data['activer'] = array($this->activer, 'issue');
         return view('create_issue', $data);
     }
     public function editIssue(Request $request,$id)
     {
-        $data['users']=  $this->user->getUser();
+        $data['users']=  $this->user->getUser($this->authdata->project_id);
         $data['activer'] = array($this->activer, 'issue');
         $data['issue'] = $this->issue->getIssueId($id);
         $data['page'] =$this->page->getPage($id);

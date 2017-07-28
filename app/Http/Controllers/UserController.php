@@ -92,7 +92,7 @@ class UserController extends Controller
      * @return Response
      */
     public  function userList(){
-        $data['data']=$this->user->getUser();
+        $data['data']=$this->user->getUser( $this->authdata->project_id);
         return $data;
     }
     /**

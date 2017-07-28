@@ -26,7 +26,14 @@ class User extends Model
             )
         );
     }
-    public function getUser(){
+    public function getUser($access=null){
+        if($access!=null){
+            return User::whereNull('deleted_at')
+                ->where('position','!=','administrator')
+                ->where('project_id','=',$access)
+                ->orderBy('name')
+                ->get();
+        }
         return User::whereNull('deleted_at')
             ->where('position','!=','administrator')
             ->orderBy('name')
