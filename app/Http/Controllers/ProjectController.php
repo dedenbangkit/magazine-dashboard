@@ -293,7 +293,7 @@ class ProjectController extends Controller
                 );
                 $this->invoice->insertInvoice($datainvoice);
                 $publish=true;
-                $EmailC->send(1);
+                $EmailC->send(1,$request->name);
 
 
         }
