@@ -166,93 +166,20 @@
                                         <li><a href="{{asset('img/res/splash.psd')}}">Splash Screen.psd</a></li>
                                       </ul>
                                       <hr>
-                                      And here are some services that you can use to generate the splashscreen and Icons automatically:<br><br>
-                                      <ul>
-                                        <li><a href="http://ticons.fokkezb.nl/">http://ticons.fokkezb.nl/</a></li>
-                                        <li><a href="http://pgicons.abiro.com/">http://pgicons.abiro.com/</a></li>
-                                        <li><a href="http://phonegap.appiq.software/">http://phonegap.appiq.software/</a></li>
-                                      </ul>
-                                      <hr>
                                       <div class="row">
-                                      <div class="col-md-8">
-                                      Once you have the assets with you, please upload compressed (.zip) of <strong>res folder</strong> to prepare the build process.
-                                      follow this file structure before uploading your zip file.
+                                      <div class="col-md-6">
+                                        <p>
+                                        <b>Icon Guide</b><br>
+                                        Format: Portable Network Graphics (.png)<br>
+                                        Size: 1024px * 1024px</p><hr>
+                                        <img style="border:1px #DDD solid" class="img img-responsive" src="{{ asset('img/your-icon.png') }}">
                                       </div>
-                                      <div class="col-md-4">
-                                      <div>
-                                          <strong><a id="collapseAll" href="#"><i class="fa fa-file-zip-o"></i> res.zip</a></strong>
-                                      </div>
-                                      <ul id="treeview" class="treeview-black">
-                                      	<li>
-                                          <span>icons</span>
-                                          <ul>
-                                            <li></li>
-                                            <li>
-                                              <span>android</span>
-                                              <ul>
-                                                <li>icon-144-xxhdpi.png</li>
-                                                <li>icon-192-xxxhdpi.png</li>
-                                                <li>icon-36-ldpi.png</li>
-                                                <li>icon-48-mdpi.png</li>
-                                                <li>icon-72-hdpi.png</li>
-                                                <li>icon-96-xhdpi.png</li>
-                                              </ul>
-                                            </li>
-                                            <li>
-                                              <span>ios</span>
-                                              <ul>
-                                                <li>icon-40.png</li>
-                                                <li>icon-50-2x.png</li>
-                                                <li>icon-57-2x.png</li>
-                                                <li>icon-57.png</li>
-                                                <li>icon-60-2x.png</li>
-                                                <li>icon-60-3x.png</li>
-                                                <li>icon-72-2x.png</li>
-                                                <li>icon-72.png</li>
-                                                <li>icon-80-2x.png</li>
-                                                <li>icon-80.png</li>
-                                                <li>icon-small-2x.png</li>
-                                                <li>icon-small.png</li>
-                                              </ul>
-                                            </li>
-                                          </ul>
-                                        </li>
-
-                                        <li>
-                                          <span>screens</span>
-                                          <ul>
-                                            <li></li>
-                                            <li>
-                                              <span>android</span>
-                                              <ul>
-                                                <li>screen-hdpi-landscape.png</li>
-                                                <li>screen-hdpi-portrait.png</li>
-                                                <li>screen-ldpi-landscape.png</li>
-                                                <li>screen-ldpi-portrait.png</li>
-                                                <li>screen-mdpi-landscape.png</li>
-                                                <li>screen-mdpi-portrait.png</li>
-                                                <li>screen-xhdpi-landscape.png</li>
-                                                <li>screen-xhpi-portrait.png</li>
-                                              </ul>
-                                            </li>
-                                            <li>
-                                              <span>ios</span>
-                                              <ul>
-                                                <li>screen-ipad-landscape-2x.png</li>
-                                                <li>screen-ipad-landscape.png</li>
-                                                <li>screen-ipad-portrait-2x.png</li>
-                                                <li>screen-ipad-portrait.png</li>
-                                                <li>screen-iphone-568h-2x.png</li>
-                                                <li>screen-iphone-landscape-736h.png</li>
-                                                <li>screen-iphone-portrait-2x.png</li>
-                                                <li>screen-iphone-portrait-667h.png</li>
-                                                <li>screen-iphone-portrait-736h.png</li>
-                                                <li>screen-iphone-portrait.png</li>
-                                              </ul>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
+                                      <div class="col-md-6">
+                                        <p>
+                                        <b>Splash Screen Guide</b><br>
+                                        Format: Portable Network Graphics (.png)<br>
+                                        Size: 2208px * 2208px</p><hr>
+                                        <img style="border:1px #DDD solid" class="img img-responsive" src="{{ asset('img/your-splash.png') }}">
                                       </div>
                                       </div>
                                     </div>
