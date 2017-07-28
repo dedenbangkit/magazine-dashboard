@@ -63,7 +63,7 @@ class BuildApiController extends Controller
      return $result;
    }
 
-   public function Build(Request $request,EmailController $EmailC)
+   public function Build(Request $request)
    {
      $theproject=Project::where('project.id','=',$request->appid)
                          ->leftjoin('company','company.id','=','project.company_id')
