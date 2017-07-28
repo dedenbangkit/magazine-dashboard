@@ -14,7 +14,7 @@ class User extends Model
         if(empty($data['position'])){
             $data['position'] = 'supervisor';
         }
-        return  User::insert(
+        return  User::insertGetId(
             array(
              'name'=>$data['name'],
              'email'=>$data['email'],
@@ -35,6 +35,12 @@ class User extends Model
     public function getUserCompanyEmail($id){
         return User::whereNull('deleted_at')
             ->where('project_id','=',$id)
+            ->orderBy('name')
+            ->get();
+    }
+    public function getUserCompanyEmailByID($id){
+        return User::whereNull('deleted_at')
+            ->where('id','=',$id)
             ->orderBy('name')
             ->get();
     }

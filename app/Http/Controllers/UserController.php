@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\EmailController;
 use App\Model\User;
 use App\Model\Action_log;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +54,7 @@ class UserController extends Controller
      *
      * @return redirect to user page
      */
-    public function registrationProcess(Request $request){
+    public function registrationProcess(Request $request,EmailController $EmailC){
         $data=$request->all();
         $validator = Validator::make($request->all(), [
             'email' => 'required|max:255|email',
@@ -69,8 +70,9 @@ class UserController extends Controller
                 ->withErrors($validator,'create')
                 ->withInput();
         };
-        $this->user->insertUser($request->all(),$this->authdata->project_id);
+        $iduser=$this->user->insertUser($request->all(),$this->authdata->project_id);
         $this->action_log->create_log('Creating User '.$request->name.' position '.$request->position,$this->authdata->id);
+        $EmailC->send(5,$iduser)
         return redirect('/user');
 
     }

@@ -60,7 +60,18 @@ class EmailController extends Controller
                 'contentmiddle'=>'lorem middle',
                 'contentbottom'=>'lorembutton'
             ];
-        }else{
+        }elseif($id ==5){
+            $datauser=$this->user->getUserCompanyEmailById($content);
+            $content = [
+                'target'=>'user',
+                'tittle'=>'tittle',
+                'heading'=>'test',
+                'contenttop'=>'lorem top',
+                'contentmiddle'=>'lorem middle',
+                'contentbottom'=>'lorembutton'
+            ];
+        }
+        else{
             $datauser=$this->user->getUserCompanyEmail($this->authdata->project_id);
             $content = [
                 'target'=>'default',
