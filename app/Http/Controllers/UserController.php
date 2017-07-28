@@ -72,7 +72,7 @@ class UserController extends Controller
         };
         $iduser=$this->user->insertUser($request->all(),$this->authdata->project_id);
         $this->action_log->create_log('Creating User '.$request->name.' position '.$request->position,$this->authdata->id);
-        $EmailC->send(5,$iduser)
+        $EmailC->send(5,$iduser);
         return redirect('/user');
 
     }

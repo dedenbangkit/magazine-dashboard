@@ -37,7 +37,7 @@ class EmailController extends Controller
                 'tittle'=>'Successfull compiling issue',
                 'heading'=>'Successfull compiling issue',
                 'contenttop'=>'lorem top',
-                'contentmiddle'=>'Here the token'.$content,
+                'contentmiddle'=>'Here the token <b>'.$content.'</b>',
                 'contentbottom'=>'lorembutton'
             ];
         }elseif($id ==3){
