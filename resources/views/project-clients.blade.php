@@ -59,7 +59,7 @@
                                 @endif
                                   <div class="box-body">
                                   <div class="col-md-3" onclick="window.location='/issue?id={{$row->id}}';" style="cursor:pointer">
-                                    <img class="img-responsive" src="{{asset('/img/projects/'.$row->project_cover)}}" alt="Photo">
+                                    <img class="img-responsive" src="{{$row->project_cover}}" alt="Photo">
                                     <ul class="list-group list-group-unbordered">
                                       <li class="list-group-item">
                                         <b>Company Name</b> <a class="pull-right">{{$row->company_name}}</a>

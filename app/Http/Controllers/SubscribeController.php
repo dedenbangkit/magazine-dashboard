@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Storage;
 class SubscribeController extends Controller
 {
     protected $activer;
@@ -64,6 +65,8 @@ class SubscribeController extends Controller
      * @return Reditrect to dashboard
      */
     public function subscribeProcessAdd(Request $request){
+        $s3 = \Storage::disk('s3');
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/project-lib';
         $project_data=$this->project->getProjectById($this->authdata->project_id);
         Validator::extend('companyphonecheck', function ($attribute, $value, $parameters)
         {   $find=$this->company->findCompany('company_phone',$value);
@@ -107,10 +110,14 @@ class SubscribeController extends Controller
                 ->withInput();
         };
         if (!empty($request->file('cover'))) {
-            Image::make(Input::file('cover'))->resize(300, null, function ($constraint) {
+            $img=Image::make(Input::file('cover'))->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save('img/projects/' . $request->file('cover')->getClientOriginalName());
-            $cover=$request->file('cover')->getClientOriginalName();
+            });
+            $resource = $img->stream()->detach();
+            $name = time().'-'.$_FILES['cover']['name'];
+            $file_path= '/project-lib/';
+            $s3->put($file_path.''.$name, $resource, 'public');
+            $cover=$relative_path."/".$name;
         }else{
             $cover=$project_data[0]['project_cover'];
         }
