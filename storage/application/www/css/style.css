@@ -286,6 +286,7 @@ iframe {
 a.videoPlayer {
   float: left;
   position: relative;
+  width: 100%;
 }
 a.videoPlayer span {
   width: 100%;

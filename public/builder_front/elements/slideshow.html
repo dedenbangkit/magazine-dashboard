@@ -26,11 +26,14 @@
     <![endif]-->
     <style>
       .new-image{
-        position: absolute;
-        left: 15px;
         z-index: 999;
         cursor: pointer;
-        top: 80px;
+        top: 30px;
+        left: auto;
+        right: 15px;
+        z-index: 999;
+        cursor: pointer;
+        background: none #2c3e50;
       }
       .remove-image{
         position: absolute;
@@ -38,6 +41,7 @@
         z-index: 999;
         cursor: pointer;
         top: 30px;
+        background: none #2c3e50;
       }
     </style>
 </head>
@@ -55,13 +59,13 @@
 		    					<!-- Wrapper for slides -->
 		    					<div class="carousel-inner"><ion-slides slider="data.slider" class="do_not_swipe">
 		    						<ion-slide-page class="item active">
-						    			<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/image-05.png" alt="" />
+						    			<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/placeholder-image.png" alt="" />
 							    	</ion-slide-page>
 			    					<ion-slide-page class="item">
-				    					<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/image-04.png" alt="" />
+				    					<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/placeholder-image.png" alt="" />
 					    			</ion-slide-page>
 							    	<ion-slide-page class="item">
-								    	<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/image-06.png" alt="" />
+								    	<img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/placeholder-image.png" alt="" />
 									</ion-slide-page>
 								</ion-slides></div>
 
@@ -98,7 +102,7 @@
      function sortableClose(){};
      $('#add-img').click(function(){
        $('ion-slide-page').removeClass('active');
-       image = '<ion-slide-page class="item active"><img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/image-05.png" alt="" /></ion-slide-page>'
+       image = '<ion-slide-page class="item active"><img class="carousels" src="http://publixx-statics.s3.amazonaws.com/images-lib/placeholder-image.png" alt="" /></ion-slide-page>'
        $('ion-slides').append(image);
      });
 

@@ -14,7 +14,7 @@ editableItems['h4'] = ['background-color', 'text-align', 'font-family', 'text-tr
 editableItems['h5'] = ['background-color', 'text-align', 'font-family', 'text-transform'];
 editableItems['p'] = ['column-count','background-color','text-align', 'text-indent', 'font-family', 'padding', 'border-radius'];
 editableItems['a.btn'] = ['border-radius', 'font-size', 'background-color'];
-editableItems['img'] = ['opacity','width','max-height','border-radius','float','padding', 'border-color', 'border-style', 'border-width'];
+editableItems['img'] = ['opacity','border-radius','float','padding', 'border-color', 'border-style', 'border-width'];
 editableItems['.carousels'] = [];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
@@ -29,7 +29,6 @@ var editableItemOptions = new Array();
 
 editableItemOptions['nav a : font-weight'] = ['400', '700'];
 editableItemOptions['a.btn : border-radius'] = ['0px', '4px', '10px'];
-editableItemOptions['img : width'] = ['none','100%', '50%', '25%'];
 editableItemOptions['img : border-radius'] = ['0px', '10px', '20px', '30px', '100%'];
 editableItemOptions['img : padding'] = ['0px', '5px', '10px', '20px'];
 editableItemOptions['img : border-style'] = ['none', 'dotted', 'dashed', 'solid'];

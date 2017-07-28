@@ -19,7 +19,7 @@ tinymce.init({
       text: false,
       icon: 'mce-ico mce-i-image',
       onclick: function () {
-        editor.insertContent("<hr><img width='100%' class='img img-responsive' src='http:/\//publixx-statics.s3.amazonaws.com/images-lib/picture1.jpg'></img><hr>");
+        editor.insertContent("<hr><img width='100%' class='img img-responsive' src='http:/\//publixx-statics.s3.amazonaws.com/images-lib/placeholder-image.png'></img><hr>");
       }
     });
   }
