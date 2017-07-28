@@ -275,13 +275,13 @@
                                         </div> -->
 
                                         <div class="form-group">
-                                        <label>Upload splash screen (.zip)</label>
-                                        <input type="file" name="splashpng" id="splashpng">
+                                        <label>Upload icon (.png)</label>
+                                        <input type="file" name="iconpng" id="iconpng" accept="image/x-png">
                                         </div>
 
                                         <div class="form-group">
-                                        <label>Upload icon (.zip)</label>
-                                        <input type="file" name="iconpng" id="iconpng">
+                                        <label>Upload splash screen (.png)</label>
+                                        <input type="file" name="splashpng" id="splashpng" accept="image/x-png">
                                         </div>
 
                                         <hr>
