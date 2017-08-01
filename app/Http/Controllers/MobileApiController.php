@@ -39,7 +39,7 @@ class MobileApiController extends Controller
             return json_encode($code);
         }
         $code=[
-            'code'=>200,
+            'code'=>401,
             'status'=>'user does not exist'
         ];
         return json_encode($code);
