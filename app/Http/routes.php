@@ -73,6 +73,8 @@ Route::get('/services', 'SubscribeController@getService');
 Route::get('/invoice-detail', function () {
     return view('errors.404');
 });
+/*APIMobile*/
+Route::post('/login-attempt','MobileApiController@LoginCheck');
 /*mail service*/
 Route::get('/send', 'EmailController@send');
 

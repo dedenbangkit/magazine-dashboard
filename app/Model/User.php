@@ -79,9 +79,21 @@ class User extends Model
                 'updated_at'=>Carbon::now()
             ]);
     }
+    public function changeUserToken($id,$token){
+        return User::where('id',$id)
+            ->update([
+                'mobile_token'=>$token,
+                'updated_at'=>Carbon::now()
+            ]);
+    }
     public function findUser($value,$data){
         return Company::where('deleted_at',null)
             ->where($value,$data)
+            ->first();
+    }
+    public function checkLogin($email){
+        return User::whereNull('deleted_at')
+            ->where('email',$email)
             ->first();
     }
 }
