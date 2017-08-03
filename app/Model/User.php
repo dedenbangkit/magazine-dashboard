@@ -92,8 +92,11 @@ class User extends Model
             ->first();
     }
     public function checkLogin($email){
-        return User::whereNull('deleted_at')
-            ->where('email',$email)
+        return User::whereNull('users.deleted_at')
+            ->leftjoin('project','project.id','=','users.project_id')
+            ->leftjoin('company','company.id','=','project.company_id')
+            ->where('users.email',$email)
+            ->select('users.*','project.project_name','company.*')
             ->first();
     }
 }

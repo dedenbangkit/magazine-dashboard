@@ -342,7 +342,17 @@ class PageController extends Controller
                 $this->page->savePage($request->id,$request->content,$contents);
 //                $this->page->savePage($row['id'],$content,$row['content']);
 
-            return $request->id;
+                if(!empty($request->image)){
+                    $s3 = \Storage::disk('s3');
+                    $file_path= '/cover-lib/';
+                    $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/cover-lib';//specify the relative path from your elements to the upload folder
+                    $name = time().'jpg';
+                    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $request->image));
+                    file_put_contents('image.jpeg', $data);
+//                    $s3->put($file_path.''.$name, file_get_contents($unencodedData), 'public');
+//                    file_put_contents('img.jpeg', $unencodedData);
+                }
+            return $request->image;
 
 
     }
