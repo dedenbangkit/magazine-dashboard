@@ -87,6 +87,7 @@ class Issue extends Model
         return Issue::where('id',$id)
             ->update([
                 'compiled'=>$name,
+                'approval'=>'pending',
                 'updated_at'=>Carbon::now()
             ]);
     }
