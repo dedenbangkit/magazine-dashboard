@@ -56,12 +56,12 @@
                                     } ?>">
                                     </div>
                                     <div class="btn-group-vertical" style="width:100%; padding-top:20px;">
-                                        @if(!empty($row->compiled))
-                                            <a class="btn btn-default @if($row->status =='unpublished') publish-issue @else disabled @endif "
+                                        @if(!empty($row->compiled) & $row->approval == 'approved')
+                                            <a class="btn btn-default @if($row->status =='unpublished' & $row->approval == 'approved' ) publish-issue @else disabled @endif "
                                          data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
                                         <i class="fa fa-bullhorn {{$row->status}}"></i> Publish<?php echo ($row->status=='published') ? 'ed':''; ?> </a>
                                         @else
-                                            <a href="/compile/{{ $row->id }}" class="btn btn-default "
+                                            <a href="/compile/{{ $row->id }}" class="btn btn-default @if($row->approval == 'pending'   ) disabled @endif "
                                                data-id='{{ $row->id }}' data-name='<?php echo(empty($row->issue_name) ? 'Untittled' : $row->issue_name); ?>'>
                                                 <i class="fa fa-bullhorn"></i> Compile </a>
                                         @endif

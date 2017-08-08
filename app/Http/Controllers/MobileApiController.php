@@ -34,7 +34,12 @@ class MobileApiController extends Controller
                 'email'=>$user->email,
                 'position'=>$access,
                 'project_id'=>$user->project_id,
-                'token'=>$token
+                'token'=>$token,
+                'project_name'=>$user->project_name,
+                'company_name'=>$user->company_name,
+                'company_website'=>$user->company_website,
+                'company_phone'=>$user->company_phone,
+                'company_email'=>$user->company_email
             ];
             return json_encode($code);
         }
