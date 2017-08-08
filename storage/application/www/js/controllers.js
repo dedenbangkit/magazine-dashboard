@@ -74,6 +74,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
 
   .controller('MaglistsCtrl', function(
     $scope,
+    $rootScope,
     $ionicPlatform,
     $ionicLoading,
     $ionicPopup,
@@ -101,8 +102,8 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
       showDelay: 0
     });
 
-    $scope.maglists = [];
-    $scope.$watch('maglists', function() {});
+    // $scope.maglists = [];
+    // $scope.$watch('maglists', function() {});
 
     $scope.doRefresh = function(){
       $timeout(function () {
@@ -144,11 +145,11 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
             });
             StorageService.saveList(maglists);
             $q.all(promiseDownload).finally(function(){
-              $scope.maglists = StorageService.getList();
+              $rootScope.maglists = StorageService.getList();
             });
           })
           .error(function(data, status, headers, config) {
-            $scope.maglists = StorageService.getList();
+            $rootScope.maglists = StorageService.getList();
           })
       });
       $ionicLoading.hide();
@@ -160,6 +161,45 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
     // var test = StorageService.getIssue(1);
     // console.log(test[0][0]);
 
+    //Removing File
+    $scope.removeFile = function(fn) {
+      $cordovaFile.removeFile(cordova.file.cacheDirectory + "contents/", fn + ".zip")
+        .then(function(success) {
+          document.getElementById('btn-' + fn).remove();
+        }, function(error) {
+          alert('file not removed');
+        });
+    };
+
+  })
+
+  .controller('MaglistsViewCtrl',function(
+    $scope,
+    $rootScope,
+    $ionicPlatform,
+    $ionicLoading,
+    $ionicPopup,
+    $http,
+    $stateParams,
+    $cordovaProgress,
+    $cordovaFile,
+    $cordovaFileTransfer,
+    $cordovaZip,
+    $timeout,
+    $location,
+    $localStorage,
+    $q,
+    StorageService,
+    lodash,
+  ){
+    $scope.theList = StorageService.getIndex($stateParams.issueIdx);
+
+    $scope.views = [];
+    $scope.$watch('views', function() {});
+
+    $scope.views.push($scope.theList);
+    var issueInfo = StorageService.getInfo($stateParams.issueIdx);
+    $scope.issueName = issueInfo;
     $scope.downloadContent = function(fn, zf, ids, iName, idx) {
 
       var url = zf;
@@ -176,7 +216,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
 
       confirmPopup.then(function(res) {
         if (res) {
-          $scope.$watch('maglists[' + idx + '].progress', function() {});
+          // $scope.$watch('maglists[' + idx + '].progress', function() {});
           $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
             .then(function(result) {
               var promiseDownload = [];
@@ -186,7 +226,8 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
                   data.forEach(function(i, x) {
                     var imageName = unzipPath + i.substring(i.lastIndexOf('/') + 1);
                     promiseDownload.push($cordovaFileTransfer.download(i, imageName, options, trustHosts));
-                    $scope.maglists[idx].progress += imageDownload;
+                    $rootScope.maglists[idx].progress += imageDownload;
+                    $scope.views[idx].progress += imageDownload;
                     document.getElementById(fn).value += imageDownload;
                   });
                 });
@@ -206,7 +247,8 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
             }, function(progress) {
               progressBar = (progress.loaded / progress.total) * 50;
               document.getElementById(fn).value = progressBar;
-              $scope.maglists[idx].progress = progressBar;
+              $rootScope.maglists[idx].progress = progressBar;
+              $scope.views[idx].progres = progressBar;
             });
 
         }
@@ -214,33 +256,28 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
 
     };
 
-    //Removing File
-    $scope.removeFile = function(fn) {
-      $cordovaFile.removeFile(cordova.file.cacheDirectory + "contents/", fn + ".zip")
-        .then(function(success) {
-          document.getElementById('btn-' + fn).remove();
-        }, function(error) {
-          alert('file not removed');
-        });
-    };
-
   })
 
   //Downloaded Only
   .controller('MaglistsDownloadedCtrl', function(
     $scope,
+    $rootScope,
     $ionicPlatform,
     $localStorage,
     StorageService,
   ) {
-    $scope.maglists = [];
-    $scope.$watch('maglists', function() {});
-    $scope.maglists = StorageService.getList();
+    // $scope.maglists = [];
+    // $scope.$watch('maglists', function() {});
+    // $scope.maglists = StorageService.getList();
   })
 
   //Read Page Online
   .controller('OnlineCtrl', function(
     $scope,
+    $ionicNavBarDelegate,
+    $ionicTabsDelegate,
+    $ionicPopover,
+    $ionicModal,
     $cordovaInAppBrowser,
     $http,
     $stateParams,
@@ -266,39 +303,100 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
         console.log('data error');
       });
 
-    $scope.options = {
-      noSwiping: true,
-      noSwipingClass: 'do_not_swipe',
-      watchSlidesVisibility: true,
-      pagination: false,
-    };
+      $ionicModal.fromTemplateUrl('templates/modal.html', {
+        scope: $scope,
+        animation: 'jelly'
+      }).then(function(modal) {
+        $scope.modal = modal;
+      });
 
-    $ionicSideMenuDelegate.canDragContent(false)
-    $ionicModal.fromTemplateUrl('templates/modal.html', {
+      $scope.imgUrl = "http://placekitten.com/g/500/800";
+
+      $scope.openModal = function(url) {
+        $scope.modal.show();
+        $scope.$watch('imgUrl', function() {});
+        $scope.imgUrl = url;
+      };
+
+      $scope.options = {
+        noSwiping: true,
+        noSwipingClass: 'do_not_swipe',
+        watchSlidesVisibility: true,
+        pagination: false,
+      };
+
+      $ionicSideMenuDelegate.canDragContent(false)
+
+      //OpenLink
+      var browserOptions = {
+        location: 'no',
+        clearcache: 'no',
+        toolbar: 'yes'
+      };
+      $scope.openWindow = function(link_url) {
+        $cordovaInAppBrowser.open(link_url, '_blank', browserOptions);
+      };
+
+      //Hide Nav bar
+      $scope.hideNavi = function(){
+        $ionicNavBarDelegate.showBar(false);
+        $ionicTabsDelegate.showBar(false);
+      };
+      $scope.showNavi = function(){
+        $ionicNavBarDelegate.showBar(true);
+        $ionicTabsDelegate.showBar(true);
+      }
+
+      //Slider Delegate
+
+      $scope.data = {};
+      $scope.data.currentPage = 0;
+
+      var setupSlider = function() {
+        //some options to pass to our slider
+
+        //create delegate reference to link with slider
+        $scope.data.sliderDelegate = null;
+
+        //watch our sliderDelegate reference, and use it when it becomes available
+        $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
+          if (newVal != null) {
+            $scope.data.sliderDelegate.on('slideChangeEnd', function() {
+              $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+              //use $scope.$apply() to refresh any content external to the slider
+              $scope.$apply();
+            });
+          }
+        });
+      };
+
+      setupSlider();
+
+      //Popover delegate
+      $ionicPopover.fromTemplateUrl('templates/popover.html', {
       scope: $scope,
-      animation: 'jelly'
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
+      }).then(function(popover) {
+        $scope.popover = popover;
+      });
 
-    $scope.imgUrl = "http://placekitten.com/g/500/800";
-    $scope.$watch('imgUrl', function() {});
-
-    $scope.openModal = function(url) {
-      $scope.modal.show();
-      $scope.$watch('imgUrl', function() {});
-      $scope.imgUrl = url;
-    };
-
-    //OpenLink
-    var browserOptions = {
-      location: 'no',
-      clearcache: 'no',
-      toolbar: 'yes'
-    };
-    $scope.openWindow = function(link_url) {
-      $cordovaInAppBrowser.open(link_url, '_blank', browserOptions);
-    };
+      $scope.openPopover = function() {
+      $scope.popover.show();
+      };
+      $scope.closePopover = function() {
+        $scope.popover.hide();
+      };
+      //Cleanup the popover when we're done with it!
+      $scope.$on('$destroy', function() {
+        $scope.popover.remove();
+      });
+      // Execute action on hidden popover
+      $scope.$on('popover.hidden', function() {
+        // Execute action
+      });
+      // Execute action on remove popover
+      $scope.$on('popover.removed', function() {
+        // Execute action
+      });
 
   })
 
@@ -306,6 +404,10 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
   .controller('OfflineCtrl', function(
     $scope,
     $http,
+    $ionicNavBarDelegate,
+    $ionicTabsDelegate,
+    $ionicPopover,
+    $ionicModal,
     $cordovaInAppBrowser,
     $stateParams,
     $ionicSideMenuDelegate,
@@ -333,15 +435,6 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
       return thing;
     });
 
-    $scope.options = {
-      noSwiping: true,
-      noSwipingClass: 'do_not_swipe',
-      watchSlidesVisibility: true,
-      pagination: false,
-    };
-
-
-    $ionicSideMenuDelegate.canDragContent(false)
     $ionicModal.fromTemplateUrl('templates/modal.html', {
       scope: $scope,
       animation: 'jelly'
@@ -357,15 +450,85 @@ angular.module('starter.controllers', ['ionic', 'ui.router', 'ngSanitize'])
       $scope.imgUrl = url;
     };
 
+    $scope.options = {
+      noSwiping: true,
+      noSwipingClass: 'do_not_swipe',
+      watchSlidesVisibility: true,
+      pagination: false,
+    };
+
+    $ionicSideMenuDelegate.canDragContent(false)
+
     //OpenLink
     var browserOptions = {
       location: 'no',
       clearcache: 'no',
-      toolbar: 'no'
+      toolbar: 'yes'
     };
     $scope.openWindow = function(link_url) {
       $cordovaInAppBrowser.open(link_url, '_blank', browserOptions);
     };
+
+    //Hide Nav bar
+    $scope.hideNavi = function(){
+      $ionicNavBarDelegate.showBar(false);
+      $ionicTabsDelegate.showBar(false);
+    };
+    $scope.showNavi = function(){
+      $ionicNavBarDelegate.showBar(true);
+      $ionicTabsDelegate.showBar(true);
+    }
+
+    //Slider Delegate
+
+    $scope.data = {};
+    $scope.data.currentPage = 0;
+
+    var setupSlider = function() {
+      //some options to pass to our slider
+
+      //create delegate reference to link with slider
+      $scope.data.sliderDelegate = null;
+
+      //watch our sliderDelegate reference, and use it when it becomes available
+      $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
+        if (newVal != null) {
+          $scope.data.sliderDelegate.on('slideChangeEnd', function() {
+            $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+            //use $scope.$apply() to refresh any content external to the slider
+            $scope.$apply();
+          });
+        }
+      });
+    };
+
+    setupSlider();
+
+    //Popover delegate
+    $ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope,
+    }).then(function(popover) {
+      $scope.popover = popover;
+    });
+
+    $scope.openPopover = function() {
+    $scope.popover.show();
+    };
+    $scope.closePopover = function() {
+      $scope.popover.hide();
+    };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
+    // Execute action on hidden popover
+    $scope.$on('popover.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove popover
+    $scope.$on('popover.removed', function() {
+      // Execute action
+    });
 
   })
 
