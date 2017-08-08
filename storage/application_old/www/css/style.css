@@ -1,0 +1,303 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-stable {
+    background-color: #2c539e;
+    color: #FEFEFE;
+}
+.bar.bar-stable .title {
+    background-color: #2c539e;
+    color: #FEFEFE;
+}
+
+.bar-stable .button.button-icon, .bar-stable .button.button-clear{
+  color:#FFF;
+}
+
+.item-input{
+  padding:10px;
+}
+
+.list-magazine{
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 1px;
+  padding-left: 0;
+  margin-bottom: 0px;
+}
+
+.item-thumbnail-left > img:first-child,
+.item-thumbnail-left .item-image,
+.item-thumbnail-left .item-content > img:first-child {
+  height: auto;
+  max-height: none;
+}
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  height:auto;
+  max-height: none;
+  min-height: 140px;
+}
+
+.item{
+  background: transparent;
+}
+
+.menu .item-complex .item-content, .item-radio .item-content{
+ padding: 16px 16px 16px 16px;
+}
+
+.item-avatar, .menu{
+  background-image: url('../img/bg-menu.jpg');
+}
+
+.menu{
+  background:linear-gradient(to bottom, rgb(44,83,158) 0%,rgb(44,83,158) 100%);
+}
+
+.menu ion-item{
+  border-color: transparent;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu .menus{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.menu .item-content{
+  background: transparent;
+  color:#FEFEFE;
+  text-align: center;
+}
+
+
+.menu .bar.bar-footer{
+  padding-bottom:10px;
+  z-index: 10;
+}
+
+.menu .social{
+  text-align: center;
+  font-size: 20px;
+}
+
+.item-avatar a.item-content{
+  background: transparent;
+}
+
+.item-avatar img{
+  border-radius: 50%;
+  max-width: 100px;
+  margin: 40px 20px;
+  border: #fff solid 5px;
+  box-shadow: 2px 3px 10px #888888;
+}
+
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.vidio{
+padding-bottom: 67.25%;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.zoom-pane {
+  width: 100%;
+  height: 100%;
+}
+
+
+.zoom-pane .scroll {
+  min-height: 100%;
+  /* Vertical align */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.zoom-pane img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/*CSS for Template*/
+.page{
+  width:100%;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+   appearance: none;
+   height: 2px;
+   display: block;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #2c539e;
+  border-radius: 2px;
+}
+
+progress[value="0"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+progress[value="100"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.download-issue{
+  border-color: transparent;
+  background-color: #ddd;
+  color: #444;
+  position: initial;
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  min-width: 52px;
+  min-height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 25px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.downloaded{
+  border-color: transparent;
+  background-color: #2c539e;
+  color: #FFF;
+  position: initial;
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  min-width: 52px;
+  min-height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 25px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.swiper-slide{
+  height: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-bar-indicator
+{
+	display: none;
+}
+
+.swiper-container-horizontal > .swiper-pagination{
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  background: #fff;
+}
+
+.swiper-slide .item, .swiper-slide .active{
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+}
+
+.swiper-slide img{
+  width: inherit;
+}
+
+audio{
+  width: 100%;
+}
+
+.padding {
+  padding: 0px;
+}
+
+iframe {
+  width: 100%;
+}
+
+/*videoplayer*/
+
+a.videoPlayer {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+a.videoPlayer span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url("../img/play-btn.png") no-repeat;
+  background-position: 50% 50%;
+  background-size: 300%;
+}
+@media screen and (max-width: 480px) {
+  a.videoPlayer span {
+    background-size: 400%;
+  }
+}
