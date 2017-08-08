@@ -32,9 +32,11 @@ class Page extends Model
             ]);
     }
     public function getPage($id){
-        return Page::whereNull('deleted_at')
-            ->where('issue_id',$id)
-            ->orderBy('id','ASC')
+        return Page::whereNull('page.deleted_at')
+            ->where('page.issue_id',$id)
+            ->leftjoin('master_comment','master_comment.page_id','=','page.id')
+            ->orderBy('page.id','ASC')
+            ->select('page.*','master_comment.status as revision','master_comment.id as revid')
             ->get();
     }
     public function getPageCount($id){

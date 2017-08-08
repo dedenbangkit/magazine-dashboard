@@ -61,6 +61,10 @@
                     <li id="zoomValue">100%</li>
                     <li id="zoomOut"><a href="#"><span class="fa fa-minus">&nbsp</span></a></li>
             </div>
+            <div class="toolbar" id="responsive-comment">
+                <ul>
+                    <li id="commentblock"><a href="javascript:void(0);" id="buttonComment"><span class="fui-bubble">&nbsp</span></a></li>
+            </div>
             <div class="toolbar" id="responsive-orientation">
                 <ul>
                     <li class="active"><a href="#" data-orientation="portrait"> Portrait</a></li>
@@ -130,6 +134,7 @@
             <ul id="pages">
                 <li style="display: none;" id="newPageLI">
                     <input type="text" value="index" name="page" readonly>
+                    <span class="badgeSpan" ><a href="javascript:void();" class="badgeNotif"><span class="fui-alert"></span></a></spanclas>
                     <span class="pageButtons">
                       {{--<a href="" class="fileEdit"><span class="fui-new"></span></a>--}}
                         <a href="" class="fileDel"><span class="fui-cross"></span></a>
@@ -2275,7 +2280,10 @@
     }).done(function (data) {
         $(data['page_list']).each(function (index, el) {
             page_content = el.page_content;
-            newPage(el.page_name, el.page_content, el.id, index);
+            if(el.revid==null){
+                el.revid=0
+            }
+            newPage(el.page_name, el.page_content, el.id, index,el.revision,el.revid);
         });
         contentInject();
     });
@@ -2524,7 +2532,7 @@
     });
 
 
-    function newPage(pageTittle, pageContent, pageID, index) {
+    function newPage(pageTittle, pageContent, pageID, index,revision,revID) {
         $('#pages li.active').each(function () {
 
             if ($(this).find('input').size() > 0) {
@@ -2545,7 +2553,9 @@
         newPageLI.css('display', 'block');
         newPageLI.find('input').val(pageTittle);
         newPageLI.attr('id', '');
+        newPageLI.addClass(revision)
         newPageLI.attr('data-id', pageID);
+        newPageLI.attr('data-revision', revID);
         newPageLI.attr('data-page', index + 1);
 
         $('ul#pages').append(newPageLI);
@@ -2565,7 +2575,7 @@
 
         })
 
-        newPageLI.addClass('active');
+        newPageLI.addClass('active ');
 
 
         //create the page structure
@@ -2609,6 +2619,34 @@
 
         pageNumber = $('#pages li').size() - 1;
     }
+    $( "#buttonComment" ).click(function() {
+        var rev=$('.progress.active').data('revision');
+        if(rev != 0){
+            $.ajax({
+                url: "get_comment/"+rev,
+                async: "false",
+                dataType: "json",
+            }).done(function(data) {
+                var comment='';
+                $(data['list_comment']).each(function (index, el) {
+                    var commentButton='';
+                    var style='';
+                    if(el.status=='progress'){
+                         commentButton="<a href='javascript:void(0);' class='fui-check'></a>";
+                    }
+                    if(el.status=='done'){
+                        style="style='text-decoration: line-through;'";
+                    }
+                    comment += "<li "+style+">"+el.content+" "+commentButton+"</li>"
+                });
+                bootbox.alert({
+                    message: "<ul>"+comment+"</ul>",
+                    size: 'large'
+                });
+            });
+        }
+
+    });
 
 </script>
 

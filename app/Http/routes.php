@@ -78,6 +78,8 @@ Route::post('/login-attempt','MobileApiController@LoginCheck');
 /*mail service*/
 Route::get('/send', 'EmailController@send');
 
+/*Comment*/
+Route::get('/get_comment/{id}', 'CommentController@getComment');
 /* sample */
 Route::get('/sample', function () {
     return view('interact-sample');

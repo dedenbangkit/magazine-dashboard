@@ -835,6 +835,56 @@ body .sp-input {
 	text-align: center;
 }
 
+	#responsive-comment{
+		position: fixed;
+		bottom:0;
+		left:430px;
+		color:red;
+		z-index: 9999;
+		line-height: 2;
+		height: 37px;
+	}
+	#responsive-comment ul{
+		list-style: none;
+		margin:0;
+		padding:0;
+	}
+	#responsive-comment ul li{
+		float: left;
+	}
+
+	#responsive-comment ul li:hover{
+		background-color: #16997f;
+		color: #fff;
+	}
+
+	#responsive-comment ul li span.disabled{
+		opacity:0.2;
+	}
+	#responsive-comment ul li#commentblock{
+		background-color:red;
+	}
+	#responsive-comment ul li#commentblock:hover{
+		background-color:orange;
+	}
+
+	#responsive-comment ul li a{
+		display: block;
+		color:#fff;
+		font-size:9px!important;
+		padding:10px 15px;
+		border-right:1px solid rgba(255,255,255,0.1);
+		border-left:1px solid rgba(255,255,255,0.1);
+		text-transform: uppercase;
+	}
+
+	#responsive-zoom ul li#zoomValue{
+		padding: 8px;
+		font-weight: bold;
+		width: 50px;
+		text-align: center;
+	}
+
 /*#build-mode .radio{
 	visibility: hidden;
 }*/
@@ -1311,5 +1361,19 @@ ul#pages li > span a:hover.fileEdit {
 .alert {
 	border-radius: 0px;
 }
-
+ul#pages li.progress > span.badgeSpan{
+	display:block !important;
+}
+ul#pages li > span.badgeSpan > a.badgeNotif{
+		display:none;
+}
+ul#pages li.progress > span.badgeSpan > a.badgeNotif{
+	position: absolute;
+	top:1px !important;
+	left:0px !important;
+	display:block !important;
+}
+a.badgeNotif {
+	display.none;
+}
 /* end modals */
