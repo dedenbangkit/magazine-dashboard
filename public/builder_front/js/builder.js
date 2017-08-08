@@ -1848,6 +1848,11 @@ $(function(){
 		$('#pages li').removeClass('active').removeClass('edit');
 
 		$(this).addClass('active');
+		if($(this).data('revision')==0){
+			$('#responsive-comment').hide();
+		}else{
+            $('#responsive-comment').show();
+		}
 
 		$('#pageTitle span span').text( $(this).find('a').text() );
         closeStyleEditor();
