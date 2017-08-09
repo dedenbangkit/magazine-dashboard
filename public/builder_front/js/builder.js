@@ -532,6 +532,7 @@ function styleClick(el) {
 		$('a#bg_Link').hide();
 		$('a#slide_Link').hide();
 		$('a#360_Link').parent().show();
+		$('a#360_Link').click();
 		//set the current SRC
 		$('.360FileTab').find('input#360URL').val( $(el).children().css('background-image') );
 		//reset the file upload
@@ -559,6 +560,8 @@ function styleClick(el) {
 		$('a#img_Link').hide();
 		$('a#360_Link').hide();
 		$('a#slide_Link').parent().show();
+		$('a#slide_Link').parent().addClass('active');
+		$('.slideFileTab').addClass('active');
 		addStyling();
 		//set the current SRC
 		$('.slideFileTab').find('input#slideURL').val( $(el).attr('src') );

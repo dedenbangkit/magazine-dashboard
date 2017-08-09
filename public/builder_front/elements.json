@@ -27,8 +27,6 @@ var _Elements = {"elements": {
     "Embed":[
         {"title":"Video","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/youtube.html"},
         {"title":"Audio","icon":"builder_front/images/icon/embed-iframe.png","url":"builder_front/elements/audio.html"},
-        {"title":"Modal","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/text.html"},
-        {"title":"Video 4/3","icon":"builder_front/images/icon/embed-video.png","url":"builder_front/elements/youtube.html"},
     ]
     }
 }

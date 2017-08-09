@@ -8,6 +8,10 @@ body > .container {
 	position: relative;
 }
 
+.row{
+	padding-bottom: 10px;
+}
+
 .toggle:hover, .toggle:focus {
 	color: #fff;
 }
