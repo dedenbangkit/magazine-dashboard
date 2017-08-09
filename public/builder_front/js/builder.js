@@ -407,6 +407,8 @@ function styleClick(el) {
 	$('#detailTabs a:first').click();
 
 	//hide all by default
+
+	$('a#css_Setup').show();
 	$('a#link_Link').parent().hide();
 	$('a#img_Link').parent().hide();
 	$('a#bg_Link').parent().hide();
@@ -418,6 +420,7 @@ function styleClick(el) {
 
 	//is the element an ancor tag?
 	if( $(el).prop('tagName') == 'A' || $(el).parent().prop('tagName') == 'A' ) {
+		$('a#css_Setup').show();
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
 		$('a#slide_Link').hide();
@@ -478,6 +481,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).attr('data-type') == 'video' ) {
+		$('a#css_Setup').hide();
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
 		$('a#360_Link').hide();
@@ -498,6 +502,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).attr('data-type') == 'audio' ) {
+		$('a#css_Setup').hide();
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
 		$('a#audio_Link').parent().show();
@@ -508,6 +513,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).prop('tagName') == 'IMG' ){
+		$('a#css_Setup').show();
 		$('a#img_Link').show();
 		$('a#bg_Link').hide();
 		$('a#slide_Link').hide();
@@ -520,6 +526,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('panimage')){
+		$('a#css_Setup').hide();
 		$('a#360_Link').show();
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
@@ -532,6 +539,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('container') ){
+		$('a#css_Setup').show();
 		$('a#bg_Link').show();
 		$('a#img_Link').hide();
 		$('a#slide_Link').hide();
@@ -545,6 +553,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('carousels') ){
+		$('a#css_Setup').hide();
 		$('a#slide_Link').show();
 		$('a#bg_Link').hide();
 		$('a#img_Link').hide();
@@ -558,6 +567,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('column') ){
+		$('a#css_Setup').show();
 		$('a#bg_Link').show();
 		$('a#img_Link').hide();
 		$('a#slide_Link').hide();
@@ -571,6 +581,7 @@ function styleClick(el) {
 	}
 
 	if( $(el).hasClass('fa') ) {
+		$('a#css_Setup').show();
 		$('a#icon_Link').parent().show();
 		//get icon class name, starting with fa
 		var get = $.grep(el.className.split(" "), function(v, i){
