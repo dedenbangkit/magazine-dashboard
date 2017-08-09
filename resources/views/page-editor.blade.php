@@ -221,9 +221,10 @@
         <li style="display: none;"><a href="#slide_Tab" id="slide_Link"><span class="fui-image"></span> Edit Slides</a>
         </li>
         <li style="display: none;"><a href="#icon_Tab" id="icon_Link"><span class="fa fa-flag"></span> Icons</a></li>
-        <li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-youtube-play"></span>
+        <li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-film"></span>
                 Video</a></li>
         <li style="display: none;"><a href="#audio_Tab" id="audio_Link"><span class="fa fa-soundcloud"></span> Audio</a>
+        <li style="display: none;"><a href="#360_Tab" id="360_Link"><span class="fa fa-eye"></span> Panoramic</a>
         </li>
     </ul><!-- /tabs -->
 
@@ -356,6 +357,39 @@
                                         <input type="file" name="slideFileField" id="slideFileField" style="width:100%">
                                         <span class="fileinput-new" data-trigger="fileinput"><span
                                                     class="fui-image"></span>&nbsp;&nbsp;Upload image slide</span>
+                                        <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
+                                    </span>
+                            <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists"
+                               data-dismiss="fileinput"><span class="fui-alert"></span>&nbsp;&nbsp;Reset</a>
+                        </div>
+                        <div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div><!-- /.tab-pane -->
+
+        <!-- /tabs -->
+        <div class="tab-pane 360FileTab" id="360_Tab">
+            <div class="hidden">
+                <label>Enter 360 path:</label>
+
+                <input type="text" class="form-control" id="360URL" placeholder="Enter an 360 URL" value="">
+
+                <p class="text-center or">
+                    <span>OR</span>
+                </p>
+            </div>
+            <form id="360UploadForm" action="360upload">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="buttons" style="width:100%">
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file" style="width:100%">
+                                        <input type="file" name="360FileField" id="360FileField" style="width:100%">
+                                        <span class="fileinput-new" data-trigger="fileinput"><span
+                                                    class="fui-image"></span>&nbsp;&nbsp;Upload Wide Image</span>
                                         <span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
                                     </span>
                             <a style="width:100%" href="#" class="btn btn-danger btn-sm btn-embossed fileinput-exists"

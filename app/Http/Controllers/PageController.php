@@ -360,7 +360,7 @@ class PageController extends Controller
         $s3 = \Storage::disk('s3');
         $image = $request->file('imageFileField');
         $file_path= '/images-lib/';
-        $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
+        $uploads_dir = 'builder_front/elements/images/uploads';
         $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 
@@ -422,7 +422,7 @@ class PageController extends Controller
         $s3 = \Storage::disk('s3');
         $image = $request->file('bgFileField');
         $file_path= '/images-lib/';
-        $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
+        $uploads_dir = 'builder_front/elements/images/uploads';
         $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 
@@ -480,11 +480,59 @@ class PageController extends Controller
         echo json_encode( $return );
     }
 
+    public function panupload(Request $request){
+        $s3 = \Storage::disk('s3');
+        $image = $request->file('360FileField');
+        $file_path= '/images-lib/';
+        $uploads_dir = 'builder_front/elements/images/uploads';
+        $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';
+        $return = array();
+
+        if( !file_exists( $uploads_dir ) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "The specified upload location does not exist. Please provide a correct folder in /360upload.php";
+            die( json_encode( $return ) );
+
+        }
+
+        //is the folder writable?
+        if( !is_writable( $uploads_dir ) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "The specified upload location is not writable. Please make sure the specified folder has the correct write permissions set for it.";
+            die( json_encode( $return ) );
+
+        }
+
+        if ( !isset($_FILES['360FileField']['error']) || is_array($_FILES['360FileField']['error']) ) {
+
+            $return['code'] = 0;
+            $return['response'] = "Something went wrong with the file upload; please refresh the page and try again.";
+            die( json_encode( $return ) );
+
+        }
+
+        $name = time().'-'.$_FILES['360FileField']['name'];
+        if ($s3->put($file_path.''.$name, file_get_contents($image), 'public')) {
+        } else {
+
+            $return['code'] = 0;
+            $return['response'] = "The uploaded file couldn't be saved. Please make sure you have provided a correct upload folder and that the upload folder is writable.";
+
+        }
+
+        $return['code'] = 1;
+        $return['response'] = $relative_path."/".$name;
+
+        echo json_encode( $return );
+    }
+
     public function slideupload(Request $request){
         $s3 = \Storage::disk('s3');
         $image = $request->file('slideFileField');
         $file_path= '/images-lib/';
-        $uploads_dir = 'builder_front/elements/images/uploads';//specify the upload folder, make sure it's writable!
+        $uploads_dir = 'builder_front/elements/images/uploads';
         $relative_path = 'https://s3-ap-southeast-1.amazonaws.com/publixx-statics/images-lib';//specify the relative path from your elements to the upload folder
 
 

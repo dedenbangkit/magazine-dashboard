@@ -38,6 +38,7 @@ Route::get('/del-page', 'PageController@deletePage');
 Route::post('/iupload', 'PageController@iupload');
 Route::post('/bgupload', 'PageController@bgupload');
 Route::post('/slideupload', 'PageController@slideupload');
+Route::post('/360upload', 'PageController@panupload');
 Route::post('/editor-issue', 'PageController@editorIssue');
 Route::post('/save', 'PageController@exportIssue');
 Route::get('/compile/{id}', 'PageController@exportIssueById');

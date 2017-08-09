@@ -16,6 +16,7 @@ editableItems['p'] = ['column-count','background-color','text-align', 'text-inde
 editableItems['a.btn'] = ['border-radius', 'font-size', 'background-color'];
 editableItems['img'] = ['opacity','border-radius','float','padding', 'border-color', 'border-style', 'border-width'];
 editableItems['.carousels'] = [];
+editableItems['.panimage'] = [];
 editableItems['hr.dashed'] = ['border-color', 'border-width'];
 editableItems['.divider > span'] = ['color', 'font-size'];
 editableItems['hr.shadowDown'] = ['margin-top', 'margin-bottom'];
@@ -410,6 +411,7 @@ function styleClick(el) {
 	$('a#img_Link').parent().hide();
 	$('a#bg_Link').parent().hide();
 	$('a#slide_Link').parent().hide();
+	$('a#360_Link').parent().hide();
 	$('a#icon_Link').parent().hide();
 	$('a#video_Link').parent().hide();
 	$('a#audio_Link').parent().hide();
@@ -419,6 +421,7 @@ function styleClick(el) {
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
 		$('a#slide_Link').hide();
+		$('a#360_Link').hide();
 		$('a#link_Link').parent().show();
 		if( $(el).prop('tagName') == 'A' ) {
 			theHref = $(el).attr('href');
@@ -477,6 +480,7 @@ function styleClick(el) {
 	if( $(el).attr('data-type') == 'video' ) {
 		$('a#img_Link').hide();
 		$('a#bg_Link').hide();
+		$('a#360_Link').hide();
 		$('a#video_Link').parent().show();
 		$('a#video_Link').click();
 		addStyling();
@@ -488,12 +492,6 @@ function styleClick(el) {
 			$('#video_Tab input#youtubeID').val('');
 		} else {
 			var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
-			// var ytid = $(el).prev().attr('src').match(regExp);
-			// var match = $(el).prev().attr('src');
-			// var ngclick = $(el).prev().attr('ng-click', "openWindow('"+match+"')");
-      //       // var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+match[1]+'/0.jpg');
-			// var thmbyt = $(el).prev().children().attr('src','http://img.youtube.com/vi/'+ytid[1]+'/0.jpg');
-			// $('#video_Tab input#youtubeID').val( match[1] );
 			$('#video_Tab input#youtubeID').val($(el).prev().attr('src'));
 			$('#video_Tab input#vimeoID').val('');
 		}
@@ -513,6 +511,7 @@ function styleClick(el) {
 		$('a#img_Link').show();
 		$('a#bg_Link').hide();
 		$('a#slide_Link').hide();
+		$('a#360_Link').hide();
 		$('a#img_Link').parent().show();
 		//set the current SRC
 		$('.imageFileTab').find('input#imageURL').val( $(el).attr('src') );
@@ -520,10 +519,23 @@ function styleClick(el) {
 		$('.imageFileTab').find('a.fileinput-exists').click();
 	}
 
+	if( $(el).hasClass('panimage')){
+		$('a#360_Link').show();
+		$('a#img_Link').hide();
+		$('a#bg_Link').hide();
+		$('a#slide_Link').hide();
+		$('a#360_Link').parent().show();
+		//set the current SRC
+		$('.360FileTab').find('input#360URL').val( $(el).children().css('background-image') );
+		//reset the file upload
+		$('.360FileTab').find('a.fileinput-exists').click();
+	}
+
 	if( $(el).hasClass('container') ){
 		$('a#bg_Link').show();
 		$('a#img_Link').hide();
 		$('a#slide_Link').hide();
+		$('a#360_Link').hide();
 		$('a#bg_Link').parent().show();
 		addStyling();
 		//set the current SRC
@@ -536,6 +548,7 @@ function styleClick(el) {
 		$('a#slide_Link').show();
 		$('a#bg_Link').hide();
 		$('a#img_Link').hide();
+		$('a#360_Link').hide();
 		$('a#slide_Link').parent().show();
 		addStyling();
 		//set the current SRC
@@ -548,6 +561,7 @@ function styleClick(el) {
 		$('a#bg_Link').show();
 		$('a#img_Link').hide();
 		$('a#slide_Link').hide();
+		$('a#360_Link').hide();
 		$('a#bg_Link').parent().show();
 		addStyling();
 		//set the current SRC
@@ -928,6 +942,57 @@ function styleClick(el) {
 				}
 			}
 			/* END SANDBOX */
+		}
+
+		//Pan image
+		if( $('a#360_Link').css('display') == 'block' && $('input#360FileField').val() != '' ) {
+		  var form = $('form#360UploadForm');
+		  var formdata = false;
+		  if (window.FormData){
+		    formdata = new FormData(form[0]);
+		  }
+		  console.log(form);
+		  $(el).children().css('background-image', 'url("/builder_front/images/loading.gif")');
+		  var formAction = form.attr('action');
+		  $.ajax({
+		    url : formAction,
+		    data : formdata ? formdata : form.serialize(),
+		    cache : false,
+		    contentType : false,
+		    processData : false,
+		    dataType: "json",
+		    type : 'POST',
+		  }).done(function(response){
+		    if( response.code == 1 ) {//success
+		      $('input#360URL').val( response.response );
+		      if( $(el).hasClass('panimage') ){
+		      $(el).children().css('background-image', 'url('+ response.response +')');
+		      }
+		      //reset the file upload
+		      $('.360FileTab').find('a.fileinput-exists').click();
+		      /* SANDBOX */
+		      sandboxID = hasSandbox( $(el) )
+		      if( sandboxID ) {
+		        if( $(el).hasClass('panimage')){
+		        elementID = $(el).attr('id');
+		        $('#'+sandboxID).contents().find('#'+elementID).children().css('background-image', 'url('+ response.response +')');
+		        }
+		      }
+		      /* END SANDBOX */
+		    } else if( response.code == 0 ) {//error
+		      alert('Something went wrong: '+response.response)
+		    }
+		  })
+		} else if( $('a#360_Link').css('display') == 'block' ) {
+		  if( $('input#360URL').val() != '' && $('input#360URL').val() != $(el).children().css('background-image') ) {
+		      $(el).children().css('background-image', 'url('+ $('input#360URL').val() +')');
+		      /* SANDBOX */
+		      sandboxID = hasSandbox( $(el) )
+		      if( sandboxID ) {
+		        elementID = $(el).attr('id');
+		        $('#'+sandboxID).contents().find('#'+elementID).children().css('background-image', 'url('+ $('input#360URL').val() +')');
+		      }
+		    }
 		}
 
 
