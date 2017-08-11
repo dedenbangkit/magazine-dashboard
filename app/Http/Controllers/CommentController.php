@@ -23,4 +23,8 @@ class CommentController extends Controller
         $data['list_comment']=$this->comment->getCommentByMaster($id);
         return $data;
     }
+    public function checkComment($id){
+        $data=$this->comment->checkCommentById($id,$this->authdata->id);
+        return $data;
+    }
 }

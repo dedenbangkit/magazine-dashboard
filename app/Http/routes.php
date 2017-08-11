@@ -81,6 +81,7 @@ Route::get('/send', 'EmailController@send');
 
 /*Comment*/
 Route::get('/get_comment/{id}', 'CommentController@getComment');
+Route::get('/check_comment/{id}', 'CommentController@checkComment');
 /* sample */
 Route::get('/sample', function () {
     return view('interact-sample');

@@ -2666,12 +2666,12 @@
                     var commentButton='';
                     var style='';
                     if(el.status=='progress'){
-                         commentButton="<a href='javascript:void(0);' class='fui-check'></a>";
+                         commentButton="<a href='javascript:void(0);' data-id='"+el.id+"' class='fui-check comment-check '></a>";
                     }
                     if(el.status=='done'){
                         style="style='text-decoration: line-through;'";
                     }
-                    comment += "<li "+style+">"+el.content+" "+commentButton+"</li>"
+                    comment += "<li id='com-"+el.id+"' data-id='"+el.id+"' "+style+">"+el.content+" "+commentButton+"</li>"
                 });
                 bootbox.alert({
                     message: "<ul>"+comment+"</ul>",
@@ -2680,6 +2680,33 @@
             });
         }
 
+    });
+    $(".comment-check").click(function(){
+        console.log('abcd')
+        var rev=$(this).data('id')
+        $.ajax({
+            url: "check_comment/"+rev,
+            async: "false",
+            dataType: "json",
+        }).done(function(data) {
+            if(data){
+                $('#com-'+rev).css('text-decoration','line-through');
+                $('a[data-id="'+rev+'"]').remove()
+            }
+        });
+    })
+    $(document).on("click", ".comment-check", function(event){
+        var rev=$(this).data('id')
+        $.ajax({
+            url: "check_comment/"+rev,
+            async: "false",
+            dataType: "json",
+        }).done(function(data) {
+            if(data){
+                $('#com-'+rev).css('text-decoration','line-through');
+                $('a[data-id="'+rev+'"]').remove()
+            }
+        });
     });
 
 </script>
