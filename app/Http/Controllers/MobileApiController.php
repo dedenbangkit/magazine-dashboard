@@ -28,6 +28,7 @@ class MobileApiController extends Controller
             }
             $this->user->changeUserToken($user->id,$token);
             $code=[
+                'uid' => $user->id,
                 'code'=>200,
                 'status'=>'access login',
                 'name'=>$user->name,
