@@ -96,7 +96,7 @@ class User extends Model
             ->leftjoin('project','project.id','=','users.project_id')
             ->leftjoin('company','company.id','=','project.company_id')
             ->where('users.email',$email)
-            ->select('users.*','project.project_name','company.*')
+            ->select('users.*','project.project_name','company.company_name','company.company_email','company.company_phone','company.company_website')
             ->first();
     }
 }
