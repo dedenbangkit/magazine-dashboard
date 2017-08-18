@@ -20,7 +20,7 @@ class MobileApiController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication passed...
             $user=$this->user->checkLogin($request->email);
-            $token=$user->id.''.time();
+            $token=$user->id.'-'.time();
             if($user->position=='supervisor'){
                 $access=1;
             }else{
